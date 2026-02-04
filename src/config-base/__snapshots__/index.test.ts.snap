@@ -10,6 +10,10 @@ exports[`is a valid Oxlint config 1`] = `
     "style": "error",
     "suspicious": "error",
   },
+  "env": {
+    "browser": true,
+    "node": true,
+  },
   "plugins": [
     "eslint",
     "import",
@@ -71,9 +75,6 @@ exports[`is a valid Oxlint config 1`] = `
       },
     ],
     "eslint/no-magic-numbers": "off",
-    "eslint/no-param-reassign": [
-      "error",
-    ],
     "eslint/no-return-assign": [
       "error",
       "always",
@@ -121,12 +122,6 @@ exports[`is a valid Oxlint config 1`] = `
       },
     ],
     "eslint/prefer-promise-reject-errors": "off",
-    "eslint/prefer-regex-literals": [
-      "error",
-      {
-        "disallowRedundantWrapping": true,
-      },
-    ],
     "eslint/require-await": "off",
     "eslint/sort-imports": "off",
     "eslint/sort-keys": "off",
@@ -144,8 +139,8 @@ exports[`is a valid Oxlint config 1`] = `
     "import/no-namespace": "off",
     "import/no-nodejs-modules": "off",
     "import/no-relative-parent-imports": "off",
-    "import/no-unassigned-import": "error",
     "import/unambiguous": "warn",
+    "node/no-process-env": "off",
     "oxc/no-async-await": "off",
     "oxc/no-optional-chaining": "off",
     "oxc/no-rest-spread-properties": "off",
@@ -254,6 +249,8 @@ exports[`is a valid Oxlint config 1`] = `
     "unicorn/no-single-promise-in-promise-methods": "off",
     "unicorn/no-useless-undefined": "off",
     "unicorn/prefer-bigint-literals": "off",
+    "vitest/consistent-test-filename": "off",
+    "vitest/require-hook": "off",
   },
   "settings": {
     "vitest": {

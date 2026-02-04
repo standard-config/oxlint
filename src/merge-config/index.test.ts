@@ -21,6 +21,7 @@ test('merges two valid configs', () => {
 			},
 		},
 		{
+			ignorePatterns: ['fixtures/**'],
 			plugins: ['unicorn'],
 			rules: {
 				'eslint/arrow-body-style': 'off',
@@ -31,6 +32,7 @@ test('merges two valid configs', () => {
 
 	expectTypeOf(result).toEqualTypeOf<OxlintConfig>();
 	expect(result).toStrictEqual({
+		ignorePatterns: ['fixtures/**'],
 		plugins: ['eslint', 'unicorn'],
 		rules: {
 			'eslint/arrow-body-style': 'off',

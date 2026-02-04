@@ -20,6 +20,10 @@ const config: LinterConfigEntry = {
 		style: 'error',
 		suspicious: 'error',
 	},
+	env: {
+		browser: true,
+		node: true,
+	},
 	settings: {
 		vitest: {
 			typecheck: true,
@@ -50,7 +54,6 @@ const config: LinterConfigEntry = {
 		'eslint/no-else-return': ['error', { allowElseIf: false }],
 		'eslint/no-empty': ['error', { allowEmptyCatch: true }],
 		'eslint/no-magic-numbers': 'off',
-		'eslint/no-param-reassign': ['error'],
 		'eslint/no-return-assign': ['error', 'always'],
 		'eslint/no-self-assign': ['error', { props: true }],
 		'eslint/no-ternary': 'off',
@@ -79,10 +82,6 @@ const config: LinterConfigEntry = {
 			{ enforceForRenamedProperties: false },
 		],
 		'eslint/prefer-promise-reject-errors': 'off',
-		'eslint/prefer-regex-literals': [
-			'error',
-			{ disallowRedundantWrapping: true },
-		],
 		'eslint/require-await': 'off',
 		'eslint/sort-imports': 'off',
 		'eslint/sort-keys': 'off',
@@ -95,8 +94,8 @@ const config: LinterConfigEntry = {
 		'import/no-namespace': 'off',
 		'import/no-nodejs-modules': 'off',
 		'import/no-relative-parent-imports': 'off',
-		'import/no-unassigned-import': 'error',
 		'import/unambiguous': 'warn',
+		'node/no-process-env': 'off',
 		'oxc/no-async-await': 'off',
 		'oxc/no-optional-chaining': 'off',
 		'oxc/no-rest-spread-properties': 'off',
@@ -189,6 +188,8 @@ const config: LinterConfigEntry = {
 		'unicorn/no-single-promise-in-promise-methods': 'off',
 		'unicorn/no-useless-undefined': 'off',
 		'unicorn/prefer-bigint-literals': 'off',
+		'vitest/consistent-test-filename': 'off',
+		'vitest/require-hook': 'off',
 	},
 };
 

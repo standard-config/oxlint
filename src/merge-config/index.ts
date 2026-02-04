@@ -24,6 +24,11 @@ export default function mergeConfig(
 			continue;
 		}
 
+		if (result[key] === undefined) {
+			(result as any)[key] = value;
+			continue;
+		}
+
 		if (isArray(value) && isArray(result[key])) {
 			(result as any)[key] = [...result[key], ...value];
 			continue;

@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`is a valid Oxlint config override 1`] = `
+{
+  "rules": {
+    "import/unambiguous": "off",
+    "unicorn/no-empty-file": "off",
+    "vitest/require-hook": "off",
+  },
+}
+`;

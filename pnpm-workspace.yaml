@@ -1,0 +1,14 @@
+autoInstallPeers: false
+
+onlyBuiltDependencies:
+  - esbuild
+
+peerDependencyRules:
+  allowedVersions:
+    vitest: '*'
+
+strictPeerDependencies: true
+
+updateConfig:
+  ignoreDependencies:
+    - '@types/node'

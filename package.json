@@ -1,6 +1,6 @@
 {
 	"name": "@standard-config/oxlint",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Curated Oxlint config with sensible defaults",
 	"license": "MIT",
 	"author": {
@@ -13,12 +13,17 @@
 		"url": "git+https://github.com/standard-config/oxlint.git"
 	},
 	"keywords": [
+		"eslint-config-xo",
+		"eslint-config-xo-typescript",
+		"linter",
 		"oxc",
 		"oxlint",
 		"oxlint-config",
+		"oxlint-tsgolint",
 		"standard-config",
 		"type-aware",
-		"typescript"
+		"typescript",
+		"xo"
 	],
 	"files": [
 		"dist/**"

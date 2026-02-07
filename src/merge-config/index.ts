@@ -30,7 +30,7 @@ export default function mergeConfig(
 		}
 
 		if (isArray(value) && isArray(result[key])) {
-			(result as any)[key] = [...result[key], ...value];
+			(result as any)[key] = [...new Set([...result[key], ...value])];
 			continue;
 		}
 

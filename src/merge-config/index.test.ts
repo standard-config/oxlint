@@ -22,7 +22,7 @@ test('merges two valid configs', () => {
 		},
 		{
 			ignorePatterns: ['fixtures/**'],
-			plugins: ['unicorn'],
+			plugins: ['eslint', 'unicorn'],
 			rules: {
 				'eslint/arrow-body-style': 'off',
 				'eslint/func-style': 'off',

@@ -48,7 +48,6 @@ export default function mergeConfig(
 			continue;
 		}
 
-		/* oxlint-disable-next-line typescript/no-misused-spread */
 		(result as any)[key] = { ...result[key], ...value };
 	}
 

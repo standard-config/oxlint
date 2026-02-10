@@ -36,7 +36,7 @@
 	"engines": {
 		"node": ">=20"
 	},
-	"packageManager": "pnpm@10.28.2",
+	"packageManager": "pnpm@10.29.2",
 	"dependencies": {
 		"rfdc": "^1.4.1"
 	},
@@ -57,7 +57,7 @@
 		"eslint": "9.39.2",
 		"husky": "9.1.7",
 		"jiti": "2.6.1",
-		"oxlint": "1.43.0",
+		"oxlint": "1.46.0",
 		"oxlint-tsgolint": "0.11.5",
 		"prettier": "3.8.1",
 		"publint": "0.3.17",

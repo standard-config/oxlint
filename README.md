@@ -19,6 +19,8 @@ npm install --save-dev @standard-config/oxlint
 pnpm add --save-dev @standard-config/oxlint
 ```
 
+For [type-aware linting](https://oxc.rs/docs/guide/usage/linter/type-aware.html), make sure both `oxlint` and `oxlint-tsgolint` are installed.
+
 ## Usage
 
 Create your `oxlint.config.ts`:
@@ -28,6 +30,8 @@ import { defineConfig } from '@standard-config/oxlint';
 
 export default defineConfig();
 ```
+
+### Overrides
 
 You can override the defaults by passing your own [config options](https://oxc.rs/docs/guide/usage/linter/config-file-reference.html).
 
@@ -43,7 +47,7 @@ export default defineConfig({
 
 ### React
 
-Standard Config includes a set of React-related rules that are off by default. You can enable them by passing `react: true`.
+Standard Config includes a set of React-related rules that are off by default. You can enable them by setting `react: true` in the root of your config.
 
 ```ts
 import { defineConfig } from '@standard-config/oxlint';

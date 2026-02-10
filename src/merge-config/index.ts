@@ -1,11 +1,18 @@
 /* oxlint-disable eslint/no-unsafe-member-access */
 
 import type { OxlintConfig } from 'oxlint';
+import type {
+	LinterConfigEntry,
+	LinterConfigOverrideEntry,
+} from '../types/index.js';
 import clone from '../clone/index.ts';
 
 export default function mergeConfig(
 	baseConfig: OxlintConfig,
-	extensionConfig: OxlintConfig
+	extensionConfig:
+		| LinterConfigEntry
+		| LinterConfigOverrideEntry
+		| OxlintConfig
 ): OxlintConfig {
 	if (!(isObject(baseConfig) && isObject(extensionConfig))) {
 		throw new TypeError(
@@ -30,7 +37,13 @@ export default function mergeConfig(
 		}
 
 		if (isArray(value) && isArray(result[key])) {
-			(result as any)[key] = [...new Set([...result[key], ...value])];
+			const values = [...new Set([...result[key], ...value])];
+
+			(result as any)[key] =
+				key === 'plugins'
+					? (values as ReadonlyArray<string>).toSorted()
+					: values;
+
 			continue;
 		}
 

@@ -41,6 +41,18 @@ export default defineConfig({
 });
 ```
 
+### React
+
+Standard Config includes a set of React-related rules that are off by default. You can enable them by passing `react: true`.
+
+```ts
+import { defineConfig } from '@standard-config/oxlint';
+
+export default defineConfig({
+    react: true,
+});
+```
+
 ## Related
 
 - [**@standard-config/eslint**](https://github.com/standard-config/eslint)

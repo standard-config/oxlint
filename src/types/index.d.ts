@@ -6,3 +6,11 @@ export type LinterConfigEntry = Omit<
 >;
 
 export type LinterConfigOverrideEntry = Omit<OxlintOverride, 'files'>;
+
+export type StandardConfig = OxlintConfig & {
+	/**
+	 * Enable React-specific rules.
+	 * @default false
+	 */
+	react?: boolean;
+};

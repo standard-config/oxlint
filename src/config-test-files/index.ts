@@ -3,6 +3,7 @@ import type { LinterConfigOverrideEntry } from '../types/index.d.ts';
 const config: LinterConfigOverrideEntry = {
 	rules: {
 		'eslint/no-alert': 'off',
+		'eslint/no-promise-executor-return': 'off',
 		'import/unambiguous': 'off',
 		'promise/prefer-await-to-then': 'off',
 		'typescript/ban-ts-comment': 'off',

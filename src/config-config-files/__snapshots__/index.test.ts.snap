@@ -9,6 +9,7 @@ exports[`is a valid Oxlint config override 1`] = `
         "allowObject": true,
       },
     ],
+    "import/no-unassigned-import": "off",
     "import/unambiguous": "off",
     "unicorn/no-empty-file": "off",
   },

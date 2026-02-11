@@ -10,6 +10,7 @@ test('merges two valid configs', () => {
 
 	result = mergeConfig(
 		{
+			ignorePatterns: ['coverage/**'],
 			plugins: ['eslint'],
 			rules: {
 				'eslint/func-names': 'off',
@@ -32,7 +33,7 @@ test('merges two valid configs', () => {
 
 	expectTypeOf(result).toEqualTypeOf<OxlintConfig>();
 	expect(result).toStrictEqual({
-		ignorePatterns: ['fixtures/**'],
+		ignorePatterns: ['coverage/**', 'fixtures/**'],
 		plugins: ['eslint', 'unicorn'],
 		rules: {
 			'eslint/arrow-body-style': 'off',

@@ -1,3 +1,7 @@
 import { defineConfig } from './src/index.ts';
 
-export default defineConfig();
+export default defineConfig({
+	categories: {
+		nursery: 'error',
+	},
+});

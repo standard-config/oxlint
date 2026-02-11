@@ -40,7 +40,6 @@ export default function mergeConfig(
 			const values = [...new Set([...result[key], ...value])];
 
 			(result as any)[key] =
-				/* v8 ignore next -- @preserve */
 				key === 'plugins'
 					? (values as ReadonlyArray<string>).toSorted()
 					: values;

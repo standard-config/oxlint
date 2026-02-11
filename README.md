@@ -40,7 +40,7 @@ import { defineConfig } from '@standard-config/oxlint';
 
 export default defineConfig({
     rules: {
-        'import/no-unassigned-import': 'off',
+        'typescript/consistent-type-definitions': ['error', 'interface'],
     },
 });
 ```

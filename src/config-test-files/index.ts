@@ -4,6 +4,7 @@ const config: LinterConfigOverrideEntry = {
 	rules: {
 		'eslint/no-alert': 'off',
 		'eslint/no-promise-executor-return': 'off',
+		'import/no-unassigned-import': 'off',
 		'import/unambiguous': 'off',
 		'jsx-a11y/anchor-is-valid': 'off',
 		'promise/prefer-await-to-then': 'off',

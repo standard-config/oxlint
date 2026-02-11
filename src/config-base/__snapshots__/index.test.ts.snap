@@ -181,6 +181,7 @@ exports[`is a valid Oxlint config 1`] = `
         "ignoreArrowShorthand": true,
       },
     ],
+    "typescript/no-empty-interface": "off",
     "typescript/no-explicit-any": "off",
     "typescript/no-misused-promises": [
       "error",

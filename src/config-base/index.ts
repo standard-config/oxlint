@@ -131,6 +131,7 @@ const config: LinterConfigEntry = {
 			'error',
 			{ ignoreArrowShorthand: true },
 		],
+		'typescript/no-empty-interface': 'off',
 		'typescript/no-explicit-any': 'off',
 		'typescript/no-misused-promises': [
 			'error',

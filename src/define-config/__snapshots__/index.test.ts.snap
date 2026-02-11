@@ -37,6 +37,7 @@ exports[`defines a valid Oxlint config 1`] = `
       ],
       "rules": {
         "eslint/no-alert": "off",
+        "eslint/no-param-reassign": "off",
         "eslint/no-promise-executor-return": "off",
         "import/no-unassigned-import": "off",
         "import/unambiguous": "off",
@@ -368,6 +369,7 @@ exports[`supports the \`react\` option 1`] = `
       ],
       "rules": {
         "eslint/no-alert": "off",
+        "eslint/no-param-reassign": "off",
         "eslint/no-promise-executor-return": "off",
         "import/no-unassigned-import": "off",
         "import/unambiguous": "off",

@@ -75,6 +75,7 @@ exports[`is a valid Oxlint config 1`] = `
         "allowEmptyCatch": true,
       },
     ],
+    "eslint/no-inline-comments": "off",
     "eslint/no-magic-numbers": "off",
     "eslint/no-return-assign": [
       "error",

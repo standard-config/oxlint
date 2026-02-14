@@ -54,6 +54,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-duplicate-imports': 'off',
 		'eslint/no-else-return': ['error', { allowElseIf: false }],
 		'eslint/no-empty': ['error', { allowEmptyCatch: true }],
+		'eslint/no-inline-comments': 'off',
 		'eslint/no-magic-numbers': 'off',
 		'eslint/no-return-assign': ['error', 'always'],
 		'eslint/no-self-assign': ['error', { props: true }],

@@ -51,6 +51,7 @@ const config: LinterConfigEntry = {
 		'eslint/new-cap': 'off',
 		'eslint/no-await-in-loop': 'off',
 		'eslint/no-continue': 'off',
+		'eslint/no-deprecated': 'warn',
 		'eslint/no-duplicate-imports': 'off',
 		'eslint/no-else-return': ['error', { allowElseIf: false }],
 		'eslint/no-empty': ['error', { allowEmptyCatch: true }],

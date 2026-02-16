@@ -17,15 +17,26 @@ export default function defineConfig(
 		...(react ? mergeConfig(configBase, configReact) : configBase),
 		overrides: [
 			{
-				files: ['**/*.d.{ts,cts,mts}'],
+				files: [
+					/* prettier-ignore */
+					'**/*.d.{ts,cts,mts}',
+					'**/*.test-d.{ts,cts,mts}',
+				],
 				...configTypeDefinitions,
 			},
 			{
-				files: ['**/*.test.{ts,tsx,cts,mts}'],
+				files: [
+					'**/*.test.{ts,tsx,cts,mts}',
+					'**/*.test-d.{ts,cts,mts}',
+				],
 				...configTestFiles,
 			},
 			{
-				files: ['**/*.config.{ts,cts,mts}', '**/*.setup.{ts,cts,mts}'],
+				files: [
+					/* prettier-ignore */
+					'**/*.config.{ts,cts,mts}',
+					'**/*.setup.{ts,cts,mts}',
+				],
 				...configConfigFiles,
 			},
 		],

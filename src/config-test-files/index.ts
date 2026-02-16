@@ -5,6 +5,7 @@ const config: LinterConfigOverrideEntry = {
 		'eslint/no-alert': 'off',
 		'eslint/no-param-reassign': 'off',
 		'eslint/no-promise-executor-return': 'off',
+		'eslint/no-shadow': 'off',
 		'import/no-unassigned-import': 'off',
 		'import/unambiguous': 'off',
 		'jsx-a11y/anchor-is-valid': 'off',

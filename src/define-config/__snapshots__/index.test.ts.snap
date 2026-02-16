@@ -285,6 +285,7 @@ exports[`defines a valid Oxlint config 1`] = `
       },
     ],
     "typescript/no-unsafe-type-assertion": "off",
+    "typescript/no-use-before-define": "off",
     "typescript/only-throw-error": [
       "error",
       {
@@ -650,6 +651,7 @@ exports[`supports the \`react\` option 1`] = `
       },
     ],
     "typescript/no-unsafe-type-assertion": "off",
+    "typescript/no-use-before-define": "off",
     "typescript/only-throw-error": [
       "error",
       {

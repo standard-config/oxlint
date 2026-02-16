@@ -210,6 +210,7 @@ exports[`is a valid Oxlint config 1`] = `
       },
     ],
     "typescript/no-unsafe-type-assertion": "off",
+    "typescript/no-use-before-define": "off",
     "typescript/only-throw-error": [
       "error",
       {

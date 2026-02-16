@@ -155,6 +155,7 @@ const config: LinterConfigEntry = {
 			},
 		],
 		'typescript/no-unsafe-type-assertion': 'off',
+		'typescript/no-use-before-define': 'off',
 		'typescript/only-throw-error': [
 			'error',
 			{

@@ -23,6 +23,7 @@ const config: LinterConfigOverrideEntry = {
 		'unicorn/no-empty-file': 'off',
 		'vitest/consistent-test-it': 'off',
 		'vitest/max-expects': 'off',
+		'vitest/max-nested-describe': 'off',
 		'vitest/no-alias-methods': 'off',
 		'vitest/no-conditional-tests': 'off',
 		'vitest/no-disabled-tests': 'warn',

@@ -28,6 +28,7 @@ const config: LinterConfigOverrideEntry = {
 		'vitest/no-conditional-tests': 'off',
 		'vitest/no-disabled-tests': 'warn',
 		'vitest/no-hooks': 'off',
+		'vitest/no-large-snapshots': 'off',
 		'vitest/prefer-called-once': 'off',
 		'vitest/prefer-called-with': 'off',
 		'vitest/prefer-lowercase-title': 'off',

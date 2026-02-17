@@ -29,6 +29,7 @@ exports[`is a valid Oxlint config override 1`] = `
     "vitest/no-conditional-tests": "off",
     "vitest/no-disabled-tests": "warn",
     "vitest/no-hooks": "off",
+    "vitest/no-large-snapshots": "off",
     "vitest/prefer-called-once": "off",
     "vitest/prefer-called-with": "off",
     "vitest/prefer-lowercase-title": "off",

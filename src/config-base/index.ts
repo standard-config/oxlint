@@ -193,6 +193,13 @@ const config: LinterConfigEntry = {
 		'unicorn/no-single-promise-in-promise-methods': 'off',
 		'unicorn/no-useless-undefined': 'off',
 		'unicorn/prefer-bigint-literals': 'off',
+		'unicorn/prefer-number-properties': [
+			'error',
+			{
+				checkInfinity: true,
+				checkNaN: true,
+			},
+		],
 		'vitest/consistent-test-filename': 'off',
 		'vitest/require-hook': 'off',
 	},

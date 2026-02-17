@@ -200,6 +200,7 @@ const config: LinterConfigEntry = {
 				checkNaN: true,
 			},
 		],
+		'unicorn/prefer-structured-clone': 'off',
 		'vitest/consistent-test-filename': 'off',
 		'vitest/require-hook': 'off',
 	},

@@ -261,6 +261,7 @@ exports[`is a valid Oxlint config 1`] = `
         "checkNaN": true,
       },
     ],
+    "unicorn/prefer-structured-clone": "off",
     "vitest/consistent-test-filename": "off",
     "vitest/require-hook": "off",
   },

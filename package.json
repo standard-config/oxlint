@@ -36,7 +36,7 @@
 	"engines": {
 		"node": ">=20"
 	},
-	"packageManager": "pnpm@10.29.2",
+	"packageManager": "pnpm@10.30.0",
 	"dependencies": {
 		"rfdc": "^1.4.1"
 	},

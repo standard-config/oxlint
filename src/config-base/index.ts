@@ -168,6 +168,7 @@ const config: LinterConfigEntry = {
 			{ ignoreConditionalTests: false },
 		],
 		'typescript/prefer-promise-reject-errors': 'off',
+		'typescript/prefer-readonly-parameter-types': 'off',
 		'typescript/require-array-sort-compare': [
 			'error',
 			{ ignoreStringArrays: true },

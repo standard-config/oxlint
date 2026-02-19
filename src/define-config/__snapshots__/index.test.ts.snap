@@ -305,6 +305,7 @@ exports[`defines a valid Oxlint config 1`] = `
       },
     ],
     "typescript/prefer-promise-reject-errors": "off",
+    "typescript/prefer-readonly-parameter-types": "off",
     "typescript/require-array-sort-compare": [
       "error",
       {
@@ -685,6 +686,7 @@ exports[`supports the \`react\` option 1`] = `
       },
     ],
     "typescript/prefer-promise-reject-errors": "off",
+    "typescript/prefer-readonly-parameter-types": "off",
     "typescript/require-array-sort-compare": [
       "error",
       {

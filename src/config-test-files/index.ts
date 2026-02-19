@@ -26,6 +26,7 @@ const config: LinterConfigOverrideEntry = {
 		'vitest/max-expects': 'off',
 		'vitest/max-nested-describe': 'off',
 		'vitest/no-alias-methods': 'off',
+		'vitest/no-commented-out-tests': 'warn',
 		'vitest/no-conditional-tests': 'off',
 		'vitest/no-disabled-tests': 'warn',
 		'vitest/no-hooks': 'off',

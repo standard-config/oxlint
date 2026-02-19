@@ -202,6 +202,7 @@ const config: LinterConfigEntry = {
 		],
 		'unicorn/prefer-structured-clone': 'off',
 		'vitest/consistent-test-filename': 'off',
+		'vitest/no-importing-vitest-globals': 'off',
 		'vitest/require-hook': 'off',
 	},
 };

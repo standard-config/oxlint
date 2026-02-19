@@ -263,6 +263,7 @@ exports[`is a valid Oxlint config 1`] = `
     ],
     "unicorn/prefer-structured-clone": "off",
     "vitest/consistent-test-filename": "off",
+    "vitest/no-importing-vitest-globals": "off",
     "vitest/require-hook": "off",
   },
   "settings": {

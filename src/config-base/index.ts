@@ -213,6 +213,7 @@ const config: LinterConfigEntry = {
 		'vitest/no-large-snapshots': 'off',
 		'vitest/prefer-called-once': 'off',
 		'vitest/prefer-called-with': 'off',
+		'vitest/prefer-import-in-mock': 'off',
 		'vitest/prefer-lowercase-title': 'off',
 		'vitest/prefer-spy-on': 'off',
 		'vitest/prefer-to-be-falsy': 'off',

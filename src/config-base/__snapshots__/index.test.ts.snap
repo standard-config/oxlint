@@ -109,7 +109,7 @@ exports[`is a valid Oxlint config 1`] = `
       },
     ],
     "eslint/no-unused-vars": [
-      "error",
+      "warn",
       {
         "argsIgnorePattern": "^_",
         "caughtErrorsIgnorePattern": "^_",

@@ -71,7 +71,7 @@ const config: LinterConfigEntry = {
 		],
 		'eslint/no-unused-expressions': ['error', { enforceForJSX: true }],
 		'eslint/no-unused-vars': [
-			'error',
+			'warn',
 			{
 				argsIgnorePattern: '^_',
 				caughtErrorsIgnorePattern: '^_',

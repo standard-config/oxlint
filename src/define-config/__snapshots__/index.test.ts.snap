@@ -189,7 +189,7 @@ exports[`defines a valid Oxlint config 1`] = `
       },
     ],
     "eslint/no-unused-vars": [
-      "error",
+      "warn",
       {
         "argsIgnorePattern": "^_",
         "caughtErrorsIgnorePattern": "^_",
@@ -545,7 +545,7 @@ exports[`supports the \`react\` option 1`] = `
       },
     ],
     "eslint/no-unused-vars": [
-      "error",
+      "warn",
       {
         "argsIgnorePattern": "^_",
         "caughtErrorsIgnorePattern": "^_",

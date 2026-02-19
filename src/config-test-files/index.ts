@@ -16,6 +16,7 @@ const config: LinterConfigOverrideEntry = {
 		'typescript/no-confusing-void-expression': 'off',
 		'typescript/no-empty-function': 'off',
 		'typescript/no-extraneous-class': 'off',
+		'typescript/no-unsafe-argument': 'off',
 		'typescript/no-unsafe-assignment': 'off',
 		'typescript/no-unsafe-member-access': 'off',
 		'unicorn/consistent-function-scoping': 'off',

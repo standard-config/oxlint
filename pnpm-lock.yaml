@@ -13,8 +13,8 @@ importers:
         version: 1.4.1
     devDependencies:
       '@standard-config/eslint':
-        specifier: ^1.5.1
-        version: 1.5.1(eslint@10.0.0(jiti@2.6.1))(typescript@5.9.3)
+        specifier: ^1.5.2
+        version: 1.5.2(eslint@10.0.0(jiti@2.6.1))(typescript@5.9.3)
       '@standard-config/prettier':
         specifier: ^1.9.1
         version: 1.9.1(prettier@3.8.1)
@@ -915,8 +915,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@standard-config/eslint@1.5.1':
-    resolution: {integrity: sha512-ugWT9pSBDnH9lyzBgzPoAjJVkFHo2RgAbF00v4vocYwoPCwruQAkZQNPZ4Sq5YMZxIo9NaOg9cxIryolPHhb8g==}
+  '@standard-config/eslint@1.5.2':
+    resolution: {integrity: sha512-sBPzWAqVuWRo6i8u9yY3CjQATAe2yxeEA1kUArLjOPTlj8VfZRR1fZNcR2PxL966je8tVgSyqEOoEnlxak3+vw==}
     engines: {node: '>=20'}
     peerDependencies:
       '@standard-config/oxlint': '*'
@@ -1268,8 +1268,8 @@ packages:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
     engines: {node: '>= 0.4'}
 
-  electron-to-chromium@1.5.286:
-    resolution: {integrity: sha512-9tfDXhJ4RKFNerfjdCcZfufu49vg620741MNs26a9+bhLThdB+plgMeou98CAaHu/WATj2iHOOHTp1hWtABj2A==}
+  electron-to-chromium@1.5.302:
+    resolution: {integrity: sha512-sM6HAN2LyK82IyPBpznDRqlTQAtuSaO+ShzFiWTvoMJLHyZ+Y39r8VMfHzwbU8MVBzQ4Wdn85+wlZl2TLGIlwg==}
 
   empathic@2.0.0:
     resolution: {integrity: sha512-i6UzDscO/XfAcNYD75CfICkmfLedpyPDdozrLMmQc5ORaQcdMoc21OnlEylMIqI7U8eniKrPMxxtj8k0vhmJhA==}
@@ -2981,7 +2981,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.57.1':
     optional: true
 
-  '@standard-config/eslint@1.5.1(eslint@10.0.0(jiti@2.6.1))(typescript@5.9.3)':
+  '@standard-config/eslint@1.5.2(eslint@10.0.0(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
       '@eslint/compat': 2.0.2(eslint@10.0.0(jiti@2.6.1))
       '@stylistic/eslint-plugin': 5.9.0(eslint@10.0.0(jiti@2.6.1))
@@ -3316,7 +3316,7 @@ snapshots:
     dependencies:
       baseline-browser-mapping: 2.10.0
       caniuse-lite: 1.0.30001770
-      electron-to-chromium: 1.5.286
+      electron-to-chromium: 1.5.302
       node-releases: 2.0.27
       update-browserslist-db: 1.2.3(browserslist@4.28.1)
 
@@ -3413,7 +3413,7 @@ snapshots:
       es-errors: 1.3.0
       gopd: 1.2.0
 
-  electron-to-chromium@1.5.286: {}
+  electron-to-chromium@1.5.302: {}
 
   empathic@2.0.0: {}
 

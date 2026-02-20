@@ -88,6 +88,7 @@ exports[`is a valid Oxlint config 1`] = `
         "props": true,
       },
     ],
+    "eslint/no-shadow": "off",
     "eslint/no-ternary": "off",
     "eslint/no-undefined": "off",
     "eslint/no-unsafe-negation": [

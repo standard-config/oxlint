@@ -59,6 +59,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-magic-numbers': 'off',
 		'eslint/no-return-assign': ['error', 'always'],
 		'eslint/no-self-assign': ['error', { props: true }],
+		'eslint/no-shadow': 'off',
 		'eslint/no-ternary': 'off',
 		'eslint/no-undefined': 'off',
 		'eslint/no-unsafe-negation': [

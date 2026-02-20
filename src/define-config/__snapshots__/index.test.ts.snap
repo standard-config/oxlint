@@ -45,6 +45,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "import/unambiguous": "off",
         "jsx-a11y/anchor-is-valid": "off",
         "promise/prefer-await-to-then": "off",
+        "react-perf/jsx-no-new-array-as-prop": "off",
         "react/jsx-no-useless-fragment": "off",
         "react/no-children-prop": "off",
         "typescript/ban-ts-comment": "off",
@@ -401,6 +402,7 @@ exports[`supports the \`react\` option 1`] = `
         "import/unambiguous": "off",
         "jsx-a11y/anchor-is-valid": "off",
         "promise/prefer-await-to-then": "off",
+        "react-perf/jsx-no-new-array-as-prop": "off",
         "react/jsx-no-useless-fragment": "off",
         "react/no-children-prop": "off",
         "typescript/ban-ts-comment": "off",
@@ -574,6 +576,7 @@ exports[`supports the \`react\` option 1`] = `
     "oxc/no-rest-spread-properties": "off",
     "promise/avoid-new": "off",
     "promise/prefer-await-to-callbacks": "off",
+    "react-perf/jsx-no-new-array-as-prop": "error",
     "react/jsx-filename-extension": [
       "error",
       {
@@ -594,7 +597,6 @@ exports[`supports the \`react\` option 1`] = `
     "react/only-export-components": "off",
     "react/react-in-jsx-scope": "off",
     "react_perf/jsx-no-jsx-as-prop": "off",
-    "react_perf/jsx-no-new-array-as-prop": "off",
     "react_perf/jsx-no-new-function-as-prop": "off",
     "react_perf/jsx-no-new-object-as-prop": "off",
     "typescript/array-type": [

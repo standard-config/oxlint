@@ -9,6 +9,7 @@ const config: LinterConfigOverrideEntry = {
 		'import/unambiguous': 'off',
 		'jsx-a11y/anchor-is-valid': 'off',
 		'promise/prefer-await-to-then': 'off',
+		'react-perf/jsx-no-new-array-as-prop': 'off',
 		'react/jsx-no-useless-fragment': 'off',
 		'react/no-children-prop': 'off',
 		'typescript/ban-ts-comment': 'off',

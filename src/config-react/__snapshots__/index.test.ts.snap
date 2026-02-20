@@ -8,6 +8,7 @@ exports[`is a valid Oxlint config override 1`] = `
     "react-perf",
   ],
   "rules": {
+    "react-perf/jsx-no-new-array-as-prop": "error",
     "react/jsx-filename-extension": [
       "error",
       {
@@ -28,7 +29,6 @@ exports[`is a valid Oxlint config override 1`] = `
     "react/only-export-components": "off",
     "react/react-in-jsx-scope": "off",
     "react_perf/jsx-no-jsx-as-prop": "off",
-    "react_perf/jsx-no-new-array-as-prop": "off",
     "react_perf/jsx-no-new-function-as-prop": "off",
     "react_perf/jsx-no-new-object-as-prop": "off",
   },

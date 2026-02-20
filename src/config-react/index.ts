@@ -3,6 +3,7 @@ import type { LinterConfigOverrideEntry } from '../types/index.d.ts';
 const config: LinterConfigOverrideEntry = {
 	plugins: ['jsx-a11y', 'react', 'react-perf'],
 	rules: {
+		'react-perf/jsx-no-new-array-as-prop': 'error',
 		'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
 		'react/jsx-max-depth': 'off',
 		'react/jsx-no-target-blank': [
@@ -14,7 +15,6 @@ const config: LinterConfigOverrideEntry = {
 		'react/only-export-components': 'off',
 		'react/react-in-jsx-scope': 'off',
 		'react_perf/jsx-no-jsx-as-prop': 'off',
-		'react_perf/jsx-no-new-array-as-prop': 'off',
 		'react_perf/jsx-no-new-function-as-prop': 'off',
 		'react_perf/jsx-no-new-object-as-prop': 'off',
 	},

@@ -6,6 +6,7 @@ const config: LinterConfigOverrideEntry = {
 		'jsx-a11y/click-events-have-key-events': 'warn',
 		'jsx-a11y/img-redundant-alt': 'off',
 		'jsx-a11y/media-has-caption': 'off',
+		'jsx-a11y/mouse-events-have-key-events': 'warn',
 		'react-perf/jsx-no-new-array-as-prop': 'error',
 		'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
 		'react/jsx-max-depth': 'off',

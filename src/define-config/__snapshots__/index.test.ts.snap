@@ -585,6 +585,7 @@ exports[`supports the \`react\` option 1`] = `
     "promise/avoid-new": "off",
     "promise/prefer-await-to-callbacks": "off",
     "react-perf/jsx-no-new-array-as-prop": "error",
+    "react/display-name": "off",
     "react/jsx-filename-extension": [
       "error",
       {

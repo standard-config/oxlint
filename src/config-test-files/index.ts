@@ -8,6 +8,7 @@ const config: LinterConfigOverrideEntry = {
 		'import/no-unassigned-import': 'off',
 		'import/unambiguous': 'off',
 		'jsx-a11y/anchor-is-valid': 'off',
+		'jsx-a11y/click-events-have-key-events': 'off',
 		'promise/prefer-await-to-then': 'off',
 		'react-perf/jsx-no-new-array-as-prop': 'off',
 		'react/jsx-no-useless-fragment': 'off',

@@ -9,6 +9,7 @@ exports[`is a valid Oxlint config override 1`] = `
   ],
   "rules": {
     "jsx-a11y/img-redundant-alt": "off",
+    "jsx-a11y/media-has-caption": "off",
     "react-perf/jsx-no-new-array-as-prop": "error",
     "react/jsx-filename-extension": [
       "error",

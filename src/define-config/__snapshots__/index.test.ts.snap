@@ -571,6 +571,7 @@ exports[`supports the \`react\` option 1`] = `
     "import/no-relative-parent-imports": "off",
     "import/unambiguous": "warn",
     "jsx-a11y/img-redundant-alt": "off",
+    "jsx-a11y/media-has-caption": "off",
     "node/no-process-env": "off",
     "oxc/no-async-await": "off",
     "oxc/no-optional-chaining": "off",

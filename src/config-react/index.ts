@@ -3,6 +3,7 @@ import type { LinterConfigOverrideEntry } from '../types/index.d.ts';
 const config: LinterConfigOverrideEntry = {
 	plugins: ['jsx-a11y', 'react', 'react-perf'],
 	rules: {
+		'jsx-a11y/img-redundant-alt': 'off',
 		'react-perf/jsx-no-new-array-as-prop': 'error',
 		'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
 		'react/jsx-max-depth': 'off',

@@ -9,6 +9,7 @@ const config: LinterConfigOverrideEntry = {
 		'jsx-a11y/mouse-events-have-key-events': 'warn',
 		'react-perf/jsx-no-new-array-as-prop': 'error',
 		'react/button-has-type': 'error',
+		'react/checked-requires-onchange-or-readonly': 'error',
 		'react/display-name': 'off',
 		'react/forbid-dom-props': 'off',
 		'react/forbid-elements': 'off',

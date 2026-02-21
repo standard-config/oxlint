@@ -7,6 +7,7 @@ const config: LinterConfigOverrideEntry = {
 		'eslint/no-promise-executor-return': 'off',
 		'import/no-unassigned-import': 'off',
 		'import/unambiguous': 'off',
+		'jest/expect-expect': 'warn',
 		'jsx-a11y/anchor-is-valid': 'off',
 		'jsx-a11y/click-events-have-key-events': 'off',
 		'jsx-a11y/mouse-events-have-key-events': 'off',

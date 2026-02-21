@@ -8,6 +8,7 @@ const config: LinterConfigOverrideEntry = {
 		'jsx-a11y/media-has-caption': 'off',
 		'jsx-a11y/mouse-events-have-key-events': 'warn',
 		'react-perf/jsx-no-new-array-as-prop': 'error',
+		'react/button-has-type': 'error',
 		'react/display-name': 'off',
 		'react/forbid-dom-props': 'off',
 		'react/forbid-elements': 'off',

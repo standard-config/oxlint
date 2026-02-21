@@ -12,6 +12,7 @@ const config: LinterConfigOverrideEntry = {
 		'jsx-a11y/mouse-events-have-key-events': 'off',
 		'promise/prefer-await-to-then': 'off',
 		'react-perf/jsx-no-new-array-as-prop': 'off',
+		'react/button-has-type': 'off',
 		'react/jsx-no-useless-fragment': 'off',
 		'react/no-array-index-key': 'off',
 		'react/no-children-prop': 'off',

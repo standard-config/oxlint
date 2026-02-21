@@ -29,6 +29,15 @@ const config: LinterConfigOverrideEntry = {
 		'unicorn/consistent-function-scoping': 'off',
 		'unicorn/error-message': 'off',
 		'unicorn/no-empty-file': 'off',
+		'vitest/consistent-each-for': [
+			'warn',
+			{
+				describe: 'each',
+				it: 'each',
+				suite: 'each',
+				test: 'each',
+			},
+		],
 		'vitest/no-commented-out-tests': 'warn',
 		'vitest/no-disabled-tests': 'warn',
 	},

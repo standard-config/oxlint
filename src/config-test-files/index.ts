@@ -8,6 +8,7 @@ const config: LinterConfigOverrideEntry = {
 		'import/no-unassigned-import': 'off',
 		'import/unambiguous': 'off',
 		'jest/expect-expect': 'warn',
+		'jest/no-duplicate-hooks': 'warn',
 		'jsx-a11y/anchor-is-valid': 'off',
 		'jsx-a11y/click-events-have-key-events': 'off',
 		'jsx-a11y/mouse-events-have-key-events': 'off',

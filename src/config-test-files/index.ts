@@ -40,6 +40,7 @@ const config: LinterConfigOverrideEntry = {
 		],
 		'vitest/no-commented-out-tests': 'warn',
 		'vitest/no-disabled-tests': 'warn',
+		'vitest/warn-todo': 'warn',
 	},
 };
 

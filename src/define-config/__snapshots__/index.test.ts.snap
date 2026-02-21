@@ -76,6 +76,7 @@ exports[`defines a valid Oxlint config 1`] = `
         ],
         "vitest/no-commented-out-tests": "warn",
         "vitest/no-disabled-tests": "warn",
+        "vitest/warn-todo": "warn",
       },
     },
     {
@@ -455,6 +456,7 @@ exports[`supports the \`react\` option 1`] = `
         ],
         "vitest/no-commented-out-tests": "warn",
         "vitest/no-disabled-tests": "warn",
+        "vitest/warn-todo": "warn",
       },
     },
     {

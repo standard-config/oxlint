@@ -193,6 +193,10 @@ const config: LinterConfigEntry = {
 		'unicorn/no-empty-file': 'warn',
 		'unicorn/no-null': 'off',
 		'unicorn/no-single-promise-in-promise-methods': 'off',
+		'unicorn/no-typeof-undefined': [
+			'error',
+			{ checkGlobalVariables: true },
+		],
 		'unicorn/no-useless-undefined': 'off',
 		'unicorn/prefer-bigint-literals': 'off',
 		'unicorn/prefer-number-properties': [

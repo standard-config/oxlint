@@ -29,6 +29,8 @@ const config: LinterConfigOverrideEntry = {
 		],
 		'react/jsx-props-no-spreading': 'off',
 		'react/no-array-index-key': 'error',
+		'react/no-danger': 'error',
+		'react/no-danger-with-children': 'error',
 		'react/no-did-mount-set-state': 'off',
 		'react/no-direct-mutation-state': 'off',
 		'react/no-find-dom-node': 'off',

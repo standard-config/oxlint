@@ -17,6 +17,7 @@ const config: LinterConfigOverrideEntry = {
 		'react/jsx-no-useless-fragment': 'off',
 		'react/no-array-index-key': 'off',
 		'react/no-children-prop': 'off',
+		'react/no-danger': 'off',
 		'typescript/ban-ts-comment': 'off',
 		'typescript/no-confusing-void-expression': 'off',
 		'typescript/no-empty-function': 'off',

@@ -11,6 +11,7 @@ exports[`is a valid Oxlint config override 1`] = `
     "jest/expect-expect": "warn",
     "jest/no-duplicate-hooks": "warn",
     "jest/no-focused-tests": "warn",
+    "jest/no-identical-title": "warn",
     "jsx-a11y/anchor-is-valid": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/mouse-events-have-key-events": "off",

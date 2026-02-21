@@ -51,7 +51,6 @@ const config: LinterConfigEntry = {
 		'eslint/new-cap': 'off',
 		'eslint/no-await-in-loop': 'off',
 		'eslint/no-continue': 'off',
-		'eslint/no-deprecated': 'warn',
 		'eslint/no-duplicate-imports': 'off',
 		'eslint/no-else-return': ['error', { allowElseIf: false }],
 		'eslint/no-empty': ['error', { allowEmptyCatch: true }],
@@ -80,6 +79,7 @@ const config: LinterConfigEntry = {
 				varsIgnorePattern: '^_',
 			},
 		],
+		'eslint/no-use-before-define': 'off',
 		'eslint/no-void': 'off',
 		'eslint/prefer-destructuring': [
 			'error',
@@ -150,6 +150,7 @@ const config: LinterConfigEntry = {
 			'error',
 			{ ignoreArrowShorthand: true },
 		],
+		'typescript/no-deprecated': 'warn',
 		'typescript/no-empty-interface': 'off',
 		'typescript/no-explicit-any': 'off',
 		'typescript/no-misused-promises': [
@@ -172,7 +173,6 @@ const config: LinterConfigEntry = {
 			},
 		],
 		'typescript/no-unsafe-type-assertion': 'off',
-		'typescript/no-use-before-define': 'off',
 		'typescript/only-throw-error': [
 			'error',
 			{

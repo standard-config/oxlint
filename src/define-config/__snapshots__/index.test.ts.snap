@@ -39,6 +39,7 @@ exports[`defines a valid Oxlint config 1`] = `
       ],
       "rules": {
         "eslint/no-alert": "off",
+        "eslint/no-empty-function": "off",
         "eslint/no-param-reassign": "off",
         "eslint/no-promise-executor-return": "off",
         "import/no-unassigned-import": "off",
@@ -94,7 +95,6 @@ exports[`defines a valid Oxlint config 1`] = `
         "react/no-danger": "off",
         "typescript/ban-ts-comment": "off",
         "typescript/no-confusing-void-expression": "off",
-        "typescript/no-empty-function": "off",
         "typescript/no-extraneous-class": "off",
         "typescript/no-unsafe-argument": "off",
         "typescript/no-unsafe-assignment": "off",
@@ -189,7 +189,6 @@ exports[`defines a valid Oxlint config 1`] = `
     "eslint/new-cap": "off",
     "eslint/no-await-in-loop": "off",
     "eslint/no-continue": "off",
-    "eslint/no-deprecated": "warn",
     "eslint/no-duplicate-imports": "off",
     "eslint/no-else-return": [
       "error",
@@ -245,6 +244,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "varsIgnorePattern": "^_",
       },
     ],
+    "eslint/no-use-before-define": "off",
     "eslint/no-void": "off",
     "eslint/prefer-destructuring": [
       "error",
@@ -327,6 +327,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "ignoreArrowShorthand": true,
       },
     ],
+    "typescript/no-deprecated": "warn",
     "typescript/no-empty-interface": "off",
     "typescript/no-explicit-any": "off",
     "typescript/no-misused-promises": [
@@ -354,7 +355,6 @@ exports[`defines a valid Oxlint config 1`] = `
       },
     ],
     "typescript/no-unsafe-type-assertion": "off",
-    "typescript/no-use-before-define": "off",
     "typescript/only-throw-error": [
       "error",
       {
@@ -469,6 +469,7 @@ exports[`supports the \`react\` option 1`] = `
       ],
       "rules": {
         "eslint/no-alert": "off",
+        "eslint/no-empty-function": "off",
         "eslint/no-param-reassign": "off",
         "eslint/no-promise-executor-return": "off",
         "import/no-unassigned-import": "off",
@@ -524,7 +525,6 @@ exports[`supports the \`react\` option 1`] = `
         "react/no-danger": "off",
         "typescript/ban-ts-comment": "off",
         "typescript/no-confusing-void-expression": "off",
-        "typescript/no-empty-function": "off",
         "typescript/no-extraneous-class": "off",
         "typescript/no-unsafe-argument": "off",
         "typescript/no-unsafe-assignment": "off",
@@ -622,7 +622,6 @@ exports[`supports the \`react\` option 1`] = `
     "eslint/new-cap": "off",
     "eslint/no-await-in-loop": "off",
     "eslint/no-continue": "off",
-    "eslint/no-deprecated": "warn",
     "eslint/no-duplicate-imports": "off",
     "eslint/no-else-return": [
       "error",
@@ -678,6 +677,7 @@ exports[`supports the \`react\` option 1`] = `
         "varsIgnorePattern": "^_",
       },
     ],
+    "eslint/no-use-before-define": "off",
     "eslint/no-void": "off",
     "eslint/prefer-destructuring": [
       "error",
@@ -867,6 +867,7 @@ exports[`supports the \`react\` option 1`] = `
         "ignoreArrowShorthand": true,
       },
     ],
+    "typescript/no-deprecated": "warn",
     "typescript/no-empty-interface": "off",
     "typescript/no-explicit-any": "off",
     "typescript/no-misused-promises": [
@@ -894,7 +895,6 @@ exports[`supports the \`react\` option 1`] = `
       },
     ],
     "typescript/no-unsafe-type-assertion": "off",
-    "typescript/no-use-before-define": "off",
     "typescript/only-throw-error": [
       "error",
       {

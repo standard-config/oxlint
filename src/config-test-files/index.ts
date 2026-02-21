@@ -3,6 +3,7 @@ import type { LinterConfigOverrideEntry } from '../types/index.d.ts';
 const config: LinterConfigOverrideEntry = {
 	rules: {
 		'eslint/no-alert': 'off',
+		'eslint/no-empty-function': 'off',
 		'eslint/no-param-reassign': 'off',
 		'eslint/no-promise-executor-return': 'off',
 		'import/no-unassigned-import': 'off',
@@ -58,7 +59,6 @@ const config: LinterConfigOverrideEntry = {
 		'react/no-danger': 'off',
 		'typescript/ban-ts-comment': 'off',
 		'typescript/no-confusing-void-expression': 'off',
-		'typescript/no-empty-function': 'off',
 		'typescript/no-extraneous-class': 'off',
 		'typescript/no-unsafe-argument': 'off',
 		'typescript/no-unsafe-assignment': 'off',

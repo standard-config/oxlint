@@ -18,6 +18,7 @@ exports[`is a valid Oxlint config override 1`] = `
     "react/display-name": "off",
     "react/forbid-dom-props": "off",
     "react/forbid-elements": "off",
+    "react/iframe-missing-sandbox": "off",
     "react/jsx-curly-brace-presence": [
       "error",
       {

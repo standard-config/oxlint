@@ -13,6 +13,7 @@ const config: LinterConfigOverrideEntry = {
 		'react/display-name': 'off',
 		'react/forbid-dom-props': 'off',
 		'react/forbid-elements': 'off',
+		'react/forward-ref-uses-ref': 'off',
 		'react/iframe-missing-sandbox': 'off',
 		'react/jsx-curly-brace-presence': [
 			'error',

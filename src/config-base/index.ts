@@ -110,6 +110,7 @@ const config: LinterConfigEntry = {
 		'jest/no-restricted-jest-methods': 'off',
 		'jest/no-restricted-matchers': 'off',
 		'jest/no-test-prefixes': 'off',
+		'jest/no-untyped-mock-factory': 'off',
 		'jest/prefer-called-with': 'off',
 		'jest/prefer-lowercase-title': 'off',
 		'jest/prefer-spy-on': 'off',

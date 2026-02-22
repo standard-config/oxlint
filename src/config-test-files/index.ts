@@ -24,7 +24,6 @@ const config: LinterConfigOverrideEntry = {
 		'jest/no-standalone-expect': 'error',
 		'jest/no-test-return-statement': 'error',
 		'jest/no-unneeded-async-expect-function': 'error',
-		'jest/no-untyped-mock-factory': 'error',
 		'jest/padding-around-test-blocks': 'error',
 		'jest/prefer-comparison-matcher': 'error',
 		'jest/prefer-each': 'error',

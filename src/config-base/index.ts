@@ -205,6 +205,7 @@ const config: LinterConfigEntry = {
 			},
 		],
 		'typescript/unbound-method': 'off',
+		'unicorn/filename-case': 'off',
 		'unicorn/no-array-callback-reference': 'off',
 		'unicorn/no-empty-file': 'warn',
 		'unicorn/no-null': 'off',

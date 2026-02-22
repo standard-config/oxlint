@@ -117,6 +117,7 @@ const config: LinterConfigEntry = {
 		'jest/require-top-level-describe': 'off',
 		'node/no-process-env': 'off',
 		'oxc/no-async-await': 'off',
+		'oxc/no-barrel-file': 'off',
 		'oxc/no-optional-chaining': 'off',
 		'oxc/no-rest-spread-properties': 'off',
 		'promise/avoid-new': 'off',

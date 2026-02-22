@@ -23,7 +23,6 @@ exports[`defines a valid Oxlint config 1`] = `
       "rules": {
         "import/no-empty-named-blocks": "off",
         "import/no-unassigned-import": "off",
-        "import/prefer-default-export": "off",
         "import/unambiguous": "off",
         "typescript/consistent-type-definitions": "off",
         "typescript/no-empty-interface": "off",
@@ -287,6 +286,7 @@ exports[`defines a valid Oxlint config 1`] = `
     "import/no-namespace": "off",
     "import/no-nodejs-modules": "off",
     "import/no-relative-parent-imports": "off",
+    "import/prefer-default-export": "off",
     "import/unambiguous": "warn",
     "jest/consistent-test-it": "off",
     "jest/max-expects": "off",
@@ -473,7 +473,6 @@ exports[`supports the \`react\` option 1`] = `
       "rules": {
         "import/no-empty-named-blocks": "off",
         "import/no-unassigned-import": "off",
-        "import/prefer-default-export": "off",
         "import/unambiguous": "off",
         "typescript/consistent-type-definitions": "off",
         "typescript/no-empty-interface": "off",
@@ -740,6 +739,7 @@ exports[`supports the \`react\` option 1`] = `
     "import/no-namespace": "off",
     "import/no-nodejs-modules": "off",
     "import/no-relative-parent-imports": "off",
+    "import/prefer-default-export": "off",
     "import/unambiguous": "warn",
     "jest/consistent-test-it": "off",
     "jest/max-expects": "off",

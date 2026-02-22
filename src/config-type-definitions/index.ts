@@ -4,7 +4,6 @@ const config: LinterConfigOverrideEntry = {
 	rules: {
 		'import/no-empty-named-blocks': 'off',
 		'import/no-unassigned-import': 'off',
-		'import/prefer-default-export': 'off',
 		'import/unambiguous': 'off',
 		'typescript/consistent-type-definitions': 'off',
 		'typescript/no-empty-interface': 'off',

@@ -98,6 +98,7 @@ const config: LinterConfigEntry = {
 		'import/no-namespace': 'off',
 		'import/no-nodejs-modules': 'off',
 		'import/no-relative-parent-imports': 'off',
+		'import/prefer-default-export': 'off',
 		'import/unambiguous': 'warn',
 		'jest/consistent-test-it': 'off',
 		'jest/max-expects': 'off',

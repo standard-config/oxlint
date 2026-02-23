@@ -87,10 +87,10 @@ const config: LinterConfigOverrideEntry = {
 		'vitest/consistent-each-for': [
 			'warn',
 			{
+				test: 'each',
 				describe: 'each',
 				it: 'each',
 				suite: 'each',
-				test: 'each',
 			},
 		],
 		'vitest/consistent-vitest-vi': 'error',

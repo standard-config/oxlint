@@ -70,6 +70,7 @@ const config: LinterConfigOverrideEntry = {
 		'react-perf/jsx-no-new-array-as-prop': 'off',
 		'react/button-has-type': 'off',
 		'react/checked-requires-onchange-or-readonly': 'off',
+		'react/jsx-no-target-blank': 'off',
 		'react/jsx-no-useless-fragment': 'off',
 		'react/no-array-index-key': 'off',
 		'react/no-children-prop': 'off',

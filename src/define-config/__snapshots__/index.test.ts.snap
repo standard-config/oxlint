@@ -218,6 +218,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "allowEmptyCatch": true,
       },
     ],
+    "eslint/no-empty-function": "warn",
     "eslint/no-inline-comments": "off",
     "eslint/no-magic-numbers": "off",
     "eslint/no-return-assign": [
@@ -671,6 +672,7 @@ exports[`supports the \`react\` option 1`] = `
         "allowEmptyCatch": true,
       },
     ],
+    "eslint/no-empty-function": "warn",
     "eslint/no-inline-comments": "off",
     "eslint/no-magic-numbers": "off",
     "eslint/no-return-assign": [

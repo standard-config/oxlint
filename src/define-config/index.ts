@@ -9,12 +9,26 @@ import configTypeDefinitions from '../config-type-definitions/index.ts';
 import mergeConfig from '../merge-config/index.ts';
 
 export default function defineConfig(
-	config: StandardConfig = {}
+	...configs: ReadonlyArray<StandardConfig>
 ): OxlintConfig {
-	const { react, ...extensionConfig } = config;
+	let extensionConfig: OxlintConfig = {};
+	let includeReactConfig = false;
+
+	for (const config of configs) {
+		const { react, ...otherConfig } = config;
+
+		extensionConfig = mergeConfig(extensionConfig, otherConfig);
+
+		if (react !== undefined) {
+			includeReactConfig = react;
+		}
+	}
 
 	const baseConfig: OxlintConfig = {
-		...(react ? mergeConfig(configBase, configReact) : configBase),
+		...(includeReactConfig
+			? mergeConfig(configBase, configReact)
+			: configBase),
+
 		overrides: [
 			{
 				files: [

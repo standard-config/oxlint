@@ -341,6 +341,7 @@ exports[`defines a valid Oxlint config 1`] = `
     "oxc/only-used-in-recursion": "error",
     "oxc/uninvoked-array-callback": "error",
     "promise/avoid-new": "off",
+    "promise/no-nesting": "warn",
     "promise/no-promise-in-callback": "warn",
     "promise/no-return-in-finally": "warn",
     "promise/no-return-wrap": [
@@ -994,6 +995,7 @@ exports[`supports the \`react\` option 1`] = `
     "oxc/only-used-in-recursion": "error",
     "oxc/uninvoked-array-callback": "error",
     "promise/avoid-new": "off",
+    "promise/no-nesting": "warn",
     "promise/no-promise-in-callback": "warn",
     "promise/no-return-in-finally": "warn",
     "promise/no-return-wrap": [

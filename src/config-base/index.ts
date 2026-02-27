@@ -121,6 +121,7 @@ const config: LinterConfigEntry = {
 		'node/no-process-env': 'off',
 		'oxc/approx-constant': 'error',
 		'oxc/branches-sharing-code': 'warn',
+		'oxc/const-comparisons': 'warn',
 		'oxc/no-accumulating-spread': 'error',
 		'oxc/no-async-await': 'off',
 		'oxc/no-async-endpoint-handlers': 'off',

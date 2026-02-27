@@ -5,8 +5,8 @@
 Curated Oxlint config with sensible defaults. Designed as a careful, environment-agnostic baseline for writing better TypeScript.
 
 - If you’re adopting Oxlint, this config will get you started right away.
-- If you’re migrating from [**xo**](https://github.com/xojs/xo) to Oxlint, you’ll feel right at home.
-- For rules not yet implemented in Oxlint, see the optional [**@standard-config/eslint**](https://github.com/standard-config/eslint) package for additional coverage.
+- If you’re migrating from [**xo**](https://github.com/xojs/xo), you’ll feel right at home.
+- For additional coverage, including rules not yet implemented in Oxlint, see [**@standard-config/eslint**](https://github.com/standard-config/eslint).
 
 ## Install
 

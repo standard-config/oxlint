@@ -339,6 +339,7 @@ exports[`defines a valid Oxlint config 1`] = `
     "oxc/only-used-in-recursion": "error",
     "oxc/uninvoked-array-callback": "error",
     "promise/avoid-new": "off",
+    "promise/no-return-in-finally": "warn",
     "promise/prefer-await-to-callbacks": "off",
     "typescript/array-type": [
       "error",
@@ -981,6 +982,7 @@ exports[`supports the \`react\` option 1`] = `
     "oxc/only-used-in-recursion": "error",
     "oxc/uninvoked-array-callback": "error",
     "promise/avoid-new": "off",
+    "promise/no-return-in-finally": "warn",
     "promise/prefer-await-to-callbacks": "off",
     "react-perf/jsx-no-jsx-as-prop": "off",
     "react-perf/jsx-no-new-array-as-prop": "error",

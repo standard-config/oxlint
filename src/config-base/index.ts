@@ -146,6 +146,7 @@ const config: LinterConfigEntry = {
 		'oxc/only-used-in-recursion': 'error',
 		'oxc/uninvoked-array-callback': 'error',
 		'promise/avoid-new': 'off',
+		'promise/no-return-in-finally': 'warn',
 		'promise/prefer-await-to-callbacks': 'off',
 		'typescript/array-type': [
 			'error',

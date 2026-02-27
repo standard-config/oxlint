@@ -66,6 +66,7 @@ const config: LinterConfigOverrideEntry = {
 		'jsx-a11y/prefer-tag-over-role': 'off',
 		'jsx-a11y/scope': 'off',
 		'jsx-a11y/tabindex-no-positive': 'off',
+		'oxc/approx-constant': 'off',
 		'oxc/no-accumulating-spread': 'off',
 		'oxc/no-map-spread': 'off',
 		'promise/prefer-await-to-then': 'off',

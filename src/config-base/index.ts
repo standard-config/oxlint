@@ -119,6 +119,7 @@ const config: LinterConfigEntry = {
 		'jest/require-hook': 'off',
 		'jest/require-top-level-describe': 'off',
 		'node/no-process-env': 'off',
+		'oxc/no-accumulating-spread': 'error',
 		'oxc/no-async-await': 'off',
 		'oxc/no-async-endpoint-handlers': 'off',
 		'oxc/no-barrel-file': 'off',

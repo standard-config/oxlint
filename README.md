@@ -2,10 +2,11 @@
 
 # @standard-config/oxlint
 
-Curated Oxlint config with sensible defaults. Carefully designed as a strict, environment-agnostic baseline for writing better TypeScript.
+Curated Oxlint config with sensible defaults. Designed as a careful, environment-agnostic baseline for writing better TypeScript.
 
+- If you’re adopting Oxlint, this config will get you started right away.
 - If you’re migrating from [**xo**](https://github.com/xojs/xo) to Oxlint, you’ll feel right at home.
-- For additional rules not yet implemented in Oxlint, see [**@standard-config/eslint**](https://github.com/standard-config/eslint).
+- For rules not yet implemented in Oxlint, see the optional [**@standard-config/eslint**](https://github.com/standard-config/eslint) package for additional coverage.
 
 ## Install
 
@@ -45,7 +46,7 @@ export default defineConfig({
 
 ### React
 
-Standard Config includes a set of React-related rules that are off by default. You can enable them by setting `react: true` in the root of your config.
+Standard Config includes a set of React-related rules that are off by default. You can enable them by setting `react: true` at the root of your config.
 
 ```ts
 import { defineConfig } from '@standard-config/oxlint';

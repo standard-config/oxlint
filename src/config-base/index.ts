@@ -219,6 +219,10 @@ const config: LinterConfigEntry = {
 			{ checkGlobalVariables: true },
 		],
 		'unicorn/no-useless-undefined': 'off',
+		'unicorn/numeric-separators-style': [
+			'error',
+			{ onlyIfContainsSeparator: true },
+		],
 		'unicorn/prefer-bigint-literals': 'off',
 		'unicorn/prefer-number-properties': [
 			'error',

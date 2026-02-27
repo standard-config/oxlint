@@ -70,6 +70,7 @@ exports[`is a valid Oxlint config override 1`] = `
     "oxc/approx-constant": "off",
     "oxc/no-accumulating-spread": "off",
     "oxc/no-map-spread": "off",
+    "promise/no-return-wrap": "off",
     "promise/prefer-await-to-then": "off",
     "react-perf/jsx-no-new-array-as-prop": "off",
     "react/button-has-type": "off",

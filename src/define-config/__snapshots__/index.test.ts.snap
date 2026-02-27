@@ -104,6 +104,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "oxc/approx-constant": "off",
         "oxc/no-accumulating-spread": "off",
         "oxc/no-map-spread": "off",
+        "promise/no-return-wrap": "off",
         "promise/prefer-await-to-then": "off",
         "react-perf/jsx-no-new-array-as-prop": "off",
         "react/button-has-type": "off",
@@ -340,6 +341,12 @@ exports[`defines a valid Oxlint config 1`] = `
     "oxc/uninvoked-array-callback": "error",
     "promise/avoid-new": "off",
     "promise/no-return-in-finally": "warn",
+    "promise/no-return-wrap": [
+      "error",
+      {
+        "allowReject": true,
+      },
+    ],
     "promise/prefer-await-to-callbacks": "off",
     "promise/prefer-catch": "warn",
     "typescript/array-type": [
@@ -714,6 +721,7 @@ exports[`supports the \`react\` option 1`] = `
         "oxc/approx-constant": "off",
         "oxc/no-accumulating-spread": "off",
         "oxc/no-map-spread": "off",
+        "promise/no-return-wrap": "off",
         "promise/prefer-await-to-then": "off",
         "react-perf/jsx-no-new-array-as-prop": "off",
         "react/button-has-type": "off",
@@ -984,6 +992,12 @@ exports[`supports the \`react\` option 1`] = `
     "oxc/uninvoked-array-callback": "error",
     "promise/avoid-new": "off",
     "promise/no-return-in-finally": "warn",
+    "promise/no-return-wrap": [
+      "error",
+      {
+        "allowReject": true,
+      },
+    ],
     "promise/prefer-await-to-callbacks": "off",
     "promise/prefer-catch": "warn",
     "react-perf/jsx-no-jsx-as-prop": "off",

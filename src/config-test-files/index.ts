@@ -69,6 +69,7 @@ const config: LinterConfigOverrideEntry = {
 		'oxc/approx-constant': 'off',
 		'oxc/no-accumulating-spread': 'off',
 		'oxc/no-map-spread': 'off',
+		'promise/no-promise-in-callback': 'off',
 		'promise/no-return-wrap': 'off',
 		'promise/prefer-await-to-then': 'off',
 		'react-perf/jsx-no-new-array-as-prop': 'off',

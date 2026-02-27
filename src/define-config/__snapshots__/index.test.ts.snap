@@ -104,6 +104,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "oxc/approx-constant": "off",
         "oxc/no-accumulating-spread": "off",
         "oxc/no-map-spread": "off",
+        "promise/no-promise-in-callback": "off",
         "promise/no-return-wrap": "off",
         "promise/prefer-await-to-then": "off",
         "react-perf/jsx-no-new-array-as-prop": "off",
@@ -340,6 +341,7 @@ exports[`defines a valid Oxlint config 1`] = `
     "oxc/only-used-in-recursion": "error",
     "oxc/uninvoked-array-callback": "error",
     "promise/avoid-new": "off",
+    "promise/no-promise-in-callback": "warn",
     "promise/no-return-in-finally": "warn",
     "promise/no-return-wrap": [
       "error",
@@ -721,6 +723,7 @@ exports[`supports the \`react\` option 1`] = `
         "oxc/approx-constant": "off",
         "oxc/no-accumulating-spread": "off",
         "oxc/no-map-spread": "off",
+        "promise/no-promise-in-callback": "off",
         "promise/no-return-wrap": "off",
         "promise/prefer-await-to-then": "off",
         "react-perf/jsx-no-new-array-as-prop": "off",
@@ -991,6 +994,7 @@ exports[`supports the \`react\` option 1`] = `
     "oxc/only-used-in-recursion": "error",
     "oxc/uninvoked-array-callback": "error",
     "promise/avoid-new": "off",
+    "promise/no-promise-in-callback": "warn",
     "promise/no-return-in-finally": "warn",
     "promise/no-return-wrap": [
       "error",

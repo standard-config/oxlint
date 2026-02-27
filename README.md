@@ -6,7 +6,7 @@ Curated Oxlint config with sensible defaults. Designed as a careful, environment
 
 - If you’re adopting Oxlint, this config will get you started right away.
 - If you’re migrating from [**xo**](https://github.com/xojs/xo), you’ll feel right at home.
-- For additional coverage, including rules not yet implemented in Oxlint, see [**@standard-config/eslint**](https://github.com/standard-config/eslint).
+- For additional rules not yet implemented in Oxlint, see [**@standard-config/eslint**](https://github.com/standard-config/eslint).
 
 ## Install
 

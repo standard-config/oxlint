@@ -193,6 +193,7 @@ exports[`is a valid Oxlint config 1`] = `
     "promise/avoid-new": "off",
     "promise/no-return-in-finally": "warn",
     "promise/prefer-await-to-callbacks": "off",
+    "promise/prefer-catch": "warn",
     "typescript/array-type": [
       "error",
       {

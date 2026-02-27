@@ -148,6 +148,7 @@ const config: LinterConfigEntry = {
 		'promise/avoid-new': 'off',
 		'promise/no-return-in-finally': 'warn',
 		'promise/prefer-await-to-callbacks': 'off',
+		'promise/prefer-catch': 'warn',
 		'typescript/array-type': [
 			'error',
 			{

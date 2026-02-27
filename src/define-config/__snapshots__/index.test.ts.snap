@@ -120,6 +120,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "unicorn/consistent-function-scoping": "off",
         "unicorn/error-message": "off",
         "unicorn/no-empty-file": "off",
+        "unicorn/no-useless-promise-resolve-reject": "off",
         "vitest/consistent-each-for": [
           "warn",
           {
@@ -425,6 +426,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "checkGlobalVariables": true,
       },
     ],
+    "unicorn/no-useless-promise-resolve-reject": "error",
     "unicorn/no-useless-undefined": "off",
     "unicorn/numeric-separators-style": [
       "error",
@@ -578,6 +580,7 @@ exports[`supports the \`react\` option 1`] = `
         "unicorn/consistent-function-scoping": "off",
         "unicorn/error-message": "off",
         "unicorn/no-empty-file": "off",
+        "unicorn/no-useless-promise-resolve-reject": "off",
         "vitest/consistent-each-for": [
           "warn",
           {
@@ -993,6 +996,7 @@ exports[`supports the \`react\` option 1`] = `
         "checkGlobalVariables": true,
       },
     ],
+    "unicorn/no-useless-promise-resolve-reject": "error",
     "unicorn/no-useless-undefined": "off",
     "unicorn/numeric-separators-style": [
       "error",

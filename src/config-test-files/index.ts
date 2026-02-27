@@ -85,6 +85,7 @@ const config: LinterConfigOverrideEntry = {
 		'unicorn/consistent-function-scoping': 'off',
 		'unicorn/error-message': 'off',
 		'unicorn/no-empty-file': 'off',
+		'unicorn/no-useless-promise-resolve-reject': 'off',
 		'vitest/consistent-each-for': [
 			'warn',
 			{

@@ -218,6 +218,7 @@ const config: LinterConfigEntry = {
 			'error',
 			{ checkGlobalVariables: true },
 		],
+		'unicorn/no-useless-promise-resolve-reject': 'error',
 		'unicorn/no-useless-undefined': 'off',
 		'unicorn/numeric-separators-style': [
 			'error',

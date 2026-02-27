@@ -122,6 +122,7 @@ const config: LinterConfigEntry = {
 		'oxc/no-async-await': 'off',
 		'oxc/no-async-endpoint-handlers': 'off',
 		'oxc/no-barrel-file': 'off',
+		'oxc/no-map-spread': 'error',
 		'oxc/no-optional-chaining': 'off',
 		'oxc/no-rest-spread-properties': 'off',
 		'promise/avoid-new': 'off',

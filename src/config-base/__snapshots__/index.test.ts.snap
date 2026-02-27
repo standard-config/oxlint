@@ -190,10 +190,13 @@ exports[`is a valid Oxlint config 1`] = `
     "oxc/number-arg-out-of-range": "error",
     "oxc/only-used-in-recursion": "error",
     "oxc/uninvoked-array-callback": "error",
+    "promise/always-return": "error",
     "promise/avoid-new": "off",
     "promise/catch-or-return": "warn",
     "promise/no-callback-in-promise": "warn",
+    "promise/no-multiple-resolved": "error",
     "promise/no-nesting": "warn",
+    "promise/no-new-statics": "error",
     "promise/no-promise-in-callback": "warn",
     "promise/no-return-in-finally": "warn",
     "promise/no-return-wrap": [
@@ -202,8 +205,12 @@ exports[`is a valid Oxlint config 1`] = `
         "allowReject": true,
       },
     ],
+    "promise/param-names": "error",
     "promise/prefer-await-to-callbacks": "off",
+    "promise/prefer-await-to-then": "error",
     "promise/prefer-catch": "warn",
+    "promise/spec-only": "error",
+    "promise/valid-params": "error",
     "typescript/array-type": [
       "error",
       {

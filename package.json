@@ -38,8 +38,8 @@
 	},
 	"packageManager": "pnpm@10.30.3",
 	"peerDependencies": {
-		"oxlint": ">=1.43",
-		"oxlint-tsgolint": ">=0.11"
+		"oxlint": ">=1.51.0",
+		"oxlint-tsgolint": ">=0.15.0"
 	},
 	"peerDependenciesMeta": {
 		"oxlint-tsgolint": {

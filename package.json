@@ -37,9 +37,6 @@
 		"node": ">=20"
 	},
 	"packageManager": "pnpm@10.30.3",
-	"dependencies": {
-		"rfdc": "^1.4.1"
-	},
 	"peerDependencies": {
 		"oxlint": ">=1.43",
 		"oxlint-tsgolint": ">=0.11"

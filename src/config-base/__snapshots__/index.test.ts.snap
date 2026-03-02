@@ -14,6 +14,9 @@ exports[`is a valid Oxlint config 1`] = `
     "browser": true,
     "node": true,
   },
+  "options": {
+    "typeAware": true,
+  },
   "plugins": [
     "eslint",
     "import",

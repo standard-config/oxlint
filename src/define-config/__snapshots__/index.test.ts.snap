@@ -14,6 +14,9 @@ exports[`defines a valid Oxlint config 1`] = `
     "browser": true,
     "node": true,
   },
+  "options": {
+    "typeAware": true,
+  },
   "overrides": [
     {
       "files": [
@@ -648,6 +651,9 @@ exports[`supports the \`react\` option 1`] = `
   "env": {
     "browser": true,
     "node": true,
+  },
+  "options": {
+    "typeAware": true,
   },
   "overrides": [
     {

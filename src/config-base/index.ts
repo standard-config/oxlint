@@ -24,6 +24,9 @@ const config: LinterConfigEntry = {
 		browser: true,
 		node: true,
 	},
+	options: {
+		typeAware: true,
+	},
 	settings: {
 		vitest: {
 			typecheck: true,

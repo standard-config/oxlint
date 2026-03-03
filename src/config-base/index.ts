@@ -101,6 +101,7 @@ const config: LinterConfigEntry = {
 		'import/no-commonjs': ['error', { allowConditionalRequire: false }],
 		'import/no-default-export': 'off',
 		'import/no-dynamic-require': 'off',
+		'import/no-named-default': 'warn',
 		'import/no-named-export': 'off',
 		'import/no-namespace': 'off',
 		'import/no-nodejs-modules': 'off',

@@ -98,6 +98,7 @@ const config: LinterConfigEntry = {
 		'import/group-exports': 'off',
 		'import/max-dependencies': 'off',
 		'import/no-amd': 'off',
+		'import/no-commonjs': ['error', { allowConditionalRequire: false }],
 		'import/no-default-export': 'off',
 		'import/no-dynamic-require': 'off',
 		'import/no-named-export': 'off',

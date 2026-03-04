@@ -240,13 +240,7 @@ const config: LinterConfigEntry = {
 			},
 		],
 		'typescript/no-unsafe-type-assertion': 'off',
-		'typescript/only-throw-error': [
-			'error',
-			{
-				allowThrowingAny: false,
-				allowThrowingUnknown: true,
-			},
-		],
+		'typescript/only-throw-error': ['error', { allowThrowingAny: false }],
 		'typescript/prefer-nullish-coalescing': [
 			'error',
 			{ ignoreConditionalTests: false },

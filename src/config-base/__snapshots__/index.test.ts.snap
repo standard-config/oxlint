@@ -312,7 +312,6 @@ exports[`is a valid Oxlint config 1`] = `
       "error",
       {
         "allowThrowingAny": false,
-        "allowThrowingUnknown": true,
       },
     ],
     "typescript/prefer-nullish-coalescing": [

@@ -126,6 +126,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "typescript/no-unsafe-argument": "off",
         "typescript/no-unsafe-assignment": "off",
         "typescript/no-unsafe-member-access": "off",
+        "typescript/only-throw-error": "off",
         "typescript/strict-void-return": "off",
         "unicorn/consistent-function-scoping": "off",
         "unicorn/error-message": "off",
@@ -464,7 +465,6 @@ exports[`defines a valid Oxlint config 1`] = `
       "error",
       {
         "allowThrowingAny": false,
-        "allowThrowingUnknown": true,
       },
     ],
     "typescript/prefer-nullish-coalescing": [
@@ -792,6 +792,7 @@ exports[`supports the \`react\` option 1`] = `
         "typescript/no-unsafe-argument": "off",
         "typescript/no-unsafe-assignment": "off",
         "typescript/no-unsafe-member-access": "off",
+        "typescript/only-throw-error": "off",
         "typescript/strict-void-return": "off",
         "unicorn/consistent-function-scoping": "off",
         "unicorn/error-message": "off",
@@ -1240,7 +1241,6 @@ exports[`supports the \`react\` option 1`] = `
       "error",
       {
         "allowThrowingAny": false,
-        "allowThrowingUnknown": true,
       },
     ],
     "typescript/prefer-nullish-coalescing": [

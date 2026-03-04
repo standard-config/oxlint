@@ -88,6 +88,7 @@ const config: LinterConfigOverrideEntry = {
 		'typescript/no-unsafe-argument': 'off',
 		'typescript/no-unsafe-assignment': 'off',
 		'typescript/no-unsafe-member-access': 'off',
+		'typescript/only-throw-error': 'off',
 		'typescript/strict-void-return': 'off',
 		'unicorn/consistent-function-scoping': 'off',
 		'unicorn/error-message': 'off',

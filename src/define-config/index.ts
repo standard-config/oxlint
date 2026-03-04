@@ -9,7 +9,7 @@ import configTypeDefinitions from '../config-type-definitions/index.ts';
 import mergeConfig from '../merge-config/index.ts';
 
 export default function defineConfig(
-	...configs: ReadonlyArray<StandardConfig>
+	...configs: StandardConfig[]
 ): OxlintConfig {
 	let extensionConfig: OxlintConfig = {};
 	let includeReactConfig = false;

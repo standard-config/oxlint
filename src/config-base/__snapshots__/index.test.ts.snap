@@ -319,6 +319,7 @@ exports[`is a valid Oxlint config 1`] = `
         },
       },
     ],
+    "typescript/no-unnecessary-type-assertion": "warn",
     "typescript/no-unsafe-argument": "error",
     "typescript/no-unsafe-assignment": "error",
     "typescript/no-unsafe-call": "error",

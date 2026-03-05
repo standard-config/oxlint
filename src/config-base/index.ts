@@ -217,6 +217,7 @@ const config: LinterConfigEntry = {
 			'error',
 			{ allowArgumentsExplicitlyTypedAsAny: true },
 		],
+		'typescript/no-base-to-string': ['error', { checkUnknown: true }],
 		'typescript/no-confusing-void-expression': [
 			'error',
 			{ ignoreArrowShorthand: true },

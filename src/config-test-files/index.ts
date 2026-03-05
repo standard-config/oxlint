@@ -84,6 +84,7 @@ const config: LinterConfigOverrideEntry = {
 		'react/no-danger': 'off',
 		'typescript/ban-ts-comment': 'off',
 		'typescript/explicit-module-boundary-types': 'off',
+		'typescript/no-base-to-string': 'off',
 		'typescript/no-confusing-void-expression': 'off',
 		'typescript/no-extraneous-class': 'off',
 		'typescript/no-restricted-types': 'off',

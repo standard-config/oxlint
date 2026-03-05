@@ -267,7 +267,7 @@ const config: LinterConfigEntry = {
 		'typescript/require-await': 'warn',
 		'typescript/restrict-template-expressions': [
 			'error',
-			{ allowNumber: true },
+			{ allowNullish: true },
 		],
 		'typescript/strict-boolean-expressions': 'off',
 		'typescript/switch-exhaustiveness-check': [

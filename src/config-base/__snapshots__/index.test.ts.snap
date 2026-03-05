@@ -347,7 +347,7 @@ exports[`is a valid Oxlint config 1`] = `
     "typescript/restrict-template-expressions": [
       "error",
       {
-        "allowNumber": true,
+        "allowNullish": true,
       },
     ],
     "typescript/strict-boolean-expressions": "off",

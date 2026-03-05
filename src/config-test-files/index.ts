@@ -97,6 +97,7 @@ const config: LinterConfigOverrideEntry = {
 		'typescript/no-unsafe-return': 'off',
 		'typescript/no-unsafe-unary-minus': 'off',
 		'typescript/only-throw-error': 'off',
+		'typescript/restrict-template-expressions': 'off',
 		'typescript/strict-void-return': 'off',
 		'unicorn/consistent-function-scoping': 'off',
 		'unicorn/error-message': 'off',

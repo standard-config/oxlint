@@ -135,6 +135,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "typescript/no-unsafe-return": "off",
         "typescript/no-unsafe-unary-minus": "off",
         "typescript/only-throw-error": "off",
+        "typescript/restrict-template-expressions": "off",
         "typescript/strict-void-return": "off",
         "unicorn/consistent-function-scoping": "off",
         "unicorn/error-message": "off",
@@ -508,7 +509,7 @@ exports[`defines a valid Oxlint config 1`] = `
     "typescript/restrict-template-expressions": [
       "error",
       {
-        "allowNumber": true,
+        "allowNullish": true,
       },
     ],
     "typescript/strict-boolean-expressions": "off",
@@ -824,6 +825,7 @@ exports[`supports the \`react\` option 1`] = `
         "typescript/no-unsafe-return": "off",
         "typescript/no-unsafe-unary-minus": "off",
         "typescript/only-throw-error": "off",
+        "typescript/restrict-template-expressions": "off",
         "typescript/strict-void-return": "off",
         "unicorn/consistent-function-scoping": "off",
         "unicorn/error-message": "off",
@@ -1307,7 +1309,7 @@ exports[`supports the \`react\` option 1`] = `
     "typescript/restrict-template-expressions": [
       "error",
       {
-        "allowNumber": true,
+        "allowNullish": true,
       },
     ],
     "typescript/strict-boolean-expressions": "off",

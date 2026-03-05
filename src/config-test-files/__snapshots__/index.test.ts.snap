@@ -98,6 +98,7 @@ exports[`is a valid Oxlint config override 1`] = `
     "typescript/no-unsafe-return": "off",
     "typescript/no-unsafe-unary-minus": "off",
     "typescript/only-throw-error": "off",
+    "typescript/restrict-template-expressions": "off",
     "typescript/strict-void-return": "off",
     "unicorn/consistent-function-scoping": "off",
     "unicorn/error-message": "off",

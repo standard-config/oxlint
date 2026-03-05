@@ -83,6 +83,7 @@ const config: LinterConfigOverrideEntry = {
 		'react/no-children-prop': 'off',
 		'react/no-danger': 'off',
 		'typescript/ban-ts-comment': 'off',
+		'typescript/explicit-module-boundary-types': 'off',
 		'typescript/no-confusing-void-expression': 'off',
 		'typescript/no-extraneous-class': 'off',
 		'typescript/no-unsafe-argument': 'off',

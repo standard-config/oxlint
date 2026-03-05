@@ -121,6 +121,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "react/no-children-prop": "off",
         "react/no-danger": "off",
         "typescript/ban-ts-comment": "off",
+        "typescript/explicit-module-boundary-types": "off",
         "typescript/no-confusing-void-expression": "off",
         "typescript/no-extraneous-class": "off",
         "typescript/no-unsafe-argument": "off",
@@ -427,6 +428,12 @@ exports[`defines a valid Oxlint config 1`] = `
       },
     ],
     "typescript/explicit-function-return-type": "off",
+    "typescript/explicit-module-boundary-types": [
+      "error",
+      {
+        "allowArgumentsExplicitlyTypedAsAny": true,
+      },
+    ],
     "typescript/no-confusing-void-expression": [
       "error",
       {
@@ -787,6 +794,7 @@ exports[`supports the \`react\` option 1`] = `
         "react/no-children-prop": "off",
         "react/no-danger": "off",
         "typescript/ban-ts-comment": "off",
+        "typescript/explicit-module-boundary-types": "off",
         "typescript/no-confusing-void-expression": "off",
         "typescript/no-extraneous-class": "off",
         "typescript/no-unsafe-argument": "off",
@@ -1203,6 +1211,12 @@ exports[`supports the \`react\` option 1`] = `
       },
     ],
     "typescript/explicit-function-return-type": "off",
+    "typescript/explicit-module-boundary-types": [
+      "error",
+      {
+        "allowArgumentsExplicitlyTypedAsAny": true,
+      },
+    ],
     "typescript/no-confusing-void-expression": [
       "error",
       {

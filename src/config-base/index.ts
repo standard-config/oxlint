@@ -213,6 +213,10 @@ const config: LinterConfigEntry = {
 			},
 		],
 		'typescript/explicit-function-return-type': 'off',
+		'typescript/explicit-module-boundary-types': [
+			'error',
+			{ allowArgumentsExplicitlyTypedAsAny: true },
+		],
 		'typescript/no-confusing-void-expression': [
 			'error',
 			{ ignoreArrowShorthand: true },

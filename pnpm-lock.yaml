@@ -39,8 +39,8 @@ importers:
         specifier: ^0.3.18
         version: 0.3.18
       tsdown:
-        specifier: 0.21.0-beta.3
-        version: 0.21.0-beta.3(publint@0.3.18)(typescript@5.9.3)
+        specifier: 0.21.0-beta.5
+        version: 0.21.0-beta.5(publint@0.3.18)(typescript@5.9.3)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -2140,26 +2140,26 @@ packages:
   ts-pattern@5.9.0:
     resolution: {integrity: sha512-6s5V71mX8qBUmlgbrfL33xDUwO0fq48rxAu2LBE11WBeGdpCPOsXksQbZJHvHwhrd3QjUusd3mAOM5Gg0mFBLg==}
 
-  tsdown@0.21.0-beta.3:
-    resolution: {integrity: sha512-Ew9SRZAJgbu5W0+oP5oRSbnLagpfvkR/HjJvfz1mormn/YzeSB8BJiOr0EY0B/NfVFuPGKiJ2TfB06NhUBFWcQ==}
+  tsdown@0.21.0-beta.5:
+    resolution: {integrity: sha512-C9HaZdQUjL+ALVOjOnG1cEzZAbnLaUOFEYr/6/jHlzPz7lZtLbhjIlnCH1Y6coopHy1HqaLNewni/Rm1nddCcg==}
     engines: {node: '>=20.19.0'}
     hasBin: true
     peerDependencies:
       '@arethetypeswrong/core': ^0.18.1
-      '@tsdown/exe': 0.21.0-beta.3
+      '@tsdown/css': 0.21.0-beta.5
+      '@tsdown/exe': 0.21.0-beta.5
       '@vitejs/devtools': '*'
-      lightningcss: ^1.29.0
       publint: ^0.3.0
       typescript: ^5.0.0
       unplugin-unused: ^0.5.0
     peerDependenciesMeta:
       '@arethetypeswrong/core':
         optional: true
+      '@tsdown/css':
+        optional: true
       '@tsdown/exe':
         optional: true
       '@vitejs/devtools':
-        optional: true
-      lightningcss:
         optional: true
       publint:
         optional: true
@@ -4528,7 +4528,7 @@ snapshots:
 
   ts-pattern@5.9.0: {}
 
-  tsdown@0.21.0-beta.3(publint@0.3.18)(typescript@5.9.3):
+  tsdown@0.21.0-beta.5(publint@0.3.18)(typescript@5.9.3):
     dependencies:
       ansis: 4.2.0
       cac: 7.0.0

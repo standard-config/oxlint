@@ -86,6 +86,7 @@ const config: LinterConfigOverrideEntry = {
 		'typescript/explicit-module-boundary-types': 'off',
 		'typescript/no-confusing-void-expression': 'off',
 		'typescript/no-extraneous-class': 'off',
+		'typescript/no-restricted-types': 'off',
 		'typescript/no-unsafe-argument': 'off',
 		'typescript/no-unsafe-assignment': 'off',
 		'typescript/no-unsafe-call': 'off',

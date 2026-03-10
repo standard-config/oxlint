@@ -511,6 +511,7 @@ exports[`defines a valid Oxlint config 1`] = `
     ],
     "typescript/prefer-enum-initializers": "off",
     "typescript/prefer-literal-enum-member": "off",
+    "typescript/prefer-namespace-keyword": "off",
     "typescript/prefer-nullish-coalescing": [
       "error",
       {
@@ -1332,6 +1333,7 @@ exports[`supports the \`react\` option 1`] = `
     ],
     "typescript/prefer-enum-initializers": "off",
     "typescript/prefer-literal-enum-member": "off",
+    "typescript/prefer-namespace-keyword": "off",
     "typescript/prefer-nullish-coalescing": [
       "error",
       {

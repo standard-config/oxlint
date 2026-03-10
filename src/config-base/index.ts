@@ -266,6 +266,7 @@ const config: LinterConfigEntry = {
 		'typescript/only-throw-error': ['error', { allowThrowingAny: false }],
 		'typescript/prefer-enum-initializers': 'off',
 		'typescript/prefer-literal-enum-member': 'off',
+		'typescript/prefer-namespace-keyword': 'off',
 		'typescript/prefer-nullish-coalescing': [
 			'error',
 			{ ignoreConditionalTests: false },

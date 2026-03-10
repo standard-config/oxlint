@@ -245,6 +245,7 @@ const config: LinterConfigEntry = {
 				},
 			},
 		],
+		'typescript/no-unnecessary-parameter-property-assignment': 'warn',
 		'typescript/no-unnecessary-type-assertion': 'warn',
 		'typescript/no-unsafe-argument': 'error',
 		'typescript/no-unsafe-assignment': 'error',

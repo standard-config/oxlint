@@ -459,6 +459,7 @@ exports[`defines a valid Oxlint config 1`] = `
       },
     ],
     "typescript/no-deprecated": "warn",
+    "typescript/no-duplicate-enum-values": "off",
     "typescript/no-empty-interface": "off",
     "typescript/no-explicit-any": "off",
     "typescript/no-extraneous-class": "warn",
@@ -471,6 +472,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "checksVoidReturn": false,
       },
     ],
+    "typescript/no-mixed-enums": "off",
     "typescript/no-namespace": [
       "error",
       {
@@ -507,6 +509,8 @@ exports[`defines a valid Oxlint config 1`] = `
         "allowThrowingAny": false,
       },
     ],
+    "typescript/prefer-enum-initializers": "off",
+    "typescript/prefer-literal-enum-member": "off",
     "typescript/prefer-nullish-coalescing": [
       "error",
       {
@@ -1276,6 +1280,7 @@ exports[`supports the \`react\` option 1`] = `
       },
     ],
     "typescript/no-deprecated": "warn",
+    "typescript/no-duplicate-enum-values": "off",
     "typescript/no-empty-interface": "off",
     "typescript/no-explicit-any": "off",
     "typescript/no-extraneous-class": "warn",
@@ -1288,6 +1293,7 @@ exports[`supports the \`react\` option 1`] = `
         "checksVoidReturn": false,
       },
     ],
+    "typescript/no-mixed-enums": "off",
     "typescript/no-namespace": [
       "error",
       {
@@ -1324,6 +1330,8 @@ exports[`supports the \`react\` option 1`] = `
         "allowThrowingAny": false,
       },
     ],
+    "typescript/prefer-enum-initializers": "off",
+    "typescript/prefer-literal-enum-member": "off",
     "typescript/prefer-nullish-coalescing": [
       "error",
       {

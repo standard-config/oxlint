@@ -224,6 +224,7 @@ const config: LinterConfigEntry = {
 			{ ignoreArrowShorthand: true },
 		],
 		'typescript/no-deprecated': 'warn',
+		'typescript/no-duplicate-enum-values': 'off',
 		'typescript/no-empty-interface': 'off',
 		'typescript/no-explicit-any': 'off',
 		'typescript/no-extraneous-class': 'warn',
@@ -236,6 +237,7 @@ const config: LinterConfigEntry = {
 				checksVoidReturn: false,
 			},
 		],
+		'typescript/no-mixed-enums': 'off',
 		'typescript/no-namespace': ['error', { allowDeclarations: true }],
 		'typescript/no-non-null-assertion': 'off',
 		'typescript/no-restricted-types': [
@@ -262,6 +264,8 @@ const config: LinterConfigEntry = {
 		'typescript/no-unsafe-unary-minus': 'error',
 		'typescript/no-useless-empty-export': 'error',
 		'typescript/only-throw-error': ['error', { allowThrowingAny: false }],
+		'typescript/prefer-enum-initializers': 'off',
+		'typescript/prefer-literal-enum-member': 'off',
 		'typescript/prefer-nullish-coalescing': [
 			'error',
 			{ ignoreConditionalTests: false },

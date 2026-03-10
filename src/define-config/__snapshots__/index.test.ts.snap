@@ -503,6 +503,7 @@ exports[`defines a valid Oxlint config 1`] = `
     "typescript/no-unsafe-type-assertion": "off",
     "typescript/no-unsafe-unary-minus": "error",
     "typescript/no-useless-empty-export": "error",
+    "typescript/no-var-requires": "off",
     "typescript/only-throw-error": [
       "error",
       {
@@ -1325,6 +1326,7 @@ exports[`supports the \`react\` option 1`] = `
     "typescript/no-unsafe-type-assertion": "off",
     "typescript/no-unsafe-unary-minus": "error",
     "typescript/no-useless-empty-export": "error",
+    "typescript/no-var-requires": "off",
     "typescript/only-throw-error": [
       "error",
       {

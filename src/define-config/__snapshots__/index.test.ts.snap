@@ -463,6 +463,7 @@ exports[`defines a valid Oxlint config 1`] = `
     "typescript/no-explicit-any": "off",
     "typescript/no-extraneous-class": "warn",
     "typescript/no-inferrable-types": "warn",
+    "typescript/no-meaningless-void-operator": "warn",
     "typescript/no-misused-promises": [
       "error",
       {
@@ -1279,6 +1280,7 @@ exports[`supports the \`react\` option 1`] = `
     "typescript/no-explicit-any": "off",
     "typescript/no-extraneous-class": "warn",
     "typescript/no-inferrable-types": "warn",
+    "typescript/no-meaningless-void-operator": "warn",
     "typescript/no-misused-promises": [
       "error",
       {

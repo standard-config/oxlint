@@ -228,6 +228,7 @@ const config: LinterConfigEntry = {
 		'typescript/no-explicit-any': 'off',
 		'typescript/no-extraneous-class': 'warn',
 		'typescript/no-inferrable-types': 'warn',
+		'typescript/no-meaningless-void-operator': 'warn',
 		'typescript/no-misused-promises': [
 			'error',
 			{

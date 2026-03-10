@@ -9,6 +9,7 @@ const config: LinterConfigOverrideEntry = {
 		'typescript/no-empty-interface': 'off',
 		'typescript/no-empty-object-type': 'off',
 		'typescript/no-restricted-types': 'off',
+		'typescript/no-useless-empty-export': 'off',
 		'unicorn/require-module-specifiers': 'off',
 	},
 };

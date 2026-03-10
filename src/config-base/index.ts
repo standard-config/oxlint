@@ -256,6 +256,7 @@ const config: LinterConfigEntry = {
 		'typescript/no-unsafe-return': 'error',
 		'typescript/no-unsafe-type-assertion': 'off',
 		'typescript/no-unsafe-unary-minus': 'error',
+		'typescript/no-useless-empty-export': 'error',
 		'typescript/only-throw-error': ['error', { allowThrowingAny: false }],
 		'typescript/prefer-nullish-coalescing': [
 			'error',

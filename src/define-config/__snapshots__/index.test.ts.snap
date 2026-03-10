@@ -15,6 +15,7 @@ exports[`defines a valid Oxlint config 1`] = `
     "node": true,
   },
   "options": {
+    "reportUnusedDisableDirectives": "warn",
     "typeAware": true,
   },
   "overrides": [
@@ -713,6 +714,7 @@ exports[`supports the \`react\` option 1`] = `
     "node": true,
   },
   "options": {
+    "reportUnusedDisableDirectives": "warn",
     "typeAware": true,
   },
   "overrides": [

@@ -25,6 +25,7 @@ const config: LinterConfigEntry = {
 		node: true,
 	},
 	options: {
+		reportUnusedDisableDirectives: 'warn',
 		typeAware: true,
 	},
 	settings: {

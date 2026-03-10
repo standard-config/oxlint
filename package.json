@@ -38,8 +38,8 @@
 	},
 	"packageManager": "pnpm@10.32.0",
 	"peerDependencies": {
-		"oxlint": ">=1.51.0",
-		"oxlint-tsgolint": ">=0.15.0"
+		"oxlint": ">=1.52.0",
+		"oxlint-tsgolint": ">=0.16.0"
 	},
 	"peerDependenciesMeta": {
 		"oxlint-tsgolint": {
@@ -66,8 +66,8 @@
 		"fix": "pnpm format && pnpm lint && pnpm format",
 		"format": "prettier --ignore-unknown --log-level=warn --write .",
 		"format:check": "prettier --check --ignore-unknown .",
-		"lint": "oxlint --fix --report-unused-disable-directives",
-		"lint:check": "oxlint --deny-warnings --report-unused-disable-directives --type-check",
+		"lint": "oxlint --fix",
+		"lint:check": "oxlint --deny-warnings --type-check",
 		"prepack": "pnpm run '/^(format:check|lint:check|test|typecheck)$/' && pnpm build",
 		"prepare": "husky",
 		"test": "vitest run",

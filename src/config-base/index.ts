@@ -281,6 +281,7 @@ const config: LinterConfigEntry = {
 				requireDefaultForNonUnion: true,
 			},
 		],
+		'typescript/triple-slash-reference': 'off',
 		'typescript/unbound-method': 'off',
 		'unicorn/catch-error-name': 'error',
 		'unicorn/consistent-assert': 'error',

@@ -367,6 +367,7 @@ exports[`is a valid Oxlint config 1`] = `
         "requireDefaultForNonUnion": true,
       },
     ],
+    "typescript/triple-slash-reference": "off",
     "typescript/unbound-method": "off",
     "unicorn/catch-error-name": "error",
     "unicorn/consistent-assert": "error",

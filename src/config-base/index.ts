@@ -226,6 +226,7 @@ const config: LinterConfigEntry = {
 		'typescript/no-deprecated': 'warn',
 		'typescript/no-empty-interface': 'off',
 		'typescript/no-explicit-any': 'off',
+		'typescript/no-extraneous-class': 'warn',
 		'typescript/no-inferrable-types': 'warn',
 		'typescript/no-misused-promises': [
 			'error',

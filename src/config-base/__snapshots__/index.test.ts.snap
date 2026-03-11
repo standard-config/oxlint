@@ -247,6 +247,7 @@ exports[`is a valid Oxlint config 1`] = `
     "promise/prefer-catch": "warn",
     "promise/spec-only": "error",
     "promise/valid-params": "error",
+    "typescript/adjacent-overload-signatures": "error",
     "typescript/array-type": [
       "error",
       {
@@ -254,6 +255,7 @@ exports[`is a valid Oxlint config 1`] = `
         "readonly": "generic",
       },
     ],
+    "typescript/await-thenable": "error",
     "typescript/ban-ts-comment": [
       "error",
       {
@@ -265,6 +267,24 @@ exports[`is a valid Oxlint config 1`] = `
     ],
     "typescript/ban-tslint-comment": "off",
     "typescript/ban-types": "off",
+    "typescript/class-literal-property-style": [
+      "error",
+      "fields",
+    ],
+    "typescript/consistent-generic-constructors": [
+      "error",
+      "constructor",
+    ],
+    "typescript/consistent-indexed-object-style": [
+      "error",
+      "record",
+    ],
+    "typescript/consistent-type-assertions": [
+      "error",
+      {
+        "assertionStyle": "as",
+      },
+    ],
     "typescript/consistent-type-definitions": [
       "error",
       "type",
@@ -285,6 +305,7 @@ exports[`is a valid Oxlint config 1`] = `
     ],
     "typescript/no-array-delete": "off",
     "typescript/no-base-to-string": "error",
+    "typescript/no-confusing-non-null-assertion": "error",
     "typescript/no-confusing-void-expression": [
       "error",
       {
@@ -293,11 +314,21 @@ exports[`is a valid Oxlint config 1`] = `
     ],
     "typescript/no-deprecated": "warn",
     "typescript/no-duplicate-enum-values": "off",
+    "typescript/no-duplicate-type-constituents": "error",
+    "typescript/no-dynamic-delete": "error",
     "typescript/no-empty-interface": "off",
+    "typescript/no-empty-object-type": "error",
     "typescript/no-explicit-any": "off",
+    "typescript/no-extra-non-null-assertion": "error",
     "typescript/no-extraneous-class": "warn",
+    "typescript/no-floating-promises": "error",
+    "typescript/no-for-in-array": "error",
+    "typescript/no-implied-eval": "error",
+    "typescript/no-import-type-side-effects": "error",
     "typescript/no-inferrable-types": "warn",
+    "typescript/no-invalid-void-type": "error",
     "typescript/no-meaningless-void-operator": "warn",
+    "typescript/no-misused-new": "error",
     "typescript/no-misused-promises": [
       "error",
       {
@@ -305,6 +336,7 @@ exports[`is a valid Oxlint config 1`] = `
         "checksVoidReturn": false,
       },
     ],
+    "typescript/no-misused-spread": "error",
     "typescript/no-mixed-enums": "off",
     "typescript/no-namespace": [
       "error",
@@ -312,7 +344,11 @@ exports[`is a valid Oxlint config 1`] = `
         "allowDeclarations": true,
       },
     ],
+    "typescript/no-non-null-asserted-nullish-coalescing": "error",
+    "typescript/no-non-null-asserted-optional-chain": "error",
     "typescript/no-non-null-assertion": "off",
+    "typescript/no-redundant-type-constituents": "error",
+    "typescript/no-require-imports": "error",
     "typescript/no-restricted-types": [
       "error",
       {
@@ -323,6 +359,7 @@ exports[`is a valid Oxlint config 1`] = `
         },
       },
     ],
+    "typescript/no-this-alias": "error",
     "typescript/no-unnecessary-boolean-literal-compare": "warn",
     "typescript/no-unnecessary-parameter-property-assignment": "warn",
     "typescript/no-unnecessary-template-expression": "warn",
@@ -341,11 +378,18 @@ exports[`is a valid Oxlint config 1`] = `
     "typescript/no-unsafe-unary-minus": "error",
     "typescript/no-useless-empty-export": "error",
     "typescript/no-var-requires": "off",
+    "typescript/no-wrapper-object-types": "error",
     "typescript/non-nullable-type-assertion-style": "warn",
     "typescript/only-throw-error": [
       "error",
       {
         "allowThrowingAny": false,
+      },
+    ],
+    "typescript/parameter-properties": [
+      "error",
+      {
+        "prefer": "class-property",
       },
     ],
     "typescript/prefer-as-const": "warn",
@@ -363,7 +407,10 @@ exports[`is a valid Oxlint config 1`] = `
     ],
     "typescript/prefer-promise-reject-errors": "off",
     "typescript/prefer-readonly-parameter-types": "off",
+    "typescript/prefer-reduce-type-parameter": "error",
     "typescript/prefer-return-this-type": "warn",
+    "typescript/prefer-ts-expect-error": "error",
+    "typescript/promise-function-async": "error",
     "typescript/related-getter-setter-pairs": "off",
     "typescript/require-array-sort-compare": [
       "error",
@@ -372,11 +419,16 @@ exports[`is a valid Oxlint config 1`] = `
       },
     ],
     "typescript/require-await": "warn",
+    "typescript/restrict-plus-operands": "error",
     "typescript/restrict-template-expressions": [
       "error",
       {
         "allowNullish": true,
       },
+    ],
+    "typescript/return-await": [
+      "error",
+      "in-try-catch",
     ],
     "typescript/strict-boolean-expressions": "off",
     "typescript/switch-exhaustiveness-check": [
@@ -389,6 +441,8 @@ exports[`is a valid Oxlint config 1`] = `
     ],
     "typescript/triple-slash-reference": "off",
     "typescript/unbound-method": "off",
+    "typescript/unified-signatures": "error",
+    "typescript/use-unknown-in-catch-callback-variable": "error",
     "unicorn/catch-error-name": "error",
     "unicorn/consistent-assert": "error",
     "unicorn/consistent-date-clone": "error",

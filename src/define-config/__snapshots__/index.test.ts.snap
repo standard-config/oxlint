@@ -446,12 +446,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "allowArgumentsExplicitlyTypedAsAny": true,
       },
     ],
-    "typescript/no-base-to-string": [
-      "error",
-      {
-        "checkUnknown": true,
-      },
-    ],
+    "typescript/no-base-to-string": "error",
     "typescript/no-confusing-void-expression": [
       "error",
       {
@@ -1271,12 +1266,7 @@ exports[`supports the \`react\` option 1`] = `
         "allowArgumentsExplicitlyTypedAsAny": true,
       },
     ],
-    "typescript/no-base-to-string": [
-      "error",
-      {
-        "checkUnknown": true,
-      },
-    ],
+    "typescript/no-base-to-string": "error",
     "typescript/no-confusing-void-expression": [
       "error",
       {

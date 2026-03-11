@@ -205,6 +205,8 @@ const config: LinterConfigEntry = {
 				'ts-nocheck': true,
 			},
 		],
+		'typescript/ban-tslint-comment': 'off',
+		'typescript/ban-types': 'off',
 		'typescript/consistent-type-definitions': ['error', 'type'],
 		'typescript/consistent-type-imports': [
 			'error',

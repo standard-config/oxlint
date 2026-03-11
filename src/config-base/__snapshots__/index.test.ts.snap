@@ -263,6 +263,8 @@ exports[`is a valid Oxlint config 1`] = `
         "ts-nocheck": true,
       },
     ],
+    "typescript/ban-tslint-comment": "off",
+    "typescript/ban-types": "off",
     "typescript/consistent-type-definitions": [
       "error",
       "type",

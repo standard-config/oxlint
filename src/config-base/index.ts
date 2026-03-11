@@ -278,6 +278,7 @@ const config: LinterConfigEntry = {
 		],
 		'typescript/prefer-promise-reject-errors': 'off',
 		'typescript/prefer-readonly-parameter-types': 'off',
+		'typescript/related-getter-setter-pairs': 'off',
 		'typescript/require-array-sort-compare': [
 			'error',
 			{ ignoreStringArrays: true },

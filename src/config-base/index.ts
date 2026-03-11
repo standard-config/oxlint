@@ -220,6 +220,7 @@ const config: LinterConfigEntry = {
 			'error',
 			{ allowArgumentsExplicitlyTypedAsAny: true },
 		],
+		'typescript/no-array-delete': 'off',
 		'typescript/no-base-to-string': 'error',
 		'typescript/no-confusing-void-expression': [
 			'error',

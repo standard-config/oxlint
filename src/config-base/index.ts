@@ -271,6 +271,7 @@ const config: LinterConfigEntry = {
 		'typescript/no-unsafe-unary-minus': 'error',
 		'typescript/no-useless-empty-export': 'error',
 		'typescript/no-var-requires': 'off',
+		'typescript/non-nullable-type-assertion-style': 'warn',
 		'typescript/only-throw-error': ['error', { allowThrowingAny: false }],
 		'typescript/prefer-enum-initializers': 'off',
 		'typescript/prefer-literal-enum-member': 'off',

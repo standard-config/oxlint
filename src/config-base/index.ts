@@ -273,7 +273,11 @@ const config: LinterConfigEntry = {
 		'typescript/no-var-requires': 'off',
 		'typescript/non-nullable-type-assertion-style': 'warn',
 		'typescript/only-throw-error': ['error', { allowThrowingAny: false }],
+		'typescript/prefer-as-const': 'warn',
 		'typescript/prefer-enum-initializers': 'off',
+		'typescript/prefer-for-of': 'warn',
+		'typescript/prefer-function-type': 'warn',
+		'typescript/prefer-includes': 'warn',
 		'typescript/prefer-literal-enum-member': 'off',
 		'typescript/prefer-namespace-keyword': 'off',
 		'typescript/prefer-nullish-coalescing': [
@@ -282,6 +286,7 @@ const config: LinterConfigEntry = {
 		],
 		'typescript/prefer-promise-reject-errors': 'off',
 		'typescript/prefer-readonly-parameter-types': 'off',
+		'typescript/prefer-return-this-type': 'warn',
 		'typescript/related-getter-setter-pairs': 'off',
 		'typescript/require-array-sort-compare': [
 			'error',

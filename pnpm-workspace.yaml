@@ -6,7 +6,6 @@ onlyBuiltDependencies:
 peerDependencyRules:
   allowedVersions:
     eslint: '*'
-    typescript: '*'
     vitest: '*'
 
 strictPeerDependencies: true

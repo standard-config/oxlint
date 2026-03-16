@@ -374,6 +374,10 @@ exports[`defines a valid Oxlint config 1`] = `
     "jest/require-hook": "off",
     "jest/require-top-level-describe": "off",
     "node/global-require": "off",
+    "node/handle-callback-err": [
+      "error",
+      "error",
+    ],
     "node/no-exports-assign": "off",
     "node/no-new-require": "off",
     "node/no-path-concat": "error",
@@ -1197,6 +1201,10 @@ exports[`supports the \`react\` option 1`] = `
     "jsx-a11y/scope": "error",
     "jsx-a11y/tabindex-no-positive": "error",
     "node/global-require": "off",
+    "node/handle-callback-err": [
+      "error",
+      "error",
+    ],
     "node/no-exports-assign": "off",
     "node/no-new-require": "off",
     "node/no-path-concat": "error",

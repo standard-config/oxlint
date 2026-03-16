@@ -156,6 +156,7 @@ const config: LinterConfigEntry = {
 		'jest/require-hook': 'off',
 		'jest/require-top-level-describe': 'off',
 		'node/global-require': 'off',
+		'node/handle-callback-err': ['error', 'error'],
 		'node/no-exports-assign': 'off',
 		'node/no-new-require': 'off',
 		'node/no-path-concat': 'error',

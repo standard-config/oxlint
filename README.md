@@ -56,6 +56,26 @@ export default defineConfig({
 });
 ```
 
+## FAQ
+
+### Can I use this config with Vite+?
+
+Absolutely. In your `vite.config.ts`:
+
+```ts
+import { defineOxlintConfig } from '@standard-config/oxlint';
+import { defineConfig } from 'vite-plus';
+
+export default defineConfig({
+    lint: defineOxlintConfig({
+        react: true,
+        rules: {
+            /* Optional overrides */
+        },
+    }),
+});
+```
+
 ## Related
 
 - [**@standard-config/eslint**](https://github.com/standard-config/eslint)

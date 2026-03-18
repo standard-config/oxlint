@@ -1,7 +1,16 @@
 autoInstallPeers: false
 
+catalog:
+  oxlint: ^1.56.0
+  oxlint-tsgolint: ^0.17.0
+
 onlyBuiltDependencies:
   - esbuild
+
+overrides:
+  vite-plus>oxfmt: '-'
+  vite-plus>oxlint: 'catalog:'
+  vite-plus>oxlint-tsgolint: 'catalog:'
 
 peerDependencyRules:
   allowedVersions:

@@ -1,5 +1,5 @@
 import type { OxlintConfig } from 'oxlint';
-import type { StandardConfig } from '../types/index.js';
+import type { StandardConfig } from '../types/index.d.ts';
 import { defineConfig as oxlintDefineConfig } from 'oxlint';
 import configBase from '../config-base/index.ts';
 import configConfigFiles from '../config-config-files/index.ts';

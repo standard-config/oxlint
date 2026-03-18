@@ -9,5 +9,6 @@ test('exposes correct public API', () => {
 		configTestFiles: expect.any(Object),
 		configTypeDefinitions: expect.any(Object),
 		defineConfig: expect.any(Function),
+		defineOxlintConfig: expect.any(Function),
 	});
 });

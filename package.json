@@ -24,6 +24,8 @@
 		"standard-config",
 		"type-aware",
 		"typescript",
+		"vite-plus",
+		"vite+",
 		"xo"
 	],
 	"files": [
@@ -53,12 +55,13 @@
 		"@vitest/coverage-v8": "^4.1.0",
 		"eslint": "^10.0.3",
 		"husky": "^9.1.7",
-		"oxlint": "^1.56.0",
-		"oxlint-tsgolint": "^0.17.0",
+		"oxlint": "catalog:",
+		"oxlint-tsgolint": "catalog:",
 		"prettier": "^3.8.1",
 		"publint": "^0.3.18",
 		"tsdown": "^0.21.4",
 		"typescript": "^5.9.3",
+		"vite-plus": "^0.1.12",
 		"vitest": "^4.1.0"
 	},
 	"scripts": {

@@ -4,7 +4,7 @@ import type { OxlintConfig } from 'oxlint';
 import type {
 	LinterConfigEntry,
 	LinterConfigOverrideEntry,
-} from '../types/index.js';
+} from '../types/index.d.ts';
 import clone from '../clone/index.ts';
 
 export default function mergeConfig(

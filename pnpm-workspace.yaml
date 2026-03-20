@@ -2,7 +2,7 @@ autoInstallPeers: false
 
 catalog:
   oxlint: ^1.56.0
-  oxlint-tsgolint: ^0.17.0
+  oxlint-tsgolint: ^0.17.1
 
 onlyBuiltDependencies:
   - esbuild

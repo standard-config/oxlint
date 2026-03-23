@@ -58,6 +58,7 @@ const config: LinterConfigEntry = {
 		'eslint/new-cap': 'off',
 		'eslint/no-await-in-loop': 'off',
 		'eslint/no-class-assign': 'off',
+		'eslint/no-console': 'warn',
 		'eslint/no-const-assign': 'off',
 		'eslint/no-continue': 'off',
 		'eslint/no-dupe-class-members': 'off',

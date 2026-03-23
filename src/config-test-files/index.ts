@@ -119,6 +119,7 @@ const config: LinterConfigOverrideEntry = {
 		'vitest/prefer-called-times': 'error',
 		'vitest/prefer-describe-function-title': 'error',
 		'vitest/prefer-expect-type-of': 'error',
+		'vitest/prefer-strict-boolean-matchers': 'error',
 		'vitest/prefer-to-be-object': 'error',
 		'vitest/require-local-test-context-for-concurrent-snapshots': 'error',
 		'vitest/warn-todo': 'warn',

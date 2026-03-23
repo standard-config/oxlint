@@ -51,8 +51,8 @@
 	"devDependencies": {
 		"@standard-config/eslint": "^1.6.1",
 		"@standard-config/prettier": "^1.11.1",
-		"@standard-config/tsconfig": "^2.0.2",
-		"@vitest/coverage-v8": "^4.1.0",
+		"@standard-config/tsconfig": "^3.1.0",
+		"@vitest/coverage-v8": "^4.1.1",
 		"eslint": "^10.1.0",
 		"husky": "^9.1.7",
 		"oxlint": "catalog:",
@@ -60,9 +60,9 @@
 		"prettier": "^3.8.1",
 		"publint": "^0.3.18",
 		"tsdown": "^0.21.4",
-		"typescript": "^5.9.3",
+		"typescript": "^6.0.2",
 		"vite-plus": "^0.1.13",
-		"vitest": "^4.1.0"
+		"vitest": "^4.1.1"
 	},
 	"scripts": {
 		"build": "tsdown",

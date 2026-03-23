@@ -13,9 +13,10 @@ overrides:
   vite-plus>oxlint-tsgolint: 'catalog:'
 
 peerDependencyRules:
-  allowedVersions:
-    eslint: '*'
-    vitest: '*'
+  allowAny:
+    - eslint
+    - typescript
+    - vitest
 
 strictPeerDependencies: true
 

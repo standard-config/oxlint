@@ -19,5 +19,7 @@ jobs:
           node-version: 24
           registry-url: https://registry.npmjs.org
       - uses: pnpm/action-setup@v5
+        with:
+          cache: true
       - run: pnpm install
       - run: pnpm publish --access=public --no-git-checks --provenance

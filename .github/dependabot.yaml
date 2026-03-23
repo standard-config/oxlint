@@ -11,7 +11,3 @@ updates:
     schedule:
       interval: daily
     versioning-strategy: increase
-    ignore:
-      - dependency-name: typescript
-        versions:
-          - <6.0.0

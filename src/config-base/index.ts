@@ -367,6 +367,7 @@ const config: LinterConfigEntry = {
 		'unicorn/consistent-empty-array-spread': 'error',
 		'unicorn/consistent-existence-index-check': 'error',
 		'unicorn/consistent-function-scoping': 'error',
+		'unicorn/custom-error-definition': 'error',
 		'unicorn/empty-brace-spaces': 'error',
 		'unicorn/error-message': 'error',
 		'unicorn/escape-case': 'error',

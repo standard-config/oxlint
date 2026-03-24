@@ -1,13 +1,14 @@
-import { getOxlintConfigs } from '@standard-config/eslint/utilities';
+import {
+	oxlintConfigBase,
+	oxlintConfigConfigFiles,
+} from '@standard-config/eslint/utilities';
 import { defineConfig } from './src/index.ts';
 
-const { configBase, configConfigFiles } = getOxlintConfigs();
-
-export default defineConfig(configBase, {
+export default defineConfig(oxlintConfigBase, {
 	overrides: [
 		{
 			files: ['src/config-*/index.ts'],
-			...configConfigFiles,
+			...oxlintConfigConfigFiles,
 		},
 	],
 });

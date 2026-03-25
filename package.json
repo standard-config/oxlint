@@ -61,7 +61,7 @@
 		"publint": "^0.3.18",
 		"tsdown": "^0.21.4",
 		"typescript": "^6.0.2",
-		"vite-plus": "^0.1.13",
+		"vite-plus": "^0.1.14",
 		"vitest": "^4.1.1"
 	},
 	"scripts": {

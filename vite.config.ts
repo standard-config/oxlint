@@ -31,4 +31,11 @@ export default defineConfig({
 		publint: true,
 		sourcemap: true,
 	},
+	staged: {
+		'*': [
+			() => 'pnpm install --ignore-scripts',
+			'prettier --ignore-unknown --write',
+			() => 'pnpm prepack',
+		],
+	},
 });

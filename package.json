@@ -54,7 +54,6 @@
 		"@standard-config/tsconfig": "^3.1.0",
 		"@vitest/coverage-v8": "^4.1.1",
 		"eslint": "^10.1.0",
-		"husky": "^9.1.7",
 		"oxlint": "catalog:",
 		"oxlint-tsgolint": "catalog:",
 		"prettier": "^3.8.1",
@@ -71,7 +70,7 @@
 		"lint": "oxlint --fix",
 		"lint:check": "oxlint --deny-warnings --type-check",
 		"prepack": "pnpm run '/^(format:check|lint:check|test|typecheck)$/' && pnpm build",
-		"prepare": "husky",
+		"prepare": "vp config",
 		"test": "vitest run",
 		"typecheck": "tsc --noEmit"
 	}

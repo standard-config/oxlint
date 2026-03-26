@@ -1,12 +1,12 @@
+import type { StandardConfig } from '@standard-config/utilities/types';
 import type { OxlintConfig } from 'oxlint';
-import type { StandardConfig } from '../types/index.d.ts';
+import mergeConfig from '@standard-config/utilities/merge-config';
 import { defineConfig as oxlintDefineConfig } from 'oxlint';
 import configBase from '../config-base/index.ts';
 import configConfigFiles from '../config-config-files/index.ts';
 import configReact from '../config-react/index.ts';
 import configTestFiles from '../config-test-files/index.ts';
 import configTypeDefinitions from '../config-type-definitions/index.ts';
-import mergeConfig from '../merge-config/index.ts';
 
 export default function defineConfig(
 	...configs: StandardConfig[]

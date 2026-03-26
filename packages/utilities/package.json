@@ -1,0 +1,28 @@
+{
+	"name": "@standard-config/utilities",
+	"version": "0.0.0",
+	"private": true,
+	"license": "MIT",
+	"author": {
+		"name": "Dom Porada",
+		"email": "dom@dom.engineering",
+		"url": "https://dom.engineering"
+	},
+	"type": "module",
+	"sideEffects": false,
+	"exports": {
+		"./*": "./src/*/index.ts",
+		"./types": "./src/types/index.d.ts"
+	},
+	"devDependencies": {
+		"@standard-config/tsconfig": "catalog:",
+		"oxlint": "catalog:",
+		"typescript": "catalog:",
+		"vite-plus": "catalog:",
+		"vitest": "catalog:"
+	},
+	"scripts": {
+		"test": "vitest run",
+		"typecheck": "tsc --noEmit"
+	}
+}

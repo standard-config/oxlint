@@ -1,0 +1,65 @@
+{
+	"name": "@standard-config/oxlint",
+	"version": "1.6.1",
+	"description": "Curated Oxlint config with sensible defaults",
+	"license": "MIT",
+	"author": {
+		"name": "Dom Porada",
+		"email": "dom@dom.engineering",
+		"url": "https://dom.engineering"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/standard-config/oxlint.git"
+	},
+	"keywords": [
+		"eslint-config-xo",
+		"eslint-config-xo-typescript",
+		"linter",
+		"oxc",
+		"oxlint",
+		"oxlint-config",
+		"oxlint-tsgolint",
+		"react",
+		"standard-config",
+		"type-aware",
+		"typescript",
+		"vite-plus",
+		"vite+",
+		"xo"
+	],
+	"files": [
+		"dist/**"
+	],
+	"type": "module",
+	"sideEffects": false,
+	"exports": "./dist/index.mjs",
+	"types": "./dist/index.d.mts",
+	"engines": {
+		"node": ">=20"
+	},
+	"peerDependencies": {
+		"oxlint": ">=1.52.0",
+		"oxlint-tsgolint": ">=0.16.0"
+	},
+	"peerDependenciesMeta": {
+		"oxlint-tsgolint": {
+			"optional": true
+		}
+	},
+	"devDependencies": {
+		"@standard-config/tsconfig": "catalog:",
+		"@standard-config/utilities": "workspace:*",
+		"oxlint": "catalog:",
+		"publint": "catalog:",
+		"typescript": "catalog:",
+		"vite-plus": "catalog:",
+		"vitest": "catalog:"
+	},
+	"scripts": {
+		"build": "vp pack",
+		"prepack": "pnpm --workspace-root run '/^(format:check|lint:check|test)$/' && pnpm build",
+		"test": "vitest run",
+		"typecheck": "tsc --noEmit"
+	}
+}

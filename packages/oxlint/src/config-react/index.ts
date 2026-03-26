@@ -1,4 +1,4 @@
-import type { LinterConfigOverrideEntry } from '../types/index.d.ts';
+import type { LinterConfigOverrideEntry } from '@standard-config/utilities/types';
 
 const config: LinterConfigOverrideEntry = {
 	plugins: ['jsx-a11y', 'react', 'react-perf'],

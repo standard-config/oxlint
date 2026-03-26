@@ -1,5 +1,5 @@
+import type { StandardConfig } from '@standard-config/utilities/types';
 import type { OxlintConfig } from 'oxlint';
-import type { StandardConfig } from '../types/index.d.ts';
 import defineConfig from '../define-config/index.ts';
 
 /**

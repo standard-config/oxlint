@@ -1,8 +1,18 @@
+packages:
+  - packages/*
+
 autoInstallPeers: false
 
 catalog:
+  '@standard-config/tsconfig': ^3.1.0
   oxlint: ^1.57.0
-  oxlint-tsgolint: ^0.17.3
+  oxlint-tsgolint: ^0.18.1
+  publint: ^0.3.18
+  typescript: ^6.0.2
+  vite-plus: ^0.1.14
+  vitest: ^4.1.2
+
+gitChecks: false
 
 onlyBuiltDependencies:
   - esbuild

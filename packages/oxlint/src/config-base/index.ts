@@ -1,4 +1,4 @@
-import type { LinterConfigEntry } from '../types/index.d.ts';
+import type { LinterConfigEntry } from '@standard-config/utilities/types';
 
 const config: LinterConfigEntry = {
 	plugins: [

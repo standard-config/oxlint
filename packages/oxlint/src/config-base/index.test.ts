@@ -1,4 +1,4 @@
-import type { LinterConfigEntry } from '../types/index.d.ts';
+import type { LinterConfigEntry } from '@standard-config/utilities/types';
 import { defineConfig } from 'oxlint';
 import { expect, expectTypeOf, test } from 'vitest';
 import config from './index.ts';

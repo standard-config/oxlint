@@ -12,6 +12,8 @@ catalog:
   vite-plus: ^0.1.14
   vitest: ^4.1.2
 
+color: always
+
 gitChecks: false
 
 onlyBuiltDependencies:

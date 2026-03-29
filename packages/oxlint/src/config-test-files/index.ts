@@ -1,6 +1,8 @@
 import type { LinterConfigOverrideEntry } from '@standard-config/utilities/types';
+import { configReactTestFiles } from '@standard-config/oxlint-react';
+import mergeConfig from '@standard-config/utilities/merge-config';
 
-const config: LinterConfigOverrideEntry = {
+const config: LinterConfigOverrideEntry = mergeConfig(configReactTestFiles, {
 	rules: {
 		'eslint/no-alert': 'off',
 		'eslint/no-empty-function': 'off',
@@ -45,27 +47,6 @@ const config: LinterConfigOverrideEntry = {
 		'jest/valid-describe-callback': 'error',
 		'jest/valid-expect': 'error',
 		'jest/valid-title': 'error',
-		'jsx-a11y/alt-text': 'off',
-		'jsx-a11y/anchor-ambiguous-text': 'off',
-		'jsx-a11y/anchor-has-content': 'off',
-		'jsx-a11y/anchor-is-valid': 'off',
-		'jsx-a11y/click-events-have-key-events': 'off',
-		'jsx-a11y/heading-has-content': 'off',
-		'jsx-a11y/html-has-lang': 'off',
-		'jsx-a11y/iframe-has-title': 'off',
-		'jsx-a11y/jsx-no-target-blank': 'off',
-		'jsx-a11y/label-has-associated-control': 'off',
-		'jsx-a11y/lang': 'off',
-		'jsx-a11y/mouse-events-have-key-events': 'off',
-		'jsx-a11y/no-access-key': 'off',
-		'jsx-a11y/no-autofocus': 'off',
-		'jsx-a11y/no-distracting-elements': 'off',
-		'jsx-a11y/no-noninteractive-tabindex': 'off',
-		'jsx-a11y/no-redundant-roles': 'off',
-		'jsx-a11y/no-static-element-interactions': 'off',
-		'jsx-a11y/prefer-tag-over-role': 'off',
-		'jsx-a11y/scope': 'off',
-		'jsx-a11y/tabindex-no-positive': 'off',
 		'oxc/approx-constant': 'off',
 		'oxc/no-accumulating-spread': 'off',
 		'oxc/no-map-spread': 'off',
@@ -74,14 +55,6 @@ const config: LinterConfigOverrideEntry = {
 		'promise/no-promise-in-callback': 'off',
 		'promise/no-return-wrap': 'off',
 		'promise/prefer-await-to-then': 'off',
-		'react-perf/jsx-no-new-array-as-prop': 'off',
-		'react/button-has-type': 'off',
-		'react/checked-requires-onchange-or-readonly': 'off',
-		'react/jsx-no-target-blank': 'off',
-		'react/jsx-no-useless-fragment': 'off',
-		'react/no-array-index-key': 'off',
-		'react/no-children-prop': 'off',
-		'react/no-danger': 'off',
 		'typescript/ban-ts-comment': 'off',
 		'typescript/explicit-module-boundary-types': 'off',
 		'typescript/no-base-to-string': 'off',
@@ -124,6 +97,6 @@ const config: LinterConfigOverrideEntry = {
 		'vitest/require-local-test-context-for-concurrent-snapshots': 'error',
 		'vitest/warn-todo': 'warn',
 	},
-};
+});
 
 export default config;

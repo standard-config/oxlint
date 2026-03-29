@@ -7,7 +7,7 @@ import { defineConfig } from 'vite-plus';
 
 export default defineConfig({
 	test: {
-		projects: ['packages/*'],
+		projects: ['packages/**/vite.config.ts'],
 	},
 	lint: defineOxlintConfig(oxlintConfigBase, {
 		overrides: [

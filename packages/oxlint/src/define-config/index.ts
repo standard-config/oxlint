@@ -1,10 +1,10 @@
 import type { StandardConfig } from '@standard-config/utilities/types';
 import type { OxlintConfig } from 'oxlint';
+import { configReactBase } from '@standard-config/oxlint-react';
 import mergeConfig from '@standard-config/utilities/merge-config';
 import { defineConfig as oxlintDefineConfig } from 'oxlint';
 import configBase from '../config-base/index.ts';
 import configConfigFiles from '../config-config-files/index.ts';
-import configReact from '../config-react/index.ts';
 import configTestFiles from '../config-test-files/index.ts';
 import configTypeDefinitions from '../config-type-definitions/index.ts';
 
@@ -26,7 +26,7 @@ export default function defineConfig(
 
 	const baseConfig: OxlintConfig = {
 		...(includeReactConfig
-			? mergeConfig(configBase, configReact)
+			? mergeConfig(configBase, configReactBase)
 			: configBase),
 
 		overrides: [

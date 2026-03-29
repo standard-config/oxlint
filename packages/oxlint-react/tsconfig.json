@@ -1,0 +1,10 @@
+{
+	"extends": "@standard-config/tsconfig",
+	"include": [
+		"**/*"
+	],
+	"exclude": [
+		"dist",
+		"node_modules"
+	]
+}

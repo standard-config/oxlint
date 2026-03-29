@@ -48,6 +48,7 @@
 		}
 	},
 	"devDependencies": {
+		"@standard-config/oxlint-react": "workspace:*",
 		"@standard-config/tsconfig": "catalog:",
 		"@standard-config/utilities": "workspace:*",
 		"oxlint": "catalog:",

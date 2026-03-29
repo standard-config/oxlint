@@ -1,7 +1,12 @@
 import type { LinterConfigOverrideEntry } from '@standard-config/utilities/types';
 
 const config: LinterConfigOverrideEntry = {
-	plugins: ['jsx-a11y', 'react', 'react-perf'],
+	plugins: [
+		/* prettier-ignore */
+		'jsx-a11y',
+		'react',
+		'react-perf',
+	],
 	rules: {
 		'jsx-a11y/alt-text': 'error',
 		'jsx-a11y/anchor-ambiguous-text': 'error',

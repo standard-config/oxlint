@@ -321,6 +321,7 @@ const config: LinterConfigEntry = {
 		],
 		'typescript/prefer-as-const': 'warn',
 		'typescript/prefer-enum-initializers': 'off',
+		'typescript/prefer-find': 'warn',
 		'typescript/prefer-for-of': 'warn',
 		'typescript/prefer-function-type': 'warn',
 		'typescript/prefer-includes': 'warn',

@@ -412,6 +412,7 @@ exports[`is a valid Oxlint config 1`] = `
     ],
     "typescript/prefer-as-const": "warn",
     "typescript/prefer-enum-initializers": "off",
+    "typescript/prefer-find": "warn",
     "typescript/prefer-for-of": "warn",
     "typescript/prefer-function-type": "warn",
     "typescript/prefer-includes": "warn",

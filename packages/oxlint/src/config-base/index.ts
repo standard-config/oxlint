@@ -335,6 +335,7 @@ const config: LinterConfigEntry = {
 		'typescript/prefer-readonly': 'warn',
 		'typescript/prefer-readonly-parameter-types': 'off',
 		'typescript/prefer-reduce-type-parameter': 'error',
+		'typescript/prefer-regexp-exec': 'warn',
 		'typescript/prefer-return-this-type': 'warn',
 		'typescript/prefer-ts-expect-error': 'error',
 		'typescript/promise-function-async': 'error',

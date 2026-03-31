@@ -74,6 +74,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-func-assign': 'off',
 		'eslint/no-import-assign': 'off',
 		'eslint/no-inline-comments': 'off',
+		'eslint/no-lonely-if': 'warn',
 		'eslint/no-magic-numbers': 'off',
 		'eslint/no-new-native-nonconstructor': 'off',
 		'eslint/no-obj-calls': 'off',

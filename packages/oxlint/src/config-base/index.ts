@@ -61,6 +61,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-console': 'warn',
 		'eslint/no-const-assign': 'off',
 		'eslint/no-continue': 'off',
+		'eslint/no-delete-var': 'off',
 		'eslint/no-dupe-class-members': 'off',
 		'eslint/no-duplicate-imports': 'off',
 		'eslint/no-else-return': ['error', { allowElseIf: false }],

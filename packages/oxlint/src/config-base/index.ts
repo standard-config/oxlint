@@ -77,6 +77,8 @@ const config: LinterConfigEntry = {
 		'eslint/no-new-native-nonconstructor': 'off',
 		'eslint/no-obj-calls': 'off',
 		'eslint/no-redeclare': 'off',
+		'eslint/no-restricted-globals': 'off',
+		'eslint/no-restricted-imports': 'off',
 		'eslint/no-return-assign': ['error', 'always'],
 		'eslint/no-self-assign': ['error', { props: true }],
 		'eslint/no-setter-return': 'off',

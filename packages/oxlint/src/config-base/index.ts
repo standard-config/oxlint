@@ -506,6 +506,7 @@ const config: LinterConfigEntry = {
 		'vitest/prefer-import-in-mock': 'off',
 		'vitest/prefer-to-be-falsy': 'off',
 		'vitest/prefer-to-be-truthy': 'off',
+		'vitest/require-mock-type-parameters': 'off',
 	},
 };
 

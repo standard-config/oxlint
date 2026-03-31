@@ -621,6 +621,7 @@ exports[`is a valid Oxlint config 1`] = `
     "vitest/prefer-import-in-mock": "off",
     "vitest/prefer-to-be-falsy": "off",
     "vitest/prefer-to-be-truthy": "off",
+    "vitest/require-mock-type-parameters": "off",
   },
   "settings": {
     "vitest": {

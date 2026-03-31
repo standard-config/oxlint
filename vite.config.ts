@@ -20,9 +20,10 @@ export default defineConfig({
 	staged: {
 		'*': [
 			() => 'pnpm install --ignore-scripts',
-			'prettier --ignore-unknown --write',
+			() => 'pnpm test',
 			() => 'pnpm --recursive build',
 			'oxlint --deny-warnings --fix --type-check',
+			'prettier --ignore-unknown --write',
 		],
 	},
 });

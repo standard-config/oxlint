@@ -95,6 +95,7 @@ const config: LinterConfigOverrideEntry = mergeConfig(configReactTestFiles, {
 		'vitest/prefer-strict-boolean-matchers': 'error',
 		'vitest/prefer-to-be-object': 'error',
 		'vitest/require-local-test-context-for-concurrent-snapshots': 'error',
+		'vitest/require-test-timeout': 'off',
 		'vitest/warn-todo': 'warn',
 	},
 });

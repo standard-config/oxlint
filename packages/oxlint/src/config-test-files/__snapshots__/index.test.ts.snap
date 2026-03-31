@@ -54,7 +54,6 @@ exports[`is a valid Oxlint config override 1`] = `
     "jsx-a11y/heading-has-content": "off",
     "jsx-a11y/html-has-lang": "off",
     "jsx-a11y/iframe-has-title": "off",
-    "jsx-a11y/jsx-no-target-blank": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "jsx-a11y/lang": "off",
     "jsx-a11y/mouse-events-have-key-events": "off",
@@ -123,6 +122,7 @@ exports[`is a valid Oxlint config override 1`] = `
     "vitest/prefer-strict-boolean-matchers": "error",
     "vitest/prefer-to-be-object": "error",
     "vitest/require-local-test-context-for-concurrent-snapshots": "error",
+    "vitest/require-test-timeout": "off",
     "vitest/warn-todo": "warn",
   },
 }

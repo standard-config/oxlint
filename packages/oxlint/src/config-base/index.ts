@@ -63,6 +63,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-continue': 'off',
 		'eslint/no-delete-var': 'off',
 		'eslint/no-dupe-class-members': 'off',
+		'eslint/no-dupe-keys': 'off',
 		'eslint/no-duplicate-imports': 'off',
 		'eslint/no-else-return': ['error', { allowElseIf: false }],
 		'eslint/no-empty': ['error', { allowEmptyCatch: true }],

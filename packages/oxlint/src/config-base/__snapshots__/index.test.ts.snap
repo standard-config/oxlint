@@ -94,6 +94,7 @@ exports[`is a valid Oxlint config 1`] = `
     "eslint/no-inline-comments": "off",
     "eslint/no-magic-numbers": "off",
     "eslint/no-new-native-nonconstructor": "off",
+    "eslint/no-obj-calls": "off",
     "eslint/no-redeclare": "off",
     "eslint/no-return-assign": [
       "error",

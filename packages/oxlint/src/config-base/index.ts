@@ -37,6 +37,7 @@ const config: LinterConfigEntry = {
 		'eslint/accessor-pairs': ['error', { enforceForClassMembers: true }],
 		'eslint/array-callback-return': ['error', { allowImplicit: true }],
 		'eslint/arrow-body-style': 'off',
+		'eslint/block-scoped-var': 'off',
 		'eslint/capitalized-comments': 'off',
 		'eslint/constructor-super': 'off',
 		'eslint/default-case': 'off',
@@ -103,6 +104,7 @@ const config: LinterConfigEntry = {
 			},
 		],
 		'eslint/no-use-before-define': 'off',
+		'eslint/no-var': 'error',
 		'eslint/no-void': 'off',
 		'eslint/prefer-destructuring': [
 			'error',
@@ -113,6 +115,7 @@ const config: LinterConfigEntry = {
 		'eslint/sort-imports': 'off',
 		'eslint/sort-keys': 'off',
 		'eslint/valid-typeof': ['error', { requireStringLiterals: false }],
+		'eslint/vars-on-top': 'off',
 		'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
 		'import/default': 'error',
 		'import/exports-last': 'off',

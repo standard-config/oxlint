@@ -209,6 +209,7 @@ exports[`defines a valid Oxlint config 1`] = `
       },
     ],
     "eslint/arrow-body-style": "off",
+    "eslint/block-scoped-var": "off",
     "eslint/capitalized-comments": "off",
     "eslint/constructor-super": "off",
     "eslint/default-case": "off",
@@ -307,6 +308,7 @@ exports[`defines a valid Oxlint config 1`] = `
       },
     ],
     "eslint/no-use-before-define": "off",
+    "eslint/no-var": "error",
     "eslint/no-void": "off",
     "eslint/prefer-destructuring": [
       "error",
@@ -324,6 +326,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "requireStringLiterals": false,
       },
     ],
+    "eslint/vars-on-top": "off",
     "import/consistent-type-specifier-style": [
       "error",
       "prefer-top-level",
@@ -1017,6 +1020,7 @@ exports[`supports the \`react\` option 1`] = `
       },
     ],
     "eslint/arrow-body-style": "off",
+    "eslint/block-scoped-var": "off",
     "eslint/capitalized-comments": "off",
     "eslint/constructor-super": "off",
     "eslint/default-case": "off",
@@ -1115,6 +1119,7 @@ exports[`supports the \`react\` option 1`] = `
       },
     ],
     "eslint/no-use-before-define": "off",
+    "eslint/no-var": "error",
     "eslint/no-void": "off",
     "eslint/prefer-destructuring": [
       "error",
@@ -1132,6 +1137,7 @@ exports[`supports the \`react\` option 1`] = `
         "requireStringLiterals": false,
       },
     ],
+    "eslint/vars-on-top": "off",
     "import/consistent-type-specifier-style": [
       "error",
       "prefer-top-level",

@@ -240,6 +240,7 @@ exports[`defines a valid Oxlint config 1`] = `
     "eslint/no-const-assign": "off",
     "eslint/no-continue": "off",
     "eslint/no-delete-var": "off",
+    "eslint/no-div-regex": "off",
     "eslint/no-dupe-class-members": "off",
     "eslint/no-dupe-keys": "off",
     "eslint/no-duplicate-imports": "off",
@@ -261,8 +262,10 @@ exports[`defines a valid Oxlint config 1`] = `
     "eslint/no-func-assign": "off",
     "eslint/no-import-assign": "off",
     "eslint/no-inline-comments": "off",
+    "eslint/no-iterator": "off",
     "eslint/no-lonely-if": "warn",
     "eslint/no-magic-numbers": "off",
+    "eslint/no-multi-str": "off",
     "eslint/no-new-native-nonconstructor": "off",
     "eslint/no-obj-calls": "off",
     "eslint/no-redeclare": "off",
@@ -324,6 +327,7 @@ exports[`defines a valid Oxlint config 1`] = `
     "eslint/require-await": "off",
     "eslint/sort-imports": "off",
     "eslint/sort-keys": "off",
+    "eslint/sort-vars": "off",
     "eslint/valid-typeof": [
       "error",
       {
@@ -1055,6 +1059,7 @@ exports[`supports the \`react\` option 1`] = `
     "eslint/no-const-assign": "off",
     "eslint/no-continue": "off",
     "eslint/no-delete-var": "off",
+    "eslint/no-div-regex": "off",
     "eslint/no-dupe-class-members": "off",
     "eslint/no-dupe-keys": "off",
     "eslint/no-duplicate-imports": "off",
@@ -1076,8 +1081,10 @@ exports[`supports the \`react\` option 1`] = `
     "eslint/no-func-assign": "off",
     "eslint/no-import-assign": "off",
     "eslint/no-inline-comments": "off",
+    "eslint/no-iterator": "off",
     "eslint/no-lonely-if": "warn",
     "eslint/no-magic-numbers": "off",
+    "eslint/no-multi-str": "off",
     "eslint/no-new-native-nonconstructor": "off",
     "eslint/no-obj-calls": "off",
     "eslint/no-redeclare": "off",
@@ -1139,6 +1146,7 @@ exports[`supports the \`react\` option 1`] = `
     "eslint/require-await": "off",
     "eslint/sort-imports": "off",
     "eslint/sort-keys": "off",
+    "eslint/sort-vars": "off",
     "eslint/valid-typeof": [
       "error",
       {

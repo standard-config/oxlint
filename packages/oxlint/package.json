@@ -59,7 +59,8 @@
 	},
 	"scripts": {
 		"build": "vp pack",
-		"prepack": "pnpm --workspace-root run '/^(format:check|lint:check|test)$/' && pnpm build",
+		"prepack": "pnpm --workspace-root run '/^(format:check|lint:check|test)$/' && pnpm build && cp ../../LICENSE LICENSE && cp ../../README.md README.md",
+		"postpack": "rm LICENSE README.md",
 		"test": "vitest run",
 		"typecheck": "tsc --noEmit"
 	}

@@ -332,6 +332,7 @@ const config: LinterConfigEntry = {
 			{ ignoreConditionalTests: false },
 		],
 		'typescript/prefer-promise-reject-errors': 'off',
+		'typescript/prefer-readonly': 'warn',
 		'typescript/prefer-readonly-parameter-types': 'off',
 		'typescript/prefer-reduce-type-parameter': 'error',
 		'typescript/prefer-return-this-type': 'warn',

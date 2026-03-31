@@ -90,6 +90,7 @@ exports[`is a valid Oxlint config 1`] = `
       },
     ],
     "eslint/no-empty-function": "warn",
+    "eslint/no-extra-bind": "warn",
     "eslint/no-fallthrough": "off",
     "eslint/no-func-assign": "off",
     "eslint/no-import-assign": "off",

@@ -72,6 +72,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-import-assign': 'off',
 		'eslint/no-inline-comments': 'off',
 		'eslint/no-magic-numbers': 'off',
+		'eslint/no-new-native-nonconstructor': 'off',
 		'eslint/no-redeclare': 'off',
 		'eslint/no-return-assign': ['error', 'always'],
 		'eslint/no-self-assign': ['error', { props: true }],

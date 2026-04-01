@@ -166,6 +166,7 @@ exports[`is a valid Oxlint config 1`] = `
     "eslint/no-useless-rename": "warn",
     "eslint/no-var": "error",
     "eslint/no-void": "off",
+    "eslint/no-warning-comments": "off",
     "eslint/operator-assignment": [
       "warn",
       "always",

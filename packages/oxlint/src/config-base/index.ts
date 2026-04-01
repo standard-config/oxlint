@@ -57,6 +57,7 @@ const config: LinterConfigEntry = {
 		'eslint/max-depth': 'off',
 		'eslint/max-lines': 'off',
 		'eslint/max-lines-per-function': 'off',
+		'eslint/max-nested-callbacks': 'off',
 		'eslint/max-params': 'off',
 		'eslint/max-statements': 'off',
 		'eslint/new-cap': 'off',

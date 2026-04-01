@@ -75,6 +75,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-else-return': ['error', { allowElseIf: false }],
 		'eslint/no-empty': ['error', { allowEmptyCatch: true }],
 		'eslint/no-empty-function': 'warn',
+		'eslint/no-eval': 'off',
 		'eslint/no-extra-bind': 'warn',
 		'eslint/no-fallthrough': 'off',
 		'eslint/no-func-assign': 'off',

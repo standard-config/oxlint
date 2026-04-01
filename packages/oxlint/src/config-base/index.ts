@@ -82,6 +82,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-import-assign': 'off',
 		'eslint/no-inline-comments': 'off',
 		'eslint/no-inner-declarations': 'off',
+		'eslint/no-irregular-whitespace': 'off',
 		'eslint/no-iterator': 'off',
 		'eslint/no-lonely-if': 'warn',
 		'eslint/no-magic-numbers': 'off',

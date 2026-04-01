@@ -39,6 +39,7 @@ const config: LinterConfigEntry = {
 		'eslint/arrow-body-style': 'off',
 		'eslint/block-scoped-var': 'off',
 		'eslint/capitalized-comments': 'off',
+		'eslint/class-methods-use-this': 'off',
 		'eslint/constructor-super': 'off',
 		'eslint/default-case': 'off',
 		'eslint/default-case-last': 'error',

@@ -92,6 +92,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-this-before-super': 'off',
 		'eslint/no-undef': 'off',
 		'eslint/no-undefined': 'off',
+		'eslint/no-unneeded-ternary': 'warn',
 		'eslint/no-unsafe-negation': [
 			'error',
 			{ enforceForOrderingRelations: true },
@@ -111,6 +112,9 @@ const config: LinterConfigEntry = {
 			},
 		],
 		'eslint/no-use-before-define': 'off',
+		'eslint/no-useless-computed-key': 'warn',
+		'eslint/no-useless-escape': 'warn',
+		'eslint/no-useless-rename': 'warn',
 		'eslint/no-var': 'error',
 		'eslint/no-void': 'off',
 		'eslint/prefer-destructuring': [

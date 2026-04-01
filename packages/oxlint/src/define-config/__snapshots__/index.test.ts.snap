@@ -321,6 +321,10 @@ exports[`defines a valid Oxlint config 1`] = `
     "eslint/no-useless-rename": "warn",
     "eslint/no-var": "error",
     "eslint/no-void": "off",
+    "eslint/operator-assignment": [
+      "warn",
+      "always",
+    ],
     "eslint/prefer-destructuring": [
       "error",
       {
@@ -1144,6 +1148,10 @@ exports[`supports the \`react\` option 1`] = `
     "eslint/no-useless-rename": "warn",
     "eslint/no-var": "error",
     "eslint/no-void": "off",
+    "eslint/operator-assignment": [
+      "warn",
+      "always",
+    ],
     "eslint/prefer-destructuring": [
       "error",
       {

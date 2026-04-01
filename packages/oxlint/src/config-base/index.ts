@@ -117,6 +117,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-useless-rename': 'warn',
 		'eslint/no-var': 'error',
 		'eslint/no-void': 'off',
+		'eslint/operator-assignment': ['warn', 'always'],
 		'eslint/prefer-destructuring': [
 			'error',
 			{ enforceForRenamedProperties: false },

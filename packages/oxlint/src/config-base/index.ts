@@ -65,6 +65,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-class-assign': 'off',
 		'eslint/no-console': 'warn',
 		'eslint/no-const-assign': 'off',
+		'eslint/no-constant-condition': 'off',
 		'eslint/no-continue': 'off',
 		'eslint/no-delete-var': 'off',
 		'eslint/no-div-regex': 'off',

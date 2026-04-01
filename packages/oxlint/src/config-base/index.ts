@@ -91,6 +91,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-negated-condition': 'off',
 		'eslint/no-new-native-nonconstructor': 'off',
 		'eslint/no-obj-calls': 'off',
+		'eslint/no-plusplus': 'off',
 		'eslint/no-redeclare': 'off',
 		'eslint/no-restricted-globals': 'off',
 		'eslint/no-restricted-imports': 'off',

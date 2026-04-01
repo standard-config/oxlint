@@ -88,6 +88,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-lonely-if': 'warn',
 		'eslint/no-magic-numbers': 'off',
 		'eslint/no-multi-str': 'off',
+		'eslint/no-negated-condition': 'off',
 		'eslint/no-new-native-nonconstructor': 'off',
 		'eslint/no-obj-calls': 'off',
 		'eslint/no-redeclare': 'off',

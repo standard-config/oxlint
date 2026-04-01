@@ -84,6 +84,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-inner-declarations': 'off',
 		'eslint/no-irregular-whitespace': 'off',
 		'eslint/no-iterator': 'off',
+		'eslint/no-labels': 'off',
 		'eslint/no-lonely-if': 'warn',
 		'eslint/no-magic-numbers': 'off',
 		'eslint/no-multi-str': 'off',

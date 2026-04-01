@@ -40,6 +40,7 @@ const config: LinterConfigEntry = {
 		'eslint/block-scoped-var': 'off',
 		'eslint/capitalized-comments': 'off',
 		'eslint/class-methods-use-this': 'off',
+		'eslint/complexity': 'off',
 		'eslint/constructor-super': 'off',
 		'eslint/default-case': 'off',
 		'eslint/default-case-last': 'error',

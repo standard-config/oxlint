@@ -53,6 +53,7 @@ const config: LinterConfigEntry = {
 		'eslint/grouped-accessor-pairs': ['error', 'getBeforeSet'],
 		'eslint/id-length': 'off',
 		'eslint/init-declarations': 'off',
+		'eslint/max-classes-per-file': 'off',
 		'eslint/max-depth': 'off',
 		'eslint/max-lines': 'off',
 		'eslint/max-lines-per-function': 'off',

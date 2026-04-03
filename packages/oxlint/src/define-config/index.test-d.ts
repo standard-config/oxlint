@@ -8,12 +8,8 @@ test('defines a valid Oxlint config', () => {
 	let config = defineConfig();
 
 	expectTypeOf(config).toEqualTypeOf<OxlintConfig>();
-	expectTypeOf(defineOxlintConfig(config)).toEqualTypeOf<
-		ReturnType<typeof defineOxlintConfig>
-	>();
-	expectTypeOf(defineViteConfig({ lint: config })).toEqualTypeOf<
-		ReturnType<typeof defineViteConfig>
-	>();
+	expectTypeOf(defineOxlintConfig).toBeCallableWith(config);
+	expectTypeOf(defineViteConfig).toBeCallableWith({ lint: config });
 
 	config = defineConfig({
 		ignorePatterns: ['fixtures/**'],
@@ -23,24 +19,16 @@ test('defines a valid Oxlint config', () => {
 	});
 
 	expectTypeOf(config).toEqualTypeOf<OxlintConfig>();
-	expectTypeOf(defineOxlintConfig(config)).toEqualTypeOf<
-		ReturnType<typeof defineOxlintConfig>
-	>();
-	expectTypeOf(defineViteConfig({ lint: config })).toEqualTypeOf<
-		ReturnType<typeof defineViteConfig>
-	>();
+	expectTypeOf(defineOxlintConfig).toBeCallableWith(config);
+	expectTypeOf(defineViteConfig).toBeCallableWith({ lint: config });
 });
 
 test('supports the `react` option', () => {
 	let config = defineConfig({ react: true });
 
 	expectTypeOf(config).toEqualTypeOf<OxlintConfig>();
-	expectTypeOf(defineOxlintConfig(config)).toEqualTypeOf<
-		ReturnType<typeof defineOxlintConfig>
-	>();
-	expectTypeOf(defineViteConfig({ lint: config })).toEqualTypeOf<
-		ReturnType<typeof defineViteConfig>
-	>();
+	expectTypeOf(defineOxlintConfig).toBeCallableWith(config);
+	expectTypeOf(defineViteConfig).toBeCallableWith({ lint: config });
 
 	config = defineConfig({
 		react: true,
@@ -51,10 +39,6 @@ test('supports the `react` option', () => {
 	});
 
 	expectTypeOf(config).toEqualTypeOf<OxlintConfig>();
-	expectTypeOf(defineOxlintConfig(config)).toEqualTypeOf<
-		ReturnType<typeof defineOxlintConfig>
-	>();
-	expectTypeOf(defineViteConfig({ lint: config })).toEqualTypeOf<
-		ReturnType<typeof defineViteConfig>
-	>();
+	expectTypeOf(defineOxlintConfig).toBeCallableWith(config);
+	expectTypeOf(defineViteConfig).toBeCallableWith({ lint: config });
 });

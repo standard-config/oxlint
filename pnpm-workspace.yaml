@@ -9,7 +9,7 @@ catalog:
   oxlint-tsgolint: ^0.20.0
   publint: ^0.3.18
   typescript: ^6.0.2
-  vite-plus: ^0.1.16-alpha.4
+  vite-plus: ^0.1.16
   vitest: ^4.1.2
 
 color: always

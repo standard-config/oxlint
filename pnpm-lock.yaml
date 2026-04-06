@@ -29,6 +29,7 @@ catalogs:
       version: 4.1.2
 
 overrides:
+  '@napi-rs/wasm-runtime': 1.1.1
   vite-plus>oxfmt: '-'
   vite-plus>oxlint: ^1.58.0
   vite-plus>oxlint-tsgolint: ^0.20.0
@@ -72,7 +73,7 @@ importers:
         version: 6.0.2
       vite-plus:
         specifier: 'catalog:'
-        version: 0.1.16(publint@0.3.18)(typescript@6.0.2)(vite@8.0.3(yaml@2.8.3))(yaml@2.8.3)
+        version: 0.1.16(publint@0.3.18)(typescript@6.0.2)(vite@8.0.5(yaml@2.8.3))(yaml@2.8.3)
       vitest:
         specifier: 'catalog:'
         version: 4.1.2(yaml@2.8.3)
@@ -99,7 +100,7 @@ importers:
         version: 6.0.2
       vite-plus:
         specifier: 'catalog:'
-        version: 0.1.16(publint@0.3.18)(typescript@6.0.2)(vite@8.0.3(yaml@2.8.3))(yaml@2.8.3)
+        version: 0.1.16(publint@0.3.18)(typescript@6.0.2)(vite@8.0.5(yaml@2.8.3))(yaml@2.8.3)
       vitest:
         specifier: 'catalog:'
         version: 4.1.2(yaml@2.8.3)
@@ -527,8 +528,8 @@ packages:
     resolution: {integrity: sha512-HDVTWq3H0uTXiU0eeSQntcVUTPP3GamzeXI41+x7uU9J65JgWQh3qWZHblR1i0npXfFtF+mxBiU2nJH8znxWnQ==}
     engines: {node: '>=18'}
 
-  '@reteps/dockerfmt@0.3.6':
-    resolution: {integrity: sha512-Tb5wIMvBf/nLejTQ61krK644/CEMB/cpiaIFXqGApfGqO3GwcR3qnI0DbmkFVCl2OyEp8LnLX3EkucoL0+tbFg==}
+  '@reteps/dockerfmt@0.5.2':
+    resolution: {integrity: sha512-Hbr7yen4fP5TxGM54ucXa4o5NwWXatJ6Bd9I8gp0PValYbI4Rug2Gu+rVv7K7o/efQc3F5ctqWJz47rYaa8zBw==}
     engines: {node: ^v12.20.0 || ^14.13.0 || >=16.0.0}
 
   '@rolldown/binding-android-arm64@1.0.0-rc.12':
@@ -1344,8 +1345,8 @@ packages:
     peerDependencies:
       prettier: ^3.0.3
 
-  prettier-plugin-sh@0.18.0:
-    resolution: {integrity: sha512-cW1XL27FOJQ/qGHOW6IHwdCiNWQsAgK+feA8V6+xUTaH0cD3Mh+tFAtBvEEWvuY6hTDzRV943Fzeii+qMOh7nQ==}
+  prettier-plugin-sh@0.18.1:
+    resolution: {integrity: sha512-uZmU22wBMevjh3rmCatNQqiEer2+5KLa0xYCBX6zQQUQkcNzVL+s6FbPKK6ZSUNUbQk6jMAcQHrYPvuL2W6ihQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       prettier: ^3.6.0
@@ -1474,14 +1475,14 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
-  vite@8.0.3:
-    resolution: {integrity: sha512-B9ifbFudT1TFhfltfaIPgjo9Z3mDynBTJSUYxTjOQruf/zHH+ezCQKcoqO+h7a9Pw9Nm/OtlXAiGT1axBgwqrQ==}
+  vite@8.0.5:
+    resolution: {integrity: sha512-nmu43Qvq9UopTRfMx2jOYW5l16pb3iDC1JH6yMuPkpVbzK0k+L7dfsEDH4jRgYFmsg0sTAqkojoZgzLMlwHsCQ==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
       '@types/node': ^20.19.0 || >=22.12.0
       '@vitejs/devtools': ^0.1.0
-      esbuild: ^0.27.0
+      esbuild: ^0.27.0 || ^0.28.0
       jiti: '>=1.21.0'
       less: ^4.0.0
       sass: ^1.70.0
@@ -1865,7 +1866,7 @@ snapshots:
 
   '@publint/pack@0.1.4': {}
 
-  '@reteps/dockerfmt@0.3.6': {}
+  '@reteps/dockerfmt@0.5.2': {}
 
   '@rolldown/binding-android-arm64@1.0.0-rc.12':
     optional: true
@@ -1935,7 +1936,7 @@ snapshots:
       prettier-plugin-expand-json: 1.0.4(prettier@3.8.1)
       prettier-plugin-markdown-html: 1.4.0(prettier@3.8.1)
       prettier-plugin-pkg: 0.22.1(prettier@3.8.1)
-      prettier-plugin-sh: 0.18.0(prettier@3.8.1)
+      prettier-plugin-sh: 0.18.1(prettier@3.8.1)
       prettier-plugin-sort-json: 4.2.0(prettier@3.8.1)
       prettier-plugin-yaml: 1.1.3(prettier@3.8.1)
 
@@ -2059,13 +2060,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.2(vite@8.0.3(yaml@2.8.3))':
+  '@vitest/mocker@4.1.2(vite@8.0.5(yaml@2.8.3))':
     dependencies:
       '@vitest/spy': 4.1.2
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 8.0.3(yaml@2.8.3)
+      vite: 8.0.5(yaml@2.8.3)
 
   '@vitest/pretty-format@4.1.2':
     dependencies:
@@ -2121,7 +2122,7 @@ snapshots:
   '@voidzero-dev/vite-plus-linux-x64-musl@0.1.16':
     optional: true
 
-  '@voidzero-dev/vite-plus-test@0.1.16(publint@0.3.18)(typescript@6.0.2)(vite@8.0.3(yaml@2.8.3))(yaml@2.8.3)':
+  '@voidzero-dev/vite-plus-test@0.1.16(publint@0.3.18)(typescript@6.0.2)(vite@8.0.5(yaml@2.8.3))(yaml@2.8.3)':
     dependencies:
       '@standard-schema/spec': 1.1.0
       '@types/chai': 5.2.3
@@ -2135,7 +2136,7 @@ snapshots:
       tinybench: 2.9.0
       tinyexec: 1.0.4
       tinyglobby: 0.2.15
-      vite: 8.0.3(yaml@2.8.3)
+      vite: 8.0.5(yaml@2.8.3)
       ws: 8.20.0
     transitivePeerDependencies:
       - '@arethetypeswrong/core'
@@ -2594,9 +2595,9 @@ snapshots:
     dependencies:
       prettier: 3.8.1
 
-  prettier-plugin-sh@0.18.0(prettier@3.8.1):
+  prettier-plugin-sh@0.18.1(prettier@3.8.1):
     dependencies:
-      '@reteps/dockerfmt': 0.3.6
+      '@reteps/dockerfmt': 0.5.2
       prettier: 3.8.1
       sh-syntax: 0.5.8
 
@@ -2708,11 +2709,11 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  vite-plus@0.1.16(publint@0.3.18)(typescript@6.0.2)(vite@8.0.3(yaml@2.8.3))(yaml@2.8.3):
+  vite-plus@0.1.16(publint@0.3.18)(typescript@6.0.2)(vite@8.0.5(yaml@2.8.3))(yaml@2.8.3):
     dependencies:
       '@oxc-project/types': 0.123.0
       '@voidzero-dev/vite-plus-core': 0.1.16(publint@0.3.18)(typescript@6.0.2)(yaml@2.8.3)
-      '@voidzero-dev/vite-plus-test': 0.1.16(publint@0.3.18)(typescript@6.0.2)(vite@8.0.3(yaml@2.8.3))(yaml@2.8.3)
+      '@voidzero-dev/vite-plus-test': 0.1.16(publint@0.3.18)(typescript@6.0.2)(vite@8.0.5(yaml@2.8.3))(yaml@2.8.3)
       oxlint: 1.58.0(oxlint-tsgolint@0.20.0)
       oxlint-tsgolint: 0.20.0
     optionalDependencies:
@@ -2752,7 +2753,7 @@ snapshots:
       - vite
       - yaml
 
-  vite@8.0.3(yaml@2.8.3):
+  vite@8.0.5(yaml@2.8.3):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
@@ -2766,7 +2767,7 @@ snapshots:
   vitest@4.1.2(yaml@2.8.3):
     dependencies:
       '@vitest/expect': 4.1.2
-      '@vitest/mocker': 4.1.2(vite@8.0.3(yaml@2.8.3))
+      '@vitest/mocker': 4.1.2(vite@8.0.5(yaml@2.8.3))
       '@vitest/pretty-format': 4.1.2
       '@vitest/runner': 4.1.2
       '@vitest/snapshot': 4.1.2
@@ -2783,7 +2784,7 @@ snapshots:
       tinyexec: 1.0.4
       tinyglobby: 0.2.15
       tinyrainbow: 3.1.0
-      vite: 8.0.3(yaml@2.8.3)
+      vite: 8.0.5(yaml@2.8.3)
       why-is-node-running: 2.3.0
     transitivePeerDependencies:
       - '@vitejs/devtools'

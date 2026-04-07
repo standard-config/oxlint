@@ -50,6 +50,7 @@ const config: LinterConfigOverrideEntry = {
 		'react/forbid-dom-props': 'off',
 		'react/forbid-elements': 'off',
 		'react/forward-ref-uses-ref': 'off',
+		'react/hook-use-state': 'error',
 		'react/iframe-missing-sandbox': 'off',
 		'react/jsx-boolean-value': 'error',
 		'react/jsx-curly-brace-presence': [

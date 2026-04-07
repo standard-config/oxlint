@@ -90,6 +90,7 @@ const config: LinterConfigOverrideEntry = mergeConfig(configReactTestFiles, {
 		'vitest/consistent-vitest-vi': 'error',
 		'vitest/hoisted-apis-on-top': 'error',
 		'vitest/no-import-node-test': 'error',
+		'vitest/prefer-called-exactly-once-with': 'warn',
 		'vitest/prefer-called-times': 'error',
 		'vitest/prefer-describe-function-title': 'error',
 		'vitest/prefer-expect-type-of': 'error',

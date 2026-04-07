@@ -94,6 +94,7 @@ const config: LinterConfigOverrideEntry = mergeConfig(configReactTestFiles, {
 		'vitest/prefer-called-times': 'error',
 		'vitest/prefer-describe-function-title': 'error',
 		'vitest/prefer-expect-type-of': 'error',
+		'vitest/prefer-importing-vitest-globals': 'error',
 		'vitest/prefer-strict-boolean-matchers': 'error',
 		'vitest/prefer-to-be-object': 'error',
 		'vitest/require-local-test-context-for-concurrent-snapshots': 'error',

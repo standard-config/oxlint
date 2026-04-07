@@ -39,8 +39,8 @@
 		"node": ">=20"
 	},
 	"peerDependencies": {
-		"oxlint": ">=1.52.0",
-		"oxlint-tsgolint": ">=0.16.0"
+		"oxlint": "^1.59.0",
+		"oxlint-tsgolint": "^0.18.0"
 	},
 	"peerDependenciesMeta": {
 		"oxlint-tsgolint": {

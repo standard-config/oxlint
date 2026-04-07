@@ -22,7 +22,6 @@ onlyBuiltDependencies:
   - esbuild
 
 overrides:
-  '@napi-rs/wasm-runtime': 1.1.1
   vite-plus>oxfmt: '-'
   vite-plus>oxlint: 'catalog:'
   vite-plus>oxlint-tsgolint: 'catalog:'

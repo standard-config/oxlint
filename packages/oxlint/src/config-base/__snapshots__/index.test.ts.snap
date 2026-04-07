@@ -656,6 +656,7 @@ exports[`is a valid Oxlint config 1`] = `
       "error",
       "avoid",
     ],
+    "unicorn/switch-case-break-position": "error",
     "unicorn/text-encoding-identifier-case": "error",
     "unicorn/throw-new-error": "error",
     "vitest/consistent-test-filename": "off",

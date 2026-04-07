@@ -26,6 +26,7 @@ const config: LinterConfigOverrideEntry = mergeConfig(configReactTestFiles, {
 		'jest/no-standalone-expect': 'error',
 		'jest/no-test-return-statement': 'error',
 		'jest/no-unneeded-async-expect-function': 'error',
+		'jest/padding-around-after-all-blocks': 'error',
 		'jest/padding-around-test-blocks': 'error',
 		'jest/prefer-comparison-matcher': 'error',
 		'jest/prefer-each': 'error',

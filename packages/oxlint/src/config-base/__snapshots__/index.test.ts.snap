@@ -351,6 +351,7 @@ exports[`is a valid Oxlint config 1`] = `
         "prefer": "type-imports",
       },
     ],
+    "typescript/dot-notation": "warn",
     "typescript/explicit-function-return-type": "off",
     "typescript/explicit-module-boundary-types": [
       "error",

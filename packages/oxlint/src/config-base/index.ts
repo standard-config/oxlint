@@ -273,6 +273,7 @@ const config: LinterConfigEntry = {
 				prefer: 'type-imports',
 			},
 		],
+		'typescript/dot-notation': 'warn',
 		'typescript/explicit-function-return-type': 'off',
 		'typescript/explicit-module-boundary-types': [
 			'error',

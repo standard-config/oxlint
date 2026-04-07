@@ -101,6 +101,7 @@ const config: LinterConfigOverrideEntry = {
 		'react/no-will-update-set-state': 'off',
 		'react/only-export-components': 'off',
 		'react/prefer-es6-class': 'off',
+		'react/prefer-function-component': 'off',
 		'react/react-in-jsx-scope': 'off',
 		'react/require-render-return': 'off',
 		'react/rules-of-hooks': 'error',

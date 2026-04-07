@@ -265,6 +265,7 @@ const config: LinterConfigEntry = {
 			{ assertionStyle: 'as' },
 		],
 		'typescript/consistent-type-definitions': ['error', 'type'],
+		'typescript/consistent-type-exports': 'error',
 		'typescript/consistent-type-imports': [
 			'error',
 			{

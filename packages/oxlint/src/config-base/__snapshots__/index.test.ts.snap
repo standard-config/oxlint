@@ -343,6 +343,7 @@ exports[`is a valid Oxlint config 1`] = `
       "error",
       "type",
     ],
+    "typescript/consistent-type-exports": "error",
     "typescript/consistent-type-imports": [
       "error",
       {

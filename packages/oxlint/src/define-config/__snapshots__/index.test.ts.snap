@@ -509,6 +509,7 @@ exports[`defines a valid Oxlint config 1`] = `
       "error",
       "type",
     ],
+    "typescript/consistent-type-exports": "error",
     "typescript/consistent-type-imports": [
       "error",
       {
@@ -1458,6 +1459,7 @@ exports[`supports the \`react\` option 1`] = `
       "error",
       "type",
     ],
+    "typescript/consistent-type-exports": "error",
     "typescript/consistent-type-imports": [
       "error",
       {

@@ -403,6 +403,7 @@ const config: LinterConfigEntry = {
 		'typescript/no-unnecessary-type-assertion': 'warn',
 		'typescript/no-unnecessary-type-constraint': 'warn',
 		'typescript/no-unnecessary-type-conversion': 'warn',
+		'typescript/no-unnecessary-type-parameters': 'warn',
 		'typescript/no-unsafe-argument': 'error',
 		'typescript/no-unsafe-assignment': 'error',
 		'typescript/no-unsafe-call': 'error',

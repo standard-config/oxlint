@@ -160,6 +160,7 @@ const config: LinterConfigEntry = {
 		'eslint/prefer-exponentiation-operator': 'warn',
 		'eslint/prefer-numeric-literals': 'off',
 		'eslint/prefer-promise-reject-errors': 'off',
+		'eslint/prefer-spread': 'warn',
 		'eslint/preserve-caught-error': 'error',
 		'eslint/radix': 'error',
 		'eslint/require-await': 'off',

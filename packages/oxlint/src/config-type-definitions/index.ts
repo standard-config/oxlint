@@ -6,7 +6,6 @@ const config: LinterConfigOverrideEntry = {
 		'import/no-unassigned-import': 'off',
 		'import/unambiguous': 'off',
 		'typescript/consistent-type-definitions': 'off',
-		'typescript/no-empty-interface': 'off',
 		'typescript/no-empty-object-type': 'off',
 		'typescript/no-restricted-types': 'off',
 		'typescript/no-useless-empty-export': 'off',

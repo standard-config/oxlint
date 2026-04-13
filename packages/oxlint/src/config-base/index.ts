@@ -210,6 +210,7 @@ const config: LinterConfigEntry = {
 		'jest/no-untyped-mock-factory': 'off',
 		'jest/prefer-called-with': 'off',
 		'jest/prefer-ending-with-an-expect': 'off',
+		'jest/prefer-importing-jest-globals': 'off',
 		'jest/prefer-lowercase-title': 'off',
 		'jest/prefer-snapshot-hint': 'off',
 		'jest/prefer-spy-on': 'off',

@@ -2,7 +2,6 @@ import { expect, test, vi } from 'vitest';
 import defineConfig from '../define-config/index.ts';
 import defineOxlintConfig from './index.ts';
 
-/* oxlint-disable-next-line vitest/prefer-ending-with-an-expect */
 vi.mock(import('../define-config/index.ts'), async (importActual) => {
 	const actual = await importActual();
 

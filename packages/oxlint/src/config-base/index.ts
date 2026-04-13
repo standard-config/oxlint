@@ -122,6 +122,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-this-before-super': 'off',
 		'eslint/no-undef': 'off',
 		'eslint/no-undefined': 'off',
+		'eslint/no-unexpected-multiline': 'off',
 		'eslint/no-unneeded-ternary': 'warn',
 		'eslint/no-unsafe-negation': [
 			'error',

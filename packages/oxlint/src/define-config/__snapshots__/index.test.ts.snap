@@ -324,6 +324,7 @@ exports[`defines a valid Oxlint config 1`] = `
     "eslint/no-this-before-super": "off",
     "eslint/no-undef": "off",
     "eslint/no-undefined": "off",
+    "eslint/no-unexpected-multiline": "off",
     "eslint/no-unneeded-ternary": "warn",
     "eslint/no-unsafe-negation": [
       "error",
@@ -1269,6 +1270,7 @@ exports[`supports the \`react\` option 1`] = `
     "eslint/no-this-before-super": "off",
     "eslint/no-undef": "off",
     "eslint/no-undefined": "off",
+    "eslint/no-unexpected-multiline": "off",
     "eslint/no-unneeded-ternary": "warn",
     "eslint/no-unsafe-negation": [
       "error",

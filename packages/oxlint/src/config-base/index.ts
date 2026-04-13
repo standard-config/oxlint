@@ -157,6 +157,7 @@ const config: LinterConfigEntry = {
 			'error',
 			{ enforceForRenamedProperties: false },
 		],
+		'eslint/prefer-exponentiation-operator': 'warn',
 		'eslint/prefer-numeric-literals': 'off',
 		'eslint/prefer-promise-reject-errors': 'off',
 		'eslint/preserve-caught-error': 'error',

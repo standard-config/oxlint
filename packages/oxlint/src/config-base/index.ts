@@ -398,6 +398,7 @@ const config: LinterConfigEntry = {
 		'typescript/no-this-alias': 'error',
 		'typescript/no-unnecessary-boolean-literal-compare': 'warn',
 		'typescript/no-unnecessary-parameter-property-assignment': 'warn',
+		'typescript/no-unnecessary-qualifier': 'warn',
 		'typescript/no-unnecessary-template-expression': 'warn',
 		'typescript/no-unnecessary-type-arguments': 'warn',
 		'typescript/no-unnecessary-type-assertion': 'warn',

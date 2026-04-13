@@ -188,6 +188,7 @@ exports[`is a valid Oxlint config 1`] = `
     "eslint/no-useless-constructor": "off",
     "eslint/no-useless-escape": "warn",
     "eslint/no-useless-rename": "warn",
+    "eslint/no-useless-return": "warn",
     "eslint/no-var": "error",
     "eslint/no-void": "off",
     "eslint/no-warning-comments": "off",

@@ -9,7 +9,7 @@ export default defineConfig({
 			() => 'pnpm install --ignore-scripts',
 			() => 'pnpm test',
 			() => 'pnpm --recursive build',
-			'oxlint --deny-warnings --fix --type-check',
+			'oxlint --deny-warnings --fix --no-error-on-unmatched-pattern --type-check',
 			'prettier --ignore-unknown --write',
 		],
 	},

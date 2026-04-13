@@ -47,6 +47,7 @@ const config: LinterConfigOverrideEntry = mergeConfig(configReactTestFiles, {
 		'jest/require-to-throw-message': 'error',
 		'jest/valid-describe-callback': 'error',
 		'jest/valid-expect': 'error',
+		'jest/valid-expect-in-promise': 'error',
 		'jest/valid-title': 'error',
 		'oxc/approx-constant': 'off',
 		'oxc/no-accumulating-spread': 'off',

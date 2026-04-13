@@ -144,6 +144,7 @@ const config: LinterConfigEntry = {
 		],
 		'eslint/no-use-before-define': 'off',
 		'eslint/no-useless-computed-key': 'warn',
+		'eslint/no-useless-constructor': 'off',
 		'eslint/no-useless-escape': 'warn',
 		'eslint/no-useless-rename': 'warn',
 		'eslint/no-var': 'error',

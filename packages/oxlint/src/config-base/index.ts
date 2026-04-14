@@ -160,6 +160,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-unexpected-multiline': 'off',
 		'eslint/no-unmodified-loop-condition': 'error',
 		'eslint/no-unneeded-ternary': 'warn',
+		'eslint/no-unreachable': 'warn',
 		'eslint/no-unsafe-finally': 'error',
 		'eslint/no-unsafe-negation': [
 			'error',

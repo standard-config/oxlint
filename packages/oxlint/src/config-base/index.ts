@@ -150,6 +150,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-shadow': 'off',
 		'eslint/no-shadow-restricted-names': 'error',
 		'eslint/no-sparse-arrays': 'error',
+		'eslint/no-template-curly-in-string': 'warn',
 		'eslint/no-ternary': 'off',
 		'eslint/no-this-before-super': 'off',
 		'eslint/no-throw-literal': 'error',

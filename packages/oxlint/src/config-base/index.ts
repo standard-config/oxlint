@@ -97,6 +97,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-iterator': 'off',
 		'eslint/no-label-var': 'off',
 		'eslint/no-labels': 'off',
+		'eslint/no-lone-blocks': 'off',
 		'eslint/no-lonely-if': 'warn',
 		'eslint/no-magic-numbers': 'off',
 		'eslint/no-misleading-character-class': 'error',

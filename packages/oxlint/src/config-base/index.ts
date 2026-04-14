@@ -95,6 +95,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-invalid-regexp': 'error',
 		'eslint/no-irregular-whitespace': 'off',
 		'eslint/no-iterator': 'off',
+		'eslint/no-label-var': 'off',
 		'eslint/no-labels': 'off',
 		'eslint/no-lonely-if': 'warn',
 		'eslint/no-magic-numbers': 'off',

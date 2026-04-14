@@ -111,6 +111,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-param-reassign': 'error',
 		'eslint/no-plusplus': 'off',
 		'eslint/no-promise-executor-return': 'error',
+		'eslint/no-prototype-builtins': 'off',
 		'eslint/no-redeclare': 'off',
 		'eslint/no-regex-spaces': 'error',
 		'eslint/no-restricted-globals': 'off',

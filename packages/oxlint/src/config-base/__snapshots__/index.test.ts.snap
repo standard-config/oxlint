@@ -144,6 +144,7 @@ exports[`is a valid Oxlint config 1`] = `
       "error",
       "always",
     ],
+    "eslint/no-script-url": "off",
     "eslint/no-self-assign": [
       "error",
       {

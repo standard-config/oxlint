@@ -16,7 +16,7 @@
 	"devDependencies": {
 		"@standard-config/eslint": "^2.1.0",
 		"@standard-config/oxlint": "workspace:*",
-		"@standard-config/prettier": "^1.12.0",
+		"@standard-config/prettier": "^1.12.1",
 		"@standard-config/tsconfig": "catalog:",
 		"@vitest/coverage-v8": "^4.1.4",
 		"eslint": "^10.2.0",

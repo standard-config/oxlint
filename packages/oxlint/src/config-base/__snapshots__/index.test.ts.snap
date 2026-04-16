@@ -472,7 +472,7 @@ exports[`is a valid Oxlint config 1`] = `
       "error",
       "record",
     ],
-    "typescript/consistent-return": "error",
+    "typescript/consistent-return": "off",
     "typescript/consistent-type-assertions": [
       "error",
       {

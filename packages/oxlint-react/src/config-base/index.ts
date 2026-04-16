@@ -110,7 +110,6 @@ const config: LinterConfigOverrideEntry = {
 		'react/state-in-constructor': 'off',
 		'react/style-prop-object': 'error',
 		'react/void-dom-elements-no-children': 'error',
-		'typescript/consistent-return': 'off',
 	},
 };
 

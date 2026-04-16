@@ -384,7 +384,7 @@ const config: LinterConfigEntry = {
 		'typescript/class-literal-property-style': ['error', 'fields'],
 		'typescript/consistent-generic-constructors': ['error', 'constructor'],
 		'typescript/consistent-indexed-object-style': ['error', 'record'],
-		'typescript/consistent-return': 'error',
+		'typescript/consistent-return': 'off',
 		'typescript/consistent-type-assertions': [
 			'error',
 			{ assertionStyle: 'as' },

@@ -10,7 +10,7 @@ catalog:
   oxlint: ^1.60.0
   oxlint-tsgolint: ^0.21.1
   publint: ^0.3.18
-  typescript: ^6.0.2
+  typescript: ^6.0.3
   vite-plus: ^0.1.18
   vitest: ^4.1.4
 

@@ -2,14 +2,6 @@
 
 exports[`defines a valid Oxlint config 1`] = `
 {
-  "categories": {
-    "correctness": "error",
-    "pedantic": "error",
-    "perf": "error",
-    "restriction": "error",
-    "style": "error",
-    "suspicious": "error",
-  },
   "env": {
     "browser": true,
     "node": true,
@@ -1005,14 +997,6 @@ exports[`defines a valid Oxlint config 1`] = `
 
 exports[`supports the \`react\` option 1`] = `
 {
-  "categories": {
-    "correctness": "error",
-    "pedantic": "error",
-    "perf": "error",
-    "restriction": "error",
-    "style": "error",
-    "suspicious": "error",
-  },
   "env": {
     "browser": true,
     "node": true,

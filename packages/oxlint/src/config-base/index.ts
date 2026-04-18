@@ -12,14 +12,6 @@ const config: LinterConfigEntry = {
 		'unicorn',
 		'vitest',
 	],
-	categories: {
-		correctness: 'error',
-		pedantic: 'error',
-		perf: 'error',
-		restriction: 'error',
-		style: 'error',
-		suspicious: 'error',
-	},
 	env: {
 		browser: true,
 		node: true,

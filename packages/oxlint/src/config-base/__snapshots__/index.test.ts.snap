@@ -2,14 +2,6 @@
 
 exports[`is a valid Oxlint config 1`] = `
 {
-  "categories": {
-    "correctness": "error",
-    "pedantic": "error",
-    "perf": "error",
-    "restriction": "error",
-    "style": "error",
-    "suspicious": "error",
-  },
   "env": {
     "browser": true,
     "node": true,

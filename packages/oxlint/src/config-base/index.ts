@@ -425,7 +425,7 @@ const config: LinterConfigEntry = {
 		'typescript/no-implied-eval': 'error',
 		'typescript/no-import-type-side-effects': 'error',
 		'typescript/no-inferrable-types': 'warn',
-		'typescript/no-invalid-void-type': 'error',
+		'typescript/no-invalid-void-type': 'off',
 		'typescript/no-meaningless-void-operator': 'warn',
 		'typescript/no-misused-new': 'error',
 		'typescript/no-misused-promises': [

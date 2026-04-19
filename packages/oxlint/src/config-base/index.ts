@@ -536,7 +536,7 @@ const config: LinterConfigEntry = {
 		'unicorn/new-for-builtins': 'error',
 		'unicorn/no-abusive-eslint-disable': 'error',
 		'unicorn/no-accessor-recursion': 'error',
-		'unicorn/no-anonymous-default-export': 'error',
+		'unicorn/no-anonymous-default-export': 'off',
 		'unicorn/no-array-callback-reference': 'off',
 		'unicorn/no-array-for-each': 'error',
 		'unicorn/no-array-method-this-argument': 'error',

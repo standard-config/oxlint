@@ -555,7 +555,7 @@ const config: LinterConfigEntry = {
 		'unicorn/no-invalid-fetch-options': 'error',
 		'unicorn/no-invalid-remove-event-listener': 'error',
 		'unicorn/no-length-as-slice-end': 'error',
-		'unicorn/no-lonely-if': 'error',
+		'unicorn/no-lonely-if': 'warn',
 		'unicorn/no-magic-array-flat-depth': 'error',
 		'unicorn/no-negation-in-equality-check': 'error',
 		'unicorn/no-nested-ternary': 'error',

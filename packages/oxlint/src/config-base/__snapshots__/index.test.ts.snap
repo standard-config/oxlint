@@ -623,6 +623,7 @@ exports[`is a valid Oxlint config 1`] = `
       "in-try-catch",
     ],
     "typescript/strict-boolean-expressions": "off",
+    "typescript/strict-void-return": "error",
     "typescript/switch-exhaustiveness-check": [
       "error",
       {

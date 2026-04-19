@@ -507,6 +507,7 @@ const config: LinterConfigEntry = {
 		],
 		'typescript/return-await': ['error', 'in-try-catch'],
 		'typescript/strict-boolean-expressions': 'off',
+		'typescript/strict-void-return': 'error',
 		'typescript/switch-exhaustiveness-check': [
 			'error',
 			{

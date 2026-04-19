@@ -154,10 +154,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-unneeded-ternary': 'warn',
 		'eslint/no-unreachable': 'warn',
 		'eslint/no-unsafe-finally': 'error',
-		'eslint/no-unsafe-negation': [
-			'error',
-			{ enforceForOrderingRelations: true },
-		],
+		'eslint/no-unsafe-negation': 'off',
 		'eslint/no-unsafe-optional-chaining': [
 			'error',
 			{ disallowArithmeticOperators: true },

@@ -156,7 +156,6 @@ exports[`defines a valid Oxlint config 1`] = `
         "vitest/prefer-to-be-object": "error",
         "vitest/require-awaited-expect-poll": "error",
         "vitest/require-local-test-context-for-concurrent-snapshots": "error",
-        "vitest/require-test-timeout": "off",
         "vitest/warn-todo": "warn",
       },
     },
@@ -980,6 +979,7 @@ exports[`defines a valid Oxlint config 1`] = `
     "vitest/require-awaited-expect-poll": "off",
     "vitest/require-local-test-context-for-concurrent-snapshots": "off",
     "vitest/require-mock-type-parameters": "off",
+    "vitest/require-test-timeout": "off",
     "vitest/warn-todo": "off",
   },
   "settings": {
@@ -1146,7 +1146,6 @@ exports[`supports the \`react\` option 1`] = `
         "vitest/prefer-to-be-object": "error",
         "vitest/require-awaited-expect-poll": "error",
         "vitest/require-local-test-context-for-concurrent-snapshots": "error",
-        "vitest/require-test-timeout": "off",
         "vitest/warn-todo": "warn",
       },
     },
@@ -2084,6 +2083,7 @@ exports[`supports the \`react\` option 1`] = `
     "vitest/require-awaited-expect-poll": "off",
     "vitest/require-local-test-context-for-concurrent-snapshots": "off",
     "vitest/require-mock-type-parameters": "off",
+    "vitest/require-test-timeout": "off",
     "vitest/warn-todo": "off",
   },
   "settings": {

@@ -99,7 +99,6 @@ const config: LinterConfigOverrideEntry = mergeConfig(configReactTestFiles, {
 		'vitest/prefer-to-be-object': 'error',
 		'vitest/require-awaited-expect-poll': 'error',
 		'vitest/require-local-test-context-for-concurrent-snapshots': 'error',
-		'vitest/require-test-timeout': 'off',
 		'vitest/warn-todo': 'warn',
 	},
 });

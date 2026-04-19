@@ -680,6 +680,7 @@ const config: LinterConfigEntry = {
 		'vitest/require-awaited-expect-poll': 'off',
 		'vitest/require-local-test-context-for-concurrent-snapshots': 'off',
 		'vitest/require-mock-type-parameters': 'off',
+		'vitest/require-test-timeout': 'off',
 		'vitest/warn-todo': 'off',
 	},
 };

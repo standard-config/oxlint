@@ -4,7 +4,6 @@ import mergeConfig from '@standard-config/utilities/merge-config';
 
 const config: LinterConfigOverrideEntry = mergeConfig(configReactTestFiles, {
 	rules: {
-		'eslint/no-alert': 'off',
 		'eslint/no-empty-function': 'off',
 		'eslint/no-param-reassign': 'off',
 		'eslint/no-promise-executor-return': 'off',

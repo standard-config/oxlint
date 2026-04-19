@@ -58,6 +58,7 @@ const config: LinterConfigEntry = {
 		'eslint/max-params': 'off',
 		'eslint/max-statements': 'off',
 		'eslint/new-cap': 'off',
+		'eslint/no-alert': 'off',
 		'eslint/no-array-constructor': 'error',
 		'eslint/no-async-promise-executor': 'error',
 		'eslint/no-await-in-loop': 'off',

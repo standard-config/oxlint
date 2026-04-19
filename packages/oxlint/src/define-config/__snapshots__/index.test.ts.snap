@@ -33,7 +33,6 @@ exports[`defines a valid Oxlint config 1`] = `
         "**/*.test-d.{ts,cts,mts}",
       ],
       "rules": {
-        "eslint/no-alert": "off",
         "eslint/no-empty-function": "off",
         "eslint/no-param-reassign": "off",
         "eslint/no-promise-executor-return": "off",
@@ -242,6 +241,7 @@ exports[`defines a valid Oxlint config 1`] = `
     "eslint/max-params": "off",
     "eslint/max-statements": "off",
     "eslint/new-cap": "off",
+    "eslint/no-alert": "off",
     "eslint/no-array-constructor": "error",
     "eslint/no-async-promise-executor": "error",
     "eslint/no-await-in-loop": "off",
@@ -1023,7 +1023,6 @@ exports[`supports the \`react\` option 1`] = `
         "**/*.test-d.{ts,cts,mts}",
       ],
       "rules": {
-        "eslint/no-alert": "off",
         "eslint/no-empty-function": "off",
         "eslint/no-param-reassign": "off",
         "eslint/no-promise-executor-return": "off",
@@ -1235,6 +1234,7 @@ exports[`supports the \`react\` option 1`] = `
     "eslint/max-params": "off",
     "eslint/max-statements": "off",
     "eslint/new-cap": "off",
+    "eslint/no-alert": "off",
     "eslint/no-array-constructor": "error",
     "eslint/no-async-promise-executor": "error",
     "eslint/no-await-in-loop": "off",

@@ -613,7 +613,7 @@ const config: LinterConfigEntry = {
 		'unicorn/prefer-event-target': 'error',
 		'unicorn/prefer-global-this': 'error',
 		'unicorn/prefer-import-meta-properties': 'error',
-		'unicorn/prefer-includes': 'error',
+		'unicorn/prefer-includes': 'off',
 		'unicorn/prefer-keyboard-event-key': 'error',
 		'unicorn/prefer-logical-operator-over-ternary': 'error',
 		'unicorn/prefer-math-min-max': 'error',

@@ -116,7 +116,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-multi-assign': 'error',
 		'eslint/no-multi-str': 'off',
 		'eslint/no-negated-condition': 'off',
-		'eslint/no-nested-ternary': 'error',
+		'eslint/no-nested-ternary': 'off',
 		'eslint/no-new': 'off',
 		'eslint/no-new-func': 'error',
 		'eslint/no-new-native-nonconstructor': 'off',

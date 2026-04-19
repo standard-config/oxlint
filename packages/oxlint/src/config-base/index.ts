@@ -640,7 +640,7 @@ const config: LinterConfigEntry = {
 		'unicorn/prefer-response-static-json': 'error',
 		'unicorn/prefer-set-has': 'error',
 		'unicorn/prefer-set-size': 'error',
-		'unicorn/prefer-spread': 'error',
+		'unicorn/prefer-spread': 'warn',
 		'unicorn/prefer-string-raw': 'error',
 		'unicorn/prefer-string-replace-all': 'error',
 		'unicorn/prefer-string-slice': 'error',

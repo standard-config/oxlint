@@ -40,6 +40,11 @@ const config: LinterConfigEntry = {
 		'eslint/default-param-last': 'error',
 		'eslint/eqeqeq': 'error',
 		'eslint/for-direction': 'error',
+		'eslint/func-name-matching': [
+			'error',
+			'never',
+			{ considerPropertyDescriptor: true },
+		],
 		'eslint/func-names': 'off',
 		'eslint/func-style': [
 			'error',

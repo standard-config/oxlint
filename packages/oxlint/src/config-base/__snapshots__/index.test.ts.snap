@@ -57,6 +57,7 @@ exports[`is a valid Oxlint config 1`] = `
         "allowArrowFunctions": true,
       },
     ],
+    "eslint/getter-return": "error",
     "eslint/grouped-accessor-pairs": [
       "error",
       "getBeforeSet",

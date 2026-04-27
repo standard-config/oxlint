@@ -46,6 +46,7 @@ const config: LinterConfigEntry = {
 			'declaration',
 			{ allowArrowFunctions: true },
 		],
+		'eslint/getter-return': 'error',
 		'eslint/grouped-accessor-pairs': ['error', 'getBeforeSet'],
 		'eslint/guard-for-in': 'error',
 		'eslint/id-length': 'off',

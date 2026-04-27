@@ -33,6 +33,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "**/*.test-d.{ts,cts,mts}",
       ],
       "rules": {
+        "eslint/getter-return": "off",
         "eslint/no-empty-function": "off",
         "eslint/no-param-reassign": "off",
         "eslint/no-promise-executor-return": "off",
@@ -225,6 +226,7 @@ exports[`defines a valid Oxlint config 1`] = `
         "allowArrowFunctions": true,
       },
     ],
+    "eslint/getter-return": "error",
     "eslint/grouped-accessor-pairs": [
       "error",
       "getBeforeSet",
@@ -1024,6 +1026,7 @@ exports[`supports the \`react\` option 1`] = `
         "**/*.test-d.{ts,cts,mts}",
       ],
       "rules": {
+        "eslint/getter-return": "off",
         "eslint/no-empty-function": "off",
         "eslint/no-param-reassign": "off",
         "eslint/no-promise-executor-return": "off",
@@ -1219,6 +1222,7 @@ exports[`supports the \`react\` option 1`] = `
         "allowArrowFunctions": true,
       },
     ],
+    "eslint/getter-return": "error",
     "eslint/grouped-accessor-pairs": [
       "error",
       "getBeforeSet",

@@ -156,6 +156,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-unassigned-vars': 'error',
 		'eslint/no-undef': 'off',
 		'eslint/no-undefined': 'off',
+		'eslint/no-underscore-dangle': 'off',
 		'eslint/no-unexpected-multiline': 'off',
 		'eslint/no-unmodified-loop-condition': 'error',
 		'eslint/no-unneeded-ternary': 'warn',

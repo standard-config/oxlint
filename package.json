@@ -18,7 +18,7 @@
 		"@standard-config/oxlint": "workspace:*",
 		"@standard-config/prettier": "^1.12.1",
 		"@standard-config/tsconfig": "catalog:",
-		"@vitest/coverage-v8": "^4.1.4",
+		"@vitest/coverage-v8": "^4.1.5",
 		"eslint": "^10.2.1",
 		"oxlint": "catalog:",
 		"oxlint-tsgolint": "catalog:",

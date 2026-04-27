@@ -138,6 +138,7 @@ const config: LinterConfigEntry = {
 		'eslint/no-prototype-builtins': 'off',
 		'eslint/no-redeclare': 'off',
 		'eslint/no-regex-spaces': 'error',
+		'eslint/no-restricted-exports': 'off',
 		'eslint/no-restricted-globals': 'off',
 		'eslint/no-restricted-imports': 'off',
 		'eslint/no-return-assign': ['error', 'always'],

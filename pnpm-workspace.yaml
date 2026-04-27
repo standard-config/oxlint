@@ -7,7 +7,7 @@ blockExoticSubdeps: true
 
 catalog:
   '@standard-config/tsconfig': ^3.1.0
-  oxlint: ^1.61.0
+  oxlint: ^1.62.0
   oxlint-tsgolint: ^0.22.0
   publint: ^0.3.18
   typescript: ^6.0.3

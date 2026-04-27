@@ -288,6 +288,7 @@ const config: LinterConfigEntry = {
 		'jest/prefer-each': 'off',
 		'jest/prefer-ending-with-an-expect': 'off',
 		'jest/prefer-equality-matcher': 'off',
+		'jest/prefer-expect-assertions': 'off',
 		'jest/prefer-expect-resolves': 'off',
 		'jest/prefer-hooks-in-order': 'off',
 		'jest/prefer-hooks-on-top': 'off',

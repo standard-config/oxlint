@@ -400,6 +400,10 @@ const config: LinterConfigEntry = {
 		],
 		'typescript/dot-notation': 'warn',
 		'typescript/explicit-function-return-type': 'off',
+		'typescript/explicit-member-accessibility': [
+			'error',
+			{ accessibility: 'no-public' },
+		],
 		'typescript/explicit-module-boundary-types': [
 			'error',
 			{ allowArgumentsExplicitlyTypedAsAny: true },

@@ -179,6 +179,7 @@ const config: LinterConfigEntry = {
 			},
 		],
 		'eslint/no-use-before-define': 'off',
+		'eslint/no-useless-assignment': 'warn',
 		'eslint/no-useless-backreference': 'error',
 		'eslint/no-useless-call': 'error',
 		'eslint/no-useless-catch': 'error',

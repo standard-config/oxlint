@@ -8,6 +8,7 @@ const config: LinterConfigOverrideEntry = mergeConfig(configReactTestFiles, {
 		'eslint/no-empty-function': 'off',
 		'eslint/no-param-reassign': 'off',
 		'eslint/no-promise-executor-return': 'off',
+		'eslint/no-useless-assignment': 'off',
 		'import/no-unassigned-import': 'off',
 		'import/unambiguous': 'off',
 		'jest/expect-expect': 'warn',

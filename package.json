@@ -12,7 +12,7 @@
 	"engines": {
 		"node": ">=24"
 	},
-	"packageManager": "pnpm@10.33.0",
+	"packageManager": "pnpm@11.0.3",
 	"devDependencies": {
 		"@standard-config/eslint": "^2.2.0",
 		"@standard-config/oxlint": "workspace:*",

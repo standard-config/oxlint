@@ -1,7 +1,7 @@
 import type { OxlintConfigEntry } from '@standard-config/utilities/types';
 
 /**
- * Base config entry.
+ * Base config entry. No overrides included.
  */
 const config: OxlintConfigEntry = {
 	plugins: [

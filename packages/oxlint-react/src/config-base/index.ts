@@ -1,7 +1,7 @@
 import type { OxlintConfigEntry } from '@standard-config/utilities/types';
 
 /**
- * Base config entry containing React-related rules.
+ * Base config entry containing React-related rules. No overrides included.
  */
 const config: OxlintConfigEntry = {
 	plugins: [

@@ -1,6 +1,10 @@
-import type { LinterConfigOverrideEntry } from '@standard-config/utilities/types';
+import type { OxlintConfigOverrideEntry } from '@standard-config/utilities/types';
 
-const config: LinterConfigOverrideEntry = {
+/**
+ * Optional config entry containing rules that target config files. Intended for
+ * explicit overrides.
+ */
+const config: OxlintConfigOverrideEntry = {
 	rules: {
 		'import/no-anonymous-default-export': ['error', { allowObject: true }],
 		'import/no-unassigned-import': 'off',

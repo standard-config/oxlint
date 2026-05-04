@@ -1,6 +1,9 @@
-import type { LinterConfigOverrideEntry } from '@standard-config/utilities/types';
+import type { OxlintConfigEntry } from '@standard-config/utilities/types';
 
-const config: LinterConfigOverrideEntry = {
+/**
+ * Base config entry containing React-related rules.
+ */
+const config: OxlintConfigEntry = {
 	plugins: [
 		/* prettier-ignore */
 		'jsx-a11y',

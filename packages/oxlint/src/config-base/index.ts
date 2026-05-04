@@ -1,6 +1,9 @@
-import type { LinterConfigEntry } from '@standard-config/utilities/types';
+import type { OxlintConfigEntry } from '@standard-config/utilities/types';
 
-const config: LinterConfigEntry = {
+/**
+ * Base config entry.
+ */
+const config: OxlintConfigEntry = {
 	plugins: [
 		'eslint',
 		'import',

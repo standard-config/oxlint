@@ -1,8 +1,12 @@
-import type { LinterConfigOverrideEntry } from '@standard-config/utilities/types';
+import type { OxlintConfigOverrideEntry } from '@standard-config/utilities/types';
 import { configReactTestFiles } from '@standard-config/oxlint-react';
 import mergeConfig from '@standard-config/utilities/merge-config';
 
-const config: LinterConfigOverrideEntry = mergeConfig(configReactTestFiles, {
+/**
+ * Optional config entry containing rules that target test files. Intended for
+ * explicit overrides.
+ */
+const config: OxlintConfigOverrideEntry = mergeConfig(configReactTestFiles, {
 	rules: {
 		'eslint/getter-return': 'off',
 		'eslint/no-empty-function': 'off',

@@ -1,13 +1,13 @@
 import type {
-	LinterConfigEntry,
-	LinterConfigOverrideEntry,
+	OxlintConfigEntry,
+	OxlintConfigOverrideEntry,
 	StandardConfig,
 } from './index.d.ts';
 import { expectTypeOf, test } from 'vitest';
 
 test('exposes valid types', () => {
-	expectTypeOf<LinterConfigEntry>().toBeObject();
-	expectTypeOf<LinterConfigOverrideEntry>().toBeObject();
+	expectTypeOf<OxlintConfigEntry>().toBeObject();
+	expectTypeOf<OxlintConfigOverrideEntry>().toBeObject();
 
 	expectTypeOf<StandardConfig>().toBeObject();
 	expectTypeOf<StandardConfig>().toHaveProperty('react');

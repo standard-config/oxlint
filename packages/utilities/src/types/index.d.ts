@@ -1,11 +1,11 @@
 import type { OxlintConfig, OxlintOverride } from 'oxlint';
 
-export type LinterConfigEntry = Omit<
+export type OxlintConfigEntry = Omit<
 	OxlintConfig,
 	'categories' | 'files' | 'ignorePatterns' | 'overrides'
 >;
 
-export type LinterConfigOverrideEntry = Omit<
+export type OxlintConfigOverrideEntry = Omit<
 	OxlintOverride,
 	'categories' | 'files'
 >;

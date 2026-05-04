@@ -2,17 +2,17 @@
 
 import type { OxlintConfig } from 'oxlint';
 import type {
-	LinterConfigEntry,
-	LinterConfigOverrideEntry,
+	OxlintConfigEntry,
+	OxlintConfigOverrideEntry,
 } from '../types/index.ts';
 import clone from '../clone/index.ts';
 
 export default function mergeConfig(
 	baseConfig: OxlintConfig,
 	extensionConfig:
-		| LinterConfigEntry
-		| LinterConfigOverrideEntry
 		| OxlintConfig
+		| OxlintConfigEntry
+		| OxlintConfigOverrideEntry
 ): OxlintConfig {
 	if (!(isObject(baseConfig) && isObject(extensionConfig))) {
 		throw new TypeError(

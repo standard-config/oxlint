@@ -1,4 +1,5 @@
 import type { OxlintConfig } from 'oxlint';
+import { GLOB_SET_TEST_FILES } from '@standard-config/utilities/constants';
 import mergeConfig from '@standard-config/utilities/merge-config';
 import configReactBase from '../config-base/index.ts';
 import configReactTestFiles from '../config-test-files/index.ts';
@@ -9,11 +10,7 @@ import configReactTestFiles from '../config-test-files/index.ts';
 const config: OxlintConfig = mergeConfig(configReactBase, {
 	overrides: [
 		{
-			files: [
-				/* prettier-ignore */
-				'**/*.test.{ts,tsx,cts,mts}',
-				'**/*.test-d.{ts,cts,mts}',
-			],
+			files: GLOB_SET_TEST_FILES,
 			...configReactTestFiles,
 		},
 	],

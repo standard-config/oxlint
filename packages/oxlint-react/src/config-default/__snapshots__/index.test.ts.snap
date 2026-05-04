@@ -5,7 +5,7 @@ exports[`is a valid Oxlint config 1`] = `
   "overrides": [
     {
       "files": [
-        "**/*.test.{ts,tsx,cts,mts}",
+        "**/*.test.{js,jsx,ts,tsx,cjs,cts,mjs,mts}",
         "**/*.test-d.{ts,cts,mts}",
       ],
       "rules": {

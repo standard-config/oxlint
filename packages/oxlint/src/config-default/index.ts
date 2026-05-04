@@ -1,4 +1,9 @@
 import type { OxlintConfig } from 'oxlint';
+import {
+	GLOB_SET_CONFIG_FILES,
+	GLOB_SET_TEST_FILES,
+	GLOB_SET_TYPE_DEFINITIONS,
+} from '@standard-config/utilities/constants';
 import mergeConfig from '@standard-config/utilities/merge-config';
 import configBase from '../config-base/index.ts';
 import configConfigFiles from '../config-config-files/index.ts';
@@ -11,27 +16,15 @@ import configTypeDefinitions from '../config-type-definitions/index.ts';
 const config: OxlintConfig = mergeConfig(configBase, {
 	overrides: [
 		{
-			files: [
-				/* prettier-ignore */
-				'**/*.d.{ts,cts,mts}',
-				'**/*.test-d.{ts,cts,mts}',
-			],
+			files: GLOB_SET_TYPE_DEFINITIONS,
 			...configTypeDefinitions,
 		},
 		{
-			files: [
-				/* prettier-ignore */
-				'**/*.test.{ts,tsx,cts,mts}',
-				'**/*.test-d.{ts,cts,mts}',
-			],
+			files: GLOB_SET_TEST_FILES,
 			...configTestFiles,
 		},
 		{
-			files: [
-				/* prettier-ignore */
-				'**/*.config.{ts,cts,mts}',
-				'**/*.setup.{ts,cts,mts}',
-			],
+			files: GLOB_SET_CONFIG_FILES,
 			...configConfigFiles,
 		},
 	],

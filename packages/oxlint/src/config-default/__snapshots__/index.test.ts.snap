@@ -29,7 +29,7 @@ exports[`is a valid Oxlint config 1`] = `
     },
     {
       "files": [
-        "**/*.test.{ts,tsx,cts,mts}",
+        "**/*.test.{js,jsx,ts,tsx,cjs,cts,mjs,mts}",
         "**/*.test-d.{ts,cts,mts}",
       ],
       "rules": {
@@ -149,8 +149,8 @@ exports[`is a valid Oxlint config 1`] = `
     },
     {
       "files": [
-        "**/*.config.{ts,cts,mts}",
-        "**/*.setup.{ts,cts,mts}",
+        "**/*.config.{js,ts,cjs,cts,mjs,mts}",
+        "**/*.setup.{js,ts,cjs,cts,mjs,mts}",
       ],
       "rules": {
         "import/no-anonymous-default-export": [

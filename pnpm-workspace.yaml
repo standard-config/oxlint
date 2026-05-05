@@ -5,7 +5,7 @@ autoInstallPeers: false
 
 catalog:
   '@standard-config/tsconfig': ^3.1.0
-  oxlint: ^1.62.0
+  oxlint: ^1.63.0
   oxlint-tsgolint: ^0.22.1
   publint: ^0.3.18
   typescript: ^6.0.3

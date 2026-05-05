@@ -218,6 +218,7 @@ const config: OxlintConfigEntry = {
 		'eslint/preserve-caught-error': 'error',
 		'eslint/radix': 'error',
 		'eslint/require-await': 'off',
+		'eslint/require-unicode-regexp': 'off',
 		'eslint/require-yield': 'error',
 		'eslint/sort-imports': 'off',
 		'eslint/sort-keys': 'off',

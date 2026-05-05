@@ -59,6 +59,7 @@ const config: OxlintConfigEntry = {
 		'eslint/guard-for-in': 'error',
 		'eslint/id-length': 'off',
 		'eslint/init-declarations': 'off',
+		'eslint/logical-assignment-operators': 'off',
 		'eslint/max-classes-per-file': 'off',
 		'eslint/max-depth': 'off',
 		'eslint/max-lines': 'off',

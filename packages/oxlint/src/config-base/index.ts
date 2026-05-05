@@ -145,6 +145,7 @@ const config: OxlintConfigEntry = {
 		'eslint/no-restricted-exports': 'off',
 		'eslint/no-restricted-globals': 'off',
 		'eslint/no-restricted-imports': 'off',
+		'eslint/no-restricted-properties': 'off',
 		'eslint/no-return-assign': ['error', 'always'],
 		'eslint/no-script-url': 'off',
 		'eslint/no-self-assign': ['error', { props: true }],

@@ -89,6 +89,7 @@ const config: OxlintConfigEntry = {
 		'react/no-danger': 'error',
 		'react/no-danger-with-children': 'error',
 		'react/no-did-mount-set-state': 'off',
+		'react/no-did-update-set-state': 'off',
 		'react/no-direct-mutation-state': 'off',
 		'react/no-find-dom-node': 'off',
 		'react/no-is-mounted': 'off',

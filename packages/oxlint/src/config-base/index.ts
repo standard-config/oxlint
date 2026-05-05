@@ -574,6 +574,7 @@ const config: OxlintConfigEntry = {
 		'unicorn/no-length-as-slice-end': 'error',
 		'unicorn/no-lonely-if': 'warn',
 		'unicorn/no-magic-array-flat-depth': 'error',
+		'unicorn/no-negated-condition': 'off',
 		'unicorn/no-negation-in-equality-check': 'error',
 		'unicorn/no-nested-ternary': 'error',
 		'unicorn/no-new-array': 'error',

@@ -50,6 +50,7 @@ const config: OxlintConfigEntry = {
 		'react/checked-requires-onchange-or-readonly': 'error',
 		'react/display-name': 'off',
 		'react/exhaustive-deps': 'error',
+		'react/forbid-component-props': 'off',
 		'react/forbid-dom-props': 'off',
 		'react/forbid-elements': 'off',
 		'react/forward-ref-uses-ref': 'off',

@@ -36,7 +36,7 @@
 	"exports": "./dist/index.mjs",
 	"types": "./dist/index.d.mts",
 	"engines": {
-		"node": ">=20"
+		"node": ">=22"
 	},
 	"peerDependencies": {
 		"oxlint": "^1.63.0",

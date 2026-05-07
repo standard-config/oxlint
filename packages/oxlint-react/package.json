@@ -10,6 +10,18 @@
 	"type": "module",
 	"sideEffects": false,
 	"exports": "./src/index.ts",
+	"engines": {
+		"node": ">=22"
+	},
+	"peerDependencies": {
+		"@standard-config/oxlint": "*",
+		"oxlint": "^1.63.0"
+	},
+	"peerDependenciesMeta": {
+		"@standard-config/oxlint": {
+			"optional": true
+		}
+	},
 	"devDependencies": {
 		"@standard-config/tsconfig": "catalog:",
 		"@standard-config/utilities": "workspace:*",

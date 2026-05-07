@@ -3,10 +3,10 @@ import * as exports from './index.ts';
 
 test('exposes correct public API', () => {
 	expect({ ...exports }).toStrictEqual({
-		configBase: expect.any(Object),
-		configConfigFiles: expect.any(Object),
-		configTestFiles: expect.any(Object),
-		configTypeDefinitions: expect.any(Object),
+		configCoreBase: expect.any(Object),
+		configCoreConfigFiles: expect.any(Object),
+		configCoreTestFiles: expect.any(Object),
+		configCoreTypeDefinitions: expect.any(Object),
 		default: expect.any(Object),
 		defineConfig: expect.any(Function),
 		defineOxlintConfig: expect.any(Function),

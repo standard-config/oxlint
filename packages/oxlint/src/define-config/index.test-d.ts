@@ -22,23 +22,3 @@ test('defines a valid Oxlint config', () => {
 	expectTypeOf(oxlintDefineConfig).toBeCallableWith(config);
 	expectTypeOf(viteDefineConfig).toBeCallableWith({ lint: config });
 });
-
-test('supports the `react` option', () => {
-	let config = defineConfig({ react: true });
-
-	expectTypeOf(config).toEqualTypeOf<OxlintConfig>();
-	expectTypeOf(oxlintDefineConfig).toBeCallableWith(config);
-	expectTypeOf(viteDefineConfig).toBeCallableWith({ lint: config });
-
-	config = defineConfig({
-		react: true,
-		ignorePatterns: ['fixtures/**'],
-		options: {
-			typeCheck: true,
-		},
-	});
-
-	expectTypeOf(config).toEqualTypeOf<OxlintConfig>();
-	expectTypeOf(oxlintDefineConfig).toBeCallableWith(config);
-	expectTypeOf(viteDefineConfig).toBeCallableWith({ lint: config });
-});

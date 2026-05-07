@@ -1,13 +1,26 @@
-import { expect, test } from 'vitest';
-import defineConfig from './index.ts';
+import { beforeEach, expect, test, vi } from 'vitest';
+import configCore from '../config-default/index.ts';
 
-test('defines a valid Oxlint config', () => {
+beforeEach(() => {
+	vi.resetModules();
+});
+
+test('defines a valid Oxlint config', async () => {
+	/* @ts-expect-error */
+	vi.doMock('@standard-config/oxlint-react', () => undefined);
+
+	const { default: defineConfig } = await import('./index.ts');
+
 	let config = defineConfig();
 
-	expect(config).toHaveProperty('rules', expect.any(Object));
-	expect(config.rules).toHaveProperty('unicorn/no-null', 'off');
-	expect(config.rules).not.toHaveProperty('react/jsx-key');
-	expect(config).toMatchSnapshot();
+	expect(config).toStrictEqual(configCore);
+	expect(config).not.toHaveProperty('jsPlugins');
+	expect(config).toHaveProperty(
+		'rules',
+		expect.objectContaining({
+			'unicorn/no-null': 'off',
+		})
+	);
 
 	config = defineConfig({
 		ignorePatterns: ['fixtures/**'],
@@ -16,11 +29,17 @@ test('defines a valid Oxlint config', () => {
 		},
 	});
 
-	expect(config).toHaveProperty('ignorePatterns', expect.any(Array));
-	expect(config.ignorePatterns).toContain('fixtures/**');
-	expect(config).toHaveProperty('rules', expect.any(Object));
-	expect(config.rules).toHaveProperty('unicorn/no-null', 'error');
-	expect(config.rules).not.toHaveProperty('react/jsx-key');
+	expect(config).toHaveProperty(
+		'ignorePatterns',
+		expect.arrayContaining(['fixtures/**'])
+	);
+	expect(config).not.toHaveProperty('jsPlugins');
+	expect(config).toHaveProperty(
+		'rules',
+		expect.objectContaining({
+			'unicorn/no-null': 'error',
+		})
+	);
 
 	config = defineConfig(
 		{
@@ -37,28 +56,34 @@ test('defines a valid Oxlint config', () => {
 		}
 	);
 
-	expect(config).toHaveProperty('ignorePatterns', expect.any(Array));
-	expect(config.ignorePatterns).toContain('fixtures/**');
-	expect(config).toHaveProperty('rules', expect.any(Object));
-	expect(config.rules).toHaveProperty('unicorn/no-null', 'error');
-	expect(config.rules).toHaveProperty(
-		'unicorn/no-useless-undefined',
-		'error'
+	expect(config).toHaveProperty(
+		'ignorePatterns',
+		expect.arrayContaining(['fixtures/**'])
 	);
-	expect(config.rules).not.toHaveProperty('react/jsx-key');
+	expect(config).not.toHaveProperty('jsPlugins');
+	expect(config).toHaveProperty(
+		'rules',
+		expect.objectContaining({
+			'unicorn/no-null': 'error',
+			'unicorn/no-useless-undefined': 'error',
+		})
+	);
 });
 
-test('supports the `react` option', () => {
-	const config = defineConfig({ react: true });
+test('includes `@standard-config/oxlint-react` when it’s available', async () => {
+	vi.doUnmock('@standard-config/oxlint-react');
 
-	expect(config).not.toStrictEqual(defineConfig());
-	expect(config).not.toHaveProperty('react');
-	expect(config.rules).toHaveProperty('unicorn/no-null', 'off');
-	expect(config.rules).toHaveProperty('react/jsx-key');
-	expect(config).toMatchSnapshot();
+	const { default: defineConfig } = await import('./index.ts');
 
-	expect(defineConfig({}, { react: true }, {})).toStrictEqual(config);
-	expect(defineConfig({}, { react: true }, { react: false })).toStrictEqual(
-		defineConfig()
+	const config = defineConfig();
+
+	expect(config).not.toStrictEqual(configCore);
+	expect(config).toHaveProperty(
+		'rules',
+		expect.objectContaining({
+			'react/jsx-key': 'error',
+			'unicorn/no-null': 'off',
+		})
 	);
+	expect(config).toMatchSnapshot();
 });

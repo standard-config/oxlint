@@ -39,10 +39,14 @@
 		"node": ">=22"
 	},
 	"peerDependencies": {
+		"@standard-config/oxlint-react": "*",
 		"oxlint": "^1.63.0",
 		"oxlint-tsgolint": "^0.22.1"
 	},
 	"peerDependenciesMeta": {
+		"@standard-config/oxlint-react": {
+			"optional": true
+		},
 		"oxlint-tsgolint": {
 			"optional": true
 		}

@@ -1,30 +1,31 @@
-import type { StandardConfig } from '@standard-config/utilities/types';
 import type { OxlintConfig } from 'oxlint';
-import configReact from '@standard-config/oxlint-react';
 import mergeConfig from '@standard-config/utilities/merge-config';
 import { defineConfig as oxlintDefineConfig } from 'oxlint';
 import configCore from '../config-default/index.ts';
 
-export default function defineConfig(
-	...configs: StandardConfig[]
-): OxlintConfig {
-	let extensionConfig: OxlintConfig = {};
-	let includeReactConfig = false;
+const SUPPLEMENTAL_CONFIGS: OxlintConfig[] = [];
 
-	for (const config of configs) {
-		const { react, ...otherConfig } = config;
+for (const config of ['@standard-config/oxlint-react'] as const) {
+	let resolvedConfig: OxlintConfig | undefined;
 
-		extensionConfig = mergeConfig(extensionConfig, otherConfig);
+	try {
+		/* oxlint-disable-next-line typescript/no-unsafe-assignment */
+		const module = await import(config);
+		/* oxlint-disable-next-line typescript/no-unsafe-member-access */
+		resolvedConfig = module.default as OxlintConfig;
+	} catch {}
 
-		if (react !== undefined) {
-			includeReactConfig = react;
-		}
+	if (typeof resolvedConfig === 'object') {
+		SUPPLEMENTAL_CONFIGS.push(resolvedConfig);
+	}
+}
+
+export default function defineConfig(...configs: OxlintConfig[]): OxlintConfig {
+	let mergedConfig: OxlintConfig = {};
+
+	for (const config of [configCore, ...SUPPLEMENTAL_CONFIGS, ...configs]) {
+		mergedConfig = mergeConfig(mergedConfig, config);
 	}
 
-	const baseConfig = includeReactConfig
-		? mergeConfig(configCore, configReact)
-		: configCore;
-
-	const extendedConfig = mergeConfig(baseConfig, extensionConfig);
-	return oxlintDefineConfig(extendedConfig);
+	return oxlintDefineConfig(mergedConfig);
 }

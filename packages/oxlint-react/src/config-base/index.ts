@@ -65,7 +65,10 @@ const config: OxlintConfigEntry = {
 				props: 'never',
 			},
 		],
-		'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
+		'react/jsx-filename-extension': [
+			'error',
+			{ extensions: ['.tsx', '.jsx'] },
+		],
 		'react/jsx-fragments': 'error',
 		'react/jsx-handler-names': 'error',
 		'react/jsx-key': 'error',

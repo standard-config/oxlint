@@ -17,14 +17,12 @@ test('aliases `defineConfig`', () => {
 	expect(defineConfig).toHaveBeenCalledExactlyOnceWith();
 
 	defineOxlintConfig({
-		react: true,
 		options: {
 			typeCheck: true,
 		},
 	});
 
 	expect(defineConfig).toHaveBeenCalledWith({
-		react: true,
 		options: {
 			typeCheck: true,
 		},

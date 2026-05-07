@@ -11,11 +11,3 @@ export type OxlintConfigOverrideEntry = Omit<
 >;
 
 export type OxlintConfigGlobSet = OxlintOverride['files'];
-
-export type StandardConfig = OxlintConfig & {
-	/**
-	 * Enable React-specific rules.
-	 * @default false
-	 */
-	react?: boolean;
-};

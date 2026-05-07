@@ -67,6 +67,7 @@ exports[`is a valid Oxlint config 1`] = `
       {
         "extensions": [
           ".tsx",
+          ".jsx",
         ],
       },
     ],

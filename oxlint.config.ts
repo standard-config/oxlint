@@ -1,14 +1,11 @@
-import {
-	oxlintConfigBase,
-	oxlintConfigConfigFiles,
-} from '@standard-config/eslint/utilities';
 import { defineConfig } from '@standard-config/oxlint';
+import { configStylisticConfigFiles } from '@standard-config/oxlint-stylistic';
 
-export default defineConfig(oxlintConfigBase, {
+export default defineConfig({
 	overrides: [
 		{
 			files: ['**/config-*/index.ts'],
-			...oxlintConfigConfigFiles,
+			...configStylisticConfigFiles,
 		},
 	],
 });

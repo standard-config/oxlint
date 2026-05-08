@@ -1,0 +1,65 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`is a valid Oxlint config override 1`] = `
+{
+  "rules": {
+    "perfectionist/sort-objects": [
+      "error",
+      {
+        "customGroups": [
+          {
+            "elementNamePattern": "^extends$",
+            "groupName": "extends",
+          },
+          {
+            "elementNamePattern": "^files$",
+            "groupName": "files",
+          },
+          {
+            "elementNamePattern": "^(ignores|ignorePatterns)$",
+            "groupName": "ignores",
+          },
+          {
+            "elementNamePattern": "^(name|groupName)$",
+            "groupName": "name",
+          },
+          {
+            "elementNamePattern": "^overrides$",
+            "groupName": "overrides",
+          },
+          {
+            "elementNamePattern": "^parser$",
+            "groupName": "parser",
+          },
+          {
+            "elementNamePattern": "^plugins$",
+            "groupName": "plugins",
+          },
+          {
+            "elementNamePattern": "^rules$",
+            "groupName": "rules",
+          },
+          {
+            "elementNamePattern": "^(test|tests)$",
+            "groupName": "test",
+          },
+        ],
+        "groups": [
+          "name",
+          "files",
+          "extends",
+          "ignores",
+          "plugins",
+          "parser",
+          "test",
+          "unknown",
+          "rules",
+          "overrides",
+        ],
+        "newlinesBetween": 0,
+        "type": "natural",
+      },
+    ],
+  },
+}
+`;

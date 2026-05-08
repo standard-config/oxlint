@@ -5,7 +5,10 @@ import configCore from '../config-default/index.ts';
 
 const SUPPLEMENTAL_CONFIGS: OxlintConfig[] = [];
 
-for (const config of ['@standard-config/oxlint-react'] as const) {
+for (const config of [
+	'@standard-config/oxlint-react',
+	'@standard-config/oxlint-stylistic',
+] as const) {
 	let resolvedConfig: OxlintConfig | undefined;
 
 	try {

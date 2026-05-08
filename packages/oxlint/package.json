@@ -40,11 +40,15 @@
 	},
 	"peerDependencies": {
 		"@standard-config/oxlint-react": "*",
+		"@standard-config/oxlint-stylistic": "*",
 		"oxlint": "^1.63.0",
 		"oxlint-tsgolint": "^0.22.1"
 	},
 	"peerDependenciesMeta": {
 		"@standard-config/oxlint-react": {
+			"optional": true
+		},
+		"@standard-config/oxlint-stylistic": {
 			"optional": true
 		},
 		"oxlint-tsgolint": {
@@ -53,6 +57,7 @@
 	},
 	"devDependencies": {
 		"@standard-config/oxlint-react": "workspace:*",
+		"@standard-config/oxlint-stylistic": "workspace:*",
 		"@standard-config/tsconfig": "catalog:",
 		"@standard-config/utilities": "workspace:*",
 		"oxlint": "catalog:",

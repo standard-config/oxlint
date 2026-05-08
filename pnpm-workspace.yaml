@@ -5,6 +5,7 @@ autoInstallPeers: false
 
 catalog:
   '@standard-config/tsconfig': ^3.1.0
+  '@types/node': ^22.19.18
   oxlint: ^1.63.0
   oxlint-tsgolint: ^0.22.1
   publint: ^0.3.19
@@ -22,6 +23,7 @@ minimumReleaseAgeExclude:
   - oxlint-tsgolint
 
 overrides:
+  '@types/node>undici-types': '-'
   vite-plus>oxfmt: '-'
   vite-plus>oxlint: '-'
   vite-plus>oxlint-tsgolint: '-'

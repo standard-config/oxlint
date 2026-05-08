@@ -1,4 +1,4 @@
-import type { OxlintConfig, OxlintOverride } from 'oxlint';
+import type { ExternalPluginEntry, OxlintConfig, OxlintOverride } from 'oxlint';
 
 export type OxlintConfigEntry = Omit<
 	OxlintConfig,
@@ -11,3 +11,5 @@ export type OxlintConfigOverrideEntry = Omit<
 >;
 
 export type OxlintConfigGlobSet = OxlintOverride['files'];
+
+export type OxlintConfigPluginEntry = Exclude<ExternalPluginEntry, string>;

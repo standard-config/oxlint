@@ -1,4 +1,4 @@
-import { defineConfig } from '@standard-config/oxlint';
+import { configCoreTestFiles, defineConfig } from '@standard-config/oxlint';
 import { configStylisticConfigFiles } from '@standard-config/oxlint-stylistic';
 
 export default defineConfig({
@@ -6,6 +6,10 @@ export default defineConfig({
 		{
 			files: ['**/config-*/index.ts'],
 			...configStylisticConfigFiles,
+		},
+		{
+			files: ['**/mocks/**/*.ts'],
+			...configCoreTestFiles,
 		},
 	],
 });

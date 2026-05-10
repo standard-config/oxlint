@@ -10,7 +10,8 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/standard-config/oxlint.git"
+		"url": "git+https://github.com/standard-config/oxlint.git",
+		"directory": "packages/oxlint"
 	},
 	"keywords": [
 		"eslint-config-xo",
@@ -22,10 +23,12 @@
 		"oxlint-tsgolint",
 		"react",
 		"standard-config",
+		"standard-config-oxlint",
+		"stylistic",
 		"type-aware",
 		"typescript",
-		"vite-plus",
 		"vite+",
+		"vite-plus",
 		"xo"
 	],
 	"files": [
@@ -68,8 +71,7 @@
 	},
 	"scripts": {
 		"build": "vp pack",
-		"prepack": "pnpm --workspace-root run '/^(format:check|lint:check|test)$/' && pnpm build && cp ../../LICENSE LICENSE && cp ../../README.md README.md",
-		"postpack": "rm LICENSE README.md",
+		"prepack": "pnpm --workspace-root prepack && pnpm build",
 		"test": "vitest run",
 		"typecheck": "tsc --noEmit"
 	}

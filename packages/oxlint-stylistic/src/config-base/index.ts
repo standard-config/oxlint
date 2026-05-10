@@ -1,5 +1,5 @@
 import type { OxlintConfigEntry } from '@standard-config/utilities/types';
-import resolvePlugin from '@standard-config/utilities/transform-plugin';
+import resolvePlugin from '@standard-config/utilities/resolve-plugin';
 
 /**
  * Base config entry containing stylistic rules. No overrides included.

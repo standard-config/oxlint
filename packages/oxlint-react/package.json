@@ -1,15 +1,42 @@
 {
 	"name": "@standard-config/oxlint-react",
 	"version": "0.0.0",
-	"private": true,
+	"description": "Curated Oxlint config with sensible React defaults",
+	"license": "MIT",
 	"author": {
 		"name": "Dom Porada",
 		"email": "dom@dom.engineering",
 		"url": "https://dom.engineering"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/standard-config/oxlint.git",
+		"directory": "packages/oxlint-react"
+	},
+	"keywords": [
+		"eslint-config-xo",
+		"eslint-config-xo-react",
+		"jsx",
+		"jsx-a11y",
+		"linter",
+		"oxc",
+		"oxlint",
+		"oxlint-config",
+		"react",
+		"react-hooks",
+		"react-x",
+		"standard-config",
+		"standard-config-oxlint",
+		"typescript",
+		"xo"
+	],
+	"files": [
+		"dist/**"
+	],
 	"type": "module",
 	"sideEffects": false,
-	"exports": "./src/index.ts",
+	"exports": "./dist/index.mjs",
+	"types": "./dist/index.d.mts",
 	"engines": {
 		"node": ">=22"
 	},
@@ -26,10 +53,14 @@
 		"@standard-config/tsconfig": "catalog:",
 		"@standard-config/utilities": "workspace:*",
 		"oxlint": "catalog:",
+		"publint": "catalog:",
 		"typescript": "catalog:",
+		"vite-plus": "catalog:",
 		"vitest": "catalog:"
 	},
 	"scripts": {
+		"build": "vp pack",
+		"prepack": "pnpm --workspace-root prepack && pnpm build",
 		"test": "vitest run",
 		"typecheck": "tsc --noEmit"
 	}

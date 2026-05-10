@@ -1,4 +1,4 @@
-import '@standard-config/utilities/mocks/transform-plugin';
+import '@standard-config/utilities/mocks/resolve-plugin';
 import type { OxlintConfigEntry } from '@standard-config/utilities/types';
 import { defineConfig } from 'oxlint';
 import { expect, expectTypeOf, test } from 'vitest';

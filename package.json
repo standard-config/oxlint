@@ -34,6 +34,7 @@
 		"format:check": "prettier --check --ignore-unknown .",
 		"lint": "oxlint --fix",
 		"lint:check": "oxlint --deny-warnings --type-check",
+		"prepack": "pnpm run '/^(format:check|lint:check|test)$/'",
 		"prepare": "vp config",
 		"postprepare": "pnpm build",
 		"test": "vitest run",

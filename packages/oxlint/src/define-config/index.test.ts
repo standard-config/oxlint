@@ -1,4 +1,4 @@
-import '@standard-config/utilities/mocks/transform-plugin';
+import '@standard-config/utilities/mocks/resolve-plugin';
 import { beforeEach, expect, test, vi } from 'vitest';
 import configCore from '../config-default/index.ts';
 

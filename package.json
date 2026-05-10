@@ -15,6 +15,7 @@
 	"packageManager": "pnpm@11.0.8",
 	"devDependencies": {
 		"@standard-config/oxlint": "workspace:*",
+		"@standard-config/oxlint-react": "workspace:*",
 		"@standard-config/oxlint-stylistic": "workspace:*",
 		"@standard-config/prettier": "^1.13.0",
 		"@standard-config/tsconfig": "catalog:",

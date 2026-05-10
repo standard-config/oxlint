@@ -1,0 +1,27 @@
+{
+	"name": "@standard-config/tests",
+	"version": "0.0.0",
+	"private": true,
+	"author": {
+		"name": "Dom Porada",
+		"email": "dom@dom.engineering",
+		"url": "https://dom.engineering"
+	},
+	"type": "module",
+	"sideEffects": false,
+	"devDependencies": {
+		"@standard-config/oxlint": "workspace:*",
+		"@standard-config/oxlint-react": "workspace:*",
+		"@standard-config/oxlint-stylistic": "workspace:*",
+		"@standard-config/tsconfig": "catalog:",
+		"@standard-config/utilities": "workspace:*",
+		"@types/node": "catalog:",
+		"oxlint": "catalog:",
+		"typescript": "catalog:",
+		"vitest": "catalog:"
+	},
+	"scripts": {
+		"test": "vitest run",
+		"typecheck": "tsc --noEmit"
+	}
+}

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`includes \`@standard-config/oxlint-react\` when it’s available 1`] = `
+exports[`resolves \`@standard-config/oxlint-react\` when it’s available 1`] = `
 {
   "env": {
     "browser": true,
@@ -1220,7 +1220,7 @@ exports[`includes \`@standard-config/oxlint-react\` when it’s available 1`] = 
 }
 `;
 
-exports[`includes \`@standard-config/oxlint-stylistic\` when it’s available 1`] = `
+exports[`resolves \`@standard-config/oxlint-stylistic\` when it’s available 1`] = `
 {
   "env": {
     "browser": true,
@@ -2619,7 +2619,7 @@ exports[`includes \`@standard-config/oxlint-stylistic\` when it’s available 1`
 }
 `;
 
-exports[`includes all available supplemental configs 1`] = `
+exports[`resolves all available supplemental configs by default 1`] = `
 {
   "env": {
     "browser": true,

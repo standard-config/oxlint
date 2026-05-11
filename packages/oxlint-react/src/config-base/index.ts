@@ -1,10 +1,10 @@
-import type { OxlintConfigEntry } from '@standard-config/utilities/types';
+import type { OxlintConfigBaseEntry } from '@standard-config/utilities/types';
 import resolvePlugin from '@standard-config/utilities/resolve-plugin';
 
 /**
  * Base config entry containing React-related rules. No overrides included.
  */
-const config: OxlintConfigEntry = {
+const config: OxlintConfigBaseEntry = {
 	plugins: [
 		/* prettier-ignore */
 		'jsx-a11y',

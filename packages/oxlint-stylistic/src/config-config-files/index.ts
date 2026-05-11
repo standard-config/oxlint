@@ -1,7 +1,7 @@
 import type { OxlintConfigOverrideEntry } from '@standard-config/utilities/types';
 
 /**
- * Optional config entry containing stylistic rules that target test files.
+ * Optional config entry containing stylistic rules that target config files.
  * Intended for explicit overrides.
  */
 const config: OxlintConfigOverrideEntry = {

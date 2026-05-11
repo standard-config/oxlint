@@ -1,9 +1,9 @@
-import type { OxlintConfigEntry } from '@standard-config/utilities/types';
+import type { OxlintConfigCoreBaseEntry } from '@standard-config/utilities/types';
 
 /**
- * Base config entry. No overrides included.
+ * Base config entry containing core rules. No overrides included.
  */
-const config: OxlintConfigEntry = {
+const config: OxlintConfigCoreBaseEntry = {
 	plugins: [
 		'eslint',
 		'import',

@@ -1897,16 +1897,6 @@ exports[`resolves \`@standard-config/oxlint-stylistic\` when it’s available 1`
         "type": "natural",
       },
     ],
-    "perfectionist/sort-classes": [
-      "error",
-      {
-        "groups": [
-          "property",
-          "constructor",
-        ],
-        "type": "natural",
-      },
-    ],
     "perfectionist/sort-exports": [
       "error",
       {
@@ -3363,16 +3353,6 @@ exports[`resolves all available supplemental configs by default 1`] = `
     "perfectionist/sort-array-includes": [
       "error",
       {
-        "type": "natural",
-      },
-    ],
-    "perfectionist/sort-classes": [
-      "error",
-      {
-        "groups": [
-          "property",
-          "constructor",
-        ],
         "type": "natural",
       },
     ],

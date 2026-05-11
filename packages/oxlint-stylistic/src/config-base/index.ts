@@ -11,13 +11,6 @@ const config: OxlintConfigEntry = {
 	],
 	rules: {
 		'perfectionist/sort-array-includes': ['error', { type: 'natural' }],
-		'perfectionist/sort-classes': [
-			'error',
-			{
-				groups: ['property', 'constructor'],
-				type: 'natural',
-			},
-		],
 		'perfectionist/sort-exports': ['error', { type: 'natural' }],
 		'perfectionist/sort-imports': [
 			'error',

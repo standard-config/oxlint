@@ -86,16 +86,6 @@ exports[`is a valid Oxlint config 1`] = `
         "type": "natural",
       },
     ],
-    "perfectionist/sort-classes": [
-      "error",
-      {
-        "groups": [
-          "property",
-          "constructor",
-        ],
-        "type": "natural",
-      },
-    ],
     "perfectionist/sort-exports": [
       "error",
       {

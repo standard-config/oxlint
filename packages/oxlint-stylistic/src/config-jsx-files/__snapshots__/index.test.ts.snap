@@ -1,0 +1,50 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`is a valid Oxlint config override 1`] = `
+{
+  "rules": {
+    "perfectionist/sort-jsx-props": [
+      "error",
+      {
+        "customGroups": [
+          {
+            "elementNamePattern": "^as$",
+            "groupName": "as",
+          },
+          {
+            "elementNamePattern": "^on.+",
+            "groupName": "callback",
+          },
+          {
+            "elementNamePattern": "^children$",
+            "groupName": "children",
+          },
+          {
+            "elementNamePattern": "^key$",
+            "groupName": "key",
+          },
+          {
+            "elementNamePattern": "^ref$",
+            "groupName": "ref",
+          },
+          {
+            "elementNamePattern": "^dangerously.+",
+            "groupName": "unsafe",
+          },
+        ],
+        "groups": [
+          "key",
+          "ref",
+          "as",
+          "unknown",
+          "shorthand-prop",
+          "callback",
+          "children",
+          "unsafe",
+        ],
+        "type": "unsorted",
+      },
+    ],
+  },
+}
+`;

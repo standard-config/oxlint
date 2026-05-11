@@ -24,6 +24,8 @@ test('resolves `@standard-config/oxlint` when no supplemental configs are availa
 			'unicorn/no-null': 'off',
 		})
 	);
+	expect(config).not.toHaveProperty(['rules', 'perfectionist/sort-imports']);
+	expect(config).not.toHaveProperty(['rules', 'react/jsx-key']);
 });
 
 test('resolves `@standard-config/oxlint-react` when it’s available', async () => {
@@ -36,6 +38,7 @@ test('resolves `@standard-config/oxlint-react` when it’s available', async () 
 	const config = defineConfig();
 
 	expect(config).not.toStrictEqual(configCore);
+	expect(config).toHaveProperty('jsPlugins', expect.any(Array));
 	expect(config).toHaveProperty(
 		'rules',
 		expect.objectContaining({
@@ -43,6 +46,7 @@ test('resolves `@standard-config/oxlint-react` when it’s available', async () 
 			'unicorn/no-null': 'off',
 		})
 	);
+	expect(config).not.toHaveProperty(['rules', 'perfectionist/sort-imports']);
 	expect(config).toMatchSnapshot();
 });
 
@@ -64,6 +68,7 @@ test('resolves `@standard-config/oxlint-stylistic` when it’s available', async
 			'unicorn/no-null': 'off',
 		})
 	);
+	expect(config).not.toHaveProperty(['rules', 'react/jsx-key']);
 	expect(config).toMatchSnapshot();
 });
 

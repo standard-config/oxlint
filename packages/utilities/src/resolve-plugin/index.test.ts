@@ -3,7 +3,7 @@ import { expect, test } from 'vitest';
 import resolvePlugin from './index.ts';
 
 const PLUGINS = [
-	/* prettier-ignore */
+	'@eslint-react/eslint-plugin',
 	'@stylistic/eslint-plugin',
 	'eslint-plugin-perfectionist',
 ];

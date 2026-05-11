@@ -5,6 +5,7 @@ test('exposes correct public API', () => {
 	expect({ ...exports }).toStrictEqual({
 		configStylisticBase: expect.any(Object),
 		configStylisticConfigFiles: expect.any(Object),
+		configStylisticJSXFiles: expect.any(Object),
 		default: expect.any(Object),
 	});
 });

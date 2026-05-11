@@ -40,6 +40,9 @@
 	"engines": {
 		"node": ">=22"
 	},
+	"dependencies": {
+		"@eslint-react/eslint-plugin": "^5.7.5"
+	},
 	"peerDependencies": {
 		"@standard-config/oxlint": "*",
 		"oxlint": "^1.63.0"

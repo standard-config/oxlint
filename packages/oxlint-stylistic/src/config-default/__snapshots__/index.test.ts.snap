@@ -15,6 +15,55 @@ exports[`is a valid Oxlint config 1`] = `
   "overrides": [
     {
       "files": [
+        "**/*.{jsx,tsx}",
+      ],
+      "rules": {
+        "perfectionist/sort-jsx-props": [
+          "error",
+          {
+            "customGroups": [
+              {
+                "elementNamePattern": "^as$",
+                "groupName": "as",
+              },
+              {
+                "elementNamePattern": "^on.+",
+                "groupName": "callback",
+              },
+              {
+                "elementNamePattern": "^children$",
+                "groupName": "children",
+              },
+              {
+                "elementNamePattern": "^key$",
+                "groupName": "key",
+              },
+              {
+                "elementNamePattern": "^ref$",
+                "groupName": "ref",
+              },
+              {
+                "elementNamePattern": "^dangerously.+",
+                "groupName": "unsafe",
+              },
+            ],
+            "groups": [
+              "key",
+              "ref",
+              "as",
+              "unknown",
+              "shorthand-prop",
+              "callback",
+              "children",
+              "unsafe",
+            ],
+            "type": "unsorted",
+          },
+        ],
+      },
+    },
+    {
+      "files": [
         "**/*.config.{js,ts,cjs,cts,mjs,mts}",
         "**/*.setup.{js,ts,cjs,cts,mjs,mts}",
       ],

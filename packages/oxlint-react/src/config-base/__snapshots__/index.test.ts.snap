@@ -2,6 +2,12 @@
 
 exports[`is a valid Oxlint config 1`] = `
 {
+  "jsPlugins": [
+    {
+      "name": "react-x",
+      "specifier": "@eslint-react/eslint-plugin",
+    },
+  ],
   "plugins": [
     "jsx-a11y",
     "react",
@@ -66,8 +72,8 @@ exports[`is a valid Oxlint config 1`] = `
       "error",
       {
         "extensions": [
-          ".tsx",
           ".jsx",
+          ".tsx",
         ],
       },
     ],

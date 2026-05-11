@@ -1,4 +1,5 @@
 import type { OxlintConfigEntry } from '@standard-config/utilities/types';
+import resolvePlugin from '@standard-config/utilities/resolve-plugin';
 
 /**
  * Base config entry containing React-related rules. No overrides included.
@@ -9,6 +10,10 @@ const config: OxlintConfigEntry = {
 		'jsx-a11y',
 		'react',
 		'react-perf',
+	],
+	jsPlugins: [
+		/* prettier-ignore */
+		resolvePlugin('react-x', '@eslint-react/eslint-plugin'),
 	],
 	rules: {
 		'jsx-a11y/alt-text': 'error',
@@ -67,7 +72,7 @@ const config: OxlintConfigEntry = {
 		],
 		'react/jsx-filename-extension': [
 			'error',
-			{ extensions: ['.tsx', '.jsx'] },
+			{ extensions: ['.jsx', '.tsx'] },
 		],
 		'react/jsx-fragments': 'error',
 		'react/jsx-handler-names': 'error',

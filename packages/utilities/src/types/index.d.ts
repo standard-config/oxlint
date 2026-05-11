@@ -7,7 +7,7 @@ export type OxlintConfigEntry = Omit<
 
 export type OxlintConfigOverrideEntry = Omit<
 	OxlintOverride,
-	'categories' | 'files'
+	'categories' | 'files' | 'jsPlugins' | 'plugins'
 >;
 
 export type OxlintConfigGlobSet = OxlintOverride['files'];

@@ -5,6 +5,10 @@ export const GLOB_SET_CONFIG_FILES: OxlintConfigGlobSet = [
 	'**/*.setup.{js,ts,cjs,cts,mjs,mts}',
 ] as const;
 
+export const GLOB_SET_JSX_FILES: OxlintConfigGlobSet = [
+	'**/*.{jsx,tsx}',
+] as const;
+
 export const GLOB_SET_TEST_FILES: OxlintConfigGlobSet = [
 	'**/*.test.{js,jsx,ts,tsx,cjs,cts,mjs,mts}',
 	'**/*.test-d.{ts,cts,mts}',

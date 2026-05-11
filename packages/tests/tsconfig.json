@@ -2,7 +2,8 @@
 	"extends": "@standard-config/tsconfig",
 	"compilerOptions": {
 		"types": [
-			"node"
+			"node",
+			"react"
 		]
 	},
 	"include": [

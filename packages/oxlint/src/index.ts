@@ -5,3 +5,4 @@ export { default as configCoreTestFiles } from './config-test-files/index.ts';
 export { default as configCoreTypeDefinitions } from './config-type-definitions/index.ts';
 export { default as defineConfig } from './define-config/index.ts';
 export { default as defineOxlintConfig } from './define-oxlint-config/index.ts';
+export { default as resolvePlugin } from '@standard-config/utilities/resolve-plugin';

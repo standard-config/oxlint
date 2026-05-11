@@ -11,8 +11,10 @@ const PLUGINS = [
 test.each(PLUGINS)('resolves `%s`', (plugin) => {
 	const result = resolvePlugin('plugin', plugin);
 
-	expect(result).toHaveProperty('name', 'plugin');
-	expect(result).toHaveProperty('specifier', expect.any(String));
+	expect(result).toStrictEqual({
+		name: 'plugin',
+		specifier: expect.any(String),
+	});
 
 	const { specifier } = result;
 
@@ -21,9 +23,9 @@ test.each(PLUGINS)('resolves `%s`', (plugin) => {
 	expect(isAbsolute(specifier)).toBe(true);
 });
 
-test('handles incorrect values', () => {
-	const result = resolvePlugin('plugin', 'nonexistent-plugin');
-
-	expect(result).toHaveProperty('name', 'plugin');
-	expect(result).toHaveProperty('specifier', 'nonexistent-plugin');
+test('handles unavailable modules', () => {
+	expect(resolvePlugin('js', '@eslint/js')).toStrictEqual({
+		name: 'js',
+		specifier: '@eslint/js',
+	});
 });

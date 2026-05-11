@@ -10,5 +10,6 @@ test('exposes correct public API', () => {
 		default: expect.any(Object),
 		defineConfig: expect.any(Function),
 		defineOxlintConfig: expect.any(Function),
+		resolvePlugin: expect.any(Function),
 	});
 });

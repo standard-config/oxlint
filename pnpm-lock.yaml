@@ -19,8 +19,8 @@ catalogs:
       specifier: ^0.22.1
       version: 0.22.1
     publint:
-      specifier: ^0.3.19
-      version: 0.3.19
+      specifier: ^0.3.20
+      version: 0.3.20
     typescript:
       specifier: ^6.0.3
       version: 6.0.3
@@ -76,7 +76,7 @@ importers:
         version: 6.0.3
       vite-plus:
         specifier: 'catalog:'
-        version: 0.1.20(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(publint@0.3.19)(typescript@6.0.3)(vite@8.0.11(@types/node@22.19.18)(yaml@2.8.4))(yaml@2.8.4)
+        version: 0.1.20(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(publint@0.3.20)(typescript@6.0.3)(vite@8.0.11(@types/node@22.19.18)(yaml@2.8.4))(yaml@2.8.4)
       vitest:
         specifier: 'catalog:'
         version: 4.1.5(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(yaml@2.8.4)
@@ -94,13 +94,13 @@ importers:
         version: 1.63.0(oxlint-tsgolint@0.22.1)
       publint:
         specifier: 'catalog:'
-        version: 0.3.19
+        version: 0.3.20
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
       vite-plus:
         specifier: 'catalog:'
-        version: 0.1.20(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(publint@0.3.19)(typescript@6.0.3)(vite@8.0.11(@types/node@22.19.18)(yaml@2.8.4))(yaml@2.8.4)
+        version: 0.1.20(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(publint@0.3.20)(typescript@6.0.3)(vite@8.0.11(@types/node@22.19.18)(yaml@2.8.4))(yaml@2.8.4)
       vitest:
         specifier: 'catalog:'
         version: 4.1.5(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(yaml@2.8.4)
@@ -118,13 +118,13 @@ importers:
         version: 1.63.0(oxlint-tsgolint@0.22.1)
       publint:
         specifier: 'catalog:'
-        version: 0.3.19
+        version: 0.3.20
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
       vite-plus:
         specifier: 'catalog:'
-        version: 0.1.20(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(publint@0.3.19)(typescript@6.0.3)(vite@8.0.11(@types/node@22.19.18)(yaml@2.8.4))(yaml@2.8.4)
+        version: 0.1.20(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(publint@0.3.20)(typescript@6.0.3)(vite@8.0.11(@types/node@22.19.18)(yaml@2.8.4))(yaml@2.8.4)
       vitest:
         specifier: 'catalog:'
         version: 4.1.5(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(yaml@2.8.4)
@@ -152,13 +152,13 @@ importers:
         version: 1.63.0(oxlint-tsgolint@0.22.1)
       publint:
         specifier: 'catalog:'
-        version: 0.3.19
+        version: 0.3.20
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
       vite-plus:
         specifier: 'catalog:'
-        version: 0.1.20(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(publint@0.3.19)(typescript@6.0.3)(vite@8.0.11(@types/node@22.19.18)(yaml@2.8.4))(yaml@2.8.4)
+        version: 0.1.20(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(publint@0.3.20)(typescript@6.0.3)(vite@8.0.11(@types/node@22.19.18)(yaml@2.8.4))(yaml@2.8.4)
       vitest:
         specifier: 'catalog:'
         version: 4.1.5(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(yaml@2.8.4)
@@ -1012,8 +1012,8 @@ packages:
     resolution: {integrity: sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA==}
     engines: {node: 18 || 20 || >=22}
 
-  brace-expansion@5.0.5:
-    resolution: {integrity: sha512-VZznLgtwhn+Mact9tfiwx64fA9erHH/MCXEUfB/0bX/6Fz6ny5EGTXYltMocqg4xFAQZtnO3DHWWXi8RiuN7cQ==}
+  brace-expansion@5.0.6:
+    resolution: {integrity: sha512-kLpxurY4Z4r9sgMsyG0Z9uzsBlgiU/EFKhj/h91/8yHu0edo7XuixOIH3VcJ8kkxs6/jPzoI6U9Vj3WqbMQ94g==}
     engines: {node: 18 || 20 || >=22}
 
   chai@6.2.2:
@@ -1441,8 +1441,8 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
-  publint@0.3.19:
-    resolution: {integrity: sha512-J3p4GOocCRFyLLFRzGfIhAwWgk0Kkcdxj5iFspFvCYbyiJs5IhCM8gsIkcNeQL+tdpV671RtJQiTFSUKhl1Wjg==}
+  publint@0.3.20:
+    resolution: {integrity: sha512-UWqFYP7VBVCe9l/leEEGJrDs6Am4K4KapLmLi5qbt+9fA+Ny38ghdW+bw1nYfVqCK8/3kgsxjjhFjTYqYYRpyw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -1459,8 +1459,8 @@ packages:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
     engines: {node: '>=6'}
 
-  semver@7.7.4:
-    resolution: {integrity: sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==}
+  semver@7.8.0:
+    resolution: {integrity: sha512-AcM7dV/5ul4EekoQ29Agm5vri8JNqRyj39o0qpX6vDF2GZrtutZl5RwgD1XnZjiTAfncsJhMI48QQH3sN87YNA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -2056,7 +2056,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 8.59.2
       debug: 4.4.3
       minimatch: 10.2.5
-      semver: 7.7.4
+      semver: 7.8.0
       tinyglobby: 0.2.16
       ts-api-utils: 2.5.0(typescript@6.0.3)
       typescript: 6.0.3
@@ -2134,7 +2134,7 @@ snapshots:
       convert-source-map: 2.0.0
       tinyrainbow: 3.1.0
 
-  '@voidzero-dev/vite-plus-core@0.1.20(@types/node@22.19.18)(publint@0.3.19)(typescript@6.0.3)(yaml@2.8.4)':
+  '@voidzero-dev/vite-plus-core@0.1.20(@types/node@22.19.18)(publint@0.3.20)(typescript@6.0.3)(yaml@2.8.4)':
     dependencies:
       '@oxc-project/runtime': 0.127.0
       '@oxc-project/types': 0.127.0
@@ -2143,7 +2143,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 22.19.18
       fsevents: 2.3.3
-      publint: 0.3.19
+      publint: 0.3.20
       typescript: 6.0.3
       yaml: 2.8.4
 
@@ -2165,11 +2165,11 @@ snapshots:
   '@voidzero-dev/vite-plus-linux-x64-musl@0.1.20':
     optional: true
 
-  '@voidzero-dev/vite-plus-test@0.1.20(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(publint@0.3.19)(typescript@6.0.3)(vite@8.0.11(@types/node@22.19.18)(yaml@2.8.4))(yaml@2.8.4)':
+  '@voidzero-dev/vite-plus-test@0.1.20(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(publint@0.3.20)(typescript@6.0.3)(vite@8.0.11(@types/node@22.19.18)(yaml@2.8.4))(yaml@2.8.4)':
     dependencies:
       '@standard-schema/spec': 1.1.0
       '@types/chai': 5.2.3
-      '@voidzero-dev/vite-plus-core': 0.1.20(@types/node@22.19.18)(publint@0.3.19)(typescript@6.0.3)(yaml@2.8.4)
+      '@voidzero-dev/vite-plus-core': 0.1.20(@types/node@22.19.18)(publint@0.3.20)(typescript@6.0.3)(yaml@2.8.4)
       es-module-lexer: 1.7.0
       obug: 2.1.1
       pixelmatch: 7.2.0
@@ -2234,7 +2234,7 @@ snapshots:
 
   balanced-match@4.0.4: {}
 
-  brace-expansion@5.0.5:
+  brace-expansion@5.0.6:
     dependencies:
       balanced-match: 4.0.4
 
@@ -2493,11 +2493,11 @@ snapshots:
 
   make-dir@4.0.0:
     dependencies:
-      semver: 7.7.4
+      semver: 7.8.0
 
   minimatch@10.2.5:
     dependencies:
-      brace-expansion: 5.0.5
+      brace-expansion: 5.0.6
 
   mri@1.2.0: {}
 
@@ -2642,7 +2642,7 @@ snapshots:
 
   prettier@3.8.3: {}
 
-  publint@0.3.19:
+  publint@0.3.20:
     dependencies:
       '@publint/pack': 0.1.4
       package-manager-detector: 1.6.0
@@ -2676,7 +2676,7 @@ snapshots:
     dependencies:
       mri: 1.2.0
 
-  semver@7.7.4: {}
+  semver@7.8.0: {}
 
   sh-syntax@0.5.8:
     dependencies:
@@ -2735,11 +2735,11 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  vite-plus@0.1.20(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(publint@0.3.19)(typescript@6.0.3)(vite@8.0.11(@types/node@22.19.18)(yaml@2.8.4))(yaml@2.8.4):
+  vite-plus@0.1.20(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(publint@0.3.20)(typescript@6.0.3)(vite@8.0.11(@types/node@22.19.18)(yaml@2.8.4))(yaml@2.8.4):
     dependencies:
       '@oxc-project/types': 0.127.0
-      '@voidzero-dev/vite-plus-core': 0.1.20(@types/node@22.19.18)(publint@0.3.19)(typescript@6.0.3)(yaml@2.8.4)
-      '@voidzero-dev/vite-plus-test': 0.1.20(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(publint@0.3.19)(typescript@6.0.3)(vite@8.0.11(@types/node@22.19.18)(yaml@2.8.4))(yaml@2.8.4)
+      '@voidzero-dev/vite-plus-core': 0.1.20(@types/node@22.19.18)(publint@0.3.20)(typescript@6.0.3)(yaml@2.8.4)
+      '@voidzero-dev/vite-plus-test': 0.1.20(@types/node@22.19.18)(@vitest/coverage-v8@4.1.5)(publint@0.3.20)(typescript@6.0.3)(vite@8.0.11(@types/node@22.19.18)(yaml@2.8.4))(yaml@2.8.4)
     optionalDependencies:
       '@voidzero-dev/vite-plus-darwin-arm64': 0.1.20
       '@voidzero-dev/vite-plus-darwin-x64': 0.1.20

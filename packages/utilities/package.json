@@ -22,6 +22,7 @@
 		"eslint-plugin-perfectionist": "^5.9.0",
 		"oxlint": "catalog:",
 		"typescript": "catalog:",
+		"vite-plus": "catalog:",
 		"vitest": "catalog:"
 	},
 	"scripts": {

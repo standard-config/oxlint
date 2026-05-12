@@ -12,7 +12,7 @@
 	"engines": {
 		"node": ">=24"
 	},
-	"packageManager": "pnpm@11.0.9",
+	"packageManager": "pnpm@11.1.1",
 	"devDependencies": {
 		"@standard-config/oxlint": "workspace:*",
 		"@standard-config/oxlint-react": "workspace:*",

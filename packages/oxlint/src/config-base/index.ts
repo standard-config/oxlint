@@ -212,6 +212,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'eslint/prefer-object-has-own': 'error',
 		'eslint/prefer-object-spread': 'error',
 		'eslint/prefer-promise-reject-errors': 'off',
+		'eslint/prefer-regex-literals': 'warn',
 		'eslint/prefer-rest-params': 'error',
 		'eslint/prefer-spread': 'warn',
 		'eslint/prefer-template': 'error',

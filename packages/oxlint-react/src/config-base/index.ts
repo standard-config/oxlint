@@ -31,6 +31,7 @@ const config: OxlintConfigBaseEntry = {
 		'jsx-a11y/html-has-lang': 'error',
 		'jsx-a11y/iframe-has-title': 'error',
 		'jsx-a11y/img-redundant-alt': 'off',
+		'jsx-a11y/interactive-supports-focus': 'error',
 		'jsx-a11y/label-has-associated-control': 'error',
 		'jsx-a11y/lang': 'error',
 		'jsx-a11y/media-has-caption': 'off',

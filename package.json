@@ -20,7 +20,7 @@
 		"@standard-config/prettier": "^1.13.1",
 		"@standard-config/tsconfig": "catalog:",
 		"@vitest/coverage-v8": "^4.1.6",
-		"eslint": "^10.3.0",
+		"eslint": "^10.4.0",
 		"oxlint": "catalog:",
 		"oxlint-tsgolint": "catalog:",
 		"prettier": "^3.8.3",

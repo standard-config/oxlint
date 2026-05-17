@@ -41,7 +41,7 @@
 		"node": ">=22"
 	},
 	"dependencies": {
-		"@eslint-react/eslint-plugin": "^5.7.7"
+		"@eslint-react/eslint-plugin": "^5.8.0"
 	},
 	"peerDependencies": {
 		"@standard-config/oxlint": "*",

@@ -510,6 +510,12 @@ exports[`resolves \`@standard-config/oxlint-react\` when it’s available 1`] = 
       "warn",
       "always",
     ],
+    "eslint/prefer-arrow-callback": [
+      "error",
+      {
+        "allowNamedFunctions": true,
+      },
+    ],
     "eslint/prefer-const": "error",
     "eslint/prefer-destructuring": [
       "error",
@@ -1817,6 +1823,12 @@ exports[`resolves \`@standard-config/oxlint-stylistic\` when it’s available 1`
     "eslint/operator-assignment": [
       "warn",
       "always",
+    ],
+    "eslint/prefer-arrow-callback": [
+      "error",
+      {
+        "allowNamedFunctions": true,
+      },
     ],
     "eslint/prefer-const": "error",
     "eslint/prefer-destructuring": [
@@ -3344,6 +3356,12 @@ exports[`resolves all available supplemental configs by default 1`] = `
     "eslint/operator-assignment": [
       "warn",
       "always",
+    ],
+    "eslint/prefer-arrow-callback": [
+      "error",
+      {
+        "allowNamedFunctions": true,
+      },
     ],
     "eslint/prefer-const": "error",
     "eslint/prefer-destructuring": [

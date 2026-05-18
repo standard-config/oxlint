@@ -246,6 +246,12 @@ exports[`is a valid Oxlint config 1`] = `
       "warn",
       "always",
     ],
+    "eslint/prefer-arrow-callback": [
+      "error",
+      {
+        "allowNamedFunctions": true,
+      },
+    ],
     "eslint/prefer-const": "error",
     "eslint/prefer-destructuring": [
       "error",

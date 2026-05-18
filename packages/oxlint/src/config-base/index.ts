@@ -202,6 +202,10 @@ const config: OxlintConfigCoreBaseEntry = {
 		'eslint/no-with': 'error',
 		'eslint/object-shorthand': ['error', 'always'],
 		'eslint/operator-assignment': ['warn', 'always'],
+		'eslint/prefer-arrow-callback': [
+			'error',
+			{ allowNamedFunctions: true },
+		],
 		'eslint/prefer-const': 'error',
 		'eslint/prefer-destructuring': [
 			'error',

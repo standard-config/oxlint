@@ -44,7 +44,7 @@
 	"peerDependencies": {
 		"@standard-config/oxlint-react": "*",
 		"@standard-config/oxlint-stylistic": "*",
-		"oxlint": "^1.64.0",
+		"oxlint": "^1.65.0",
 		"oxlint-tsgolint": "^0.22.1"
 	},
 	"peerDependenciesMeta": {

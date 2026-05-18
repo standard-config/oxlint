@@ -110,6 +110,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'eslint/no-func-assign': 'off',
 		'eslint/no-global-assign': 'error',
 		'eslint/no-implicit-coercion': 'error',
+		'eslint/no-implicit-globals': 'error',
 		'eslint/no-import-assign': 'off',
 		'eslint/no-inline-comments': 'off',
 		'eslint/no-inner-declarations': 'off',

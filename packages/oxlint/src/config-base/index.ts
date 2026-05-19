@@ -716,6 +716,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'vitest/no-test-prefixes': 'off',
 		'vitest/no-test-return-statement': 'off',
 		'vitest/no-unneeded-async-expect-function': 'off',
+		'vitest/padding-around-after-all-blocks': 'off',
 		'vitest/prefer-called-exactly-once-with': 'off',
 		'vitest/prefer-called-once': 'off',
 		'vitest/prefer-called-times': 'off',

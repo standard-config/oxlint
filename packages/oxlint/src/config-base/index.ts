@@ -58,6 +58,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'eslint/grouped-accessor-pairs': ['error', 'getBeforeSet'],
 		'eslint/guard-for-in': 'error',
 		'eslint/id-length': 'off',
+		'eslint/id-match': 'off',
 		'eslint/init-declarations': 'off',
 		'eslint/logical-assignment-operators': 'off',
 		'eslint/max-classes-per-file': 'off',

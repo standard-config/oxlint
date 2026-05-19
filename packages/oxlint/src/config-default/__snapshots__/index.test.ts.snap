@@ -246,6 +246,7 @@ exports[`is a valid Oxlint config 1`] = `
     ],
     "eslint/guard-for-in": "error",
     "eslint/id-length": "off",
+    "eslint/id-match": "off",
     "eslint/init-declarations": "off",
     "eslint/logical-assignment-operators": "off",
     "eslint/max-classes-per-file": "off",

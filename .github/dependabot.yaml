@@ -11,6 +11,12 @@ updates:
     schedule:
       interval: weekly
     versioning-strategy: increase
+    cooldown:
+      default-days: 1
+      exclude:
+        - '@oxlint/*'
+        - oxlint
+        - oxlint-tsgolint
     ignore:
       - dependency-name: '@types/node'
         update-types:

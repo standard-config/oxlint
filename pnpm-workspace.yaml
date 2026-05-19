@@ -18,7 +18,7 @@ color: always
 gitChecks: false
 
 minimumReleaseAgeExclude:
-  - '@standard-config/*'
+  - '@oxlint/*'
   - oxlint
   - oxlint-tsgolint
 

@@ -118,6 +118,7 @@ const config: OxlintConfigBaseEntry = {
 		'react/no-unescaped-entities': 'error',
 		'react/no-unknown-property': 'error',
 		'react/no-unsafe': 'off',
+		'react/no-unstable-nested-components': 'warn',
 		'react/no-will-update-set-state': 'off',
 		'react/only-export-components': 'off',
 		'react/prefer-es6-class': 'off',

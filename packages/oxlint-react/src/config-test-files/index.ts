@@ -40,6 +40,7 @@ const config: OxlintConfigOverrideEntry = {
 		'react/no-children-prop': 'off',
 		'react/no-danger': 'off',
 		'react/no-object-type-as-default-prop': 'off',
+		'react/no-unstable-nested-components': 'off',
 	},
 };
 

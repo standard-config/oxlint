@@ -39,6 +39,7 @@ const config: OxlintConfigOverrideEntry = {
 		'react/no-array-index-key': 'off',
 		'react/no-children-prop': 'off',
 		'react/no-danger': 'off',
+		'react/no-object-type-as-default-prop': 'off',
 	},
 };
 

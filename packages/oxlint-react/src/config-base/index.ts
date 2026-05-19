@@ -108,6 +108,7 @@ const config: OxlintConfigBaseEntry = {
 		'react/no-is-mounted': 'off',
 		'react/no-multi-comp': 'off',
 		'react/no-namespace': 'error',
+		'react/no-object-type-as-default-prop': 'error',
 		'react/no-react-children': 'off',
 		'react/no-redundant-should-component-update': 'off',
 		'react/no-render-return-value': 'off',

@@ -243,6 +243,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'import/group-exports': 'off',
 		'import/max-dependencies': 'off',
 		'import/namespace': 'error',
+		'import/newline-after-import': 'error',
 		'import/no-absolute-path': 'error',
 		'import/no-amd': 'off',
 		'import/no-anonymous-default-export': 'error',

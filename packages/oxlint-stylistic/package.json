@@ -8,6 +8,7 @@
 		"email": "dom@dom.engineering",
 		"url": "https://dom.engineering"
 	},
+	"homepage": "https://sconfig.org/oxlint-stylistic",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/standard-config/oxlint.git",

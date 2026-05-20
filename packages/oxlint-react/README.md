@@ -1,3 +1,7 @@
+> [!NOTE]
+>
+> This document refers to an upcoming version of the package.
+
 <div>&nbsp;</div>
 
 <h1 align="center">@standard&#8209;config/oxlint&#8209;react</h1>
@@ -5,7 +9,7 @@
 <p align="center">Curated Oxlint config with sensible React&nbsp;defaults.</p>
 
 <p align="center">
-    <a href="https://www.npmx.dev/package/@standard-config/oxlint-react"
+    <a href="https://npmx.dev/package/@standard-config/oxlint-react"
         ><img
             src="https://img.shields.io/npm/v/%40standard-config%2Foxlint-react?style=flat-square"
             alt=""
@@ -26,7 +30,7 @@
 
 ## Overview
 
-Supplemental config for [**@standard&#8209;config/oxlint**](https://github.com/standard-config/oxlint).
+Supplemental config for [**@standard-config/oxlint**](https://github.com/standard-config/oxlint), with React-related rules from Oxlint and [ESLint React](https://eslint-react.xyz).
 
 ## Install
 

@@ -8,6 +8,7 @@
 		"email": "dom@dom.engineering",
 		"url": "https://dom.engineering"
 	},
+	"homepage": "https://sconfig.org/oxlint-react",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/standard-config/oxlint.git",
@@ -16,6 +17,7 @@
 	"keywords": [
 		"eslint-config-xo",
 		"eslint-config-xo-react",
+		"eslint-react",
 		"jsx",
 		"jsx-a11y",
 		"linter",

@@ -1,4 +1,4 @@
-[![](https://img.shields.io/npm/v/%40standard-config%2Foxlint?style=flat-square)](https://www.npmx.dev/package/@standard-config/oxlint) [![](https://img.shields.io/github/actions/workflow/status/standard-config/oxlint/test.yaml?style=flat-square)](https://github.com/standard-config/oxlint/actions/workflows/test.yaml) [![](https://img.shields.io/codecov/c/github/standard-config/oxlint?style=flat-square)](https://codecov.io/github/standard-config/oxlint)
+[![](https://img.shields.io/npm/v/%40standard-config%2Foxlint?style=flat-square)](https://npmx.dev/package/@standard-config/oxlint) [![](https://img.shields.io/github/actions/workflow/status/standard-config/oxlint/test.yaml?style=flat-square)](https://github.com/standard-config/oxlint/actions/workflows/test.yaml) [![](https://img.shields.io/codecov/c/github/standard-config/oxlint?style=flat-square)](https://codecov.io/github/standard-config/oxlint)
 
 # @standard-config/oxlint
 
@@ -18,7 +18,7 @@ npm install --save-dev @standard-config/oxlint
 pnpm add --save-dev @standard-config/oxlint
 ```
 
-For [type-aware linting](https://oxc.rs/docs/guide/usage/linter/type-aware.html), make sure both `oxlint` and `oxlint-tsgolint` are installed.
+For [type-aware linting](https://oxc.rs/docs/guide/usage/linter/type-aware.html), make sure `oxlint` and `oxlint-tsgolint` are both installed.
 
 ## Usage
 

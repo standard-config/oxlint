@@ -1,3 +1,7 @@
+> [!NOTE]
+>
+> This document refers to an upcoming version of the package.
+
 <div>&nbsp;</div>
 
 <h1 align="center">@standard&#8209;config/oxlint&#8209;stylistic</h1>
@@ -5,7 +9,7 @@
 <p align="center">Curated Oxlint config with sensible stylistic&nbsp;defaults.</p>
 
 <p align="center">
-    <a href="https://www.npmx.dev/package/@standard-config/oxlint-stylistic"
+    <a href="https://npmx.dev/package/@standard-config/oxlint-stylistic"
         ><img
             src="https://img.shields.io/npm/v/%40standard-config%2Foxlint-stylistic?style=flat-square"
             alt=""
@@ -26,7 +30,7 @@
 
 ## Overview
 
-Supplemental config for [**@standard&#8209;config/oxlint**](https://github.com/standard-config/oxlint).
+Supplemental config for [**@standard-config/oxlint**](https://github.com/standard-config/oxlint), with stylistic rules from [ESLint Stylistic](https://eslint.style) and [Perfectionist](https://perfectionist.dev).
 
 ## Install
 

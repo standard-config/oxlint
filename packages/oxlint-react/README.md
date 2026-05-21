@@ -1,4 +1,4 @@
-> [!NOTE]
+> [!CAUTION]
 >
 > This document refers to an upcoming version of the package.
 
@@ -61,11 +61,15 @@ This config loads an ESLint plugin via Oxlint’s [JS plugins](https://oxc.rs/do
 
 And if you only want to suppress missing peer dependency warnings, you can [configure `pnpm`](https://pnpm.io/settings#peerdependencyrules) not to flag `eslint`:
 
+<!-- prettier-ignore-start -->
+
 ```yaml
 peerDependencyRules:
-    ignoreMissing:
-        - eslint
+  ignoreMissing:
+    - eslint
 ```
+
+<!-- prettier-ignore-end -->
 
 > [!NOTE]
 >

@@ -58,6 +58,27 @@ export default defineConfig({
 
 ## FAQ
 
+### Does this config require any specific TypeScript configuration?
+
+No, it works with any `tsconfig.json`. For matching compiler defaults, pair it with [**@standard-config/tsconfig**](https://github.com/standard-config/tsconfig), though it is not required.
+
+### Does this config enable any rule categories?
+
+No. The config explicitly defines every enabled and disabled rule for each core plugin used. Any [`categories`](https://oxc.rs/docs/guide/usage/linter/config-file-reference.html#categories) you set will only apply to the plugins you enable.
+
+```ts
+import { defineConfig } from '@standard-config/oxlint';
+
+export default defineConfig({
+    plugins: ['nextjs'],
+    categories: {
+        // Only applies to `next/*` rules
+        correctness: 'error',
+        suspicious: 'warn',
+    },
+});
+```
+
 ### Can I use this config with Vite+?
 
 Absolutely. In your `vite.config.ts`:
@@ -70,7 +91,7 @@ export default defineConfig({
     lint: defineOxlintConfig({
         react: true,
         rules: {
-            /* Optional overrides */
+            // Optional overrides
         },
     }),
 });

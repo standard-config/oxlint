@@ -37,6 +37,9 @@ strictPeerDependencies: true
 
 trustPolicy: no-downgrade
 
+trustPolicyExclude:
+  - tinyexec
+
 updateConfig:
   ignoreDependencies:
     - '@types/node'

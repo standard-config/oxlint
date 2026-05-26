@@ -47,7 +47,7 @@
 	},
 	"peerDependencies": {
 		"@standard-config/oxlint": "*",
-		"oxlint": "^1.66.0"
+		"oxlint": "^1.67.0"
 	},
 	"peerDependenciesMeta": {
 		"@standard-config/oxlint": {

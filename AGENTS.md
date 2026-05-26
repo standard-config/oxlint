@@ -25,8 +25,9 @@
 ### Inventory
 
 - For all core `plugins` used in each config, ensure every supported Oxlint rule is explicitly configured (enabled or disabled).
+    - List each missing rule on a separate line in a code block.
     - Exclude `nursery` rules from this audit.
-    - For additional context, attempt to fetch the release notes for the installed Oxlint version from `https://github.com/oxc-project/oxc/releases`.
+    - For additional context, fetch the release notes from the provided URL. If no URL is provided, attempt to fetch them for the installed Oxlint version from `https://github.com/oxc-project/oxc/releases`.
 - Ensure each base config explicitly configures every core rule referenced by override configs within the same config package.
 - Perform this task without making edits.
 

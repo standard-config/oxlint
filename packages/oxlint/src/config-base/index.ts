@@ -328,6 +328,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'jest/valid-expect': 'off',
 		'jest/valid-expect-in-promise': 'off',
 		'jest/valid-title': 'off',
+		'node/callback-return': 'off',
 		'node/global-require': 'off',
 		'node/handle-callback-err': ['error', 'error'],
 		'node/no-exports-assign': 'off',

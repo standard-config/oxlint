@@ -702,6 +702,7 @@ exports[`resolves \`@standard-config/oxlint-react\` when it’s available 1`] = 
     "jsx-a11y/role-supports-aria-props": "error",
     "jsx-a11y/scope": "error",
     "jsx-a11y/tabindex-no-positive": "error",
+    "node/callback-return": "off",
     "node/global-require": "off",
     "node/handle-callback-err": [
       "error",
@@ -1992,6 +1993,7 @@ exports[`resolves \`@standard-config/oxlint-stylistic\` when it’s available 1`
     "jest/valid-expect": "off",
     "jest/valid-expect-in-promise": "off",
     "jest/valid-title": "off",
+    "node/callback-return": "off",
     "node/global-require": "off",
     "node/handle-callback-err": [
       "error",
@@ -3571,6 +3573,7 @@ exports[`resolves all available supplemental configs by default 1`] = `
     "jsx-a11y/role-supports-aria-props": "error",
     "jsx-a11y/scope": "error",
     "jsx-a11y/tabindex-no-positive": "error",
+    "node/callback-return": "off",
     "node/global-require": "off",
     "node/handle-callback-err": [
       "error",

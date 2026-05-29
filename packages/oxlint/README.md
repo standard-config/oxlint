@@ -2,7 +2,15 @@
 >
 > This document refers to an upcoming version of the package.
 
-<div>&nbsp;</div>
+<p align="center">
+    <a href="https://github.com/standard-config/oxlint">
+        <img
+            src="https://github.com/standard-config/.github/blob/main/.github/assets/standard-config-oxlint@3x.png?raw=true"
+            width="500"
+            alt=""
+        />
+    </a>
+</p>
 
 <h1 align="center">@standard&#8209;config/oxlint</h1>
 

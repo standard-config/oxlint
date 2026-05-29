@@ -1,6 +1,38 @@
-[![](https://img.shields.io/npm/v/%40standard-config%2Foxlint?style=flat-square)](https://npmx.dev/package/@standard-config/oxlint) [![](https://img.shields.io/github/actions/workflow/status/standard-config/oxlint/test.yaml?style=flat-square)](https://github.com/standard-config/oxlint/actions/workflows/test.yaml) [![](https://img.shields.io/codecov/c/github/standard-config/oxlint?style=flat-square)](https://codecov.io/github/standard-config/oxlint)
+<p align="center">
+    <a href="https://github.com/standard-config/oxlint">
+        <img
+            src="https://github.com/standard-config/.github/blob/main/.github/assets/standard-config-oxlint@3x.png?raw=true"
+            width="500"
+            alt=""
+        />
+    </a>
+</p>
 
-# @standard-config/oxlint
+<h1 align="center">@standard&#8209;config/oxlint</h1>
+
+<p align="center">Curated Oxlint config with sensible&nbsp;defaults.</p>
+
+<p align="center">
+    <a href="https://npmx.dev/package/@standard-config/oxlint"
+        ><img
+            src="https://img.shields.io/npm/v/%40standard-config%2Foxlint?style=flat-square"
+            alt=""
+    /></a>
+    <a href="https://github.com/standard-config/oxlint/actions/workflows/test.yaml"
+        ><img
+            src="https://img.shields.io/github/actions/workflow/status/standard-config/oxlint/test.yaml?style=flat-square"
+            alt=""
+    /></a>
+    <a href="https://codecov.io/github/standard-config/oxlint"
+        ><img
+            src="https://img.shields.io/codecov/c/github/standard-config/oxlint?style=flat-square"
+            alt=""
+    /></a>
+</p>
+
+<div>&nbsp;</div>
+
+## Overview
 
 Curated Oxlint config with sensible defaults. Designed as a careful, environment-agnostic baseline for writing better TypeScript.
 

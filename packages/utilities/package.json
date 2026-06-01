@@ -15,7 +15,7 @@
 		"./types": "./src/types/index.d.ts"
 	},
 	"devDependencies": {
-		"@eslint-react/eslint-plugin": "^5.8.6",
+		"@eslint-react/eslint-plugin": "^5.8.8",
 		"@standard-config/tsconfig": "catalog:",
 		"@stylistic/eslint-plugin": "^5.10.0",
 		"@types/node": "catalog:",

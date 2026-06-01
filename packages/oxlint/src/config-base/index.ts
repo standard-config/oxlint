@@ -215,6 +215,7 @@ const config: OxlintConfigCoreBaseEntry = {
 			{ enforceForRenamedProperties: false },
 		],
 		'eslint/prefer-exponentiation-operator': 'warn',
+		'eslint/prefer-named-capture-group': 'off',
 		'eslint/prefer-numeric-literals': 'off',
 		'eslint/prefer-object-has-own': 'error',
 		'eslint/prefer-object-spread': 'error',

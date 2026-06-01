@@ -468,7 +468,7 @@ exports[`resolves \`@standard-config/oxlint-react\` when it’s available 1`] = 
     "eslint/no-unexpected-multiline": "off",
     "eslint/no-unmodified-loop-condition": "error",
     "eslint/no-unneeded-ternary": "warn",
-    "eslint/no-unreachable": "warn",
+    "eslint/no-unreachable": "off",
     "eslint/no-unsafe-finally": "error",
     "eslint/no-unsafe-negation": "off",
     "eslint/no-unsafe-optional-chaining": [
@@ -1795,7 +1795,7 @@ exports[`resolves \`@standard-config/oxlint-stylistic\` when it’s available 1`
     "eslint/no-unexpected-multiline": "off",
     "eslint/no-unmodified-loop-condition": "error",
     "eslint/no-unneeded-ternary": "warn",
-    "eslint/no-unreachable": "warn",
+    "eslint/no-unreachable": "off",
     "eslint/no-unsafe-finally": "error",
     "eslint/no-unsafe-negation": "off",
     "eslint/no-unsafe-optional-chaining": [
@@ -3339,7 +3339,7 @@ exports[`resolves all available supplemental configs by default 1`] = `
     "eslint/no-unexpected-multiline": "off",
     "eslint/no-unmodified-loop-condition": "error",
     "eslint/no-unneeded-ternary": "warn",
-    "eslint/no-unreachable": "warn",
+    "eslint/no-unreachable": "off",
     "eslint/no-unsafe-finally": "error",
     "eslint/no-unsafe-negation": "off",
     "eslint/no-unsafe-optional-chaining": [

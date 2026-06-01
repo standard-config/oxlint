@@ -169,7 +169,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'eslint/no-unexpected-multiline': 'off',
 		'eslint/no-unmodified-loop-condition': 'error',
 		'eslint/no-unneeded-ternary': 'warn',
-		'eslint/no-unreachable': 'warn',
+		'eslint/no-unreachable': 'off',
 		'eslint/no-unsafe-finally': 'error',
 		'eslint/no-unsafe-negation': 'off',
 		'eslint/no-unsafe-optional-chaining': [

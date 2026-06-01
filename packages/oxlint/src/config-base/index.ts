@@ -425,6 +425,7 @@ const config: OxlintConfigCoreBaseEntry = {
 			'error',
 			{ allowArgumentsExplicitlyTypedAsAny: true },
 		],
+		'typescript/method-signature-style': ['error', 'property'],
 		'typescript/no-array-delete': 'off',
 		'typescript/no-base-to-string': 'error',
 		'typescript/no-confusing-non-null-assertion': 'error',

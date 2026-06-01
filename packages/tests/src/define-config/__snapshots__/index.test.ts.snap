@@ -910,6 +910,10 @@ exports[`resolves \`@standard-config/oxlint-react\` when it’s available 1`] = 
         "allowArgumentsExplicitlyTypedAsAny": true,
       },
     ],
+    "typescript/method-signature-style": [
+      "error",
+      "property",
+    ],
     "typescript/no-array-delete": "off",
     "typescript/no-base-to-string": "error",
     "typescript/no-confusing-non-null-assertion": "error",
@@ -2363,6 +2367,10 @@ exports[`resolves \`@standard-config/oxlint-stylistic\` when it’s available 1`
       {
         "allowArgumentsExplicitlyTypedAsAny": true,
       },
+    ],
+    "typescript/method-signature-style": [
+      "error",
+      "property",
     ],
     "typescript/no-array-delete": "off",
     "typescript/no-base-to-string": "error",
@@ -4029,6 +4037,10 @@ exports[`resolves all available supplemental configs by default 1`] = `
       {
         "allowArgumentsExplicitlyTypedAsAny": true,
       },
+    ],
+    "typescript/method-signature-style": [
+      "error",
+      "property",
     ],
     "typescript/no-array-delete": "off",
     "typescript/no-base-to-string": "error",

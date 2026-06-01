@@ -23,4 +23,4 @@ jobs:
           registry-url: https://registry.npmjs.org
       - uses: pnpm/action-setup@v6
       - run: pnpm install
-      - run: pnpm --filter @standard-config/oxlint publish --access=public --provenance
+      - run: pnpm --filter @standard-config/oxlint stage publish --access=public --provenance

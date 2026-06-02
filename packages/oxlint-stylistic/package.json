@@ -1,6 +1,6 @@
 {
 	"name": "@standard-config/oxlint-stylistic",
-	"version": "0.0.0",
+	"version": "2.0.0",
 	"description": "Curated Oxlint config with sensible stylistic defaults",
 	"license": "MIT",
 	"author": {
@@ -45,7 +45,7 @@
 		"eslint-plugin-perfectionist": "^5.9.0"
 	},
 	"peerDependencies": {
-		"@standard-config/oxlint": "*",
+		"@standard-config/oxlint": "^2.0.0",
 		"oxlint": "^1.68.0"
 	},
 	"peerDependenciesMeta": {

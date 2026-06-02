@@ -154,6 +154,17 @@ export default defineConfig({
 });
 ```
 
+### How do I enable a supplemental config package?
+
+If you already [use the core config](#usage), there’s no need to modify `oxlint.config.ts`. Installed supplemental config packages are detected and applied automatically.
+
+```ts
+import { defineConfig } from '@standard-config/oxlint';
+
+// Will automatically include any installed supplemental configs
+export default defineConfig();
+```
+
 ### Can I use this config with Vite+?
 
 Absolutely. In your `vite.config.ts`:

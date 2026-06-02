@@ -65,7 +65,7 @@
 	},
 	"scripts": {
 		"build": "vp pack",
-		"prepack": "pnpm --workspace-root prepack && pnpm build",
+		"prepack": "pnpm build",
 		"test": "vitest run",
 		"typecheck": "tsc --noEmit"
 	}

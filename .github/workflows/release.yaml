@@ -23,4 +23,7 @@ jobs:
           registry-url: https://registry.npmjs.org
       - uses: pnpm/action-setup@v6
       - run: pnpm install
+      - run: pnpm prepack
       - run: pnpm --filter @standard-config/oxlint stage publish --access=public --provenance
+      - run: pnpm --filter @standard-config/oxlint-react stage publish --access=public --provenance
+      - run: pnpm --filter @standard-config/oxlint-stylistic stage publish --access=public --provenance

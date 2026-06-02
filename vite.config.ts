@@ -6,9 +6,10 @@ export default defineConfig({
 	},
 	staged: {
 		'*': [
+			() => 'cp README.md packages/oxlint/README.md',
 			() => 'pnpm install --ignore-scripts',
-			() => 'pnpm test',
 			() => 'pnpm --recursive build',
+			() => 'pnpm test',
 			'oxlint --deny-warnings --fix --no-error-on-unmatched-pattern --type-check',
 			'prettier --ignore-unknown --write',
 		],

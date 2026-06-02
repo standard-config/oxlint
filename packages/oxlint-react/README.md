@@ -1,7 +1,3 @@
-> [!CAUTION]
->
-> This document refers to an upcoming version of the package.
-
 <p align="center">
     <a href="https://github.com/standard-config/oxlint">
         <img

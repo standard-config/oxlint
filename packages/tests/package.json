@@ -16,7 +16,7 @@
 		"@standard-config/tsconfig": "catalog:",
 		"@standard-config/utilities": "workspace:*",
 		"@types/node": "catalog:",
-		"@types/react": "^19.2.15",
+		"@types/react": "^19.2.16",
 		"oxlint": "catalog:",
 		"typescript": "catalog:",
 		"vitest": "catalog:"

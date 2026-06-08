@@ -5,7 +5,7 @@ autoInstallPeers: false
 
 catalog:
   '@standard-config/tsconfig': ^3.2.0
-  '@types/node': ^22.19.19
+  '@types/node': ^22.19.20
   oxlint: ^1.68.0
   oxlint-tsgolint: ^0.23.0
   publint: ^0.3.21

@@ -38,6 +38,7 @@ const config: OxlintConfigOverrideEntry = {
 		'react-x/no-nested-lazy-component-declarations': 'off',
 		'react-x/no-unstable-context-value': 'off',
 		'react-x/no-unstable-default-props': 'off',
+		'react-x/set-state-in-effect': 'off',
 		'react/button-has-type': 'off',
 		'react/checked-requires-onchange-or-readonly': 'off',
 		'react/jsx-no-target-blank': 'off',

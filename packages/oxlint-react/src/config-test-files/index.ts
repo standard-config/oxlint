@@ -32,6 +32,7 @@ const config: OxlintConfigOverrideEntry = {
 		'jsx-a11y/scope': 'off',
 		'jsx-a11y/tabindex-no-positive': 'off',
 		'react-perf/jsx-no-new-array-as-prop': 'off',
+		'react-x/jsx-no-leaked-dollar': 'off',
 		'react-x/jsx-no-leaked-semicolon': 'off',
 		'react-x/jsx-no-useless-fragment': 'off',
 		'react/button-has-type': 'off',

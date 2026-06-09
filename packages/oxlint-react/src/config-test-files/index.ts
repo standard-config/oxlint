@@ -35,6 +35,7 @@ const config: OxlintConfigOverrideEntry = {
 		'react-x/jsx-no-leaked-dollar': 'off',
 		'react-x/jsx-no-leaked-semicolon': 'off',
 		'react-x/jsx-no-useless-fragment': 'off',
+		'react-x/no-unstable-context-value': 'off',
 		'react/button-has-type': 'off',
 		'react/checked-requires-onchange-or-readonly': 'off',
 		'react/jsx-no-target-blank': 'off',

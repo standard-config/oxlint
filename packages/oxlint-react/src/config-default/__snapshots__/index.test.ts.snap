@@ -88,6 +88,7 @@ exports[`is a valid Oxlint config 1`] = `
         "react-x/no-nested-lazy-component-declarations": "off",
         "react-x/no-unstable-context-value": "off",
         "react-x/no-unstable-default-props": "off",
+        "react-x/purity": "off",
         "react-x/refs": "off",
         "react-x/set-state-in-effect": "off",
         "react/button-has-type": "off",

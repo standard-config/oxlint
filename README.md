@@ -103,9 +103,7 @@ While **@standard-config/oxlint** relies only on Oxlint’s core rules, the supp
     </thead>
     <tbody>
         <tr>
-            <th align="left">
-                <a href="https://github.com/standard-config/oxlint/tree/main/packages/oxlint-react">@standard&#8209;config/oxlint&#8209;react</a>
-            </th>
+            <th align="left">🟦 <a href="https://github.com/standard-config/oxlint/tree/main/packages/oxlint-react">@standard&#8209;config/oxlint&#8209;react</a></th>
             <td>
                 <code>react</code>
                 <br />
@@ -118,9 +116,7 @@ While **@standard-config/oxlint** relies only on Oxlint’s core rules, the supp
             </td>
         </tr>
         <tr>
-            <th align="left">
-                <a href="https://github.com/standard-config/oxlint/tree/main/packages/oxlint-stylistic">@standard&#8209;config/oxlint&#8209;stylistic</a>
-            </th>
+            <th align="left">🟦 <a href="https://github.com/standard-config/oxlint/tree/main/packages/oxlint-stylistic">@standard&#8209;config/oxlint&#8209;stylistic</a></th>
             <td>—</td>
             <td>
                 <a href="https://eslint.style"><code>stylistic</code></a>

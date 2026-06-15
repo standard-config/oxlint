@@ -34,6 +34,7 @@ exports[`is a valid Oxlint config override 1`] = `
     "react-x/use-memo": "error",
     "react-x/use-state": "error",
     "react-x/web-api-no-leaked-event-listener": "error",
+    "react-x/web-api-no-leaked-intersection-observer": "error",
     "react-x/web-api-no-leaked-interval": "error",
     "react-x/web-api-no-leaked-resize-observer": "error",
     "react-x/web-api-no-leaked-timeout": "error",

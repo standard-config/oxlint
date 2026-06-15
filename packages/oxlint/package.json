@@ -1,6 +1,6 @@
 {
 	"name": "@standard-config/oxlint",
-	"version": "2.0.2",
+	"version": "2.0.3",
 	"description": "Curated Oxlint config with sensible defaults",
 	"license": "MIT",
 	"author": {
@@ -43,8 +43,8 @@
 		"node": ">=22"
 	},
 	"peerDependencies": {
-		"@standard-config/oxlint-react": "^2.0.0",
-		"@standard-config/oxlint-stylistic": "^2.0.0",
+		"@standard-config/oxlint-react": "^2.0.1",
+		"@standard-config/oxlint-stylistic": "^2.0.1",
 		"oxlint": "^1.68.0",
 		"oxlint-tsgolint": "^0.23.0"
 	},

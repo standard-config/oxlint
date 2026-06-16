@@ -674,6 +674,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'unicorn/prefer-response-static-json': 'error',
 		'unicorn/prefer-set-has': 'error',
 		'unicorn/prefer-set-size': 'error',
+		'unicorn/prefer-single-call': 'warn',
 		'unicorn/prefer-spread': 'warn',
 		'unicorn/prefer-string-raw': 'error',
 		'unicorn/prefer-string-replace-all': 'error',

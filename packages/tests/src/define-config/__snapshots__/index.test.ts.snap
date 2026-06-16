@@ -115,6 +115,7 @@ exports[`resolves \`@standard-config/oxlint-react\` when it’s available 1`] = 
         "unicorn/error-message": "off",
         "unicorn/no-empty-file": "off",
         "unicorn/no-useless-promise-resolve-reject": "off",
+        "unicorn/prefer-single-call": "off",
         "vitest/consistent-each-for": [
           "warn",
           {
@@ -1203,6 +1204,7 @@ exports[`resolves \`@standard-config/oxlint-react\` when it’s available 1`] = 
     "unicorn/prefer-response-static-json": "error",
     "unicorn/prefer-set-has": "error",
     "unicorn/prefer-set-size": "error",
+    "unicorn/prefer-single-call": "warn",
     "unicorn/prefer-spread": "warn",
     "unicorn/prefer-string-raw": "error",
     "unicorn/prefer-string-replace-all": "error",
@@ -1432,6 +1434,7 @@ exports[`resolves \`@standard-config/oxlint-stylistic\` when it’s available 1`
         "unicorn/error-message": "off",
         "unicorn/no-empty-file": "off",
         "unicorn/no-useless-promise-resolve-reject": "off",
+        "unicorn/prefer-single-call": "off",
         "vitest/consistent-each-for": [
           "warn",
           {
@@ -2661,6 +2664,7 @@ exports[`resolves \`@standard-config/oxlint-stylistic\` when it’s available 1`
     "unicorn/prefer-response-static-json": "error",
     "unicorn/prefer-set-has": "error",
     "unicorn/prefer-set-size": "error",
+    "unicorn/prefer-single-call": "warn",
     "unicorn/prefer-spread": "warn",
     "unicorn/prefer-string-raw": "error",
     "unicorn/prefer-string-replace-all": "error",
@@ -2894,6 +2898,7 @@ exports[`resolves all available supplemental configs by default 1`] = `
         "unicorn/error-message": "off",
         "unicorn/no-empty-file": "off",
         "unicorn/no-useless-promise-resolve-reject": "off",
+        "unicorn/prefer-single-call": "off",
         "vitest/consistent-each-for": [
           "warn",
           {
@@ -4343,6 +4348,7 @@ exports[`resolves all available supplemental configs by default 1`] = `
     "unicorn/prefer-response-static-json": "error",
     "unicorn/prefer-set-has": "error",
     "unicorn/prefer-set-size": "error",
+    "unicorn/prefer-single-call": "warn",
     "unicorn/prefer-spread": "warn",
     "unicorn/prefer-string-raw": "error",
     "unicorn/prefer-string-replace-all": "error",

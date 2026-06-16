@@ -109,6 +109,7 @@ exports[`is a valid Oxlint config 1`] = `
         "unicorn/error-message": "off",
         "unicorn/no-empty-file": "off",
         "unicorn/no-useless-promise-resolve-reject": "off",
+        "unicorn/prefer-single-call": "off",
         "vitest/consistent-each-for": [
           "warn",
           {
@@ -977,6 +978,7 @@ exports[`is a valid Oxlint config 1`] = `
     "unicorn/prefer-response-static-json": "error",
     "unicorn/prefer-set-has": "error",
     "unicorn/prefer-set-size": "error",
+    "unicorn/prefer-single-call": "warn",
     "unicorn/prefer-spread": "warn",
     "unicorn/prefer-string-raw": "error",
     "unicorn/prefer-string-replace-all": "error",

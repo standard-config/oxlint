@@ -810,6 +810,7 @@ exports[`resolves \`@standard-config/oxlint-react\` when it’s available 1`] = 
     "react/jsx-no-comment-textnodes": "error",
     "react/jsx-no-constructed-context-values": "error",
     "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-literals": "off",
     "react/jsx-no-script-url": "error",
     "react/jsx-no-target-blank": [
       "error",
@@ -3848,6 +3849,7 @@ exports[`resolves all available supplemental configs by default 1`] = `
     "react/jsx-no-comment-textnodes": "error",
     "react/jsx-no-constructed-context-values": "error",
     "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-literals": "off",
     "react/jsx-no-script-url": "error",
     "react/jsx-no-target-blank": [
       "error",

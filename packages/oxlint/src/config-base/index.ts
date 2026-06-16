@@ -645,6 +645,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'unicorn/prefer-dom-node-remove': 'error',
 		'unicorn/prefer-dom-node-text-content': 'error',
 		'unicorn/prefer-event-target': 'error',
+		'unicorn/prefer-export-from': 'error',
 		'unicorn/prefer-global-this': 'error',
 		'unicorn/prefer-import-meta-properties': 'error',
 		'unicorn/prefer-includes': 'off',

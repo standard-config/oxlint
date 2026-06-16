@@ -571,6 +571,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'unicorn/no-accessor-recursion': 'error',
 		'unicorn/no-anonymous-default-export': 'off',
 		'unicorn/no-array-callback-reference': 'off',
+		'unicorn/no-array-fill-with-reference-type': 'error',
 		'unicorn/no-array-for-each': 'error',
 		'unicorn/no-array-method-this-argument': 'error',
 		'unicorn/no-array-reduce': 'error',

@@ -19,7 +19,7 @@
 		"@standard-config/tsconfig": "catalog:",
 		"@stylistic/eslint-plugin": "^5.10.0",
 		"@types/node": "catalog:",
-		"eslint-plugin-perfectionist": "^5.9.0",
+		"eslint-plugin-perfectionist": "^5.9.1",
 		"oxlint": "catalog:",
 		"typescript": "catalog:",
 		"vite-plus": "catalog:",

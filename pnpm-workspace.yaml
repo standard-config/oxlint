@@ -19,6 +19,7 @@ gitChecks: false
 
 minimumReleaseAgeExclude:
   - '@oxlint/*'
+  - eslint-plugin-perfectionist
   - oxlint
   - oxlint-tsgolint
 

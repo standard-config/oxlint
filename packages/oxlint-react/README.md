@@ -34,7 +34,7 @@
 
 ## Overview
 
-Supplemental config for [**@standard-config/oxlint**](https://github.com/standard-config/oxlint), with React-related rules from Oxlint and [ESLint React](https://eslint-react.xyz).
+Supplemental config for [**@standard-config/oxlint**](https://github.com/standard-config/oxlint), with React-related rules from Oxlint, [ESLint React](https://eslint-react.xyz), and [React You Might Not Need An Effect](https://github.com/nickjvandyke/eslint-plugin-react-you-might-not-need-an-effect).
 
 ## Install
 

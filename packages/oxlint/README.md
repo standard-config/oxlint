@@ -83,13 +83,13 @@ While **@standard-config/oxlint** relies only on Oxlint’s core rules, the supp
         <tr>
             <th
                 align="left"
-                width="450"
+                width="500"
             >
                 Package
             </th>
             <th
                 align="left"
-                width="300"
+                width="200"
             >
                 Core Plugins
             </th>
@@ -113,6 +113,8 @@ While **@standard-config/oxlint** relies only on Oxlint’s core rules, the supp
             </td>
             <td>
                 <a href="https://eslint-react.xyz"><code>react&#8209;x</code></a>
+                <br />
+                <a href="https://github.com/nickjvandyke/eslint-plugin-react-you-might-not-need-an-effect"><code>react&#8209;you&#8209;might&#8209;not&#8209;need&#8209;an&#8209;effect</code></a>
             </td>
         </tr>
         <tr>

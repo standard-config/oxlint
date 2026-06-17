@@ -6,6 +6,14 @@ import type { OxlintConfigOverrideEntry } from '@standard-config/utilities/types
  */
 const config: OxlintConfigOverrideEntry = {
 	rules: {
+		'react-effect/no-adjust-state-on-prop-change': 'error',
+		'react-effect/no-chain-state-updates': 'error',
+		'react-effect/no-derived-state': 'error',
+		'react-effect/no-event-handler': 'error',
+		'react-effect/no-external-store-subscription': 'error',
+		'react-effect/no-pass-data-to-parent': 'error',
+		'react-effect/no-pass-live-state-to-parent': 'error',
+		'react-effect/no-reset-all-state-on-prop-change': 'error',
 		'react-x/dom-no-flush-sync': 'error',
 		'react-x/dom-no-unsafe-iframe-sandbox': 'error',
 		'react-x/dom-no-use-form-state': 'error',

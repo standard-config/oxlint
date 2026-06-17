@@ -12,7 +12,10 @@ const config: OxlintConfigBaseEntry = {
 		'react-perf',
 	],
 	jsPlugins: [
-		/* prettier-ignore */
+		resolvePlugin(
+			'react-effect',
+			'eslint-plugin-react-you-might-not-need-an-effect'
+		),
 		resolvePlugin('react-x', '@eslint-react/eslint-plugin'),
 	],
 	rules: {

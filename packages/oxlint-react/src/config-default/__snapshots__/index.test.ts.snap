@@ -4,6 +4,10 @@ exports[`is a valid Oxlint config 1`] = `
 {
   "jsPlugins": [
     {
+      "name": "react-effect",
+      "specifier": "eslint-plugin-react-you-might-not-need-an-effect",
+    },
+    {
       "name": "react-x",
       "specifier": "@eslint-react/eslint-plugin",
     },
@@ -14,6 +18,14 @@ exports[`is a valid Oxlint config 1`] = `
         "**/*.{jsx,tsx}",
       ],
       "rules": {
+        "react-effect/no-adjust-state-on-prop-change": "error",
+        "react-effect/no-chain-state-updates": "error",
+        "react-effect/no-derived-state": "error",
+        "react-effect/no-event-handler": "error",
+        "react-effect/no-external-store-subscription": "error",
+        "react-effect/no-pass-data-to-parent": "error",
+        "react-effect/no-pass-live-state-to-parent": "error",
+        "react-effect/no-reset-all-state-on-prop-change": "error",
         "react-x/dom-no-flush-sync": "error",
         "react-x/dom-no-unsafe-iframe-sandbox": "error",
         "react-x/dom-no-use-form-state": "error",
@@ -82,6 +94,14 @@ exports[`is a valid Oxlint config 1`] = `
         "jsx-a11y/prefer-tag-over-role": "off",
         "jsx-a11y/scope": "off",
         "jsx-a11y/tabindex-no-positive": "off",
+        "react-effect/no-adjust-state-on-prop-change": "off",
+        "react-effect/no-chain-state-updates": "off",
+        "react-effect/no-derived-state": "off",
+        "react-effect/no-event-handler": "off",
+        "react-effect/no-external-store-subscription": "off",
+        "react-effect/no-pass-data-to-parent": "off",
+        "react-effect/no-pass-live-state-to-parent": "off",
+        "react-effect/no-reset-all-state-on-prop-change": "off",
         "react-perf/jsx-no-new-array-as-prop": "off",
         "react-x/immutability": "off",
         "react-x/jsx-no-leaked-dollar": "off",

@@ -4,6 +4,10 @@ exports[`is a valid Oxlint config 1`] = `
 {
   "jsPlugins": [
     {
+      "name": "react-effect",
+      "specifier": "eslint-plugin-react-you-might-not-need-an-effect",
+    },
+    {
       "name": "react-x",
       "specifier": "@eslint-react/eslint-plugin",
     },

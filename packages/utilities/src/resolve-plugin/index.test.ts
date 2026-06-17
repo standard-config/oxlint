@@ -6,6 +6,7 @@ const PLUGINS = [
 	'@eslint-react/eslint-plugin',
 	'@stylistic/eslint-plugin',
 	'eslint-plugin-perfectionist',
+	'eslint-plugin-react-you-might-not-need-an-effect',
 ];
 
 test.each(PLUGINS)('resolves `%s`', (plugin) => {

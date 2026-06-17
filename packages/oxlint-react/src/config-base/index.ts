@@ -124,6 +124,7 @@ const config: OxlintConfigBaseEntry = {
 		'react/only-export-components': 'off',
 		'react/prefer-es6-class': 'off',
 		'react/prefer-function-component': 'off',
+		'react/react-compiler': 'off',
 		'react/react-in-jsx-scope': 'off',
 		'react/require-render-return': 'off',
 		'react/rules-of-hooks': 'error',

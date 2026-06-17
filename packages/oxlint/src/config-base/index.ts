@@ -161,7 +161,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'eslint/no-template-curly-in-string': 'warn',
 		'eslint/no-ternary': 'off',
 		'eslint/no-this-before-super': 'off',
-		'eslint/no-throw-literal': 'error',
+		'eslint/no-throw-literal': 'off',
 		'eslint/no-unassigned-vars': 'error',
 		'eslint/no-undef': 'off',
 		'eslint/no-undefined': 'off',

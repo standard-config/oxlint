@@ -1,44 +1,51 @@
 {
-	"name": "@standard-config/oxlint-packages",
-	"version": "0.0.0",
-	"private": true,
-	"license": "MIT",
-	"author": {
-		"name": "Dom Porada",
-		"email": "dom@dom.engineering",
-		"url": "https://dom.engineering"
-	},
-	"type": "module",
-	"engines": {
-		"node": ">=24"
-	},
-	"packageManager": "pnpm@11.7.0",
-	"devDependencies": {
-		"@standard-config/oxlint": "workspace:*",
-		"@standard-config/oxlint-react": "workspace:*",
-		"@standard-config/oxlint-stylistic": "workspace:*",
-		"@standard-config/prettier": "^1.13.3",
-		"@standard-config/tsconfig": "catalog:",
-		"@vitest/coverage-v8": "^4.1.9",
-		"eslint": "^10.5.0",
-		"oxlint": "catalog:",
-		"oxlint-tsgolint": "catalog:",
-		"prettier": "^3.8.4",
-		"typescript": "catalog:",
-		"vite-plus": "catalog:",
-		"vitest": "catalog:"
-	},
-	"scripts": {
-		"build": "pnpm --recursive build --log-level=warn --no-publint",
-		"fix": " pnpm format && pnpm build && pnpm lint && pnpm format",
-		"format": "prettier --ignore-unknown --log-level=warn --write .",
-		"format:check": "prettier --check --ignore-unknown .",
-		"lint": "oxlint --fix",
-		"lint:check": "oxlint --deny-warnings --type-check",
-		"prepack": "pnpm run '/^(format:check|lint:check|test)$/'",
-		"prepare": "vp config",
-		"postprepare": "pnpm build",
-		"test": "vitest run",
-		"typecheck": "tsc --noEmit"
-	}
+  "name": "@standard-config/oxlint-packages",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Dom Porada",
+    "email": "dom@dom.engineering",
+    "url": "https://dom.engineering"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.7.0",
+  "devDependencies": {
+    "@standard-config/oxlint": "workspace:*",
+    "@standard-config/oxlint-react": "workspace:*",
+    "@standard-config/oxlint-stylistic": "workspace:*",
+    "@standard-config/prettier": "^1.13.3",
+    "@standard-config/tsconfig": "catalog:",
+    "@vitest/coverage-v8": "^4.1.9",
+    "eslint": "^10.5.0",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
+    "prettier": "^3.8.4",
+    "typescript": "catalog:",
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
+  },
+  "scripts": {
+    "build": "pnpm --recursive build --log-level=warn --no-publint",
+    "fix": " pnpm format && pnpm build && pnpm lint && pnpm format",
+    "format": "prettier --ignore-unknown --log-level=warn --write .",
+    "format:check": "prettier --check --ignore-unknown .",
+    "lint": "oxlint --fix",
+    "lint:check": "oxlint --deny-warnings --type-check",
+    "prepack": "pnpm run '/^(format:check|lint:check|test)$/'",
+    "prepare": "vp config",
+    "postprepare": "pnpm build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "bugs": {
+    "url": "https://github.com/owner/repo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
 }

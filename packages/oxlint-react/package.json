@@ -1,72 +1,75 @@
 {
-	"name": "@standard-config/oxlint-react",
-	"version": "2.1.0",
-	"description": "Curated Oxlint config with sensible React defaults",
-	"license": "MIT",
-	"author": {
-		"name": "Dom Porada",
-		"email": "dom@dom.engineering",
-		"url": "https://dom.engineering"
-	},
-	"homepage": "https://sconfig.org/oxlint-react",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/standard-config/oxlint.git",
-		"directory": "packages/oxlint-react"
-	},
-	"keywords": [
-		"eslint-config-xo",
-		"eslint-config-xo-react",
-		"eslint-react",
-		"jsx",
-		"jsx-a11y",
-		"linter",
-		"oxc",
-		"oxlint",
-		"oxlint-config",
-		"react",
-		"react-hooks",
-		"react-x",
-		"standard-config",
-		"standard-config-oxlint",
-		"typescript",
-		"xo"
-	],
-	"files": [
-		"dist/**"
-	],
-	"type": "module",
-	"sideEffects": false,
-	"exports": "./dist/index.mjs",
-	"types": "./dist/index.d.mts",
-	"engines": {
-		"node": ">=22"
-	},
-	"dependencies": {
-		"@eslint-react/eslint-plugin": "^5.9.0"
-	},
-	"peerDependencies": {
-		"@standard-config/oxlint": "^2.0.0",
-		"oxlint": "^1.70.0"
-	},
-	"peerDependenciesMeta": {
-		"@standard-config/oxlint": {
-			"optional": true
-		}
-	},
-	"devDependencies": {
-		"@standard-config/tsconfig": "catalog:",
-		"@standard-config/utilities": "workspace:*",
-		"oxlint": "catalog:",
-		"publint": "catalog:",
-		"typescript": "catalog:",
-		"vite-plus": "catalog:",
-		"vitest": "catalog:"
-	},
-	"scripts": {
-		"build": "vp pack",
-		"prepack": "pnpm build",
-		"test": "vitest run",
-		"typecheck": "tsc --noEmit"
-	}
+  "name": "@standard-config/oxlint-react",
+  "version": "2.1.0",
+  "description": "Curated Oxlint config with sensible React defaults",
+  "license": "MIT",
+  "author": {
+    "name": "Dom Porada",
+    "email": "dom@dom.engineering",
+    "url": "https://dom.engineering"
+  },
+  "homepage": "https://sconfig.org/oxlint-react",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/standard-config/oxlint.git",
+    "directory": "packages/oxlint-react"
+  },
+  "keywords": [
+    "eslint-config-xo",
+    "eslint-config-xo-react",
+    "eslint-react",
+    "jsx",
+    "jsx-a11y",
+    "linter",
+    "oxc",
+    "oxlint",
+    "oxlint-config",
+    "react",
+    "react-hooks",
+    "react-x",
+    "standard-config",
+    "standard-config-oxlint",
+    "typescript",
+    "xo"
+  ],
+  "files": [
+    "dist/**"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@eslint-react/eslint-plugin": "^5.9.0"
+  },
+  "peerDependencies": {
+    "@standard-config/oxlint": "^2.0.0",
+    "oxlint": "^1.70.0"
+  },
+  "peerDependenciesMeta": {
+    "@standard-config/oxlint": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@standard-config/tsconfig": "catalog:",
+    "@standard-config/utilities": "workspace:*",
+    "oxlint": "catalog:",
+    "publint": "catalog:",
+    "typescript": "catalog:",
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
+  },
+  "scripts": {
+    "build": "vp pack",
+    "prepack": "pnpm build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "bugs": {
+    "url": "https://github.com/standard-config/oxlint/issues"
+  }
 }

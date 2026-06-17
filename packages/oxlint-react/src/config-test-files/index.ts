@@ -49,7 +49,6 @@ const config: OxlintConfigOverrideEntry = {
 		'react-x/no-unstable-default-props': 'off',
 		'react-x/purity': 'off',
 		'react-x/refs': 'off',
-		'react-x/set-state-in-effect': 'off',
 		'react/button-has-type': 'off',
 		'react/checked-requires-onchange-or-readonly': 'off',
 		'react/jsx-no-target-blank': 'off',

@@ -39,7 +39,6 @@ const config: OxlintConfigOverrideEntry = {
 		'react-x/no-use-context': 'error',
 		'react-x/purity': 'error',
 		'react-x/refs': 'error',
-		'react-x/set-state-in-effect': 'error',
 		'react-x/set-state-in-render': 'error',
 		'react-x/unsupported-syntax': 'error',
 		'react-x/use-memo': 'error',

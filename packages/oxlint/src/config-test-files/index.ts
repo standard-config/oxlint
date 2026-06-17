@@ -120,7 +120,6 @@ const config: OxlintConfigOverrideEntry = {
 		'vitest/prefer-expect-type-of': 'error',
 		'vitest/prefer-hooks-in-order': 'warn',
 		'vitest/prefer-hooks-on-top': 'warn',
-		'vitest/prefer-importing-vitest-globals': 'error',
 		'vitest/prefer-mock-promise-shorthand': 'error',
 		'vitest/prefer-mock-return-shorthand': 'error',
 		'vitest/prefer-strict-boolean-matchers': 'error',

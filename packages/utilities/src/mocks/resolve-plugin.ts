@@ -1,4 +1,4 @@
-import { vi } from 'vitest';
+import { vi } from 'vite-plus/test';
 
 // Causing `fileURLToPath` to throw an error forces `resolvePlugin` to leave
 // dependency specifiers unresolved in snapshots (even when packaged)

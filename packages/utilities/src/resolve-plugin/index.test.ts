@@ -1,5 +1,5 @@
 import { isAbsolute } from 'node:path';
-import { expect, test } from 'vitest';
+import { expect, test } from 'vite-plus/test';
 import resolvePlugin from './index.ts';
 
 const PLUGINS = [

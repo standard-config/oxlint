@@ -1,7 +1,7 @@
 import type { OxlintConfig } from 'oxlint';
 import { defineConfig as oxlintDefineConfig } from 'oxlint';
 import { defineConfig as viteDefineConfig } from 'vite-plus';
-import { expectTypeOf, test } from 'vitest';
+import { expectTypeOf, test } from 'vite-plus/test';
 import defineConfig from './index.ts';
 
 test('defines a valid Oxlint config', () => {

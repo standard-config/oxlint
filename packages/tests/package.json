@@ -19,10 +19,10 @@
 		"@types/react": "^19.2.17",
 		"oxlint": "catalog:",
 		"typescript": "catalog:",
-		"vitest": "catalog:"
+		"vite-plus": "catalog:"
 	},
 	"scripts": {
-		"test": "vitest run",
+		"test": "vp test",
 		"typecheck": "tsc --noEmit"
 	}
 }

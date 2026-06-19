@@ -1,5 +1,5 @@
 import { defineConfig as oxlintDefineConfig } from 'oxlint';
-import { expectTypeOf, test } from 'vitest';
+import { expectTypeOf, test } from 'vite-plus/test';
 import {
 	GLOB_SET_CONFIG_FILES,
 	GLOB_SET_JSX_FILES,

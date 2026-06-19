@@ -1,5 +1,5 @@
 import '@standard-config/utilities/mocks/resolve-plugin';
-import { beforeEach, expect, test, vi } from 'vitest';
+import { beforeEach, expect, test, vi } from 'vite-plus/test';
 
 beforeEach(() => {
 	vi.resetModules();

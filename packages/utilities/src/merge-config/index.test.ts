@@ -1,5 +1,5 @@
 import type { OxlintConfig } from 'oxlint';
-import { expect, expectTypeOf, test } from 'vitest';
+import { expect, expectTypeOf, test } from 'vite-plus/test';
 import mergeConfig from './index.ts';
 
 test('merges two valid configs', () => {

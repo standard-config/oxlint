@@ -61,13 +61,12 @@
 		"oxlint": "catalog:",
 		"publint": "catalog:",
 		"typescript": "catalog:",
-		"vite-plus": "catalog:",
-		"vitest": "catalog:"
+		"vite-plus": "catalog:"
 	},
 	"scripts": {
 		"build": "vp pack",
 		"prepack": "pnpm build",
-		"test": "vitest run",
+		"test": "vp test",
 		"typecheck": "tsc --noEmit"
 	}
 }

@@ -5,7 +5,7 @@ import type {
 	OxlintConfigOverrideEntry,
 	OxlintConfigPluginEntry,
 } from './index.d.ts';
-import { expectTypeOf, test } from 'vitest';
+import { expectTypeOf, test } from 'vite-plus/test';
 
 test('exposes valid types', () => {
 	expectTypeOf<OxlintConfigBaseEntry>().toBeObject();

@@ -1,5 +1,5 @@
 import '@standard-config/utilities/mocks/resolve-plugin';
-import { expect, test } from 'vitest';
+import { expect, test } from 'vite-plus/test';
 import defineConfig from './index.ts';
 
 test('defines a valid Oxlint config', () => {

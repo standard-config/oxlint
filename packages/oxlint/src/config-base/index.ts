@@ -210,10 +210,7 @@ const config: OxlintConfigCoreBaseEntry = {
 			{ allowNamedFunctions: true },
 		],
 		'eslint/prefer-const': 'error',
-		'eslint/prefer-destructuring': [
-			'error',
-			{ enforceForRenamedProperties: false },
-		],
+		'eslint/prefer-destructuring': 'warn',
 		'eslint/prefer-exponentiation-operator': 'warn',
 		'eslint/prefer-named-capture-group': 'off',
 		'eslint/prefer-numeric-literals': 'off',

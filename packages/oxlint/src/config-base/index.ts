@@ -660,6 +660,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'unicorn/prefer-native-coercion-functions': 'error',
 		'unicorn/prefer-negative-index': 'error',
 		'unicorn/prefer-node-protocol': 'error',
+		'unicorn/prefer-number-coercion': 'warn',
 		'unicorn/prefer-number-properties': [
 			'error',
 			{

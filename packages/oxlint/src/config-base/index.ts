@@ -334,6 +334,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'node/no-new-require': 'off',
 		'node/no-path-concat': 'error',
 		'node/no-process-env': 'off',
+		'node/no-sync': 'off',
 		'oxc/approx-constant': 'error',
 		'oxc/bad-array-method-on-arguments': 'error',
 		'oxc/bad-bitwise-operator': 'error',

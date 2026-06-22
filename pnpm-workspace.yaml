@@ -16,6 +16,8 @@ color: always
 
 gitChecks: false
 
+minimumReleaseAge: 900
+
 minimumReleaseAgeExclude:
   - '@oxlint/*'
   - oxlint

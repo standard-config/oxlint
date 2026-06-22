@@ -401,6 +401,7 @@ exports[`is a valid Oxlint config 1`] = `
       "error",
     ],
     "node/no-exports-assign": "off",
+    "node/no-mixed-requires": "off",
     "node/no-new-require": "off",
     "node/no-path-concat": "error",
     "node/no-process-env": "off",

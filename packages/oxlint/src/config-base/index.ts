@@ -330,6 +330,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'node/global-require': 'off',
 		'node/handle-callback-err': ['error', 'error'],
 		'node/no-exports-assign': 'off',
+		'node/no-mixed-requires': 'off',
 		'node/no-new-require': 'off',
 		'node/no-path-concat': 'error',
 		'node/no-process-env': 'off',

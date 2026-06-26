@@ -36,8 +36,6 @@
 
 Curated Oxlint config with sensible defaults. Designed as a careful, environment-agnostic baseline for writing better TypeScript. Comes with [supplemental configs](#supplemental-configs) that extend the core ruleset.
 
-If you’re migrating from [**xo**](https://github.com/xojs/xo), you’ll feel right at home.
-
 ## Install
 
 ```sh
@@ -130,6 +128,10 @@ While **@standard-config/oxlint** relies only on Oxlint’s core rules, the supp
 </table>
 
 ## FAQ
+
+### How responsive is this config to new Oxlint releases?
+
+The config follows Oxlint releases closely, evaluating new rules as they become available (or when they graduate from `nursery`). Most config updates have landed within a few hours of a new Oxlint release.
 
 ### Does this config require any specific TypeScript configuration?
 

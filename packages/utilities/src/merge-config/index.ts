@@ -10,9 +10,7 @@ import clone from '../clone/index.ts';
 export default function mergeConfig(
 	baseConfig: OxlintConfig,
 	extensionConfig:
-		| OxlintConfig
-		| OxlintConfigBaseEntry
-		| OxlintConfigOverrideEntry
+		OxlintConfig | OxlintConfigBaseEntry | OxlintConfigOverrideEntry
 ): OxlintConfig {
 	if (!(isObject(baseConfig) && isObject(extensionConfig))) {
 		throw new TypeError(

@@ -17,6 +17,7 @@ updates:
       default-days: 1
       exclude:
         - '@oxlint/*'
+        - '@oxlint-tsgolint/*'
         - oxlint
         - oxlint-tsgolint
     ignore:

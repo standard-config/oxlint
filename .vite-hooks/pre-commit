@@ -1,1 +1,11 @@
+#!/bin/sh
+
+# Enable strict mode
+set -eu
+
+# Sync `README.md`
+cp README.md packages/oxlint/README.md
+git add --update packages/oxlint/README.md
+
+# Lint staged files
 vp staged

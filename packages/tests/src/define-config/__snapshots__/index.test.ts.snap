@@ -1104,6 +1104,10 @@ exports[`resolves \`@standard-config/oxlint-react\` when it’s available 1`] = 
     "unicorn/error-message": "error",
     "unicorn/escape-case": "error",
     "unicorn/explicit-length-check": "error",
+    "unicorn/explicit-timer-delay": [
+      "warn",
+      "never",
+    ],
     "unicorn/filename-case": "off",
     "unicorn/import-style": "off",
     "unicorn/max-nested-calls": "off",
@@ -2565,6 +2569,10 @@ exports[`resolves \`@standard-config/oxlint-stylistic\` when it’s available 1`
     "unicorn/error-message": "error",
     "unicorn/escape-case": "error",
     "unicorn/explicit-length-check": "error",
+    "unicorn/explicit-timer-delay": [
+      "warn",
+      "never",
+    ],
     "unicorn/filename-case": "off",
     "unicorn/import-style": "off",
     "unicorn/max-nested-calls": "off",
@@ -4269,6 +4277,10 @@ exports[`resolves all available supplemental configs by default 1`] = `
     "unicorn/error-message": "error",
     "unicorn/escape-case": "error",
     "unicorn/explicit-length-check": "error",
+    "unicorn/explicit-timer-delay": [
+      "warn",
+      "never",
+    ],
     "unicorn/filename-case": "off",
     "unicorn/import-style": "off",
     "unicorn/max-nested-calls": "off",

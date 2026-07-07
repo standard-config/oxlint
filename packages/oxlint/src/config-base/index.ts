@@ -563,6 +563,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'unicorn/error-message': 'error',
 		'unicorn/escape-case': 'error',
 		'unicorn/explicit-length-check': 'error',
+		'unicorn/explicit-timer-delay': ['warn', 'never'],
 		'unicorn/filename-case': 'off',
 		'unicorn/import-style': 'off',
 		'unicorn/max-nested-calls': 'off',

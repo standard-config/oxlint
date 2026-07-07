@@ -580,6 +580,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'unicorn/no-array-sort': ['error'],
 		'unicorn/no-await-expression-member': 'error',
 		'unicorn/no-await-in-promise-methods': 'error',
+		'unicorn/no-confusing-array-with': 'warn',
 		'unicorn/no-console-spaces': 'error',
 		'unicorn/no-document-cookie': 'error',
 		'unicorn/no-empty-file': 'warn',

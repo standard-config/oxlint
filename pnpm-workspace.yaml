@@ -27,10 +27,6 @@ overrides:
   vite-plus>oxlint: 'catalog:'
   vite-plus>oxlint-tsgolint: 'catalog:'
 
-peerDependencyRules:
-  allowAny:
-    - '@vitest/coverage-v8'
-
 strictPeerDependencies: true
 
 trustPolicy: no-downgrade

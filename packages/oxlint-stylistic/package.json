@@ -42,7 +42,7 @@
 	},
 	"dependencies": {
 		"@stylistic/eslint-plugin": "^5.10.0",
-		"eslint-plugin-perfectionist": "^5.9.1"
+		"eslint-plugin-perfectionist": "^5.10.0"
 	},
 	"peerDependencies": {
 		"@standard-config/oxlint": "^2.0.1",

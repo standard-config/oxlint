@@ -10,22 +10,28 @@ catalog:
   oxlint-tsgolint: ^0.24.0
   publint: ^0.3.21
   typescript: ^6.0.3
-  vite-plus: ^0.2.2
+  vite-plus: ^0.2.4
 
 color: always
 
 gitChecks: false
 
 minimumReleaseAgeExclude:
-  - '@oxlint/*'
   - '@oxlint-tsgolint/*'
+  - '@oxlint/*'
+  - '@voidzero-dev/vite-plus-*'
   - oxlint
   - oxlint-tsgolint
+  - vite-plus
 
 overrides:
   vite-plus>oxfmt: '-'
   vite-plus>oxlint: 'catalog:'
   vite-plus>oxlint-tsgolint: 'catalog:'
+
+peerDependencyRules:
+  allowAny:
+    - '@vitest/coverage-v8'
 
 strictPeerDependencies: true
 

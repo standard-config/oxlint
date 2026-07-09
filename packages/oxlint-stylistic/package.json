@@ -1,6 +1,6 @@
 {
 	"name": "@standard-config/oxlint-stylistic",
-	"version": "2.4.0",
+	"version": "2.4.1",
 	"description": "Curated Oxlint config with sensible stylistic defaults",
 	"license": "MIT",
 	"author": {

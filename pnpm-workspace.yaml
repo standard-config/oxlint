@@ -19,10 +19,8 @@ gitChecks: false
 minimumReleaseAgeExclude:
   - '@oxlint-tsgolint/*'
   - '@oxlint/*'
-  - '@voidzero-dev/vite-plus-*'
   - oxlint
   - oxlint-tsgolint
-  - vite-plus
 
 overrides:
   vite-plus>oxfmt: '-'

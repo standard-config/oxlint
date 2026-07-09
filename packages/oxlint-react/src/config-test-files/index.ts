@@ -40,7 +40,6 @@ const config: OxlintConfigOverrideEntry = {
 		'react-effect/no-pass-live-state-to-parent': 'off',
 		'react-effect/no-reset-all-state-on-prop-change': 'off',
 		'react-perf/jsx-no-new-array-as-prop': 'off',
-		'react-x/immutability': 'off',
 		'react-x/jsx-no-leaked-dollar': 'off',
 		'react-x/jsx-no-leaked-semicolon': 'off',
 		'react-x/jsx-no-useless-fragment': 'off',

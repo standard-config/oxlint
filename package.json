@@ -23,7 +23,7 @@
 		"eslint": "^10.6.0",
 		"oxlint": "catalog:",
 		"oxlint-tsgolint": "catalog:",
-		"prettier": "^3.9.4",
+		"prettier": "^3.9.5",
 		"typescript": "catalog:",
 		"vite-plus": "catalog:"
 	},

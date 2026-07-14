@@ -18,6 +18,7 @@ const config: OxlintConfigOverrideEntry = {
 		'react-x/dom-no-unsafe-iframe-sandbox': 'error',
 		'react-x/dom-no-use-form-state': 'error',
 		'react-x/error-boundaries': 'error',
+		'react-x/immutability': 'error',
 		'react-x/jsx-no-key-after-spread': 'error',
 		'react-x/jsx-no-leaked-dollar': 'error',
 		'react-x/jsx-no-leaked-semicolon': 'error',

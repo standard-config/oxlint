@@ -1,4 +1,5 @@
 import type { OxlintConfigCoreBaseEntry } from '@standard-config/utilities/types';
+import { RESTRICTED_TYPES } from '@standard-config/utilities/constants';
 
 /**
  * Base config entry containing core rules. No overrides included.
@@ -466,13 +467,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'typescript/no-require-imports': 'error',
 		'typescript/no-restricted-types': [
 			'error',
-			{
-				types: {
-					'[]': true,
-					'null': true,
-					'object': true,
-				},
-			},
+			{ types: RESTRICTED_TYPES },
 		],
 		'typescript/no-this-alias': 'error',
 		'typescript/no-unnecessary-boolean-literal-compare': 'warn',

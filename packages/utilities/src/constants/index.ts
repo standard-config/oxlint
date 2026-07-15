@@ -1,4 +1,7 @@
-import type { OxlintConfigGlobSet } from '../types/index.d.ts';
+import type {
+	OxlintConfigGlobSet,
+	OxlintRuleSettings,
+} from '../types/index.d.ts';
 
 export const GLOB_SET_CONFIG_FILES: OxlintConfigGlobSet = [
 	'**/*.config.{js,ts,cjs,cts,mjs,mts}',
@@ -18,3 +21,10 @@ export const GLOB_SET_TYPE_DEFINITIONS: OxlintConfigGlobSet = [
 	'**/*.d.{ts,cts,mts}',
 	'**/*.test-d.{ts,cts,mts}',
 ] as const;
+
+export const RESTRICTED_TYPES: OxlintRuleSettings<'typescript/no-restricted-types'>['types'] =
+	{
+		'[]': true,
+		'null': true,
+		'object': true,
+	} as const;

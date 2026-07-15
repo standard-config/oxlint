@@ -1,4 +1,10 @@
-import type { ExternalPluginEntry, OxlintConfig, OxlintOverride } from 'oxlint';
+import type {
+	AllowWarnDeny,
+	DummyRuleMap,
+	ExternalPluginEntry,
+	OxlintConfig,
+	OxlintOverride,
+} from 'oxlint';
 
 export type OxlintConfigBaseEntry = Omit<
 	OxlintConfig,
@@ -18,3 +24,8 @@ export type OxlintConfigOverrideEntry = Omit<
 export type OxlintConfigGlobSet = OxlintOverride['files'];
 
 export type OxlintConfigPluginEntry = Exclude<ExternalPluginEntry, string>;
+
+export type OxlintRuleSettings<T extends keyof DummyRuleMap> = Extract<
+	DummyRuleMap[T],
+	readonly [AllowWarnDeny, unknown, ...unknown[]]
+>[1];

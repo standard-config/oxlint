@@ -60,6 +60,16 @@ exports[`is a valid Oxlint config 1`] = `
         "react-x/web-api-no-leaked-interval": "error",
         "react-x/web-api-no-leaked-resize-observer": "error",
         "react-x/web-api-no-leaked-timeout": "error",
+        "typescript/no-restricted-types": [
+          "error",
+          {
+            "types": {
+              "[]": true,
+              "null": undefined,
+              "object": true,
+            },
+          },
+        ],
       },
     },
     {
@@ -120,6 +130,7 @@ exports[`is a valid Oxlint config 1`] = `
         "react/no-danger": "off",
         "react/no-object-type-as-default-prop": "off",
         "react/no-unstable-nested-components": "off",
+        "typescript/no-restricted-types": "off",
       },
     },
   ],

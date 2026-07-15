@@ -58,6 +58,7 @@ const config: OxlintConfigOverrideEntry = {
 		'react/no-danger': 'off',
 		'react/no-object-type-as-default-prop': 'off',
 		'react/no-unstable-nested-components': 'off',
+		'typescript/no-restricted-types': 'off',
 	},
 };
 

@@ -1,4 +1,5 @@
 import type { OxlintConfigOverrideEntry } from '@standard-config/utilities/types';
+import { RESTRICTED_TYPES } from '@standard-config/utilities/constants';
 
 /**
  * Optional config entry containing React-related rules that target JSX files.
@@ -48,6 +49,15 @@ const config: OxlintConfigOverrideEntry = {
 		'react-x/web-api-no-leaked-interval': 'error',
 		'react-x/web-api-no-leaked-resize-observer': 'error',
 		'react-x/web-api-no-leaked-timeout': 'error',
+		'typescript/no-restricted-types': [
+			'error',
+			{
+				types: {
+					...RESTRICTED_TYPES,
+					null: undefined,
+				},
+			},
+		],
 	},
 };
 

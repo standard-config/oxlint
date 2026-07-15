@@ -55,6 +55,7 @@ exports[`is a valid Oxlint config override 1`] = `
     "react/no-danger": "off",
     "react/no-object-type-as-default-prop": "off",
     "react/no-unstable-nested-components": "off",
+    "typescript/no-restricted-types": "off",
   },
 }
 `;

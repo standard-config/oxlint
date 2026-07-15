@@ -45,6 +45,16 @@ exports[`is a valid Oxlint config override 1`] = `
     "react-x/web-api-no-leaked-interval": "error",
     "react-x/web-api-no-leaked-resize-observer": "error",
     "react-x/web-api-no-leaked-timeout": "error",
+    "typescript/no-restricted-types": [
+      "error",
+      {
+        "types": {
+          "[]": true,
+          "null": undefined,
+          "object": true,
+        },
+      },
+    ],
   },
 }
 `;

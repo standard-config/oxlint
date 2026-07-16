@@ -66,6 +66,7 @@ const config: OxlintConfigOverrideEntry = {
 		'typescript/no-confusing-void-expression': 'off',
 		'typescript/no-extraneous-class': 'off',
 		'typescript/no-restricted-types': 'off',
+		'typescript/no-unnecessary-type-conversion': 'off',
 		'typescript/no-unsafe-argument': 'off',
 		'typescript/no-unsafe-assignment': 'off',
 		'typescript/no-unsafe-call': 'off',

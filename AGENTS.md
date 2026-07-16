@@ -10,6 +10,10 @@
 
 - Shorthand commands are high-level task macros that define complete, self-contained procedures.
 - Always execute shorthand commands exactly as defined below.
+- Report findings only when supported by concrete repository evidence.
+    - Do not report speculative findings or preference-only alternatives.
+    - Assign a unique number to each finding when it is first reported.
+    - Preserve finding numbers in all subsequent reports.
 
 ### Dependencies
 
@@ -44,5 +48,7 @@
 
 - Re-read `AGENTS.md` and all reported files to confirm whether reported issues remain relevant.
     - Ensure that all findings align with the latest version of `AGENTS.md`.
-- Mark resolved issues as addressed and exclude them from future reports.
-- Highlight any issues that persist after the latest edits.
+- Classify each previously reported finding as resolved, intentional, or unresolved.
+    - Exclude resolved findings from future reports.
+    - Exclude intentional findings from future reports unless the relevant code or `AGENTS.md` changes.
+- Report only unresolved findings that still apply.

@@ -7,6 +7,7 @@ import type { OxlintConfigOverrideEntry } from '@standard-config/utilities/types
 const config: OxlintConfigOverrideEntry = {
 	rules: {
 		'eslint/getter-return': 'off',
+		'eslint/no-console': 'off',
 		'eslint/no-empty-function': 'off',
 		'eslint/no-param-reassign': 'off',
 		'eslint/no-promise-executor-return': 'off',

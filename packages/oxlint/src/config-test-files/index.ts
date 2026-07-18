@@ -99,7 +99,6 @@ const config: OxlintConfigOverrideEntry = {
 		'vitest/hoisted-apis-on-top': 'error',
 		'vitest/no-commented-out-tests': 'warn',
 		'vitest/no-conditional-expect': 'error',
-		'vitest/no-conditional-in-test': 'error',
 		'vitest/no-disabled-tests': 'warn',
 		'vitest/no-duplicate-hooks': 'warn',
 		'vitest/no-focused-tests': 'warn',

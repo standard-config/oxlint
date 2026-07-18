@@ -17,7 +17,6 @@ const config: OxlintConfigOverrideEntry = {
 		'jest/expect-expect': 'warn',
 		'jest/no-commented-out-tests': 'warn',
 		'jest/no-conditional-expect': 'error',
-		'jest/no-conditional-in-test': 'error',
 		'jest/no-confusing-set-timeout': 'error',
 		'jest/no-deprecated-functions': 'error',
 		'jest/no-disabled-tests': 'warn',

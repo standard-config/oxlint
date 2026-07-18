@@ -97,7 +97,7 @@ const config: OxlintConfigBaseEntry = {
 		],
 		'react/jsx-no-undef': 'error',
 		'react/jsx-no-useless-fragment': 'error',
-		'react/jsx-pascal-case': 'error',
+		'react/jsx-pascal-case': ['error', { allowAllCaps: true }],
 		'react/jsx-props-no-spread-multi': 'error',
 		'react/jsx-props-no-spreading': 'off',
 		'react/no-array-index-key': 'error',

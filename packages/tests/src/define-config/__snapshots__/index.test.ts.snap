@@ -847,7 +847,12 @@ exports[`resolves \`@standard-config/oxlint-react\` when it’s available 1`] = 
     ],
     "react/jsx-no-undef": "error",
     "react/jsx-no-useless-fragment": "error",
-    "react/jsx-pascal-case": "error",
+    "react/jsx-pascal-case": [
+      "error",
+      {
+        "allowAllCaps": true,
+      },
+    ],
     "react/jsx-props-no-spread-multi": "error",
     "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "error",
@@ -3932,7 +3937,12 @@ exports[`resolves all available supplemental configs by default 1`] = `
     ],
     "react/jsx-no-undef": "error",
     "react/jsx-no-useless-fragment": "error",
-    "react/jsx-pascal-case": "error",
+    "react/jsx-pascal-case": [
+      "error",
+      {
+        "allowAllCaps": true,
+      },
+    ],
     "react/jsx-props-no-spread-multi": "error",
     "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "error",

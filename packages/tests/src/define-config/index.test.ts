@@ -46,6 +46,7 @@ test('resolves `@standard-config/oxlint-react` when it’s available', async () 
 			'unicorn/no-null': 'off',
 		})
 	);
+
 	expect(config).not.toHaveProperty(['rules', 'perfectionist/sort-imports']);
 	expect(config).toMatchSnapshot();
 });

@@ -18,6 +18,7 @@ for (const config of [
 		resolvedConfig = module.default as OxlintConfig;
 	} catch {}
 
+	/* v8 ignore if -- @preserve */
 	if (typeof resolvedConfig === 'object') {
 		SUPPLEMENTAL_CONFIGS.push(resolvedConfig);
 	}

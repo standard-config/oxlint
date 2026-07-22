@@ -31,7 +31,8 @@
     - List each missing rule on a separate line in a code block.
     - Exclude `nursery` rules from this audit.
     - For additional context, fetch the release notes from the provided URL. If no URL is provided, attempt to fetch the release notes for the installed Oxlint version from `https://github.com/oxc-project/oxc/releases`.
-- Ensure each base config explicitly configures every core rule referenced by override configs within the same config package.
+- Ensure each base config explicitly configures every core rule used by override configs within the same config package.
+    - Ignore rules from core plugins not declared by the base config.
 - Perform this task without making edits.
 
 ### Review

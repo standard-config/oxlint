@@ -1,6 +1,6 @@
 {
 	"name": "@standard-config/oxlint",
-	"version": "2.4.3",
+	"version": "2.5.0",
 	"description": "Curated Oxlint config with sensible defaults",
 	"license": "MIT",
 	"author": {

@@ -15,12 +15,12 @@
 		"./types": "./src/types/index.d.ts"
 	},
 	"devDependencies": {
-		"@eslint-react/eslint-plugin": "^5.17.2",
+		"@eslint-react/eslint-plugin": "catalog:",
 		"@standard-config/tsconfig": "catalog:",
-		"@stylistic/eslint-plugin": "^5.10.0",
+		"@stylistic/eslint-plugin": "catalog:",
 		"@types/node": "catalog:",
-		"eslint-plugin-perfectionist": "^5.10.0",
-		"eslint-plugin-react-you-might-not-need-an-effect": "^1.0.1",
+		"eslint-plugin-perfectionist": "catalog:",
+		"eslint-plugin-react-you-might-not-need-an-effect": "catalog:",
 		"oxlint": "catalog:",
 		"typescript": "catalog:",
 		"vite-plus": "catalog:"

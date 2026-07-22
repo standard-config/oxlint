@@ -41,8 +41,8 @@
 		"node": ">=22"
 	},
 	"dependencies": {
-		"@stylistic/eslint-plugin": "^5.10.0",
-		"eslint-plugin-perfectionist": "^5.10.0"
+		"@stylistic/eslint-plugin": "catalog:",
+		"eslint-plugin-perfectionist": "catalog:"
 	},
 	"peerDependencies": {
 		"@standard-config/oxlint": "^2.0.1",

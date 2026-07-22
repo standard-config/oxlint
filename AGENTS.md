@@ -23,7 +23,6 @@
     - Ensure all installed `@types/*` packages are always referenced in `compilerOptions.types` in the corresponding `tsconfig.json`.
 - Ensure all `catalog:` dependencies are referenced by more than one package.
     - Account for `overrides` in `pnpm-workspace.yaml`.
-    - Ensure public packages do not rely on `catalog:` dependencies for runtime packages.
 - Perform this task without making edits.
 
 ### Inventory

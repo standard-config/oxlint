@@ -110,6 +110,7 @@ const config: OxlintConfigOverrideEntry = {
 		'vitest/no-test-return-statement': 'error',
 		'vitest/no-unneeded-async-expect-function': 'error',
 		'vitest/padding-around-after-all-blocks': 'error',
+		'vitest/padding-around-test-blocks': 'error',
 		'vitest/prefer-called-exactly-once-with': 'warn',
 		'vitest/prefer-called-times': 'error',
 		'vitest/prefer-comparison-matcher': 'error',

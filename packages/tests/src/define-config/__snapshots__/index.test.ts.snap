@@ -812,6 +812,16 @@ exports[`resolves \`@standard-config/oxlint-react\` when it’s available 1`] = 
     "react/forbid-dom-props": "off",
     "react/forbid-elements": "off",
     "react/forward-ref-uses-ref": "off",
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": [
+          "arrow-function",
+          "function-declaration",
+        ],
+        "unnamedComponents": "arrow-function",
+      },
+    ],
     "react/hook-use-state": "error",
     "react/iframe-missing-sandbox": "off",
     "react/jsx-boolean-value": "error",
@@ -3908,6 +3918,16 @@ exports[`resolves all available supplemental configs by default 1`] = `
     "react/forbid-dom-props": "off",
     "react/forbid-elements": "off",
     "react/forward-ref-uses-ref": "off",
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": [
+          "arrow-function",
+          "function-declaration",
+        ],
+        "unnamedComponents": "arrow-function",
+      },
+    ],
     "react/hook-use-state": "error",
     "react/iframe-missing-sandbox": "off",
     "react/jsx-boolean-value": "error",

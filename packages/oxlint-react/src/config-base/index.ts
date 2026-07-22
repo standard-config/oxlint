@@ -67,6 +67,13 @@ const config: OxlintConfigBaseEntry = {
 		'react/forbid-dom-props': 'off',
 		'react/forbid-elements': 'off',
 		'react/forward-ref-uses-ref': 'off',
+		'react/function-component-definition': [
+			'error',
+			{
+				namedComponents: ['arrow-function', 'function-declaration'],
+				unnamedComponents: 'arrow-function',
+			},
+		],
 		'react/hook-use-state': 'error',
 		'react/iframe-missing-sandbox': 'off',
 		'react/jsx-boolean-value': 'error',

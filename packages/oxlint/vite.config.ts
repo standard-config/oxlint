@@ -8,7 +8,8 @@ export default defineConfig({
 	},
 	pack: {
 		deps: {
-			skipNodeModulesBundle: true,
+			alwaysBundle: [/^@standard-config\/utilities\//],
+			neverBundle: true,
 		},
 		dts: {
 			eager: true,

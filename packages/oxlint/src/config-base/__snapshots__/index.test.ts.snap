@@ -70,6 +70,7 @@ exports[`is a valid Oxlint config 1`] = `
       "getBeforeSet",
     ],
     "eslint/guard-for-in": "error",
+    "eslint/id-denylist": "off",
     "eslint/id-length": "off",
     "eslint/id-match": "off",
     "eslint/init-declarations": "off",

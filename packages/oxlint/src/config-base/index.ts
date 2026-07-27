@@ -58,6 +58,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'eslint/getter-return': 'error',
 		'eslint/grouped-accessor-pairs': ['error', 'getBeforeSet'],
 		'eslint/guard-for-in': 'error',
+		'eslint/id-denylist': 'off',
 		'eslint/id-length': 'off',
 		'eslint/id-match': 'off',
 		'eslint/init-declarations': 'off',

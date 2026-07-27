@@ -344,6 +344,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'oxc/bad-bitwise-operator': 'error',
 		'oxc/bad-char-at-comparison': 'error',
 		'oxc/bad-comparison-sequence': 'error',
+		'oxc/bad-match-all-arg': 'error',
 		'oxc/bad-min-max-func': 'error',
 		'oxc/bad-object-literal-comparison': 'error',
 		'oxc/bad-replace-all-arg': 'error',

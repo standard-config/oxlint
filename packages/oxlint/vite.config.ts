@@ -13,12 +13,10 @@ export default defineConfig({
 		},
 		dts: {
 			eager: true,
-			sourcemap: true,
 		},
 		entry: 'src/index.ts',
 		failOnWarn: true,
 		publint: true,
-		sourcemap: true,
 		workspace: true,
 	},
 });

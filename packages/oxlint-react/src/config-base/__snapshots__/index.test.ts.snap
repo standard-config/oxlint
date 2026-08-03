@@ -16,6 +16,7 @@ exports[`is a valid Oxlint config 1`] = `
     "jsx-a11y",
     "react",
     "react-perf",
+    "typescript",
   ],
   "rules": {
     "jsx-a11y/alt-text": "error",

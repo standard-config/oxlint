@@ -4,6 +4,14 @@ This document records durable architecture, tooling decisions, compatibility con
 
 Organize future entries under broad second-level sections so this document can grow without becoming a flat list of unrelated notes.
 
+## Architecture
+
+### Cross-package rule ownership
+
+Core plugins and rules that a supplemental config conditionally includes only when the core config is available remain owned by the core config. The supplemental config may declare a plugin solely to make a cross-package override valid while remaining independently usable.
+
+Do not treat these conditional declarations as ownership of the plugin’s complete rule set when auditing rule completeness or base and override parity.
+
 ## Compatibility
 
 ### Oxlint version support

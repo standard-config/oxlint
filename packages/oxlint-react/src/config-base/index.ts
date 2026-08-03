@@ -1,4 +1,5 @@
 import type { OxlintConfigBaseEntry } from '@standard-config/utilities/types';
+import includesCoreConfig from '@standard-config/utilities/includes-core-config';
 import resolvePlugin from '@standard-config/utilities/resolve-plugin';
 
 /**
@@ -6,10 +7,12 @@ import resolvePlugin from '@standard-config/utilities/resolve-plugin';
  */
 const config: OxlintConfigBaseEntry = {
 	plugins: [
-		/* prettier-ignore */
 		'jsx-a11y',
 		'react',
 		'react-perf',
+
+		// `typescript/no-restricted-types` is conditionally included in the JSX config
+		...(includesCoreConfig() ? (['typescript'] as const) : []),
 	],
 	jsPlugins: [
 		resolvePlugin(

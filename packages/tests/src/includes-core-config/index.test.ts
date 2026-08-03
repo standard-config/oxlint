@@ -4,25 +4,29 @@ beforeEach(() => {
 	vi.resetModules();
 });
 
-test('`@standard-config/oxlint-react` includes `typescript/no-restricted-types` when `@standard-config/oxlint` is available', async () => {
+test('`@standard-config/oxlint-react` includes TypeScript overrides when `@standard-config/oxlint` is available', async () => {
 	vi.doUnmock('@standard-config/utilities/includes-core-config');
 
-	const { default: config } =
-		await import('../../../oxlint-react/src/config-jsx-files/index.ts');
+	const { configReactBase, configReactJSXFiles } =
+		await import('../../../oxlint-react/src/index.ts');
 
-	expect(config.rules).toHaveProperty(
+	expect(configReactBase.plugins).toContain('typescript');
+	expect(configReactJSXFiles.rules).toHaveProperty(
 		'typescript/no-restricted-types',
 		expect.arrayContaining(['error'])
 	);
 });
 
-test('`@standard-config/oxlint-react` excludes `typescript/no-restricted-types` when `@standard-config/oxlint` is unavailable', async () => {
+test('`@standard-config/oxlint-react` excludes TypeScript overrides when `@standard-config/oxlint` is unavailable', async () => {
 	vi.doMock('@standard-config/utilities/includes-core-config', () => ({
 		default: () => false,
 	}));
 
-	const { default: config } =
-		await import('../../../oxlint-react/src/config-jsx-files/index.ts');
+	const { configReactBase, configReactJSXFiles } =
+		await import('../../../oxlint-react/src/index.ts');
 
-	expect(config.rules).not.toHaveProperty('typescript/no-restricted-types');
+	expect(configReactBase.plugins).not.toContain('typescript');
+	expect(configReactJSXFiles.rules).not.toHaveProperty(
+		'typescript/no-restricted-types'
+	);
 });

@@ -59,8 +59,8 @@ importers:
         specifier: workspace:*
         version: link:packages/oxlint-stylistic
       '@standard-config/prettier':
-        specifier: ^1.18.0
-        version: 1.18.0(prettier@3.9.6)
+        specifier: ^1.19.1
+        version: 1.19.1(prettier@3.9.6)
       '@standard-config/tsconfig':
         specifier: 'catalog:'
         version: 3.2.0(typescript@6.0.3)
@@ -826,8 +826,8 @@ packages:
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
-  '@standard-config/prettier@1.18.0':
-    resolution: {integrity: sha512-aUMZWUqchK2jYV3azUbvgiURN+XzZUEwSeq05o2mgpIOW7WIsuIQcThzF1AA+JjfaS0RqlAca6Knn6qqwnL+3Q==}
+  '@standard-config/prettier@1.19.1':
+    resolution: {integrity: sha512-KN1V0gSgoPXa2BwvP+mI6oWs6yRZZvCi9O/PoKUAJyVwJ0TZDWAL5du7/W8/vP7DB/Y30LjehzA36LmE5crVgA==}
     engines: {node: '>=20'}
     peerDependencies:
       prettier: ^3.9.0
@@ -2443,7 +2443,7 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.1': {}
 
-  '@standard-config/prettier@1.18.0(prettier@3.9.6)':
+  '@standard-config/prettier@1.19.1(prettier@3.9.6)':
     dependencies:
       '@prettier/plugin-oxc': 0.2.2
       prettier: 3.9.6

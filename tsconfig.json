@@ -1,7 +1,13 @@
 {
 	"extends": "@standard-config/tsconfig",
+	"compilerOptions": {
+		"types": [
+			"node"
+		]
+	},
 	"include": [
-		"**/*"
+		"**/*",
+		".*/**/*"
 	],
 	"exclude": [
 		"coverage",

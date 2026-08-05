@@ -1,6 +1,6 @@
 ---
 name: sconfig-audit-dependencies
-description: Audit dependency declarations across the Standard Config Oxlint workspace without editing files. Use this skill whenever the user explicitly asks to audit dependencies, including the exact `Audit dependencies` command, or asks for missing, redundant, misassigned, or unused dependency analysis. Do not treat the bare `Dependencies` command as an invocation, and do not use this skill for installing or updating dependencies.
+description: Audit dependency declarations across the Standard Config Oxlint workspace without editing files.
 ---
 
 # Standard Config dependency audit

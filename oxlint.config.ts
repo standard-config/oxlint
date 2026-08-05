@@ -11,5 +11,11 @@ export default defineConfig({
 			files: ['**/mocks/**/*.ts'],
 			...configCoreTestFiles,
 		},
+		{
+			files: ['.agents/**/*.test.ts'],
+			rules: {
+				'vitest/no-import-node-test': 'off',
+			},
+		},
 	],
 });

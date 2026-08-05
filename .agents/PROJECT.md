@@ -12,6 +12,8 @@ Core plugins and rules that a supplemental config conditionally includes only wh
 
 Do not treat these conditional declarations as ownership of the plugin’s complete rule set when auditing rule completeness or base and override parity.
 
+Represent each package’s owned core plugins as direct string entries in its base config’s `plugins` array. Reserve spread entries for supplemental plugin declarations. The inventory derives ownership from this source distinction.
+
 ## Compatibility
 
 ### Oxlint version support

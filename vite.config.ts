@@ -1,8 +1,17 @@
-import { defineConfig } from 'vite-plus';
+import { configDefaults, defineConfig } from 'vite-plus';
 
 export default defineConfig({
 	test: {
-		projects: ['packages/**/vite.config.ts'],
+		exclude: [
+			/* prettier-ignore */
+			...configDefaults.exclude,
+			'.agent-*/**',
+			'.agents/**',
+		],
+		projects: [
+			/* prettier-ignore */
+			'packages/**/vite.config.ts',
+		],
 	},
 	staged: {
 		'*': [

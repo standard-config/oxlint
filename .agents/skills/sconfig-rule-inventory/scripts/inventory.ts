@@ -43,6 +43,7 @@ type CliOptions = {
 	json: boolean;
 	releaseNotes: boolean;
 	releaseUrl?: string;
+	trackedOnly: boolean;
 };
 
 type ConfigSource = {
@@ -53,7 +54,15 @@ type ConfigSource = {
 type InventoryOptions = {
 	registry: RuleRegistry;
 	repositoryRoot: string;
+	trackedPaths?: ReadonlySet<string>;
 	version: string;
+};
+
+type PackageFiles = {
+	baseConfigPath: string;
+	overrideConfigPaths: string[];
+	packageJsonPath: string;
+	packagePath: string;
 };
 
 type PackageInventory = {
@@ -113,6 +122,14 @@ export class RegistryFormatError extends Error {
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
 	typeof value === 'object' && value !== null && !Array.isArray(value);
+
+const normalizeRepositoryRelativePath = (path: string): string =>
+	path.replaceAll('\\', '/').replace(/^\.\/+/, '');
+
+const getRepositoryRelativePath = (
+	repositoryRoot: string,
+	path: string
+): string => normalizeRepositoryRelativePath(relative(repositoryRoot, path));
 
 const normalizePluginName = (plugin: string): string =>
 	plugin.replaceAll('_', '-');
@@ -506,6 +523,70 @@ export const parseRuleRegistry = (output: string): RuleRegistry => {
 	};
 };
 
+type CommandResult = {
+	error: Error | undefined;
+	status: number | undefined;
+	stderr: string;
+	stdout: string;
+};
+
+type RunCommand = (
+	command: string,
+	arguments_: string[],
+	cwd: string
+) => CommandResult;
+
+const runCommand: RunCommand = (command, arguments_, cwd) => {
+	const result = spawnSync(command, arguments_, {
+		cwd,
+		encoding: 'utf8',
+	});
+
+	return {
+		error: result.error,
+		status: result.status ?? undefined,
+		stderr: result.stderr,
+		stdout: result.stdout,
+	};
+};
+
+export const resolveTrackedPaths = (
+	repositoryRoot: string,
+	execute: RunCommand = runCommand
+): ReadonlySet<string> => {
+	const result = execute(
+		'git',
+		['ls-files', '-z', '--', 'packages'],
+		repositoryRoot
+	);
+
+	if (result.error) {
+		throw new Error(
+			`Could not execute Git through PATH while resolving tracked package paths: ${result.error.message}. Ensure Git is available through PATH and retry.`,
+			{ cause: result.error }
+		);
+	}
+
+	if (result.status !== 0) {
+		const detail = [result.stderr, result.stdout]
+			.filter(Boolean)
+			.join('\n')
+			.trim();
+		const detailSuffix = detail ? `:\n${detail}` : '.';
+
+		throw new Error(
+			`Could not resolve tracked package paths with \`git ls-files -z -- packages\`. Git exited with status ${String(result.status)}${detailSuffix}\nRun the inventory from a valid Git checkout and retry.`
+		);
+	}
+
+	return new Set(
+		result.stdout
+			.split('\0')
+			.filter(Boolean)
+			.map(normalizeRepositoryRelativePath)
+	);
+};
+
 const runOxlint = (arguments_: string[]): string => {
 	const result = spawnSync(
 		process.execPath,
@@ -568,21 +649,11 @@ const readPackageName = (packagePath: string): string => {
 	return packageJson.name;
 };
 
-const isNurseryRule = (rule: RegistryRule): boolean =>
-	rule.category.toLowerCase() === 'nursery';
-
-export const buildInventory = ({
-	registry,
-	repositoryRoot,
-	version,
-}: InventoryOptions): InventoryReport => {
+const discoverFilesystemPackageFiles = (
+	repositoryRoot: string
+): PackageFiles[] => {
 	const packagesPath = join(repositoryRoot, 'packages');
-	const registryRuleKeys = new Set(
-		registry.rules.map((rule) => `${rule.source}/${rule.name}`)
-	);
-	const registrySources = new Set(registry.rules.map((rule) => rule.source));
-	const stableRules = registry.rules.filter((rule) => !isNurseryRule(rule));
-	const packageInventories: PackageInventory[] = [];
+	const packageFiles: PackageFiles[] = [];
 
 	for (const packageEntry of readdirSync(packagesPath, {
 		withFileTypes: true,
@@ -600,16 +671,7 @@ export const buildInventory = ({
 			continue;
 		}
 
-		const baseConfig = readConfigSource(baseConfigPath);
-		const ownedPluginSet = new Set(baseConfig.ownedPlugins);
-		const ownedStableRules = stableRules.filter((rule) =>
-			ownedPluginSet.has(rule.source)
-		);
-		const missingStableRules = ownedStableRules
-			.map((rule) => `${rule.source}/${rule.name}`)
-			.filter((rule) => !baseConfig.rules.includes(rule))
-			.toSorted();
-		const overrideConfigs = readdirSync(sourcePath, {
+		const overrideConfigPaths = readdirSync(sourcePath, {
 			withFileTypes: true,
 		})
 			.filter(
@@ -622,11 +684,143 @@ export const buildInventory = ({
 			.map((entry) => join(sourcePath, entry.name, 'index.ts'))
 			.filter(existsSync)
 			.toSorted();
+
+		packageFiles.push({
+			baseConfigPath,
+			overrideConfigPaths,
+			packageJsonPath,
+			packagePath,
+		});
+	}
+
+	return packageFiles;
+};
+
+const discoverTrackedPackageFiles = (
+	repositoryRoot: string,
+	trackedPaths: ReadonlySet<string>
+): PackageFiles[] => {
+	const normalizedTrackedPaths = new Set(
+		[...trackedPaths].map(normalizeRepositoryRelativePath)
+	);
+	const packageNames = new Set<string>();
+
+	for (const trackedPath of normalizedTrackedPaths) {
+		const [packagesDirectory, packageName, fileName, ...remainingSegments] =
+			trackedPath.split('/');
+
+		if (
+			packagesDirectory === 'packages' &&
+			packageName &&
+			fileName === 'package.json' &&
+			remainingSegments.length === 0
+		) {
+			packageNames.add(packageName);
+		}
+	}
+
+	const packageFiles: PackageFiles[] = [];
+
+	for (const packageName of [...packageNames].toSorted()) {
+		const packageRelativePath = `packages/${packageName}`;
+		const packageJsonRelativePath = `${packageRelativePath}/package.json`;
+		const baseConfigRelativePath = `${packageRelativePath}/src/config-base/index.ts`;
+
+		if (!normalizedTrackedPaths.has(baseConfigRelativePath)) {
+			continue;
+		}
+
+		const overrideConfigPaths = [...normalizedTrackedPaths]
+			.filter((trackedPath) => {
+				const [
+					packagesDirectory,
+					candidatePackageName,
+					sourceDirectory,
+					configDirectory,
+					fileName,
+					...remainingSegments
+				] = trackedPath.split('/');
+
+				return (
+					packagesDirectory === 'packages' &&
+					candidatePackageName === packageName &&
+					sourceDirectory === 'src' &&
+					configDirectory?.startsWith('config-') === true &&
+					configDirectory !== 'config-base' &&
+					configDirectory !== 'config-default' &&
+					fileName === 'index.ts' &&
+					remainingSegments.length === 0
+				);
+			})
+			.map((trackedPath) =>
+				join(repositoryRoot, ...trackedPath.split('/'))
+			)
+			.toSorted();
+
+		packageFiles.push({
+			baseConfigPath: join(
+				repositoryRoot,
+				...baseConfigRelativePath.split('/')
+			),
+			overrideConfigPaths,
+			packageJsonPath: join(
+				repositoryRoot,
+				...packageJsonRelativePath.split('/')
+			),
+			packagePath: join(
+				repositoryRoot,
+				...packageRelativePath.split('/')
+			),
+		});
+	}
+
+	return packageFiles;
+};
+
+const discoverPackageFiles = (
+	repositoryRoot: string,
+	trackedPaths?: ReadonlySet<string>
+): PackageFiles[] =>
+	trackedPaths === undefined
+		? discoverFilesystemPackageFiles(repositoryRoot)
+		: discoverTrackedPackageFiles(repositoryRoot, trackedPaths);
+
+const isNurseryRule = (rule: RegistryRule): boolean =>
+	rule.category.toLowerCase() === 'nursery';
+
+export const buildInventory = ({
+	registry,
+	repositoryRoot,
+	trackedPaths,
+	version,
+}: InventoryOptions): InventoryReport => {
+	const registryRuleKeys = new Set(
+		registry.rules.map((rule) => `${rule.source}/${rule.name}`)
+	);
+	const registrySources = new Set(registry.rules.map((rule) => rule.source));
+	const stableRules = registry.rules.filter((rule) => !isNurseryRule(rule));
+	const packageInventories: PackageInventory[] = [];
+
+	for (const {
+		baseConfigPath,
+		overrideConfigPaths,
+		packageJsonPath,
+		packagePath,
+	} of discoverPackageFiles(repositoryRoot, trackedPaths)) {
+		const baseConfig = readConfigSource(baseConfigPath);
+		const ownedPluginSet = new Set(baseConfig.ownedPlugins);
+		const ownedStableRules = stableRules.filter((rule) =>
+			ownedPluginSet.has(rule.source)
+		);
+		const missingStableRules = ownedStableRules
+			.map((rule) => `${rule.source}/${rule.name}`)
+			.filter((rule) => !baseConfig.rules.includes(rule))
+			.toSorted();
 		const missingBaseRulesForOverrides: PackageInventory['missingBaseRulesForOverrides'] =
 			[];
 		const unsupportedConfiguredRules: PackageInventory['unsupportedConfiguredRules'] =
 			[];
-		const configs = [baseConfigPath, ...overrideConfigs];
+		const configs = [baseConfigPath, ...overrideConfigPaths];
 
 		for (const configPath of configs) {
 			const config =
@@ -642,7 +836,10 @@ export const buildInventory = ({
 					!registryRuleKeys.has(rule)
 				) {
 					unsupportedConfiguredRules.push({
-						configPath: relative(repositoryRoot, configPath),
+						configPath: getRepositoryRelativePath(
+							repositoryRoot,
+							configPath
+						),
 						rule,
 					});
 				}
@@ -653,7 +850,10 @@ export const buildInventory = ({
 					!baseConfig.rules.includes(rule)
 				) {
 					missingBaseRulesForOverrides.push({
-						configPath: relative(repositoryRoot, configPath),
+						configPath: getRepositoryRelativePath(
+							repositoryRoot,
+							configPath
+						),
 						rule,
 					});
 				}
@@ -671,7 +871,7 @@ export const buildInventory = ({
 			missingStableRules,
 			ownedPlugins: baseConfig.ownedPlugins,
 			packageName: readPackageName(packageJsonPath),
-			packagePath: relative(repositoryRoot, packagePath),
+			packagePath: getRepositoryRelativePath(repositoryRoot, packagePath),
 			stableRuleCount: ownedStableRules.length,
 			unrecognizedOwnedPlugins,
 			unsupportedConfiguredRules,
@@ -789,6 +989,7 @@ const parseCliOptions = (arguments_: string[]): CliOptions => {
 		help: false,
 		json: false,
 		releaseNotes: false,
+		trackedOnly: false,
 	};
 
 	for (let index = 0; index < arguments_.length; index += 1) {
@@ -801,6 +1002,10 @@ const parseCliOptions = (arguments_: string[]): CliOptions => {
 
 			case '--release-notes':
 				options.releaseNotes = true;
+				break;
+
+			case '--tracked-only':
+				options.trackedOnly = true;
 				break;
 
 			case '--release-url': {
@@ -820,11 +1025,12 @@ const parseCliOptions = (arguments_: string[]): CliOptions => {
 				options.help = true;
 				process.stdout.write(
 					[
-						'Usage: node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts [--json] [--release-notes] [--release-url <url>]',
+						'Usage: node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts [--json] [--release-notes] [--release-url <url>] [--tracked-only]',
 						'',
 						'  --json           Print machine-readable audit output.',
 						'  --release-notes  Fetch release notes; failures are nonfatal.',
 						'  --release-url    Fetch release notes from an explicit URL.',
+						'  --tracked-only   Restrict package and override discovery to Git-tracked working-tree files.',
 						'',
 					].join('\n')
 				);
@@ -900,13 +1106,17 @@ const formatInventory = (report: InventoryReport): string => {
 	return `${output.join('\n')}\n`;
 };
 
-const runInventory = (): InventoryReport => {
+const runInventory = (trackedOnly: boolean): InventoryReport => {
 	const version = parseOxlintVersion(runOxlint(['--version']));
 	const registry = parseRuleRegistry(runOxlint(['--rules']));
+	const trackedPaths = trackedOnly
+		? resolveTrackedPaths(REPOSITORY_ROOT)
+		: undefined;
 
 	return buildInventory({
 		registry,
 		repositoryRoot: REPOSITORY_ROOT,
+		...(trackedPaths === undefined ? {} : { trackedPaths }),
 		version,
 	});
 };
@@ -918,7 +1128,7 @@ const main = async (): Promise<void> => {
 		return;
 	}
 
-	const report = runInventory();
+	const report = runInventory(options.trackedOnly);
 	let releaseNotes: ReleaseNotes | undefined;
 	let releaseNotesError: string | undefined;
 

@@ -1,18 +1,19 @@
 ---
 name: sconfig-audit-dependencies
-description: Audit dependency declarations across the Standard Config Oxlint workspace without editing files.
+description: Perform a read-only audit of dependency ownership across the complete Standard Config Oxlint repository. Use this skill whenever the user requests `Audit dependencies` or another repository-wide dependency ownership audit. Do not use it for dependency updates, ordinary code review, debugging, or implementation tasks.
 ---
 
 # Standard Config dependency audit
 
-Audit dependency ownership across the entire repository without modifying it. Treat the exact `Audit dependencies` command as a complete repository-wide audit.
+Audit the complete dependency surface without modifying it.
 
 ## Resolve the dependency surface
 
-1. Read every applicable `AGENTS.md` file.
-2. Inspect every Git-tracked `package.json` in the repository and `pnpm-workspace.yaml`.
-3. Inspect the corresponding source, tests, scripts, configuration, and TypeScript configuration needed to establish whether each dependency is used and which manifest owns it.
-4. Exclude generated output, dependency installation directories, and untracked task files unless the user explicitly includes them.
+1. Read every applicable `AGENTS.md` file and consult `.agents/PROJECT.md` for relevant project rationale before reviewing other repository content.
+2. Resolve the audit surface from Git-tracked paths only. Exclude all untracked paths. Explicit user scope cannot override this exclusion.
+3. Exclude generated output, dependency installation directories, and symbolic links as applicable.
+4. Inspect every Git-tracked `package.json` in the repository and `pnpm-workspace.yaml`.
+5. Inspect the corresponding source, tests, scripts, configuration, and TypeScript configuration needed to establish whether each dependency is used and which manifest owns it.
 
 ## Audit dependency ownership
 
@@ -23,10 +24,10 @@ Audit dependency ownership across the entire repository without modifying it. Tr
 - Ensure every dependency referenced through `catalog:` is referenced by more than one package.
     - Account for `overrides` in `pnpm-workspace.yaml` when evaluating catalog ownership and shared use.
 
-## Preserve the read-only workflow
+## Preserve the read-only process
 
-- Do not edit files, install dependencies, update the lockfile, or run mutating package-manager commands.
-- Do not remove or reclassify a dependency based only on naming or convention; establish its actual repository use first.
+- Do not modify repository files, install dependencies, update the lockfile, or run mutating package-manager commands.
+- Do not remove or reclassify a dependency based only on naming or convention. Establish its actual repository use first.
 - Continue through the complete dependency surface before reporting results.
 
 ## Report the result

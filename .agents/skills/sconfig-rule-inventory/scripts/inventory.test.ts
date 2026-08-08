@@ -1,11 +1,17 @@
+import type { RuleRegistry } from './inventory.ts';
 import assert from 'node:assert/strict';
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { test } from 'node:test';
 import {
+	buildInventory,
 	extractReleaseNotesFromHtml,
 	getDefaultReleaseUrl,
 	parseConfigSource,
 	parseRuleRegistry,
 	RegistryFormatError,
+	resolveTrackedPaths,
 } from './inventory.ts';
 
 const VALID_REGISTRY = `## Correctness (2)
@@ -24,6 +30,76 @@ New lints that are still under development.
 Default: 1
 Total: 3
 `;
+
+const DISCOVERY_REGISTRY: RuleRegistry = {
+	categoryCounts: {
+		Correctness: 1,
+	},
+	rules: [
+		{
+			category: 'Correctness',
+			name: 'no-broken',
+			source: 'eslint',
+		},
+	],
+	totalRuleCount: 1,
+};
+
+const writePackageFixture = (
+	repositoryRoot: string,
+	packageDirectory: string,
+	overrideDirectories: string[]
+): void => {
+	const packagePath = join(repositoryRoot, 'packages', packageDirectory);
+	const baseConfigPath = join(packagePath, 'src', 'config-base');
+
+	mkdirSync(baseConfigPath, { recursive: true });
+	writeFileSync(
+		join(packagePath, 'package.json'),
+		`${JSON.stringify({ name: `@test/${packageDirectory}` })}\n`
+	);
+	writeFileSync(
+		join(baseConfigPath, 'index.ts'),
+		`const config = {
+	plugins: ['eslint'],
+	rules: {
+		'eslint/no-broken': 'error',
+	},
+};
+`
+	);
+
+	for (const overrideDirectory of overrideDirectories) {
+		const overridePath = join(packagePath, 'src', overrideDirectory);
+
+		mkdirSync(overridePath, { recursive: true });
+		writeFileSync(
+			join(overridePath, 'index.ts'),
+			`const config = {
+	rules: {
+		'eslint/${overrideDirectory}': 'error',
+	},
+};
+`
+		);
+	}
+};
+
+const createInventoryFixture = (): string => {
+	const repositoryRoot = mkdtempSync(
+		join(tmpdir(), 'sconfig-rule-inventory-')
+	);
+
+	writePackageFixture(repositoryRoot, 'tracked', [
+		'config-tracked',
+		'config-untracked',
+	]);
+	writePackageFixture(repositoryRoot, 'untracked', [
+		'config-untracked-package',
+	]);
+
+	return repositoryRoot;
+};
 
 const assertRegistryFormatError = (
 	callback: () => unknown,
@@ -120,4 +196,126 @@ void test('extracts Markdown from a GitHub release page', () => {
 		`),
 		'# Oxlint\n- Don’t add nursery rules\n- A & B'
 	);
+});
+
+void test('tracked-only inventory includes only tracked packages and overrides', () => {
+	const repositoryRoot = createInventoryFixture();
+
+	try {
+		const report = buildInventory({
+			registry: DISCOVERY_REGISTRY,
+			repositoryRoot,
+			trackedPaths: new Set([
+				'packages/tracked/package.json',
+				'packages/tracked/src/config-base/index.ts',
+				'packages/tracked/src/config-tracked/index.ts',
+			]),
+			version: '1.0.0',
+		});
+
+		assert.deepEqual(
+			report.packages.map(({ packageName }) => packageName),
+			['@test/tracked']
+		);
+
+		const [trackedPackage] = report.packages;
+
+		assert.ok(trackedPackage);
+		assert.deepEqual(trackedPackage.unsupportedConfiguredRules, [
+			{
+				configPath: 'packages/tracked/src/config-tracked/index.ts',
+				rule: 'eslint/config-tracked',
+			},
+		]);
+	} finally {
+		rmSync(repositoryRoot, { force: true, recursive: true });
+	}
+});
+
+void test('default inventory retains filesystem package and override discovery', () => {
+	const repositoryRoot = createInventoryFixture();
+
+	try {
+		const report = buildInventory({
+			registry: DISCOVERY_REGISTRY,
+			repositoryRoot,
+			version: '1.0.0',
+		});
+
+		assert.deepEqual(
+			report.packages.map(({ packageName }) => packageName),
+			['@test/tracked', '@test/untracked']
+		);
+
+		const trackedPackage = report.packages.find(
+			({ packageName }) => packageName === '@test/tracked'
+		);
+
+		assert.ok(trackedPackage);
+		assert.deepEqual(
+			trackedPackage.unsupportedConfiguredRules.map(
+				({ configPath }) => configPath
+			),
+			[
+				'packages/tracked/src/config-tracked/index.ts',
+				'packages/tracked/src/config-untracked/index.ts',
+			]
+		);
+	} finally {
+		rmSync(repositoryRoot, { force: true, recursive: true });
+	}
+});
+
+void test('resolves NUL-delimited tracked paths through Git on PATH', () => {
+	const trackedPaths = resolveTrackedPaths(
+		'/repository',
+		(command, arguments_, cwd) => {
+			assert.equal(command, 'git');
+			assert.deepEqual(arguments_, ['ls-files', '-z', '--', 'packages']);
+			assert.equal(cwd, '/repository');
+
+			return {
+				error: undefined,
+				status: 0,
+				stderr: '',
+				stdout: './packages/tracked/package.json\0packages\\tracked\\src\\config-base\\index.ts\0',
+			};
+		}
+	);
+
+	assert.deepEqual(
+		[...trackedPaths],
+		[
+			'packages/tracked/package.json',
+			'packages/tracked/src/config-base/index.ts',
+		]
+	);
+});
+
+void test('fails closed when Git cannot resolve tracked paths', () => {
+	let invocationCount = 0;
+
+	assert.throws(
+		() =>
+			resolveTrackedPaths('/repository', () => {
+				invocationCount += 1;
+
+				return {
+					error: undefined,
+					status: 128,
+					stderr: 'fatal: not a git repository',
+					stdout: '',
+				};
+			}),
+		(error: unknown) => {
+			assert.ok(error instanceof Error);
+			assert.match(
+				error.message,
+				/Could not resolve tracked package paths with `git ls-files -z -- packages`\./
+			);
+			assert.match(error.message, /valid Git checkout/);
+			return true;
+		}
+	);
+	assert.equal(invocationCount, 1);
 });

@@ -1628,6 +1628,10 @@ exports[`resolves \`@standard-config/oxlint-stylistic\` when it’s available 1`
           {
             "customGroups": [
               {
+                "elementNamePattern": "^(exclude|excludes)$",
+                "groupName": "excludes",
+              },
+              {
                 "elementNamePattern": "^extends$",
                 "groupName": "extends",
               },
@@ -1668,6 +1672,7 @@ exports[`resolves \`@standard-config/oxlint-stylistic\` when it’s available 1`
               "name",
               "files",
               "extends",
+              "excludes",
               "ignores",
               "plugins",
               "parser",
@@ -3228,6 +3233,10 @@ exports[`resolves all available supplemental configs by default 1`] = `
           {
             "customGroups": [
               {
+                "elementNamePattern": "^(exclude|excludes)$",
+                "groupName": "excludes",
+              },
+              {
                 "elementNamePattern": "^extends$",
                 "groupName": "extends",
               },
@@ -3268,6 +3277,7 @@ exports[`resolves all available supplemental configs by default 1`] = `
               "name",
               "files",
               "extends",
+              "excludes",
               "ignores",
               "plugins",
               "parser",

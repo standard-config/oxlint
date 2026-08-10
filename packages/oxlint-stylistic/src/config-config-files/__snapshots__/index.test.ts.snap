@@ -8,6 +8,10 @@ exports[`is a valid Oxlint config override 1`] = `
       {
         "customGroups": [
           {
+            "elementNamePattern": "^(exclude|excludes)$",
+            "groupName": "excludes",
+          },
+          {
             "elementNamePattern": "^extends$",
             "groupName": "extends",
           },
@@ -48,6 +52,7 @@ exports[`is a valid Oxlint config override 1`] = `
           "name",
           "files",
           "extends",
+          "excludes",
           "ignores",
           "plugins",
           "parser",

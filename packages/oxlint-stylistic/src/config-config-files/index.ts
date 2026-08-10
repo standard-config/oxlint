@@ -11,6 +11,10 @@ const config: OxlintConfigOverrideEntry = {
 			{
 				customGroups: [
 					{
+						groupName: 'excludes',
+						elementNamePattern: '^(exclude|excludes)$',
+					},
+					{
 						groupName: 'extends',
 						elementNamePattern: '^extends$',
 					},
@@ -51,6 +55,7 @@ const config: OxlintConfigOverrideEntry = {
 					'name',
 					'files',
 					'extends',
+					'excludes',
 					'ignores',
 					'plugins',
 					'parser',

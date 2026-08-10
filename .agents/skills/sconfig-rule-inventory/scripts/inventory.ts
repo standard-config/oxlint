@@ -42,7 +42,6 @@ type CliOptions = {
 	help: boolean;
 	json: boolean;
 	releaseNotes: boolean;
-	releaseUrl?: string;
 	trackedOnly: boolean;
 };
 
@@ -85,7 +84,6 @@ type PackageInventory = {
 
 type ReleaseNotes = {
 	body: string;
-	requestedUrl: string;
 	url: string;
 };
 
@@ -933,9 +931,9 @@ export const extractReleaseNotesFromHtml = (html: string): string => {
 };
 
 export const fetchReleaseNotes = async (
-	version: string,
-	releaseUrl = getDefaultReleaseUrl(version)
+	version: string
 ): Promise<ReleaseNotes> => {
+	const releaseUrl = getDefaultReleaseUrl(version);
 	const response = await fetch(releaseUrl, {
 		headers: {
 			'Accept': 'text/html, application/vnd.github+json;q=0.9',
@@ -960,7 +958,6 @@ export const fetchReleaseNotes = async (
 			body: contentType.includes('text/html')
 				? extractReleaseNotesFromHtml(responseBody)
 				: responseBody,
-			requestedUrl: releaseUrl,
 			url: response.url,
 		};
 	}
@@ -976,7 +973,6 @@ export const fetchReleaseNotes = async (
 			typeof responseBody.body === 'string'
 				? responseBody.body
 				: JSON.stringify(responseBody, undefined, 2),
-		requestedUrl: releaseUrl,
 		url:
 			typeof responseBody.html_url === 'string'
 				? responseBody.html_url
@@ -992,9 +988,7 @@ const parseCliOptions = (arguments_: string[]): CliOptions => {
 		trackedOnly: false,
 	};
 
-	for (let index = 0; index < arguments_.length; index += 1) {
-		const argument = arguments_[index];
-
+	for (const argument of arguments_) {
 		switch (argument) {
 			case '--json':
 				options.json = true;
@@ -1008,28 +1002,14 @@ const parseCliOptions = (arguments_: string[]): CliOptions => {
 				options.trackedOnly = true;
 				break;
 
-			case '--release-url': {
-				const releaseUrl = arguments_[index + 1];
-
-				if (!releaseUrl) {
-					throw new Error('`--release-url` requires a URL.');
-				}
-
-				options.releaseNotes = true;
-				options.releaseUrl = releaseUrl;
-				index += 1;
-				break;
-			}
-
 			case '--help':
 				options.help = true;
 				process.stdout.write(
 					[
-						'Usage: node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts [--json] [--release-notes] [--release-url <url>] [--tracked-only]',
+						'Usage: node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts [--json] [--release-notes] [--tracked-only]',
 						'',
 						'  --json           Print machine-readable audit output.',
 						'  --release-notes  Fetch release notes; failures are nonfatal.',
-						'  --release-url    Fetch release notes from an explicit URL.',
 						'  --tracked-only   Restrict package and override discovery to Git-tracked working-tree files.',
 						'',
 					].join('\n')
@@ -1038,7 +1018,7 @@ const parseCliOptions = (arguments_: string[]): CliOptions => {
 				return options;
 
 			default:
-				throw new Error(`Unknown argument: ${String(argument)}`);
+				throw new Error(`Unknown argument: ${argument}`);
 		}
 	}
 
@@ -1067,7 +1047,7 @@ const formatInventory = (report: InventoryReport): string => {
 		'Oxlint rule inventory',
 		`Installed version: ${report.version}`,
 		`Registry: ${String(report.registry.totalRuleCount)} total, ${String(report.registry.stableRuleCount)} stable, ${String(report.registry.nurseryRuleCount)} nursery excluded`,
-		`Release URL: ${report.releaseUrl}`,
+		`Expected release URL: ${report.releaseUrl}`,
 	];
 
 	for (const packageInventory of report.packages) {
@@ -1134,10 +1114,7 @@ const main = async (): Promise<void> => {
 
 	if (options.releaseNotes) {
 		try {
-			releaseNotes = await fetchReleaseNotes(
-				report.version,
-				options.releaseUrl
-			);
+			releaseNotes = await fetchReleaseNotes(report.version);
 		} catch (error) {
 			releaseNotesError =
 				error instanceof Error ? error.message : String(error);

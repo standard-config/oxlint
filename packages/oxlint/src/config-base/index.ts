@@ -206,6 +206,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'eslint/no-warning-comments': 'off',
 		'eslint/no-with': 'error',
 		'eslint/object-shorthand': ['error', 'always'],
+		'eslint/one-var': 'off',
 		'eslint/operator-assignment': ['warn', 'always'],
 		'eslint/prefer-arrow-callback': [
 			'error',

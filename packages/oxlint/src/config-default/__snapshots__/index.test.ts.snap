@@ -423,6 +423,7 @@ exports[`is a valid Oxlint config 1`] = `
       "error",
       "always",
     ],
+    "eslint/one-var": "off",
     "eslint/operator-assignment": [
       "warn",
       "always",

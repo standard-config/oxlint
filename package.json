@@ -17,7 +17,7 @@
 		"@standard-config/oxlint": "workspace:*",
 		"@standard-config/oxlint-react": "workspace:*",
 		"@standard-config/oxlint-stylistic": "workspace:*",
-		"@standard-config/prettier": "^1.19.2",
+		"@standard-config/prettier": "^1.20.0",
 		"@standard-config/tsconfig": "catalog:",
 		"@types/node": "catalog:",
 		"@vitest/coverage-v8": "^4.1.10",

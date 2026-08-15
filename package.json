@@ -36,7 +36,7 @@
 		"lint": "oxlint --fix",
 		"lint:check": "oxlint --deny-warnings --type-check",
 		"prepack": "pnpm run '/^(format:check|lint:check|test)$/'",
-		"prepare": "vp config",
+		"prepare": "vp config --hooks-dir .hooks",
 		"postprepare": "pnpm build",
 		"test": "vp test",
 		"typecheck": "tsc --noEmit"

@@ -2,6 +2,7 @@ import { configCoreTestFiles, defineConfig } from '@standard-config/oxlint';
 import { configStylisticConfigFiles } from '@standard-config/oxlint-stylistic';
 
 export default defineConfig({
+	ignorePatterns: ['.claude/**'],
 	overrides: [
 		{
 			files: ['**/config-*/index.ts'],

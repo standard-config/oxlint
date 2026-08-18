@@ -1,6 +1,8 @@
 ---
 name: sconfig-rule-inventory
 description: Audit or repair Oxlint core-rule inventory and base/override parity when Oxlint changes. Use this skill for strictly read-only Oxlint core-rule inventory audits and explicit requests to repair that inventory.
+metadata:
+    internal: true
 ---
 
 # Standard Config Oxlint rule inventory

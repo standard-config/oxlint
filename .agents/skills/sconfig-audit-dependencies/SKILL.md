@@ -1,6 +1,8 @@
 ---
 name: sconfig-audit-dependencies
 description: Perform a read-only audit of dependency ownership across the complete Standard Config Oxlint repository. Use this skill whenever the user requests `Audit dependencies` or another repository-wide dependency ownership audit. Do not use it for dependency updates, ordinary code review, debugging, or implementation tasks.
+metadata:
+    internal: true
 ---
 
 # Standard Config dependency audit

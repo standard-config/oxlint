@@ -6,7 +6,6 @@ export default defineConfig({
 			/* prettier-ignore */
 			...configDefaults.exclude,
 			'.agent-*/**',
-			'.agents/**',
 		],
 		projects: [
 			/* prettier-ignore */

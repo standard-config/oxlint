@@ -165,7 +165,7 @@ const config: OxlintConfigBaseEntry = {
 		'react/unsupported-syntax': 'error',
 		'react/use-memo': 'error',
 		'react/void-dom-elements-no-children': 'error',
-		'react/void-use-memo': 'off',
+		'react/void-use-memo': 'error',
 	},
 };
 

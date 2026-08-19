@@ -42,6 +42,7 @@ const config: OxlintConfigOverrideEntry = {
 		'react-x/no-nested-lazy-component-declarations': 'off',
 		'react/button-has-type': 'off',
 		'react/checked-requires-onchange-or-readonly': 'off',
+		'react/globals': 'off',
 		'react/iframe-missing-sandbox': 'off',
 		'react/immutability': 'off',
 		'react/jsx-no-constructed-context-values': 'off',

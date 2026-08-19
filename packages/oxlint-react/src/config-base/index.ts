@@ -80,7 +80,7 @@ const config: OxlintConfigBaseEntry = {
 				unnamedComponents: 'arrow-function',
 			},
 		],
-		'react/globals': 'off',
+		'react/globals': 'error',
 		'react/hook-use-state': 'error',
 		'react/hooks': 'off',
 		'react/iframe-missing-sandbox': 'error',

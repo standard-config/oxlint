@@ -1,6 +1,6 @@
 ---
 name: sconfig-rule-inventory
-description: Audit or repair Oxlint core-rule inventory and base/override parity when Oxlint changes. Use this skill for strictly read-only Oxlint core-rule inventory audits and explicit requests to repair that inventory.
+description: Audit or repair Oxlint core-rule inventory and base/override parity when Oxlint changes. Use this skill whenever the user requests `Inventory`, another read-only core-rule inventory audit, or an explicit repair of that inventory. The bare `Inventory` shorthand selects the strictly read-only audit workflow.
 metadata:
     internal: true
 ---
@@ -11,7 +11,7 @@ Use the bundled read-only [`scripts/inventory.ts`](scripts/inventory.ts) as the 
 
 ## Choose the workflow
 
-- A request that asks only for an Oxlint core-rule inventory audit or inspection uses the strictly read-only audit workflow. It may run the detector, inspect evidence, interpret findings, and report them. It must not enter the repair workflow, modify repository files, install dependencies, update snapshots, or run mutating tools. It excludes every untracked path without exception and stops after reporting findings.
+- The bare `Inventory` shorthand, or a request that asks only for an Oxlint core-rule inventory audit or inspection, uses the strictly read-only audit workflow. It may run the detector, inspect evidence, interpret findings, and report them. It must not enter the repair workflow, modify repository files, install dependencies, update snapshots, or run mutating tools. It excludes every untracked path without exception and stops after reporting findings.
 - An explicit request to repair, fix, update, or otherwise modify the inventory uses the [repair workflow](references/repair-workflow.md) even when the same request also uses words such as `audit`, `review`, or `inspect`.
 - In a mixed request such as “audit the rule inventory and repair any findings,” treat auditing as the discovery phase of the explicitly authorized repair workflow.
 - Detector findings alone never grant permission to enter the repair workflow.
@@ -22,7 +22,7 @@ Use the bundled read-only [`scripts/inventory.ts`](scripts/inventory.ts) as the 
 2. From the repository root, run the canonical detector in the selected mode.
     - For a standalone audit or inspection, run `node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts --tracked-only --release-notes`.
     - For an explicit repair request, including a mixed audit-and-repair request, run `node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts --release-notes` without `--tracked-only` so task-owned untracked files remain inspectable.
-    - The installed `oxlint --rules` registry is authoritative. Release notes provide context only.
+    - The installed Oxlint rule registry is authoritative. Release notes provide context only.
     - A release-fetch warning does not invalidate an otherwise complete offline audit.
 3. Classify the result according to the selected workflow.
     - Exit code `0` with a complete report means the inventory is clean.

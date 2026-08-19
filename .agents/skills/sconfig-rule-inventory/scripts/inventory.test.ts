@@ -11,6 +11,7 @@ import {
 	parseConfigSource,
 	parseRuleRegistry,
 	RegistryFormatError,
+	resolveRuleRegistry,
 	resolveTrackedPaths,
 } from './inventory.ts';
 
@@ -139,6 +140,13 @@ void test('parses and validates the Oxlint rule registry', () => {
 	});
 });
 
+void test('rejects output without registry categories', () => {
+	assertRegistryFormatError(
+		() => parseRuleRegistry(''),
+		'No Oxlint rule categories were found.'
+	);
+});
+
 void test('rejects a registry category count mismatch', () => {
 	assertRegistryFormatError(
 		() =>
@@ -154,6 +162,21 @@ void test('rejects a registry total mismatch', () => {
 		() => parseRuleRegistry(VALID_REGISTRY.replace('Total: 3', 'Total: 4')),
 		'The registry declared 4 rules but 3 were parsed.'
 	);
+});
+
+void test('requests the Oxlint rule registry with an explicit output format', () => {
+	let invocationCount = 0;
+
+	const registry = resolveRuleRegistry((arguments_) => {
+		invocationCount += 1;
+
+		assert.deepEqual(arguments_, ['--rules', '--format=default']);
+
+		return VALID_REGISTRY;
+	});
+
+	assert.equal(invocationCount, 1);
+	assert.equal(registry.totalRuleCount, 3);
 });
 
 void test('infers ownership from direct plugin entries only', () => {

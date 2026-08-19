@@ -420,7 +420,7 @@ const parseRegistryTableRow = (
 };
 
 /**
- * Parse and validate the Markdown registry emitted by `oxlint --rules`.
+ * Parse and validate the Markdown registry emitted by the installed Oxlint.
  */
 export const parseRuleRegistry = (output: string): RuleRegistry => {
 	const categoryCounts = new Map<string, number>();
@@ -585,7 +585,9 @@ export const resolveTrackedPaths = (
 	);
 };
 
-const runOxlint = (arguments_: string[]): string => {
+type RunOxlint = (arguments_: string[]) => string;
+
+const runOxlint: RunOxlint = (arguments_) => {
 	const result = spawnSync(
 		process.execPath,
 		[OXLINT_BIN_PATH, ...arguments_],
@@ -633,6 +635,14 @@ const parseOxlintVersion = (output: string): string => {
 
 	return version;
 };
+
+/**
+ * `--rules` emits nothing unless an output format is selected, so the request
+ * pairs it with `--format=default` to obtain the Markdown registry.
+ */
+export const resolveRuleRegistry = (
+	execute: RunOxlint = runOxlint
+): RuleRegistry => parseRuleRegistry(execute(['--rules', '--format=default']));
 
 const readConfigSource = (configPath: string): ConfigSource =>
 	parseConfigSource(readFileSync(configPath, 'utf8'), configPath);
@@ -1088,7 +1098,7 @@ const formatInventory = (report: InventoryReport): string => {
 
 const runInventory = (trackedOnly: boolean): InventoryReport => {
 	const version = parseOxlintVersion(runOxlint(['--version']));
-	const registry = parseRuleRegistry(runOxlint(['--rules']));
+	const registry = resolveRuleRegistry();
 	const trackedPaths = trackedOnly
 		? resolveTrackedPaths(REPOSITORY_ROOT)
 		: undefined;

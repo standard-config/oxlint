@@ -20,6 +20,12 @@ Each package’s `oxlint` peer dependency range is maintained at the earliest Ox
 
 For a package that defines no core rules, the maintained compatibility baseline is `^1.53.0`. This is the release where `jsPlugins` support advanced from experimental to alpha.
 
+### React Compiler rule coverage
+
+Under Oxlint 1.79.0, five `react` rules produced no diagnostic across targeted fixtures: `react/invariant`, `react/preserve-manual-memoization`, `react/rule-suppression`, `react/syntax`, and `react/todo`. They are configured as `off` because no fixture demonstrated coverage, not because their intent conflicts with the config.
+
+`react/invariant`, `react/rule-suppression`, `react/syntax`, and `react/todo` report React Compiler bailouts, and upstream ships all four disabled in every preset. `react/preserve-manual-memoization` is upstream `recommended`, yet it stayed silent on its documented trigger of an incomplete `useMemo` dependency array. The enabled `react/exhaustive-deps` covers that trigger and names the missing dependency, so disabling `react/preserve-manual-memoization` leaves no gap.
+
 ## Agent integration
 
 ### Claude Agent integration

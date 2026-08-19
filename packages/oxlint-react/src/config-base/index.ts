@@ -158,7 +158,7 @@ const config: OxlintConfigBaseEntry = {
 		'react/set-state-in-effect': 'error',
 		'react/set-state-in-render': 'error',
 		'react/state-in-constructor': 'off',
-		'react/static-components': 'off',
+		'react/static-components': 'error',
 		'react/style-prop-object': 'error',
 		'react/syntax': 'off',
 		'react/todo': 'off',

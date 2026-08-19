@@ -56,6 +56,7 @@ const config: OxlintConfigOverrideEntry = {
 		'react/purity': 'off',
 		'react/refs': 'off',
 		'react/set-state-in-effect': 'off',
+		'react/static-components': 'off',
 		'typescript/no-restricted-types': 'off',
 	},
 };

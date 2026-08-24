@@ -1,6 +1,6 @@
 # Repair workflow
 
-Follow this workflow only after [workflow selection](../SKILL.md#choose-the-workflow) authorizes repair. The detector identifies findings. Use repository policy and verified rule semantics to decide the repair.
+The detector identifies findings. Use repository policy and verified rule semantics to decide the repair.
 
 ## Repair verified findings
 

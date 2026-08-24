@@ -7,8 +7,6 @@ metadata:
 
 # Standard Config dependency audit
 
-Audit the complete dependency surface without modifying it.
-
 ## Resolve the dependency surface
 
 1. Read every applicable `AGENTS.md` file and consult `.agents/PROJECT.md` for relevant project rationale before reviewing other repository content.

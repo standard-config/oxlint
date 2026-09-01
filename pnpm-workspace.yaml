@@ -8,9 +8,9 @@ catalog:
   '@standard-config/tsconfig': ^3.2.0
   '@stylistic/eslint-plugin': ^5.10.0
   '@types/node': ^24.13.3
-  eslint-plugin-perfectionist: ^5.10.1
+  eslint-plugin-perfectionist: ^5.11.0
   eslint-plugin-react-you-might-not-need-an-effect: ^1.0.2
-  oxlint: ^1.80.0
+  oxlint: ^1.81.0
   oxlint-tsgolint: ^7.0.2001
   publint: ^0.3.24
   typescript: ^6.0.3
@@ -19,6 +19,8 @@ catalog:
 color: always
 
 gitChecks: false
+
+engineStrict: true
 
 minimumReleaseAgeExclude:
   - '@oxlint/*'

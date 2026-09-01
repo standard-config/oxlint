@@ -127,6 +127,8 @@ While **@standard-config/oxlint** relies only on Oxlint’s core rules, the supp
     </tbody>
 </table>
 
+<div>&nbsp;</div>
+
 ## FAQ
 
 ### How responsive is this config to new Oxlint releases?

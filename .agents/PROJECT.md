@@ -1,10 +1,10 @@
-# Project documentation
+# Project Documentation
 
 This document records durable facts, rationale, constraints, and maintenance decisions that are not obvious from source and configuration. `AGENTS.md` remains authoritative for agent instructions.
 
 ## Architecture
 
-### Cross-package rule ownership
+### Cross-Package Rule Ownership
 
 Core plugins and rules that a supplemental config conditionally includes only when the core config is available remain owned by the core config. The supplemental config may declare a plugin solely to make a cross-package override valid while remaining independently usable.
 
@@ -14,20 +14,20 @@ Each package’s owned core plugins are represented as direct string entries in 
 
 ## Compatibility
 
-### Oxlint version support
+### Oxlint Version Support
 
 Each package’s `oxlint` peer dependency range is maintained at the earliest Oxlint version that contains every core rule defined by that package. This compatibility baseline includes enabled and disabled rules because Oxlint must recognize every configured rule name.
 
 For a package that defines no core rules, the maintained compatibility baseline is `^1.53.0`. This is the release where `jsPlugins` support advanced from experimental to alpha.
 
-### React Compiler rule coverage
+### React Compiler Rule Coverage
 
 Under Oxlint 1.79.0, five `react` rules produced no diagnostic across targeted fixtures: `react/invariant`, `react/preserve-manual-memoization`, `react/rule-suppression`, `react/syntax`, and `react/todo`. They are configured as `off` because no fixture demonstrated coverage, not because their intent conflicts with the config.
 
 `react/invariant`, `react/rule-suppression`, `react/syntax`, and `react/todo` report React Compiler bailouts, and upstream ships all four disabled in every preset. `react/preserve-manual-memoization` is upstream `recommended`, yet it stayed silent on its documented trigger of an incomplete `useMemo` dependency array. The enabled `react/exhaustive-deps` covers that trigger and names the missing dependency, so disabling `react/preserve-manual-memoization` leaves no gap.
 
-## Agent integration
+## Agent Integration
 
-### Claude Agent integration
+### Claude Agent Integration
 
 The tracked [`CLAUDE.md`](../CLAUDE.md) bridge is described in the [agent documentation table](../AGENTS.md#agent-documentation). The tracked [`.claude/skills`](../.claude/skills) symlink exposes repository-internal skills from `.agents/skills`. Claude therefore uses its native instruction and skill discovery locations without duplicating canonical content.

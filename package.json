@@ -12,7 +12,7 @@
 	"engines": {
 		"node": ">=24"
 	},
-	"packageManager": "pnpm@12.2.1",
+	"packageManager": "pnpm@12.4.1",
 	"devDependencies": {
 		"@standard-config/oxlint": "workspace:*",
 		"@standard-config/oxlint-react": "workspace:*",
@@ -21,7 +21,7 @@
 		"@standard-config/tsconfig": "catalog:",
 		"@types/node": "catalog:",
 		"@vitest/coverage-v8": "4.1.11",
-		"eslint": "^10.9.1",
+		"eslint": "^10.10.0",
 		"oxlint": "catalog:",
 		"oxlint-tsgolint": "catalog:",
 		"prettier": "^3.9.6",

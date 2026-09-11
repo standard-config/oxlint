@@ -10,7 +10,8 @@ export default defineConfig({
 	staged: {
 		'*': [
 			() => 'pnpm install --ignore-scripts',
-			() => 'pnpm --recursive build',
+			() => 'pnpm build',
+			() => "pnpm --filter '{packages/oxlint*}' exec publint --strict",
 			() => 'pnpm test',
 			'oxlint --deny-warnings --fix --no-error-on-unmatched-pattern --type-check',
 			'prettier --ignore-unknown --write',

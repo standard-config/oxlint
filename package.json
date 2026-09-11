@@ -29,7 +29,7 @@
 		"vite-plus": "catalog:"
 	},
 	"scripts": {
-		"build": "pnpm --recursive build --log-level=warn --no-publint",
+		"build": "vp run --filter '{packages/oxlint*}' --cache build -- --log-level=warn --no-publint",
 		"fix": " pnpm format && pnpm build && pnpm lint && pnpm format",
 		"format": "prettier --ignore-unknown --log-level=warn --write .",
 		"format:check": "prettier --check --ignore-unknown .",

@@ -11,7 +11,7 @@ catalog:
   eslint-plugin-perfectionist: ^5.11.0
   eslint-plugin-react-you-might-not-need-an-effect: ^1.0.2
   oxlint: ^1.83.0
-  oxlint-tsgolint: ^7.0.2001
+  oxlint-tsgolint: ^7.0.2002
   publint: ^0.3.24
   typescript: ^6.0.3
   vite-plus: ^0.3.1

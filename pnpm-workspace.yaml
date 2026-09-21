@@ -10,7 +10,7 @@ catalog:
   '@types/node': ^24.13.3
   eslint-plugin-perfectionist: ^5.11.0
   eslint-plugin-react-you-might-not-need-an-effect: ^1.0.2
-  oxlint: ^1.83.0
+  oxlint: ^1.84.0
   oxlint-tsgolint: ^7.0.2001
   publint: ^0.3.24
   typescript: ^6.0.3

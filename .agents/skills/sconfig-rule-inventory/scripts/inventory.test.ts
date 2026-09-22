@@ -1,12 +1,15 @@
 import type { RuleRegistry } from './inventory.ts';
 import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import process from 'node:process';
 import { test } from 'node:test';
+import { fileURLToPath } from 'node:url';
 import {
 	buildInventory,
-	extractReleaseNotesFromHtml,
+	fetchReleaseNotes,
 	getDefaultReleaseUrl,
 	parseConfigSource,
 	parseRuleRegistry,
@@ -113,6 +116,21 @@ const assertRegistryFormatError = (
 	});
 };
 
+void test('documents the proxy-aware invocation in CLI help', () => {
+	const scriptPath = fileURLToPath(new URL('inventory.ts', import.meta.url));
+	const result = spawnSync(process.execPath, [scriptPath, '--help'], {
+		encoding: 'utf8',
+	});
+
+	assert.equal(result.error, undefined);
+	assert.equal(result.status, 0);
+	assert.equal(result.stderr, '');
+	assert.equal(
+		result.stdout.split('\n')[0],
+		'Usage: NODE_USE_ENV_PROXY=1 node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts [--json] [--release-notes] [--tracked-only]'
+	);
+});
+
 void test('parses and validates the Oxlint rule registry', () => {
 	assert.deepEqual(parseRuleRegistry(VALID_REGISTRY), {
 		categoryCounts: {
@@ -208,17 +226,169 @@ void test('derives the exact GitHub release URL', () => {
 	);
 });
 
-void test('extracts Markdown from a GitHub release page', () => {
-	assert.equal(
-		extractReleaseNotesFromHtml(`
-			<div class="commit-desc border-bottom">
-				<pre class="text-small color-fg-muted" ># Oxlint
-- Don’t add nursery rules
-- A &amp; B</pre>
-			</div>
-		`),
-		'# Oxlint\n- Don’t add nursery rules\n- A & B'
+void test('fetches release Markdown from the GitHub API without decoding HTML entities', async () => {
+	const body = '# Oxlint\n- Keep `<Thing>` &amp; unchanged\n';
+	const url =
+		'https://github.com/oxc-project/oxc/releases/tag/oxlint_v1.85.0';
+	let invocationCount = 0;
+
+	const notes = await fetchReleaseNotes('1.85.0', async (input, options) => {
+		invocationCount += 1;
+		assert.equal(
+			input,
+			'https://api.github.com/repos/oxc-project/oxc/releases/tags/oxlint_v1.85.0'
+		);
+		assert.deepEqual(options?.headers, {
+			'Accept': 'application/vnd.github+json',
+			'User-Agent': 'standard-config-oxlint-rule-inventory',
+			'X-GitHub-Api-Version': '2022-11-28',
+		});
+		assert.ok(options?.signal instanceof AbortSignal);
+		assert.equal(options.signal.aborted, false);
+
+		return Promise.resolve(Response.json({ body, html_url: url }));
+	});
+
+	assert.equal(invocationCount, 1);
+	assert.deepEqual(notes, { body, url });
+});
+
+void test('accepts an empty release and falls back to its human-readable URL', async () => {
+	assert.deepEqual(
+		await fetchReleaseNotes('1.85.0', async () =>
+			Promise.resolve(Response.json({ body: null }))
+		),
+		{
+			body: '',
+			url: 'https://github.com/oxc-project/oxc/releases/tag/oxlint_v1.85.0',
+		}
 	);
+});
+
+void test('rejects a release API response that is not an object', async () => {
+	await assert.rejects(
+		fetchReleaseNotes('1.85.0', async () =>
+			Promise.resolve(Response.json(null))
+		),
+		{ message: 'The release note response was not a JSON object.' }
+	);
+});
+
+void test('rejects release metadata without a Markdown body', async () => {
+	await assert.rejects(
+		fetchReleaseNotes('1.85.0', async () =>
+			Promise.resolve(Response.json({}))
+		),
+		{
+			message:
+				'The release note response must contain a Markdown body or null.',
+		}
+	);
+});
+
+void test('rejects an HTML response instead of scraping a release page', async () => {
+	await assert.rejects(
+		fetchReleaseNotes('1.85.0', async () =>
+			Promise.resolve(new Response('<html>Release page</html>'))
+		),
+		SyntaxError
+	);
+});
+
+void test('reports release API HTTP failures', async () => {
+	await assert.rejects(
+		fetchReleaseNotes('1.85.0', async () =>
+			Promise.resolve(
+				new Response(null, { status: 403, statusText: 'Forbidden' })
+			)
+		),
+		{ message: 'Release note request failed with 403 Forbidden.' }
+	);
+});
+
+void test('preserves release request network failures', async () => {
+	const error = new TypeError('fetch failed');
+
+	await assert.rejects(
+		fetchReleaseNotes('1.85.0', async () => Promise.reject(error)),
+		error
+	);
+});
+
+void test('includes successful release notes in the JSON envelope', () => {
+	const scriptPath = fileURLToPath(new URL('inventory.ts', import.meta.url));
+	const arguments_ = [scriptPath, '--json', '--tracked-only'];
+	const baseline = spawnSync(process.execPath, arguments_, {
+		encoding: 'utf8',
+	});
+	const releaseNotes = {
+		body: '# Oxlint\n',
+		url: 'https://github.com/oxc-project/oxc/releases/tag/oxlint_v1.85.0',
+	};
+	const preload = `globalThis.fetch = () => Promise.resolve(Response.json(${JSON.stringify(
+		{
+			body: releaseNotes.body,
+			html_url: releaseNotes.url,
+		}
+	)}));`;
+	const result = spawnSync(
+		process.execPath,
+		[
+			'--import',
+			`data:text/javascript,${encodeURIComponent(preload)}`,
+			...arguments_,
+			'--release-notes',
+		],
+		{ encoding: 'utf8' }
+	);
+
+	assert.equal(baseline.error, undefined);
+	assert.equal(result.error, undefined);
+	assert.notEqual(baseline.status, null);
+	assert.equal(result.status, baseline.status);
+
+	const baselineOutput: unknown = JSON.parse(baseline.stdout);
+
+	assert.ok(typeof baselineOutput === 'object' && baselineOutput !== null);
+	assert.deepEqual(Object.keys(baselineOutput), ['report']);
+	assert.deepEqual(JSON.parse(result.stdout) as unknown, {
+		...baselineOutput,
+		releaseNotes,
+	});
+});
+
+void test('preserves the inventory report and exit status when the release API fails', () => {
+	const scriptPath = fileURLToPath(new URL('inventory.ts', import.meta.url));
+	const arguments_ = [scriptPath, '--json', '--tracked-only'];
+	const baseline = spawnSync(process.execPath, arguments_, {
+		encoding: 'utf8',
+	});
+	const preload =
+		"globalThis.fetch = () => Promise.resolve(new Response(null, { status: 403, statusText: 'Forbidden' }));";
+	const result = spawnSync(
+		process.execPath,
+		[
+			'--import',
+			`data:text/javascript,${encodeURIComponent(preload)}`,
+			...arguments_,
+			'--release-notes',
+		],
+		{ encoding: 'utf8' }
+	);
+
+	assert.equal(baseline.error, undefined);
+	assert.equal(result.error, undefined);
+	assert.notEqual(baseline.status, null);
+	assert.equal(result.status, baseline.status);
+
+	const baselineOutput: unknown = JSON.parse(baseline.stdout);
+
+	assert.ok(typeof baselineOutput === 'object' && baselineOutput !== null);
+	assert.deepEqual(Object.keys(baselineOutput), ['report']);
+	assert.deepEqual(JSON.parse(result.stdout) as unknown, {
+		...baselineOutput,
+		releaseNotesError: 'Release note request failed with 403 Forbidden.',
+	});
 });
 
 void test('tracked-only inventory includes only tracked packages and overrides', () => {

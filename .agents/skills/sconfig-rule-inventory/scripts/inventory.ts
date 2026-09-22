@@ -911,42 +911,14 @@ export const buildInventory = ({
 export const getDefaultReleaseUrl = (version: string): string =>
 	`https://github.com/oxc-project/oxc/releases/tag/oxlint_v${encodeURIComponent(version)}`;
 
-const decodeHtmlEntities = (value: string): string =>
-	value
-		.replaceAll(/&#x([\da-f]+);/gi, (_entity, codePoint: string) =>
-			String.fromCodePoint(Number.parseInt(codePoint, 16))
-		)
-		.replaceAll(/&#(\d+);/g, (_entity, codePoint: string) =>
-			String.fromCodePoint(Number(codePoint))
-		)
-		.replaceAll('&quot;', '"')
-		.replaceAll('&#39;', "'")
-		.replaceAll('&lt;', '<')
-		.replaceAll('&gt;', '>')
-		.replaceAll('&amp;', '&');
-
-export const extractReleaseNotesFromHtml = (html: string): string => {
-	const releaseNotes =
-		/<pre class="text-small color-fg-muted"[^>]*>([\s\S]*?)<\/pre>/.exec(
-			html
-		)?.[1];
-
-	if (!releaseNotes) {
-		throw new Error(
-			'Could not find release notes in the GitHub release page.'
-		);
-	}
-
-	return decodeHtmlEntities(releaseNotes).trim();
-};
-
 export const fetchReleaseNotes = async (
-	version: string
+	version: string,
+	request: typeof fetch = fetch
 ): Promise<ReleaseNotes> => {
-	const releaseUrl = getDefaultReleaseUrl(version);
-	const response = await fetch(releaseUrl, {
+	const releaseApiUrl = `https://api.github.com/repos/oxc-project/oxc/releases/tags/oxlint_v${encodeURIComponent(version)}`;
+	const response = await request(releaseApiUrl, {
 		headers: {
-			'Accept': 'text/html, application/vnd.github+json;q=0.9',
+			'Accept': 'application/vnd.github+json',
 			'User-Agent': 'standard-config-oxlint-rule-inventory',
 			'X-GitHub-Api-Version': '2022-11-28',
 		},
@@ -955,38 +927,28 @@ export const fetchReleaseNotes = async (
 
 	if (!response.ok) {
 		throw new Error(
-			`Release-note request failed with ${String(response.status)} ${response.statusText}.`
+			`Release note request failed with ${String(response.status)} ${response.statusText}.`
 		);
-	}
-
-	const contentType = response.headers.get('content-type') ?? '';
-
-	if (!contentType.includes('application/json')) {
-		const responseBody = await response.text();
-
-		return {
-			body: contentType.includes('text/html')
-				? extractReleaseNotesFromHtml(responseBody)
-				: responseBody,
-			url: response.url,
-		};
 	}
 
 	const responseBody: unknown = await response.json();
 
 	if (!isRecord(responseBody)) {
-		throw new Error('The release-note response was not a JSON object.');
+		throw new Error('The release note response was not a JSON object.');
+	}
+
+	if (responseBody.body !== null && typeof responseBody.body !== 'string') {
+		throw new Error(
+			'The release note response must contain a Markdown body or null.'
+		);
 	}
 
 	return {
-		body:
-			typeof responseBody.body === 'string'
-				? responseBody.body
-				: JSON.stringify(responseBody, undefined, 2),
+		body: responseBody.body ?? '',
 		url:
 			typeof responseBody.html_url === 'string'
 				? responseBody.html_url
-				: response.url,
+				: getDefaultReleaseUrl(version),
 	};
 };
 
@@ -1016,7 +978,7 @@ const parseCliOptions = (arguments_: string[]): CliOptions => {
 				options.help = true;
 				process.stdout.write(
 					[
-						'Usage: node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts [--json] [--release-notes] [--tracked-only]',
+						'Usage: NODE_USE_ENV_PROXY=1 node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts [--json] [--release-notes] [--tracked-only]',
 						'',
 						'  --json           Print machine-readable audit output.',
 						'  --release-notes  Fetch release notes; failures are nonfatal.',

@@ -22,16 +22,17 @@ Use the bundled read-only [`scripts/inventory.ts`](scripts/inventory.ts) as the 
 ## Run Inventory Checks
 
 1. Read every applicable `AGENTS.md` file and consult `.agents/PROJECT.md` for relevant project rationale before reviewing other repository content.
-2. From the repository root, run the canonical detector in the selected mode.
-    - For a standalone audit or inspection, run `node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts --tracked-only --release-notes`.
-    - For an explicit repair request, including a mixed audit-and-repair request, run `node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts --release-notes` without `--tracked-only` so task-owned untracked files remain inspectable.
-    - The installed Oxlint rule registry is authoritative. Release notes provide context only.
+2. From the repository root, run the canonical detector in the selected mode. Release-note requests use the unauthenticated GitHub API at `api.github.com`.
     - A release fetch warning does not invalidate an otherwise complete offline audit.
+    - Add `--json` to any invocation for machine-readable output on stdout. The JSON object contains `report` and, when release notes are requested, either `releaseNotes` or `releaseNotesError`. Exit codes are unchanged.
+    - For a standalone audit or inspection, run `NODE_USE_ENV_PROXY=1 node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts --tracked-only --release-notes`.
+    - For an explicit repair request, including a mixed audit-and-repair request, run `NODE_USE_ENV_PROXY=1 node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts --release-notes` without `--tracked-only` so task-owned untracked files remain inspectable.
+    - The installed Oxlint rule registry is authoritative. Release notes provide context only.
 3. Classify the result according to the selected workflow.
     - Exit code `0` with a complete report means the inventory is clean.
     - Exit code `1` with a structured inventory report means findings exist rather than an execution failure. Report them in an audit, or continue into repair in the explicit repair workflow.
     - Output beginning with `Rule inventory failed:` means invocation, Oxlint format compatibility, or parser failed. In an audit, inspect and report the failure without modifying repository files. An explicitly authorized repair follows the [repair workflow](references/repair-workflow.md) before changing configs.
-4. Fetch release notes only on the initial run. During repair, rerun `node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts` without `--tracked-only` or release note options.
+4. Fetch release notes only on the initial run. During repair, rerun `NODE_USE_ENV_PROXY=1 node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts` without `--tracked-only` or release note options.
 
 ## Interpret Findings
 

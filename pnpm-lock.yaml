@@ -177,8 +177,8 @@ catalogs:
       specifier: ^24.13.6
       version: 24.13.6
     eslint-plugin-perfectionist:
-      specifier: ^5.12.0
-      version: 5.12.0
+      specifier: ^5.12.1
+      version: 5.12.1
     eslint-plugin-react-you-might-not-need-an-effect:
       specifier: ^1.0.2
       version: 1.0.2
@@ -304,7 +304,7 @@ importers:
         version: 5.10.0(eslint@10.11.0)
       eslint-plugin-perfectionist:
         specifier: 'catalog:'
-        version: 5.12.0(eslint@10.11.0)(typescript@6.0.3)
+        version: 5.12.1(eslint@10.11.0)(typescript@6.0.3)
     devDependencies:
       '@standard-config/tsconfig':
         specifier: 'catalog:'
@@ -377,7 +377,7 @@ importers:
         version: 24.13.6
       eslint-plugin-perfectionist:
         specifier: 'catalog:'
-        version: 5.12.0(eslint@10.11.0)(typescript@6.0.3)
+        version: 5.12.1(eslint@10.11.0)(typescript@6.0.3)
       eslint-plugin-react-you-might-not-need-an-effect:
         specifier: 'catalog:'
         version: 1.0.2(eslint@10.11.0)
@@ -1380,11 +1380,14 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
-  eslint-plugin-perfectionist@5.12.0:
-    resolution: {integrity: sha512-1S1Vgb9b3AIxlJoVMbGKB5PwOCtA0PTvDIiGhIoT9CzZa5aZ6BhgGywIj3ONJ5vrH7gTDjgsLgJ1gPUbDI6UUQ==}
+  eslint-plugin-perfectionist@5.12.1:
+    resolution: {integrity: sha512-krdSE7Dz+TCtcVr2+rfNhlOIFFBJcUdoRvjaN7JQnsaVnxJw+BZh9wMkY3MSLCJat+yW+UPTQLKS82Epc7MGZA==}
     engines: {node: ^20.0.0 || >=22.0.0}
     peerDependencies:
       eslint: ^8.45.0 || ^9.0.0 || ^10.0.0
+    peerDependenciesMeta:
+      eslint:
+        optional: true
 
   eslint-plugin-react-dom@5.20.8:
     resolution: {integrity: sha512-IQYQbC0v+F8FlxAabLrQCXxxD6kDy8YHylQLZ1/E2iO2ufUnjOyAsVhhX9VEGVHvUpHck4CDoHCZr47msQ4pow==}
@@ -2873,12 +2876,13 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  eslint-plugin-perfectionist@5.12.0(eslint@10.11.0)(typescript@6.0.3):
+  eslint-plugin-perfectionist@5.12.1(eslint@10.11.0)(typescript@6.0.3):
     dependencies:
       '@typescript-eslint/types': 8.70.1
       '@typescript-eslint/utils': 8.70.1(eslint@10.11.0)(typescript@6.0.3)
-      eslint: 10.11.0
       natural-orderby: 5.0.0
+    optionalDependencies:
+      eslint: 10.11.0
     transitivePeerDependencies:
       - supports-color
       - typescript

@@ -9,7 +9,7 @@ export default defineConfig({
 	},
 	staged: {
 		'*': [
-			() => 'pnpm install --ignore-scripts',
+			() => 'pnpm install --frozen-lockfile --ignore-scripts',
 			() => 'pnpm build',
 			() => "pnpm --filter '{packages/oxlint*}' exec publint --strict",
 			() => 'pnpm test',

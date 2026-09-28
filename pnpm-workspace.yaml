@@ -6,23 +6,25 @@ autoDedupe: true
 autoInstallPeers: false
 
 catalog:
-  '@eslint-react/eslint-plugin': ^5.20.8
+  '@eslint-react/eslint-plugin': ^5.21.0
   '@standard-config/tsconfig': ^3.2.0
   '@stylistic/eslint-plugin': ^5.10.0
   '@types/node': ^24.19.0
   eslint-plugin-perfectionist: ^5.12.1
   eslint-plugin-react-you-might-not-need-an-effect: ^1.0.2
-  oxlint: ^1.85.0
+  oxlint: ^1.86.0
   oxlint-tsgolint: ^7.0.2003
   publint: ^0.3.24
   typescript: ^6.0.3
-  vite-plus: ^1.0.0-rc.1
+  vite-plus: ^1.0.0
 
 color: always
 
 engineStrict: true
 
 gitChecks: false
+
+minimumReleaseAge: 300
 
 minimumReleaseAgeExclude:
   - '@oxlint/*'
@@ -41,6 +43,7 @@ peerDependencyRules:
   allowAny:
     - typescript
   ignoreMissing:
+    - eslint
     - vitest
 
 strictPeerDependencies: true

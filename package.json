@@ -21,7 +21,6 @@
 		"@standard-config/tsconfig": "catalog:",
 		"@types/node": "catalog:",
 		"@vitest/coverage-v8": "5.0.1",
-		"eslint": "^10.11.0",
 		"oxlint": "catalog:",
 		"oxlint-tsgolint": "catalog:",
 		"prettier": "^3.9.9",

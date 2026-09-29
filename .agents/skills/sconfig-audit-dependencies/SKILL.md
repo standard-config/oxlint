@@ -1,7 +1,7 @@
 ---
 name: sconfig-audit-dependencies
 description: |-
-    Audit repository-wide dependency ownership and report misplaced, missing, or redundant declarations without changing files.
+    Audit dependency ownership and report misplaced, missing, or redundant declarations without changing files.
 
 disable-model-invocation: true
 metadata:
@@ -15,9 +15,9 @@ Do not use this workflow for debugging, dependency updates, implementation tasks
 ## Resolve Dependency Scope
 
 1. Read every applicable `AGENTS.md` file and consult `.agents/PROJECT.md` for relevant project rationale before reviewing other repository content.
-2. Resolve the audit surface from Git-tracked paths only. Exclude all untracked paths. Explicit user scope cannot override this exclusion.
-3. Exclude generated output, dependency installation directories, and symbolic links as applicable.
-4. Inspect every Git-tracked `package.json` in the repository and `pnpm-workspace.yaml`.
+2. By default, audit Git-tracked paths other than dependency installation directories, generated output, and symbolic links.
+3. Resolve explicit scope requests through [Audit Path Selection](references/audit-path-selection.md).
+4. Inspect every `package.json` and `pnpm-workspace.yaml` in the resolved audit scope.
 5. Inspect the corresponding source, tests, scripts, configuration, and TypeScript configuration needed to establish whether each dependency is used and which manifest owns it.
 
 ## Audit Dependency Ownership
@@ -33,10 +33,10 @@ Do not use this workflow for debugging, dependency updates, implementation tasks
 
 - Do not modify repository files, install dependencies, update the lockfile, or run mutating package manager commands.
 - Do not remove or reclassify a dependency based only on naming or convention. Establish its actual repository use first.
-- Continue through the complete dependency surface before reporting results.
+- Continue through the complete resolved audit scope before reporting results.
 
 ## Report Audit Results
 
-- Lead with evidence-backed dependency findings. If there are none, state that the audit found no reportable dependency issues.
+- Lead with the findings. If there are none, state that the audit found no reportable issues.
 - Reference the owning manifest and the concrete import, script, configuration, or TypeScript evidence for each finding.
-- State that every package manifest and `pnpm-workspace.yaml` were included, and identify anything that could not be verified.
+- State the resolved audit scope and identify anything that could not be verified.

@@ -22,12 +22,4 @@ For a package that defines no core rules, the maintained compatibility baseline 
 
 ### React Compiler Rule Coverage
 
-Under Oxlint 1.79.0, five `react` rules produced no diagnostic across targeted fixtures: `react/invariant`, `react/preserve-manual-memoization`, `react/rule-suppression`, `react/syntax`, and `react/todo`. They are configured as `off` because no fixture demonstrated coverage, not because their intent conflicts with the config.
-
-`react/invariant`, `react/rule-suppression`, `react/syntax`, and `react/todo` report React Compiler bailouts, and upstream ships all four disabled in every preset. `react/preserve-manual-memoization` is upstream `recommended`, yet it stayed silent on its documented trigger of an incomplete `useMemo` dependency array. The enabled `react/exhaustive-deps` covers that trigger and names the missing dependency, so disabling `react/preserve-manual-memoization` leaves no gap.
-
-## Agent Integration
-
-### Claude Agent Integration
-
-The tracked [`CLAUDE.md`](../CLAUDE.md) bridge is described in the [agent documentation table](../AGENTS.md#agent-documentation). The tracked [`.claude/skills`](../.claude/skills) symlink exposes repository-internal skills from `.agents/skills`. Claude therefore uses its native instruction and skill discovery locations without duplicating canonical content.
+The five `off` settings reflect the Oxlint 1.79.0 evaluation, whose targeted fixtures produced no diagnostics, rather than disagreement with the rules’ intent. At that evaluation, the compiler-bailout rules `react/invariant`, `react/rule-suppression`, `react/syntax`, and `react/todo` were disabled in every upstream preset. `react/preserve-manual-memoization` was upstream-recommended but silent on its documented incomplete `useMemo` dependency example, which `react/exhaustive-deps` covered.

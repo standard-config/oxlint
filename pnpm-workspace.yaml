@@ -14,7 +14,7 @@ catalog:
   eslint-plugin-react-you-might-not-need-an-effect: ^1.0.2
   oxlint: ^1.86.0
   oxlint-tsgolint: ^7.0.2003
-  publint: ^0.3.24
+  publint: ^0.3.25
   typescript: ^6.0.3
   vite-plus: ^1.0.0
 

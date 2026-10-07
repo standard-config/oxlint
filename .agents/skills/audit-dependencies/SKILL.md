@@ -1,5 +1,5 @@
 ---
-name: sconfig-audit-dependencies
+name: audit-dependencies
 description: |-
     Audit dependency ownership and report misplaced, missing, or redundant declarations without changing files.
 

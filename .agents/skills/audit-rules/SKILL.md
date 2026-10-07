@@ -1,5 +1,5 @@
 ---
-name: sconfig-rule-inventory
+name: audit-rules
 description: |-
     Audit Oxlint core rule inventory and base/override parity, or repair verified findings on explicit request.
 
@@ -21,7 +21,7 @@ Use the bundled read-only [`scripts/inventory.ts`](scripts/inventory.ts) as the 
 
 ## Resolve Audit Scope
 
-For standalone audits and inspections, exclude ignored and untracked paths by default. Resolve explicit scope requests through [Audit Path Selection](../sconfig-audit-dependencies/references/audit-path-selection.md).
+For standalone audits and inspections, exclude ignored and untracked paths by default. Resolve explicit scope requests through [Audit Path Selection](../audit-dependencies/references/audit-path-selection.md).
 
 ## Run Inventory Checks
 
@@ -29,15 +29,15 @@ For standalone audits and inspections, exclude ignored and untracked paths by de
 2. From the repository root, run the canonical detector in the selected mode. Release-note requests use the unauthenticated GitHub API at `api.github.com`.
     - A release fetch warning does not invalidate an otherwise complete offline audit.
     - Add `--json` to any invocation for machine-readable output on stdout. The JSON object contains `report` and, when release notes are requested, either `releaseNotes` or `releaseNotesError`. Exit codes are unchanged.
-    - For a standalone audit or inspection with default scope, run `NODE_USE_ENV_PROXY=1 node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts --tracked-only --release-notes`.
+    - For a standalone audit or inspection with default scope, run `NODE_USE_ENV_PROXY=1 node .agents/skills/audit-rules/scripts/inventory.ts --tracked-only --release-notes`.
     - For explicitly scoped audits, use a detector mode only when its complete input set is authorized. The detector has no path selector. Omitting `--tracked-only` includes matching ignored and untracked files under `packages`. If neither mode fits the authorized scope and security exclusions, report the limitation and stop rather than widening the audit or entering repair.
-    - For an explicit repair request, including a mixed audit-and-repair request, run `NODE_USE_ENV_PROXY=1 node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts --release-notes` without `--tracked-only` so task-owned untracked files remain inspectable.
+    - For an explicit repair request, including a mixed audit-and-repair request, run `NODE_USE_ENV_PROXY=1 node .agents/skills/audit-rules/scripts/inventory.ts --release-notes` without `--tracked-only` so task-owned untracked files remain inspectable.
     - The installed Oxlint rule registry is authoritative. Release notes provide context only.
 3. Classify the result according to the selected workflow.
     - Exit code `0` with a complete report means the inventory is clean.
     - Exit code `1` with a structured inventory report means findings exist rather than an execution failure. Report them in an audit, or continue into repair in the explicit repair workflow.
     - Output beginning with `Rule inventory failed:` means invocation, Oxlint format compatibility, or parser failed. In an audit, inspect and report the failure without modifying repository files. An explicitly authorized repair follows the [repair workflow](references/repair-workflow.md) before changing configs.
-4. Fetch release notes only on the initial run. During repair, rerun `NODE_USE_ENV_PROXY=1 node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts` without `--tracked-only` or release note options.
+4. Fetch release notes only on the initial run. During repair, rerun `NODE_USE_ENV_PROXY=1 node .agents/skills/audit-rules/scripts/inventory.ts` without `--tracked-only` or release note options.
 
 ## Interpret Findings
 

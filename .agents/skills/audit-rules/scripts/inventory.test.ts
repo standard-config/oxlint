@@ -90,9 +90,7 @@ const writePackageFixture = (
 };
 
 const createInventoryFixture = (): string => {
-	const repositoryRoot = mkdtempSync(
-		join(tmpdir(), 'sconfig-rule-inventory-')
-	);
+	const repositoryRoot = mkdtempSync(join(tmpdir(), 'audit-rules-'));
 
 	writePackageFixture(repositoryRoot, 'tracked', [
 		'config-tracked',
@@ -127,7 +125,7 @@ void test('documents the proxy-aware invocation in CLI help', () => {
 	assert.equal(result.stderr, '');
 	assert.equal(
 		result.stdout.split('\n')[0],
-		'Usage: NODE_USE_ENV_PROXY=1 node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts [--json] [--release-notes] [--tracked-only]'
+		'Usage: NODE_USE_ENV_PROXY=1 node .agents/skills/audit-rules/scripts/inventory.ts [--json] [--release-notes] [--tracked-only]'
 	);
 });
 

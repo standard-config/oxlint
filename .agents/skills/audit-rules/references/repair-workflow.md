@@ -17,7 +17,7 @@ Keep repairs limited to verified inventory findings.
 ## Validate Repairs
 
 1. Rerun the detector using the [repair rerun form](../SKILL.md#run-inventory-checks). Validation succeeds only when every inventory check has no gaps and the parser accepts the complete registry.
-2. If the inventory script changed, run `node --test .agents/skills/sconfig-rule-inventory/scripts/inventory.test.ts`.
+2. If the inventory script changed, run `node --test .agents/skills/audit-rules/scripts/inventory.test.ts`.
 3. If configs changed, run their focused tests and update snapshots. If a dependency range changed, update and validate the owning manifest and lockfile.
 4. Run `pnpm run typecheck` and the applicable lint checks for every changed scope.
 

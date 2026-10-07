@@ -978,7 +978,7 @@ const parseCliOptions = (arguments_: string[]): CliOptions => {
 				options.help = true;
 				process.stdout.write(
 					[
-						'Usage: NODE_USE_ENV_PROXY=1 node .agents/skills/sconfig-rule-inventory/scripts/inventory.ts [--json] [--release-notes] [--tracked-only]',
+						'Usage: NODE_USE_ENV_PROXY=1 node .agents/skills/audit-rules/scripts/inventory.ts [--json] [--release-notes] [--tracked-only]',
 						'',
 						'  --json           Print machine-readable audit output.',
 						'  --release-notes  Fetch release notes; failures are nonfatal.',

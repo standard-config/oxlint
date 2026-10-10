@@ -33,7 +33,7 @@ Do not use this workflow for debugging, dependency updates, implementation tasks
 
 - Do not modify repository files, install dependencies, update the lockfile, or run mutating package manager commands.
 - Do not remove or reclassify a dependency based only on naming or convention. Establish its actual repository use first.
-- Continue through the complete resolved audit scope before reporting results.
+- Continue until the entire scope has been reviewed, then report all findings together.
 
 ## Report Audit Results
 

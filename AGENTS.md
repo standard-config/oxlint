@@ -11,7 +11,6 @@
 | Source | Authority and Ownership |
 | --- | --- |
 | `AGENTS.md` | Defines project instructions, scope, and documentation authority. Applicable project instructions override global defaults. |
-| `CLAUDE.md` | Bridges Claude to the canonical project instructions in `AGENTS.md`. It defines no independent policy. |
 | `.agents/skills/*/` | Own delegated domain policy, workflows, validation, and reporting exceptions without contradicting applicable `AGENTS.md` instructions. |
 | `.agents/PROJECT.md` | Records constraints, durable facts, maintenance decisions, and rationale. It does not override agent instructions. |
 | Source and configuration | Define exact current values and implemented behavior. |

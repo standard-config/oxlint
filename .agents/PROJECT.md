@@ -12,6 +12,10 @@ These conditional supplemental declarations do not represent ownership of the pl
 
 Each package’s owned core plugins are represented as direct string entries in its base config’s `plugins` array. Spread entries are reserved for supplemental plugin declarations. The inventory derives ownership from this source distinction.
 
+### Utilities Dependency Direction
+
+`@standard-config/utilities` is a private build dependency whose code is bundled into the config packages. Its `includesCoreConfig` helper probes for `@standard-config/oxlint` without requiring it, and the positive unit test relies on the root’s core config installation. For tests that execute the utility source, resolution starts from the helper’s own location, so relocating a test to another workspace package does not remove its reliance on the root installation. A reverse dependency from utilities to the core package is intentionally absent because it would create a workspace dependency cycle.
+
 ## Compatibility
 
 ### Oxlint Version Support
@@ -22,4 +26,4 @@ For a package that defines no core rules, the maintained compatibility baseline 
 
 ### React Compiler Rule Coverage
 
-The five `off` settings reflect the Oxlint 1.79.0 evaluation, whose targeted fixtures produced no diagnostics, rather than disagreement with the rules’ intent. At that evaluation, the compiler-bailout rules `react/invariant`, `react/rule-suppression`, `react/syntax`, and `react/todo` were disabled in every upstream preset. `react/preserve-manual-memoization` was upstream-recommended but silent on its documented incomplete `useMemo` dependency example, which `react/exhaustive-deps` covered.
+In the Oxlint 1.79.0 evaluation, `react/preserve-manual-memoization` was upstream-recommended but produced no diagnostics on its documented incomplete `useMemo` dependency example, which `react/exhaustive-deps` covered. Its `off` setting reflects that result rather than disagreement with the rule’s intent.

@@ -58,6 +58,7 @@
 	"devDependencies": {
 		"@standard-config/tsconfig": "catalog:",
 		"@standard-config/utilities": "workspace:*",
+		"@types/node": "catalog:",
 		"oxlint": "catalog:",
 		"publint": "catalog:",
 		"typescript": "catalog:",

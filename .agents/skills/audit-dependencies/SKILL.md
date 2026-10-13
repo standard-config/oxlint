@@ -26,8 +26,7 @@ Do not use this workflow for debugging, dependency updates, implementation tasks
 - Account for runtime imports, type-only imports, test and build tooling, package scripts, configuration files, peer dependency relationships, workspace packages, and bundled internal code before classifying a dependency.
 - Report every installed `@types/*` package that is not utilized.
 - Ensure every installed `@types/*` package is referenced in `compilerOptions.types` in the corresponding `tsconfig.json`, including inherited TypeScript configuration when applicable.
-- Ensure every dependency referenced through `catalog:` is referenced by more than one package.
-    - Account for `overrides` in `pnpm-workspace.yaml` when evaluating catalog ownership and shared use.
+- Ensure every dependency referenced through `catalog:` has more than one consumer, accounting for `overrides` in `pnpm-workspace.yaml`.
 
 ## Keep Audits Read-Only
 

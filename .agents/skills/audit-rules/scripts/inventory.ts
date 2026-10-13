@@ -330,7 +330,7 @@ const collectRuleMapEntries = (
 
 /**
  * Parse the statically declared plugin ownership and rule names from a config
- * source file. Direct `plugins` entries are owned; spread entries are
+ * source file. Direct `plugins` entries are owned, and spread entries are
  * supplemental.
  */
 export const parseConfigSource = (
@@ -981,8 +981,8 @@ const parseCliOptions = (arguments_: string[]): CliOptions => {
 						'Usage: NODE_USE_ENV_PROXY=1 node .agents/skills/audit-rules/scripts/inventory.ts [--json] [--release-notes] [--tracked-only]',
 						'',
 						'  --json           Print machine-readable audit output.',
-						'  --release-notes  Fetch release notes; failures are nonfatal.',
-						'  --tracked-only   Restrict package and override discovery to Git-tracked working-tree files.',
+						'  --release-notes  Fetch release notes. Failures are non-fatal.',
+						'  --tracked-only   Restrict package and override discovery to Git-tracked working tree files.',
 						'',
 					].join('\n')
 				);
@@ -1114,7 +1114,7 @@ const main = async (): Promise<void> => {
 			);
 		} else if (releaseNotesError) {
 			process.stderr.write(
-				`\nRelease notes could not be fetched; continuing with the installed registry: ${releaseNotesError}\n`
+				`\nRelease notes could not be fetched. Continuing with the installed registry: ${releaseNotesError}\n`
 			);
 		}
 	}

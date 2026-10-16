@@ -18,6 +18,12 @@ Each package’s owned core plugins are represented as direct string entries in 
 
 ## Compatibility
 
+### Node.js Engine Range
+
+The root `engines.node` range intentionally declares the minimum supported Node.js major without mirroring narrower patch-level constraints from individual tools. pnpm and the invoked tools are expected to report when the installed Node.js release does not satisfy a tool’s more specific engine range.
+
+Code that runs only in this repository assumes the latest Node.js 24 release or newer. Published packages declare their own `engines.node` ranges.
+
 ### Oxlint Version Support
 
 Each package’s `oxlint` peer dependency range is maintained at the earliest Oxlint version that contains every core rule defined by that package. This compatibility baseline includes enabled and disabled rules because Oxlint must recognize every configured rule name.

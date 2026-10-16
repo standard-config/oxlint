@@ -4,6 +4,8 @@ The detector identifies findings. Use repository policy and verified rule semant
 
 ## Repair Verified Findings
 
+Before repairing a finding, check `.agents/PROJECT.md` for project rationale that explains or settles it.
+
 1. Distinguish config changes from detector changes before editing.
     - If registry parsing or count validation fails, inspect the current `oxlint --rules --format=default` output. When Oxlint changed its output format, update [`inventory.ts`](../scripts/inventory.ts) and [its parser tests](../scripts/inventory.test.ts) rather than changing configs.
     - If a source identifier changed, update normalization only after confirming the installed registry’s identifier and the config identifier Oxlint accepts.

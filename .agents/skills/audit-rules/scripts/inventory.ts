@@ -1,14 +1,28 @@
+import type TypeScript from 'typescript';
 import { spawnSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { dirname, join, relative, resolve } from 'node:path';
 import process from 'node:process';
-import { pathToFileURL } from 'node:url';
-import ts from 'typescript';
 
 const SCRIPT_DIRECTORY = import.meta.dirname;
 const RULE_NAME_SEPARATOR = '/';
 const RELEASE_TIMEOUT_MS = 15_000;
+
+// The options the parser accepts other than `--help`, which the help must
+// document exactly
+export const OPTIONS = ['--json', '--release-notes', '--tracked-only'] as const;
+
+// The compiler loads at run time rather than through a static import, so a
+// missing installation reaches the command’s failure handler instead of
+// stopping the script before it starts
+let ts: typeof TypeScript;
+
+export const loadTypeScript = async (): Promise<void> => {
+	const module = await import('typescript');
+
+	ts = module.default;
+};
 
 const findRepositoryRoot = (startPath: string): string => {
 	let currentPath = resolve(startPath);
@@ -33,10 +47,14 @@ const findRepositoryRoot = (startPath: string): string => {
 	}
 };
 
-const REPOSITORY_ROOT = findRepositoryRoot(SCRIPT_DIRECTORY);
-const requireFromSkill = createRequire(import.meta.url);
-const OXLINT_PACKAGE_PATH = requireFromSkill.resolve('oxlint/package.json');
-const OXLINT_BIN_PATH = join(dirname(OXLINT_PACKAGE_PATH), 'bin', 'oxlint');
+// Resolved on use rather than on import, so a missing Oxlint installation
+// reaches the command’s failure handler
+const resolveOxlintBinPath = (): string =>
+	join(
+		dirname(createRequire(import.meta.url).resolve('oxlint/package.json')),
+		'bin',
+		'oxlint'
+	);
 
 type CliOptions = {
 	help: boolean;
@@ -145,7 +163,7 @@ const normalizeRuleName = (rule: string): string => {
 const getRuleSource = (rule: string): string =>
 	normalizePluginName(rule.split(RULE_NAME_SEPARATOR, 1)[0] ?? '');
 
-const getPropertyName = (name: ts.PropertyName): string | undefined => {
+const getPropertyName = (name: TypeScript.PropertyName): string | undefined => {
 	if (
 		ts.isIdentifier(name) ||
 		ts.isNumericLiteral(name) ||
@@ -157,7 +175,9 @@ const getPropertyName = (name: ts.PropertyName): string | undefined => {
 	return undefined;
 };
 
-const unwrapExpression = (expression: ts.Expression): ts.Expression => {
+const unwrapExpression = (
+	expression: TypeScript.Expression
+): TypeScript.Expression => {
 	let currentExpression = expression;
 
 	while (
@@ -174,9 +194,9 @@ const unwrapExpression = (expression: ts.Expression): ts.Expression => {
 };
 
 const collectVariables = (
-	sourceFile: ts.SourceFile
-): Map<string, ts.Expression> => {
-	const variables = new Map<string, ts.Expression>();
+	sourceFile: TypeScript.SourceFile
+): Map<string, TypeScript.Expression> => {
+	const variables = new Map<string, TypeScript.Expression>();
 
 	for (const statement of sourceFile.statements) {
 		if (!ts.isVariableStatement(statement)) {
@@ -194,10 +214,10 @@ const collectVariables = (
 };
 
 const resolveExpression = (
-	expression: ts.Expression,
-	variables: ReadonlyMap<string, ts.Expression>,
+	expression: TypeScript.Expression,
+	variables: ReadonlyMap<string, TypeScript.Expression>,
 	seenIdentifiers = new Set<string>()
-): ts.Expression => {
+): TypeScript.Expression => {
 	const unwrappedExpression = unwrapExpression(expression);
 
 	if (!ts.isIdentifier(unwrappedExpression)) {
@@ -219,9 +239,9 @@ const resolveExpression = (
 };
 
 const findProperty = (
-	objectLiteral: ts.ObjectLiteralExpression,
+	objectLiteral: TypeScript.ObjectLiteralExpression,
 	propertyName: string
-): ts.PropertyAssignment | undefined => {
+): TypeScript.PropertyAssignment | undefined => {
 	for (const property of objectLiteral.properties) {
 		if (
 			ts.isPropertyAssignment(property) &&
@@ -235,8 +255,8 @@ const findProperty = (
 };
 
 const collectDirectStringArrayEntries = (
-	expression: ts.Expression,
-	variables: ReadonlyMap<string, ts.Expression>
+	expression: TypeScript.Expression,
+	variables: ReadonlyMap<string, TypeScript.Expression>
 ): string[] => {
 	const resolvedExpression = resolveExpression(expression, variables);
 
@@ -258,8 +278,8 @@ const collectDirectStringArrayEntries = (
 };
 
 const collectRuleMapEntries = (
-	expression: ts.Expression,
-	variables: ReadonlyMap<string, ts.Expression>,
+	expression: TypeScript.Expression,
+	variables: ReadonlyMap<string, TypeScript.Expression>,
 	rules: Set<string>,
 	seenIdentifiers = new Set<string>()
 ): void => {
@@ -590,9 +610,9 @@ type RunOxlint = (arguments_: string[]) => string;
 const runOxlint: RunOxlint = (arguments_) => {
 	const result = spawnSync(
 		process.execPath,
-		[OXLINT_BIN_PATH, ...arguments_],
+		[resolveOxlintBinPath(), ...arguments_],
 		{
-			cwd: REPOSITORY_ROOT,
+			cwd: findRepositoryRoot(SCRIPT_DIRECTORY),
 			encoding: 'utf8',
 			env: {
 				...process.env,
@@ -753,7 +773,7 @@ const discoverTrackedPackageFiles = (
 					packagesDirectory === 'packages' &&
 					candidatePackageName === packageName &&
 					sourceDirectory === 'src' &&
-					configDirectory?.startsWith('config-') === true &&
+					configDirectory?.startsWith('config-') &&
 					configDirectory !== 'config-base' &&
 					configDirectory !== 'config-default' &&
 					fileName === 'index.ts' &&
@@ -961,7 +981,36 @@ const parseCliOptions = (arguments_: string[]): CliOptions => {
 	};
 
 	for (const argument of arguments_) {
-		switch (argument) {
+		if (argument === '--help') {
+			options.help = true;
+			process.stdout.write(
+				[
+					'Usage: NODE_USE_ENV_PROXY=1 node .agents/skills/audit-rules/scripts/inventory.ts [--json] [--release-notes] [--tracked-only]',
+					'',
+					'Audit Oxlint core rule coverage and base/override parity.',
+					'',
+					'  --json           Print machine-readable audit output.',
+					'  --release-notes  Fetch release notes. Failures are non-fatal.',
+					'  --tracked-only   Restrict package and override discovery to Git-tracked working tree files.',
+					'',
+					'Exit statuses:',
+					'  0  No findings, or help was displayed.',
+					'  1  The inventory reports findings.',
+					'  2  Invalid arguments or a failed inventory, reported on standard error after `Rule inventory failed:`.',
+					'',
+				].join('\n')
+			);
+			process.exitCode = 0;
+			return options;
+		}
+
+		const option = OPTIONS.find((candidate) => candidate === argument);
+
+		if (option === undefined) {
+			throw new Error(`Unknown argument: ${argument}`);
+		}
+
+		switch (option) {
 			case '--json':
 				options.json = true;
 				break;
@@ -973,24 +1022,6 @@ const parseCliOptions = (arguments_: string[]): CliOptions => {
 			case '--tracked-only':
 				options.trackedOnly = true;
 				break;
-
-			case '--help':
-				options.help = true;
-				process.stdout.write(
-					[
-						'Usage: NODE_USE_ENV_PROXY=1 node .agents/skills/audit-rules/scripts/inventory.ts [--json] [--release-notes] [--tracked-only]',
-						'',
-						'  --json           Print machine-readable audit output.',
-						'  --release-notes  Fetch release notes. Failures are non-fatal.',
-						'  --tracked-only   Restrict package and override discovery to Git-tracked working tree files.',
-						'',
-					].join('\n')
-				);
-				process.exitCode = 0;
-				return options;
-
-			default:
-				throw new Error(`Unknown argument: ${argument}`);
 		}
 	}
 
@@ -1059,15 +1090,16 @@ const formatInventory = (report: InventoryReport): string => {
 };
 
 const runInventory = (trackedOnly: boolean): InventoryReport => {
+	const repositoryRoot = findRepositoryRoot(SCRIPT_DIRECTORY);
 	const version = parseOxlintVersion(runOxlint(['--version']));
 	const registry = resolveRuleRegistry();
 	const trackedPaths = trackedOnly
-		? resolveTrackedPaths(REPOSITORY_ROOT)
+		? resolveTrackedPaths(repositoryRoot)
 		: undefined;
 
 	return buildInventory({
 		registry,
-		repositoryRoot: REPOSITORY_ROOT,
+		repositoryRoot,
 		...(trackedPaths === undefined ? {} : { trackedPaths }),
 		version,
 	});
@@ -1079,6 +1111,8 @@ const main = async (): Promise<void> => {
 	if (options.help) {
 		return;
 	}
+
+	await loadTypeScript();
 
 	const report = runInventory(options.trackedOnly);
 	let releaseNotes: ReleaseNotes | undefined;
@@ -1124,16 +1158,12 @@ const main = async (): Promise<void> => {
 	}
 };
 
-const isMainModule =
-	process.argv[1] !== undefined &&
-	import.meta.url === pathToFileURL(resolve(process.argv[1])).href;
-
-if (isMainModule) {
+if (import.meta.main) {
 	try {
 		await main();
 	} catch (error) {
 		const message = error instanceof Error ? error.message : String(error);
 		process.stderr.write(`Rule inventory failed: ${message}\n`);
-		process.exitCode = 1;
+		process.exitCode = 2;
 	}
 }

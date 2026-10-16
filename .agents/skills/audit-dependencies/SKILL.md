@@ -14,7 +14,7 @@ Do not use this workflow for debugging, dependency updates, implementation tasks
 
 ## Resolve Dependency Scope
 
-1. Read every applicable `AGENTS.md` file and consult `.agents/PROJECT.md` for relevant project rationale before reviewing other repository content.
+1. Read every applicable `AGENTS.md` file before reviewing any other repository content.
 2. By default, audit Git-tracked paths other than dependency installation directories, generated output, and symbolic links.
 3. Resolve explicit scope requests through [Audit Path Selection](references/audit-path-selection.md).
 4. Inspect every `package.json` and `pnpm-workspace.yaml` in the resolved audit scope.
@@ -32,10 +32,13 @@ Do not use this workflow for debugging, dependency updates, implementation tasks
 
 - Do not modify repository files, install dependencies, update the lockfile, or run mutating package manager commands.
 - Do not remove or reclassify a dependency based only on naming or convention. Establish its actual repository use first.
-- Continue until the entire scope has been reviewed, then report all findings together.
 
 ## Report Audit Results
 
-- Lead with the findings. If there are none, state that the audit found no reportable issues.
-- Reference the owning manifest and the concrete import, script, configuration, or TypeScript evidence for each finding.
-- State the resolved audit scope and identify anything that could not be verified.
+Before reporting a finding, check `.agents/PROJECT.md` for project rationale that explains or settles it.
+
+Continue until the entire scope has been reviewed, then report all findings together.
+
+1. Lead with the findings. If there are none, state that the audit found no reportable issues.
+2. Reference the owning manifest and the concrete import, script, configuration, or TypeScript evidence for each finding.
+3. State the resolved audit scope and identify anything that could not be verified.

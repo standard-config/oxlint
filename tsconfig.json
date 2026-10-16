@@ -7,7 +7,7 @@
 	},
 	"include": [
 		"**/*",
-		".*/**/*"
+		".agents/**/*"
 	],
 	"exclude": [
 		"coverage",

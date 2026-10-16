@@ -30,3 +30,4 @@ jobs:
           cache: true
           runtime: node@${{ matrix.node-version }}
       - run: pnpm test
+      - run: pnpm test:skills

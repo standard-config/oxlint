@@ -5,15 +5,24 @@ export default defineConfig({
 	ignorePatterns: ['.claude/**'],
 	overrides: [
 		{
-			files: ['**/config-*/index.ts'],
+			files: [
+				/* prettier-ignore */
+				'**/config-*/index.ts',
+			],
 			...configStylisticConfigFiles,
 		},
 		{
-			files: ['**/mocks/**/*.ts'],
+			files: [
+				/* prettier-ignore */
+				'**/mocks/**/*.ts',
+			],
 			...configCoreTestFiles,
 		},
 		{
-			files: ['.agents/**/*.test.ts'],
+			files: [
+				/* prettier-ignore */
+				'.agents/**/*.test.ts',
+			],
 			rules: {
 				'vitest/no-import-node-test': 'off',
 			},

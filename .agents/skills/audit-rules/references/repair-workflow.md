@@ -1,24 +1,34 @@
 # Repair Workflow
 
-The detector identifies findings. Use repository policy and verified rule semantics to decide the repair.
+The detector identifies findings. Repository policy and verified rule semantics determine the repair.
+
+## Run Repair Inventory
+
+Follow the [common inventory procedure](../SKILL.md#run-inventory-checks) with this initial invocation from the repository root:
+
+```sh
+NODE_USE_ENV_PROXY=1 node .agents/skills/audit-rules/scripts/inventory.ts --release-notes
+```
+
+Omit `--tracked-only` so task-owned untracked files remain inspectable.
 
 ## Repair Verified Findings
 
 Before repairing a finding, check `.agents/PROJECT.md` for project rationale that explains or settles it.
 
 1. Distinguish config changes from detector changes before editing.
-    - If registry parsing or count validation fails, inspect the current `oxlint --rules --format=default` output. When Oxlint changed its output format, update [`inventory.ts`](../scripts/inventory.ts) and [its parser tests](../scripts/inventory.test.ts) rather than changing configs.
+    - If registry parsing or count validation fails, inspect the current `oxlint --rules --format=default` output. If Oxlint changed its output format, update [`inventory.ts`](../scripts/inventory.ts) and [its parser tests](../scripts/inventory.test.ts) rather than changing configs.
     - If a source identifier changed, update normalization only after confirming the installed registry’s identifier and the config identifier Oxlint accepts.
-2. For a missing stable rule, inspect its installed category, release notes, rule semantics, and neighboring policy. Explicitly enable it with appropriate options or disable it. Do not default mechanically to either choice.
+2. For a missing stable rule, inspect its installed category, release notes, rule semantics, and neighboring policy. Explicitly enable it with appropriate options or disable it. Don’t default mechanically to either choice.
 3. For parity findings, add the rule to the base config with the intended normal file behavior, then keep the override’s specialized behavior.
-4. For unsupported rules, verify whether Oxlint renamed or removed each rule, then update every affected base config and override. Do not infer a replacement from release note wording alone.
-5. When a newly configured core rule changes a package’s minimum supported Oxlint version, update its peer dependency according to [Oxlint version support](../../../PROJECT.md#oxlint-version-support). Update related snapshots and tests with the config change.
+4. For unsupported rules, verify whether Oxlint renamed or removed each rule, then update every affected base config and override. Don’t infer a replacement from release note wording alone.
+5. When a newly configured core rule changes a package’s minimum supported Oxlint version, update its peer dependency according to the [**Oxlint compatibility**](../../../../AGENTS.md#rule-configuration) requirement. Update related snapshots and tests with the config change.
 
 Keep repairs limited to verified inventory findings.
 
 ## Validate Repairs
 
-1. Rerun the detector using the [repair rerun form](../SKILL.md#run-inventory-checks). Validation succeeds only when every inventory check has no gaps and the parser accepts the complete registry.
+1. Rerun the detector with `NODE_USE_ENV_PROXY=1 node .agents/skills/audit-rules/scripts/inventory.ts`, without `--tracked-only` or release note options. Validation succeeds only when every inventory check has no gaps and the parser accepts the complete registry.
 2. If the inventory script changed, run `node --test .agents/skills/audit-rules/scripts/inventory.test.ts`.
 3. If configs changed, run their focused tests and update snapshots. If a dependency range changed, update and validate the owning manifest and lockfile.
 4. Run `pnpm run typecheck` and the applicable lint checks for every changed scope.

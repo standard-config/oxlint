@@ -10,7 +10,7 @@ metadata:
 
 # Standard Config Dependency Audit
 
-Do not use this workflow for debugging, dependency updates, implementation tasks, or ordinary code review.
+Don’t use this workflow for debugging, dependency updates, implementation tasks, or ordinary code review.
 
 ## Resolve Dependency Scope
 
@@ -24,14 +24,14 @@ Do not use this workflow for debugging, dependency updates, implementation tasks
 
 - Report dependencies that are missing, redundant, or assigned to the wrong dependency field or workspace package.
 - Account for runtime imports, type-only imports, test and build tooling, package scripts, configuration files, peer dependency relationships, workspace packages, and bundled internal code before classifying a dependency.
-- Report every installed `@types/*` package that is not utilized.
+- Report every installed `@types/*` package that isn’t used.
 - Ensure every installed `@types/*` package is referenced in `compilerOptions.types` in the corresponding `tsconfig.json`, including inherited TypeScript configuration when applicable.
 - Ensure every dependency referenced through `catalog:` has more than one consumer, accounting for `overrides` in `pnpm-workspace.yaml`.
 
 ## Keep Audits Read-Only
 
-- Do not modify repository files, install dependencies, update the lockfile, or run mutating package manager commands.
-- Do not remove or reclassify a dependency based only on naming or convention. Establish its actual repository use first.
+- Don’t modify repository files, install dependencies, update the lockfile, or run mutating package manager commands.
+- Don’t remove or reclassify a dependency based only on naming or convention. Establish its actual repository use first.
 
 ## Report Audit Results
 
@@ -41,4 +41,4 @@ Continue until the entire scope has been reviewed, then report all findings toge
 
 1. Lead with the findings. If there are none, state that the audit found no reportable issues.
 2. Reference the owning manifest and the concrete import, script, configuration, or TypeScript evidence for each finding.
-3. State the resolved audit scope and identify anything that could not be verified.
+3. State the resolved audit scope and identify anything that couldn’t be verified.

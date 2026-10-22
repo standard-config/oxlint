@@ -181,8 +181,8 @@ catalogs:
       specifier: ^24.19.2
       version: 24.19.2
     eslint-plugin-perfectionist:
-      specifier: ^5.12.1
-      version: 5.12.1
+      specifier: ^5.13.0
+      version: 5.13.0
     eslint-plugin-react-you-might-not-need-an-effect:
       specifier: ^1.0.2
       version: 1.0.2
@@ -311,7 +311,7 @@ importers:
         version: 5.10.0
       eslint-plugin-perfectionist:
         specifier: 'catalog:'
-        version: 5.12.1(typescript@6.0.3)
+        version: 5.13.0(typescript@6.0.3)
     devDependencies:
       '@standard-config/tsconfig':
         specifier: 'catalog:'
@@ -384,7 +384,7 @@ importers:
         version: 24.19.2
       eslint-plugin-perfectionist:
         specifier: 'catalog:'
-        version: 5.12.1(typescript@6.0.3)
+        version: 5.13.0(typescript@6.0.3)
       eslint-plugin-react-you-might-not-need-an-effect:
         specifier: 'catalog:'
         version: 1.0.2
@@ -1265,8 +1265,8 @@ packages:
   es-module-lexer@2.3.2:
     resolution: {integrity: sha512-poHGpORABojJJucnV9KbOavETW8lBVnphkW77ER5/BQ5Fz7oXSoCNek7IH3vR5nRjdsEz926ibFYX8KtLQmdyw==}
 
-  eslint-plugin-perfectionist@5.12.1:
-    resolution: {integrity: sha512-krdSE7Dz+TCtcVr2+rfNhlOIFFBJcUdoRvjaN7JQnsaVnxJw+BZh9wMkY3MSLCJat+yW+UPTQLKS82Epc7MGZA==}
+  eslint-plugin-perfectionist@5.13.0:
+    resolution: {integrity: sha512-kPlqE2Kdh0njsad9S9xL/xnq+NNVUsga/uS3yf6axE0RddACM3Q+idJyethC7R+C9b73+NRhAWvKyXPrkl0nFA==}
     engines: {node: ^20.0.0 || >=22.0.0}
     peerDependencies:
       eslint: ^8.45.0 || ^9.0.0 || ^10.0.0
@@ -2470,7 +2470,7 @@ snapshots:
 
   es-module-lexer@2.3.2: {}
 
-  eslint-plugin-perfectionist@5.12.1(typescript@6.0.3):
+  eslint-plugin-perfectionist@5.13.0(typescript@6.0.3):
     dependencies:
       '@typescript-eslint/types': 8.72.0
       '@typescript-eslint/utils': 8.72.0(typescript@6.0.3)

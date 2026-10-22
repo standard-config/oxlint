@@ -16,7 +16,7 @@ catalog:
   oxlint-tsgolint: ^7.0.2004
   publint: ^0.3.25
   typescript: ^6.0.3
-  vite-plus: ^1.2.0
+  vite-plus: ^1.3.0
 
 color: always
 
@@ -38,11 +38,12 @@ overrides:
   vite-plus>oxfmt: '-'
   vite-plus>oxlint: 'catalog:'
   vite-plus>oxlint-tsgolint: 'catalog:'
-  vite: npm:@voidzero-dev/vite-plus-core@1.2.0
+  vite: npm:@voidzero-dev/vite-plus-core@1.3.0
 
 peerDependencyRules:
   allowAny:
     - typescript
+    - vite
   ignoreMissing:
     - eslint
     - vitest

@@ -85,6 +85,7 @@ const config: OxlintConfigOverrideEntry = {
 		'unicorn/no-empty-file': 'off',
 		'unicorn/no-useless-promise-resolve-reject': 'off',
 		'unicorn/prefer-single-call': 'off',
+		'unicorn/prefer-string-raw': 'off',
 		'vitest/consistent-each-for': [
 			'warn',
 			{

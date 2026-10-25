@@ -14,6 +14,13 @@ const config: OxlintConfigOverrideEntry = {
 		'eslint/no-useless-assignment': 'off',
 		'import/no-unassigned-import': 'off',
 		'import/unambiguous': 'off',
+		'jest/consistent-test-it': [
+			'error',
+			{
+				fn: 'test',
+				withinDescribe: 'test',
+			},
+		],
 		'jest/expect-expect': 'warn',
 		'jest/no-commented-out-tests': 'warn',
 		'jest/no-conditional-expect': 'error',
@@ -93,6 +100,13 @@ const config: OxlintConfigOverrideEntry = {
 				describe: 'each',
 				it: 'each',
 				suite: 'each',
+			},
+		],
+		'vitest/consistent-test-it': [
+			'error',
+			{
+				fn: 'test',
+				withinDescribe: 'test',
 			},
 		],
 		'vitest/consistent-vitest-vi': 'error',

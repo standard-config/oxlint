@@ -10,6 +10,7 @@ const config: OxlintConfigOverrideEntry = {
 		'jsx-a11y/anchor-ambiguous-text': 'off',
 		'jsx-a11y/anchor-has-content': 'off',
 		'jsx-a11y/anchor-is-valid': 'off',
+		'jsx-a11y/autocomplete-valid': 'off',
 		'jsx-a11y/click-events-have-key-events': 'off',
 		'jsx-a11y/control-has-associated-label': 'off',
 		'jsx-a11y/heading-has-content': 'off',

@@ -24,6 +24,9 @@ for (const config of [
 	}
 }
 
+/**
+ * Combine Standard Config with optional config overrides.
+ */
 export default function defineConfig(...configs: OxlintConfig[]): OxlintConfig {
 	let mergedConfig: OxlintConfig = {};
 

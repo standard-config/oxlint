@@ -2,17 +2,14 @@ import '@standard-config/utilities/mocks/resolve-plugin';
 import { expect, test } from 'vite-plus/test';
 import defineConfig from './index.ts';
 
-test('defines a valid Oxlint config', () => {
-	let config = defineConfig();
+test('includes the core config by default', () => {
+	const config = defineConfig();
 
-	expect(config).toHaveProperty(
-		'rules',
-		expect.objectContaining({
-			'unicorn/no-null': 'off',
-		})
-	);
+	expect(config).toHaveProperty(['rules', 'unicorn/no-null'], 'off');
+});
 
-	config = defineConfig({
+test('overrides the core config with a custom config', () => {
+	const config = defineConfig({
 		ignorePatterns: ['fixtures/**'],
 		rules: {
 			'unicorn/no-null': 'error',
@@ -23,14 +20,11 @@ test('defines a valid Oxlint config', () => {
 		'ignorePatterns',
 		expect.arrayContaining(['fixtures/**'])
 	);
-	expect(config).toHaveProperty(
-		'rules',
-		expect.objectContaining({
-			'unicorn/no-null': 'error',
-		})
-	);
+	expect(config).toHaveProperty(['rules', 'unicorn/no-null'], 'error');
+});
 
-	config = defineConfig(
+test('gives later configs precedence over earlier ones', () => {
+	const config = defineConfig(
 		{},
 		{
 			rules: {
@@ -50,11 +44,9 @@ test('defines a valid Oxlint config', () => {
 		'ignorePatterns',
 		expect.arrayContaining(['fixtures/**'])
 	);
+	expect(config).toHaveProperty(['rules', 'unicorn/no-null'], 'error');
 	expect(config).toHaveProperty(
-		'rules',
-		expect.objectContaining({
-			'unicorn/no-null': 'error',
-			'unicorn/no-useless-undefined': 'error',
-		})
+		['rules', 'unicorn/no-useless-undefined'],
+		'error'
 	);
 });

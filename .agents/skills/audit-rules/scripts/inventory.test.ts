@@ -5,7 +5,7 @@ import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import process from 'node:process';
-import { describe, test } from 'node:test';
+import { describe, mock, test } from 'node:test';
 import { fileURLToPath } from 'node:url';
 import {
 	buildInventory,
@@ -122,9 +122,9 @@ type Result = { status: number | null; stderr: string; stdout: string };
 
 const SCRIPT_PATH = fileURLToPath(new URL('inventory.ts', import.meta.url));
 
-const run = async (arguments_: ReadonlyArray<string>): Promise<Result> =>
+const run = async (params: ReadonlyArray<string>): Promise<Result> =>
 	new Promise((resolve, reject) => {
-		const child = spawn(process.execPath, arguments_);
+		const child = spawn(process.execPath, params);
 		let stderr = '';
 		let stdout = '';
 
@@ -232,17 +232,14 @@ void describe('inventory', { concurrency: true }, () => {
 	});
 
 	void test('requests the Oxlint rule registry with an explicit output format', () => {
-		let invocationCount = 0;
+		const execute = mock.fn((_params: string[]) => VALID_REGISTRY);
 
-		const registry = resolveRuleRegistry((arguments_) => {
-			invocationCount += 1;
+		const registry = resolveRuleRegistry(execute);
 
-			assert.deepEqual(arguments_, ['--rules', '--format=default']);
-
-			return VALID_REGISTRY;
-		});
-
-		assert.equal(invocationCount, 1);
+		assert.equal(execute.mock.callCount(), 1);
+		assert.deepEqual(execute.mock.calls[0]?.arguments, [
+			['--rules', '--format=default'],
+		]);
 		assert.equal(registry.totalRuleCount, 3);
 	});
 
@@ -279,29 +276,26 @@ void describe('inventory', { concurrency: true }, () => {
 		const body = '# Oxlint\n- Keep `<Thing>` &amp; unchanged\n';
 		const url =
 			'https://github.com/oxc-project/oxc/releases/tag/oxlint_v1.85.0';
-		let invocationCount = 0;
+		const request = mock.fn<typeof fetch>(async (_input, options) => {
+			assert.ok(options?.signal instanceof AbortSignal);
+			assert.equal(options.signal.aborted, false);
 
-		const notes = await fetchReleaseNotes(
-			'1.85.0',
-			async (input, options) => {
-				invocationCount += 1;
-				assert.equal(
-					input,
-					'https://api.github.com/repos/oxc-project/oxc/releases/tags/oxlint_v1.85.0'
-				);
-				assert.deepEqual(options?.headers, {
-					'Accept': 'application/vnd.github+json',
-					'User-Agent': 'standard-config-oxlint-rule-inventory',
-					'X-GitHub-Api-Version': '2022-11-28',
-				});
-				assert.ok(options?.signal instanceof AbortSignal);
-				assert.equal(options.signal.aborted, false);
+			return Promise.resolve(Response.json({ body, html_url: url }));
+		});
 
-				return Promise.resolve(Response.json({ body, html_url: url }));
-			}
+		const notes = await fetchReleaseNotes('1.85.0', request);
+		const [input, init] = request.mock.calls[0]?.arguments ?? [];
+
+		assert.equal(request.mock.callCount(), 1);
+		assert.equal(
+			input,
+			'https://api.github.com/repos/oxc-project/oxc/releases/tags/oxlint_v1.85.0'
 		);
-
-		assert.equal(invocationCount, 1);
+		assert.deepEqual(init?.headers, {
+			'Accept': 'application/vnd.github+json',
+			'User-Agent': 'standard-config-oxlint-rule-inventory',
+			'X-GitHub-Api-Version': '2022-11-28',
+		});
 		assert.deepEqual(notes, { body, url });
 	});
 
@@ -363,12 +357,12 @@ void describe('inventory', { concurrency: true }, () => {
 
 		await assert.rejects(
 			fetchReleaseNotes('1.85.0', async () => Promise.reject(error)),
-			error
+			(caughtError) => caughtError === error
 		);
 	});
 
 	void test('includes successful release notes in the JSON envelope', async () => {
-		const arguments_ = [SCRIPT_PATH, '--json', '--tracked-only'];
+		const params = [SCRIPT_PATH, '--json', '--tracked-only'];
 		const releaseNotes = {
 			body: '# Oxlint\n',
 			url: 'https://github.com/oxc-project/oxc/releases/tag/oxlint_v1.85.0',
@@ -380,11 +374,11 @@ void describe('inventory', { concurrency: true }, () => {
 			}
 		)}));`;
 		const [baseline, result] = await Promise.all([
-			run(arguments_),
+			run(params),
 			run([
 				'--import',
 				`data:text/javascript,${encodeURIComponent(preload)}`,
-				...arguments_,
+				...params,
 				'--release-notes',
 			]),
 		]);
@@ -405,15 +399,15 @@ void describe('inventory', { concurrency: true }, () => {
 	});
 
 	void test('preserves the inventory report and exit status when the release API fails', async () => {
-		const arguments_ = [SCRIPT_PATH, '--json', '--tracked-only'];
+		const params = [SCRIPT_PATH, '--json', '--tracked-only'];
 		const preload =
 			"globalThis.fetch = () => Promise.resolve(new Response(null, { status: 403, statusText: 'Forbidden' }));";
 		const [baseline, result] = await Promise.all([
-			run(arguments_),
+			run(params),
 			run([
 				'--import',
 				`data:text/javascript,${encodeURIComponent(preload)}`,
-				...arguments_,
+				...params,
 				'--release-notes',
 			]),
 		]);
@@ -434,7 +428,7 @@ void describe('inventory', { concurrency: true }, () => {
 		});
 	});
 
-	void test('tracked-only inventory includes only tracked packages and overrides', () => {
+	void test('limits the inventory to tracked packages and overrides', () => {
 		const repositoryRoot = createInventoryFixture();
 
 		try {
@@ -468,7 +462,7 @@ void describe('inventory', { concurrency: true }, () => {
 		}
 	});
 
-	void test('default inventory retains filesystem package and override discovery', () => {
+	void test('discovers packages and overrides from the filesystem by default', () => {
 		const repositoryRoot = createInventoryFixture();
 
 		try {
@@ -502,28 +496,24 @@ void describe('inventory', { concurrency: true }, () => {
 		}
 	});
 
-	void test('resolves NUL-delimited tracked paths through Git on PATH', () => {
-		const trackedPaths = resolveTrackedPaths(
-			'/repository',
-			(command, arguments_, cwd) => {
-				assert.equal(command, 'git');
-				assert.deepEqual(arguments_, [
-					'ls-files',
-					'-z',
-					'--',
-					'packages',
-				]);
-				assert.equal(cwd, '/repository');
-
-				return {
-					error: undefined,
-					status: 0,
-					stderr: '',
-					stdout: './packages/tracked/package.json\0packages\\tracked\\src\\config-base\\index.ts\0',
-				};
-			}
+	void test('resolves NUL-delimited tracked paths through Git on `PATH`', () => {
+		const execute = mock.fn(
+			(_command: string, _params: string[], _cwd: string) => ({
+				error: undefined,
+				status: 0,
+				stderr: '',
+				stdout: './packages/tracked/package.json\0packages\\tracked\\src\\config-base\\index.ts\0',
+			})
 		);
 
+		const trackedPaths = resolveTrackedPaths('/repository', execute);
+
+		assert.equal(execute.mock.callCount(), 1);
+		assert.deepEqual(execute.mock.calls[0]?.arguments, [
+			'git',
+			['ls-files', '-z', '--', 'packages'],
+			'/repository',
+		]);
 		assert.deepEqual(
 			[...trackedPaths],
 			[
@@ -534,20 +524,15 @@ void describe('inventory', { concurrency: true }, () => {
 	});
 
 	void test('fails closed when Git cannot resolve tracked paths', () => {
-		let invocationCount = 0;
+		const execute = mock.fn(() => ({
+			error: undefined,
+			status: 128,
+			stderr: 'fatal: not a git repository',
+			stdout: '',
+		}));
 
 		assert.throws(
-			() =>
-				resolveTrackedPaths('/repository', () => {
-					invocationCount += 1;
-
-					return {
-						error: undefined,
-						status: 128,
-						stderr: 'fatal: not a git repository',
-						stdout: '',
-					};
-				}),
+			() => resolveTrackedPaths('/repository', execute),
 			(error: unknown) => {
 				assert.ok(error instanceof Error);
 				assert.match(
@@ -558,6 +543,6 @@ void describe('inventory', { concurrency: true }, () => {
 				return true;
 			}
 		);
-		assert.equal(invocationCount, 1);
+		assert.equal(execute.mock.callCount(), 1);
 	});
 });

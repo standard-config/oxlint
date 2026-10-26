@@ -2,13 +2,16 @@ import type { OxlintConfig } from 'oxlint';
 import { expect, expectTypeOf, test } from 'vite-plus/test';
 import mergeConfig from './index.ts';
 
+test('returns an Oxlint config', () => {
+	expectTypeOf(mergeConfig).returns.toEqualTypeOf<OxlintConfig>();
+});
+
+test('merges two empty configs', () => {
+	expect(mergeConfig({}, {})).toStrictEqual({});
+});
+
 test('merges two valid configs', () => {
-	let result = mergeConfig({}, {});
-
-	expectTypeOf(result).toEqualTypeOf<OxlintConfig>();
-	expect(result).toStrictEqual({});
-
-	result = mergeConfig(
+	const result = mergeConfig(
 		{
 			ignorePatterns: ['coverage/**'],
 			plugins: ['eslint'],
@@ -31,7 +34,6 @@ test('merges two valid configs', () => {
 		}
 	);
 
-	expectTypeOf(result).toEqualTypeOf<OxlintConfig>();
 	expect(result).toStrictEqual({
 		ignorePatterns: ['coverage/**', 'fixtures/**'],
 		plugins: ['eslint', 'unicorn'],
@@ -41,7 +43,9 @@ test('merges two valid configs', () => {
 			'eslint/func-style': 'off',
 		},
 	});
+});
 
+test('throws a `TypeError` when a config is missing', () => {
 	/* @ts-expect-error */
 	expect(() => mergeConfig()).toThrow(TypeError);
 
@@ -69,7 +73,6 @@ test('removes config properties that resolve to `undefined`', () => {
 		}
 	);
 
-	expectTypeOf(result).toEqualTypeOf<OxlintConfig>();
 	expect(result).toStrictEqual({
 		rules: {
 			'vitest/require-top-level-describe': 'off',

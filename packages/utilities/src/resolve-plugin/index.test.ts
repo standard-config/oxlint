@@ -3,17 +3,17 @@ import { expect, test } from 'vite-plus/test';
 import resolvePlugin from './index.ts';
 
 const PLUGINS = [
-	'@eslint-react/eslint-plugin',
-	'@stylistic/eslint-plugin',
-	'eslint-plugin-perfectionist',
-	'eslint-plugin-react-you-might-not-need-an-effect',
-];
+	['@eslint-react/eslint-plugin', 'react-x'],
+	['@stylistic/eslint-plugin', 'stylistic'],
+	['eslint-plugin-perfectionist', 'perfectionist'],
+	['eslint-plugin-react-you-might-not-need-an-effect', 'react-effect'],
+] as const;
 
-test.each(PLUGINS)('resolves `%s`', (plugin) => {
-	const result = resolvePlugin('plugin', plugin);
+test.each(PLUGINS)('resolves `%s`', (plugin, name) => {
+	const result = resolvePlugin(name, plugin);
 
 	expect(result).toStrictEqual({
-		name: 'plugin',
+		name,
 		specifier: expect.any(String),
 	});
 

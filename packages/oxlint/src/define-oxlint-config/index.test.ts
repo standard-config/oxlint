@@ -22,7 +22,7 @@ test('aliases `defineConfig`', () => {
 		},
 	});
 
-	expect(defineConfig).toHaveBeenCalledWith({
+	expect(defineConfig).toHaveBeenNthCalledWith(2, {
 		options: {
 			typeCheck: true,
 		},

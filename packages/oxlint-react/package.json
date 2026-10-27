@@ -1,6 +1,6 @@
 {
 	"name": "@standard-config/oxlint-react",
-	"version": "2.10.1",
+	"version": "2.11.0",
 	"description": "Curated Oxlint config with sensible React defaults",
 	"license": "MIT",
 	"author": {

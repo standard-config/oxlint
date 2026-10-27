@@ -40,6 +40,7 @@ const config: OxlintConfigOverrideEntry = {
 		'react-perf/jsx-no-new-array-as-prop': 'off',
 		'react-x/jsx-no-leaked-dollar': 'off',
 		'react-x/jsx-no-leaked-semicolon': 'off',
+		'react-x/no-forward-ref': 'off',
 		'react-x/no-nested-lazy-component-declarations': 'off',
 		'react/button-has-type': 'off',
 		'react/checked-requires-onchange-or-readonly': 'off',

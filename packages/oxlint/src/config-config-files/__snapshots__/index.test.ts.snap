@@ -14,6 +14,7 @@ exports[`is a valid Oxlint config override 1`] = `
     "import/unambiguous": "off",
     "typescript/no-useless-empty-export": "off",
     "unicorn/no-empty-file": "off",
+    "unicorn/require-module-specifiers": "off",
   },
 }
 `;

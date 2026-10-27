@@ -12,6 +12,7 @@ const config: OxlintConfigOverrideEntry = {
 		'import/unambiguous': 'off',
 		'typescript/no-useless-empty-export': 'off',
 		'unicorn/no-empty-file': 'off',
+		'unicorn/require-module-specifiers': 'off',
 	},
 };
 

@@ -212,6 +212,7 @@ exports[`resolves \`@standard-config/oxlint-react\` when it’s available 1`] = 
         "import/unambiguous": "off",
         "typescript/no-useless-empty-export": "off",
         "unicorn/no-empty-file": "off",
+        "unicorn/require-module-specifiers": "off",
       },
     },
     {
@@ -1610,6 +1611,7 @@ exports[`resolves \`@standard-config/oxlint-stylistic\` when it’s available 1`
         "import/unambiguous": "off",
         "typescript/no-useless-empty-export": "off",
         "unicorn/no-empty-file": "off",
+        "unicorn/require-module-specifiers": "off",
       },
     },
     {
@@ -3116,6 +3118,7 @@ exports[`resolves all available supplemental configs by default 1`] = `
         "import/unambiguous": "off",
         "typescript/no-useless-empty-export": "off",
         "unicorn/no-empty-file": "off",
+        "unicorn/require-module-specifiers": "off",
       },
     },
     {

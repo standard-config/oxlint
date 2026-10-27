@@ -75,6 +75,7 @@ exports[`is a valid Oxlint config override 1`] = `
     "typescript/no-unsafe-assignment": "off",
     "typescript/no-unsafe-call": "off",
     "typescript/no-unsafe-declaration-merging": "off",
+    "typescript/no-unsafe-enum-assignment": "off",
     "typescript/no-unsafe-enum-comparison": "off",
     "typescript/no-unsafe-function-type": "off",
     "typescript/no-unsafe-member-access": "off",

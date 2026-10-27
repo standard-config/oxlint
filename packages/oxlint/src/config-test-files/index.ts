@@ -91,6 +91,7 @@ const config: OxlintConfigOverrideEntry = {
 		'unicorn/error-message': 'off',
 		'unicorn/no-array-fill-with-reference-type': 'off',
 		'unicorn/no-empty-file': 'off',
+		'unicorn/no-thenable': 'off',
 		'unicorn/no-useless-promise-resolve-reject': 'off',
 		'unicorn/prefer-single-call': 'off',
 		'unicorn/prefer-string-raw': 'off',

@@ -24,7 +24,7 @@ test.each(PLUGINS)('resolves `%s`', (plugin, name) => {
 	expect(isAbsolute(specifier)).toBe(true);
 });
 
-test('handles unavailable modules', () => {
+test('keeps the specifier of unavailable modules', () => {
 	expect(resolvePlugin('js', '@eslint/js')).toStrictEqual({
 		name: 'js',
 		specifier: '@eslint/js',

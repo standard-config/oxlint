@@ -184,8 +184,8 @@ catalogs:
       specifier: ^5.13.0
       version: 5.13.0
     eslint-plugin-react-you-might-not-need-an-effect:
-      specifier: ^1.0.2
-      version: 1.0.2
+      specifier: ^1.0.3
+      version: 1.0.3
     oxlint:
       specifier: ^1.90.0
       version: 1.90.0
@@ -280,7 +280,7 @@ importers:
         version: 5.28.8(typescript@6.0.3)
       eslint-plugin-react-you-might-not-need-an-effect:
         specifier: 'catalog:'
-        version: 1.0.2
+        version: 1.0.3
     devDependencies:
       '@standard-config/tsconfig':
         specifier: 'catalog:'
@@ -387,7 +387,7 @@ importers:
         version: 5.13.0(typescript@6.0.3)
       eslint-plugin-react-you-might-not-need-an-effect:
         specifier: 'catalog:'
-        version: 1.0.2
+        version: 1.0.3
       oxlint:
         specifier: 'catalog:'
         version: 1.90.0(oxlint-tsgolint@7.0.2005)(vite-plus@1.4.0(@types/node@24.19.2)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1))
@@ -1337,8 +1337,8 @@ packages:
       eslint:
         optional: true
 
-  eslint-plugin-react-you-might-not-need-an-effect@1.0.2:
-    resolution: {integrity: sha512-HgYol2zhH3KbnW9Q4FY/FcIINbsYVL6rwQESChqBC2s9SLWtw1wg05+J7SCrr3BfQpNY2ReYhf8xjpd2JhKJOQ==}
+  eslint-plugin-react-you-might-not-need-an-effect@1.0.3:
+    resolution: {integrity: sha512-Om1wODVZaboHWOCUeDPaVuefJTdqx0WdDtGtYySzNl6KLiILKXdKx4YufHMdclUEP5+fS6u+0yTpd6xvJBaIVg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       eslint: '>=8.40.0'
@@ -1389,10 +1389,6 @@ packages:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
-
-  globals@16.5.0:
-    resolution: {integrity: sha512-c/c15i26VrJ4IRt5Z89DnIzCGDn9EcebibhAOjw5ibqEHsE1wLUgkPn9RDmNcUKyU87GeaL633nyJ+pplFR2ZQ==}
-    engines: {node: '>=18'}
 
   js-tokens@10.0.0:
     resolution: {integrity: sha512-lM/UBzQmfJRo9ABXbPWemivdCW8V2G8FHaHdypQaIy523snUjog0W71ayWXTjiR+ixeMyVHN2XcpnTd/liPg/Q==}
@@ -2572,9 +2568,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-react-you-might-not-need-an-effect@1.0.2:
-    dependencies:
-      globals: 16.5.0
+  eslint-plugin-react-you-might-not-need-an-effect@1.0.3: {}
 
   eslint-visitor-keys@3.4.3: {}
 
@@ -2606,8 +2600,6 @@ snapshots:
 
   fsevents@2.3.3:
     optional: true
-
-  globals@16.5.0: {}
 
   js-tokens@10.0.0: {}
 

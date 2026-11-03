@@ -9,7 +9,7 @@ catalog:
   '@eslint-react/eslint-plugin': ^5.28.8
   '@standard-config/tsconfig': ^3.2.0
   '@stylistic/eslint-plugin': ^5.10.0
-  '@types/node': ^24.19.2
+  '@types/node': ^26.6.6
   eslint-plugin-perfectionist: ^5.13.0
   eslint-plugin-react-you-might-not-need-an-effect: ^1.1.0
   oxlint: ^1.91.0

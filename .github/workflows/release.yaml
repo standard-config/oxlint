@@ -18,7 +18,7 @@ jobs:
           persist-credentials: false
       - uses: pnpm/setup@v3.1.2
         with:
-          runtime: node@24
+          runtime: node@26
       - run: pnpm prepack
       - run: pnpm --filter @standard-config/oxlint stage publish --access=public --provenance
       - run: pnpm --filter @standard-config/oxlint-react stage publish --access=public --provenance

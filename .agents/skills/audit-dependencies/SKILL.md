@@ -22,6 +22,8 @@ Don’t use this workflow for debugging, dependency updates, implementation task
 
 ## Audit Dependency Ownership
 
+Apply these checks to the manifests in the resolved audit scope:
+
 - Report dependencies that are missing, redundant, or assigned to the wrong dependency field or workspace package.
 - Account for runtime imports, type-only imports, test and build tooling, package scripts, configuration files, peer dependency relationships, workspace packages, and bundled internal code before classifying a dependency.
 - Report every installed `@types/*` package that isn’t used.

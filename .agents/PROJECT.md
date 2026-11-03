@@ -20,8 +20,6 @@ These conditional supplemental declarations don’t represent ownership of the p
 
 The root `engines.node` range intentionally declares the minimum supported Node.js major without mirroring narrower patch-level constraints from individual tools. pnpm and the invoked tools are expected to report when the installed Node.js release does not satisfy a tool’s more specific engine range.
 
-Code that runs only in this repository assumes the latest Node.js 24 release or newer. Published packages declare their own `engines.node` ranges.
-
 ### Oxlint Version Support
 
 The [**Oxlint compatibility**](../AGENTS.md#rule-configuration) requirement accounts for enabled and disabled core rules because Oxlint must recognize every configured rule name. Its `^1.53.0` baseline for packages without core rules marks the release where `jsPlugins` support advanced from experimental to alpha.

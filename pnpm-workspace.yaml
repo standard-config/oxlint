@@ -11,7 +11,7 @@ catalog:
   '@stylistic/eslint-plugin': ^5.10.0
   '@types/node': ^24.19.2
   eslint-plugin-perfectionist: ^5.13.0
-  eslint-plugin-react-you-might-not-need-an-effect: ^1.0.3
+  eslint-plugin-react-you-might-not-need-an-effect: ^1.1.0
   oxlint: ^1.90.0
   oxlint-tsgolint: ^7.0.2005
   publint: ^0.3.25

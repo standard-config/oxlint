@@ -13,7 +13,7 @@ A request for untracked content alone doesn’t select ignored paths.
 
 ## Apply Remaining Exclusions
 
-Explicit selection overrides the corresponding Git status defaults. Retain every other non-secret default exclusion unless the user names the excluded path itself or expressly selects its path category. Naming an ancestor directory alone doesn’t lift an exclusion on a descendant.
+Explicit selection overrides the corresponding Git status defaults under [Resolve Dependency Scope](../SKILL.md#resolve-dependency-scope). Retain every other non-secret default exclusion unless the user names the excluded path itself or expressly selects its path category. Naming an ancestor directory alone doesn’t lift an exclusion on a descendant.
 
 Preserve access controls, credential protection, and scope rules required by higher-priority instructions. Path selection doesn’t waive required approvals or authorize changes.
 

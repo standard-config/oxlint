@@ -13,14 +13,12 @@ catalog:
   eslint-plugin-perfectionist: ^5.13.0
   eslint-plugin-react-you-might-not-need-an-effect: ^1.1.0
   oxlint: ^1.91.0
-  oxlint-tsgolint: ^7.0.2005
+  oxlint-tsgolint: ^7.0.2006
   publint: ^0.3.25
   typescript: ^6.0.3
-  vite-plus: ^1.4.0
+  vite-plus: ^1.5.0
 
 color: always
-
-engineStrict: true
 
 gitChecks: false
 
@@ -38,7 +36,7 @@ overrides:
   vite-plus>oxfmt: '-'
   vite-plus>oxlint: 'catalog:'
   vite-plus>oxlint-tsgolint: 'catalog:'
-  vite: npm:@voidzero-dev/vite-plus-core@1.4.0
+  vite: npm:@voidzero-dev/vite-plus-core@1.5.0
 
 peerDependencyRules:
   allowAny:

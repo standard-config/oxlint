@@ -4,7 +4,7 @@ The detector identifies findings. Repository policy and verified rule semantics 
 
 ## Run Repair Inventory
 
-Follow the [common inventory procedure](../SKILL.md#run-inventory-checks) with this initial invocation from the repository root:
+Follow the [common inventory procedure](oxlint-rule-inventory.md#run-inventory-checks) with this initial invocation from the repository root:
 
 ```sh
 NODE_USE_ENV_PROXY=1 node .agents/skills/audit-rules/scripts/inventory.ts --release-notes
@@ -33,4 +33,4 @@ Keep repairs limited to verified inventory findings.
 3. If configs changed, run their focused tests and update snapshots. If a dependency range changed, update and validate the owning manifest and lockfile.
 4. Run `pnpm run typecheck` and the applicable lint checks for every changed scope.
 
-After validation, return to [common final reporting](../SKILL.md#validate-and-report).
+After validation, return to [common final reporting](oxlint-rule-inventory.md#validate-and-report).

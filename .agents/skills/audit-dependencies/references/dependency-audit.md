@@ -4,11 +4,10 @@ Don’t use this workflow for debugging, dependency updates, implementation task
 
 ## Resolve Dependency Scope
 
-1. Read every applicable `AGENTS.md` file before reviewing any other repository content.
-2. By default, audit Git-tracked paths other than dependency installation directories, generated output, and symbolic links.
-3. Resolve explicit scope requests through [Audit Path Selection](audit-path-selection.md).
-4. Inspect every `package.json` and `pnpm-workspace.yaml` in the resolved audit scope.
-5. Inspect the corresponding source, tests, scripts, configuration, and TypeScript configuration needed to establish whether each dependency is used and which manifest owns it.
+1. By default, audit Git-tracked paths other than dependency installation directories, generated output, and symbolic links.
+2. Resolve explicit scope requests through [Audit Path Selection](audit-path-selection.md).
+3. Inspect every `package.json` and `pnpm-workspace.yaml` in the resolved audit scope.
+4. Inspect the corresponding source, tests, scripts, configuration, and TypeScript configuration needed to establish whether each dependency is used and which manifest owns it.
 
 ## Audit Dependency Ownership
 

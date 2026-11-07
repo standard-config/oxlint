@@ -16,7 +16,7 @@
 
 ## General
 
-- **Navigation:** Read only the applicable section of `.agents/PROJECT.md`. Follow an existing link or locate its heading first, rather than reading the whole document.
+- **Navigation:** Consult the relevant sections of `.agents/PROJECT.md`.
 - **Durable knowledge:** Add project knowledge to `.agents/PROJECT.md` only when its absence would likely cause a wrong future decision or substantial repeated investigation. Capture non-obvious constraints and rationale not already clear from canonical configuration, instructions, or source. Don’t record optimization recaps, routine implementation details, or workflow summaries. Prefer updating existing material over adding another explanation. If the task doesn’t permit the edit, report deferred documentation work only if it meets this threshold.
 
 ## Rule Configuration

@@ -15,13 +15,12 @@ For standalone audits and inspections, exclude ignored and untracked paths by de
 
 ## Run Inventory Checks
 
-1. Read every applicable `AGENTS.md` file before reviewing any other repository content.
-2. From the repository root, run the canonical detector in the selected mode.
+1. From the repository root, run the canonical detector in the selected mode.
     - For a standalone audit or inspection with default scope, run `NODE_USE_ENV_PROXY=1 node .agents/skills/audit-rules/scripts/inventory.ts --tracked-only --release-notes`.
     - For explicitly scoped audits, use a detector mode only when its complete input set is authorized. The detector has no path selector. Omitting `--tracked-only` includes matching ignored and untracked files under `packages`. If neither mode fits the authorized scope and security exclusions, report the limitation and stop rather than widening the audit or entering repair.
     - For repairs, use the [repair inventory invocation](repair-workflow.md#run-repair-inventory).
     - Add `--json` to any invocation for machine-readable output on stdout. The JSON object contains `report` and, when release notes are requested, either `releaseNotes` or `releaseNotesError`. Exit codes are unchanged.
-3. Classify the result according to the selected workflow.
+2. Classify the result according to the selected workflow.
     - Exit code `0` with a complete report means the inventory is clean.
     - Exit code `1` with a complete report means the inventory completed with findings. Report them in an audit, or continue into repair in the explicit repair workflow.
     - Exit code `2`, with a `Rule inventory failed:` diagnostic on standard error, means the invocation failed, the Oxlint output format was incompatible, or parsing failed. In an audit, inspect and report the failure without modifying repository files. An explicitly authorized repair follows [Repair Verified Findings](repair-workflow.md#repair-verified-findings) before changing configs.

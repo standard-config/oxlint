@@ -11,5 +11,3 @@ metadata:
 # Standard Config Dependency Audit
 
 Follow [Dependency Audit](references/dependency-audit.md).
-
-Read each selected reference before proceeding, unless you already have its complete, up-to-date guidance in context.

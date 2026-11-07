@@ -11,5 +11,3 @@ metadata:
 # Standard Config Oxlint Rule Inventory
 
 Follow [Oxlint Rule Inventory](references/oxlint-rule-inventory.md).
-
-Read each selected reference before proceeding, unless you already have its complete, up-to-date guidance in context.

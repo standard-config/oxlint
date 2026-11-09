@@ -184,8 +184,8 @@ catalogs:
       specifier: ^5.13.0
       version: 5.13.0
     eslint-plugin-react-you-might-not-need-an-effect:
-      specifier: ^1.1.0
-      version: 1.1.0
+      specifier: ^1.2.0
+      version: 1.2.0
     oxlint:
       specifier: ^1.92.0
       version: 1.92.0
@@ -280,7 +280,7 @@ importers:
         version: 5.28.8(typescript@6.0.3)
       eslint-plugin-react-you-might-not-need-an-effect:
         specifier: 'catalog:'
-        version: 1.1.0
+        version: 1.2.0
     devDependencies:
       '@standard-config/tsconfig':
         specifier: 'catalog:'
@@ -387,7 +387,7 @@ importers:
         version: 5.13.0(typescript@6.0.3)
       eslint-plugin-react-you-might-not-need-an-effect:
         specifier: 'catalog:'
-        version: 1.1.0
+        version: 1.2.0
       oxlint:
         specifier: 'catalog:'
         version: 1.92.0(oxlint-tsgolint@7.0.2006)(vite-plus@1.5.0(@types/node@26.6.6)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1))
@@ -1337,8 +1337,8 @@ packages:
       eslint:
         optional: true
 
-  eslint-plugin-react-you-might-not-need-an-effect@1.1.0:
-    resolution: {integrity: sha512-cufMxMG0clISeHDMbJpOVmUSk2Hc1wQyFTW5mHO/POvAJNN3gfSSinPjxHN66iqGpsmGzon7y4HsEvcXRkHD0w==}
+  eslint-plugin-react-you-might-not-need-an-effect@1.2.0:
+    resolution: {integrity: sha512-ieSAjWnVO92c2kyDPYgGJplcX1Fs4dhCmbEVgM9PMJ3Kg0mE9BBacT7HQRyKqrhaxVyneiIlA8BsY7vzF+bQ4A==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       eslint: '>=8.40.0'
@@ -2507,7 +2507,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-react-you-might-not-need-an-effect@1.1.0: {}
+  eslint-plugin-react-you-might-not-need-an-effect@1.2.0: {}
 
   eslint-visitor-keys@3.4.3: {}
 

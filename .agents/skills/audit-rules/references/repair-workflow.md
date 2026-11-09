@@ -17,7 +17,7 @@ Omit `--tracked-only` so task-owned untracked files remain inspectable.
 Before repairing a finding, check `.agents/PROJECT.md` for project rationale that explains or settles it.
 
 1. Distinguish config changes from detector changes before editing.
-    - If registry parsing or count validation fails, inspect the current `oxlint --rules --format=default` output. If Oxlint changed its output format, update [`inventory.ts`](../scripts/inventory.ts) and [its parser tests](../scripts/inventory.test.ts) rather than changing configs.
+    - If registry parsing or count validation fails, inspect the current `pnpm exec oxlint --config .agents/skills/audit-rules/scripts/inventory.oxlintrc.json --rules --format=default` output from the repository root. If Oxlint changed its output format, update [`inventory.ts`](../scripts/inventory.ts) and [its parser tests](../scripts/inventory.test.ts) rather than changing configs.
     - If a source identifier changed, update normalization only after confirming the installed registry’s identifier and the config identifier Oxlint accepts.
 2. For a missing stable rule, inspect its installed category, release notes, rule semantics, and neighboring policy. Explicitly enable it with appropriate options or disable it. Don’t default mechanically to either choice.
 3. For parity findings, add the rule to the base config with the intended normal file behavior, then keep the override’s specialized behavior.

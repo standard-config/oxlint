@@ -1,7 +1,14 @@
 import type { RuleRegistry } from './inventory.ts';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import {
+	copyFileSync,
+	mkdirSync,
+	mkdtempSync,
+	rmSync,
+	symlinkSync,
+	writeFileSync,
+} from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import process from 'node:process';
@@ -241,6 +248,56 @@ void describe('inventory', { concurrency: true }, () => {
 			['--rules', '--format=default'],
 		]);
 		assert.equal(registry.totalRuleCount, 3);
+	});
+
+	void test('discovers installed rules without evaluating project config or requiring build outputs', async () => {
+		const repositoryRoot = createInventoryFixture();
+
+		try {
+			const scriptPath = join(repositoryRoot, 'inventory.ts');
+
+			writeFileSync(
+				join(
+					repositoryRoot,
+					'packages/tracked/src/config-base/index.ts'
+				),
+				"const config = { plugins: ['eslint', 'react'], rules: {} };\n"
+			);
+			copyFileSync(SCRIPT_PATH, scriptPath);
+			copyFileSync(
+				new URL('inventory.oxlintrc.json', import.meta.url),
+				join(repositoryRoot, 'inventory.oxlintrc.json')
+			);
+			symlinkSync(
+				fileURLToPath(
+					new URL('../../../../node_modules', import.meta.url)
+				),
+				join(repositoryRoot, 'node_modules'),
+				'junction'
+			);
+			writeFileSync(
+				join(repositoryRoot, 'pnpm-workspace.yaml'),
+				'packages: []\n'
+			);
+			writeFileSync(
+				join(repositoryRoot, 'oxlint.config.ts'),
+				'throw new Error("Project config must not execute");\n'
+			);
+
+			const result = await run([scriptPath]);
+
+			assert.equal(result.stderr, '');
+			assert.equal(result.status, 1);
+			assert.match(
+				result.stdout,
+				/Registry: \d+ total, \d+ stable, \d+ nursery excluded/
+			);
+			assert.match(result.stdout, /@test\/tracked \(packages\/tracked\)/);
+			assert.match(result.stdout, /eslint\/eqeqeq/);
+			assert.match(result.stdout, /react\/jsx-key/);
+		} finally {
+			rmSync(repositoryRoot, { force: true, recursive: true });
+		}
 	});
 
 	void test('infers ownership from direct plugin entries only', () => {

@@ -610,7 +610,13 @@ type RunOxlint = (arguments_: string[]) => string;
 const runOxlint: RunOxlint = (arguments_) => {
 	const result = spawnSync(
 		process.execPath,
-		[resolveOxlintBinPath(), ...arguments_],
+		[
+			resolveOxlintBinPath(),
+			// Registry inspection must not load project configs or their build outputs
+			'--config',
+			join(SCRIPT_DIRECTORY, 'inventory.oxlintrc.json'),
+			...arguments_,
+		],
 		{
 			cwd: findRepositoryRoot(SCRIPT_DIRECTORY),
 			encoding: 'utf8',

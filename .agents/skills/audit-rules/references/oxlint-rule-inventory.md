@@ -25,7 +25,11 @@ For standalone audits and inspections, exclude ignored and untracked paths by de
     - Exit code `1` with a complete report means the inventory completed with findings. Report them in an audit, or continue into repair in the explicit repair workflow.
     - Exit code `2`, with a `Rule inventory failed:` diagnostic on standard error, means the invocation failed, the Oxlint output format was incompatible, or parsing failed. In an audit, inspect and report the failure without modifying repository files. An explicitly authorized repair follows [Repair Verified Findings](repair-workflow.md#repair-verified-findings) before changing configs.
 
-The installed Oxlint rule registry is authoritative. Release notes provide context only. Request them only on the initial run through `--release-notes`, which makes the detector query the unauthenticated GitHub API at `api.github.com`. A release fetch warning doesn’t invalidate an otherwise complete offline audit.
+The installed Oxlint rule registry is authoritative. The detector reads it using a [bundled empty config](../scripts/inventory.oxlintrc.json), without loading project configs or requiring package build outputs.
+
+The raw registry’s `Enabled?` column reflects the bundled empty config, not package policy. The detector ignores that column and reads configured rules directly from package source files.
+
+Release notes provide context only. Request them only on the initial run through `--release-notes`, which makes the detector query the unauthenticated GitHub API at `api.github.com`. A release fetch warning doesn’t invalidate an otherwise complete offline audit.
 
 ## Interpret Findings
 

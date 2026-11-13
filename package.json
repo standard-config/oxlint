@@ -23,7 +23,7 @@
 		"@vitest/coverage-v8": "5.1.0",
 		"oxlint": "catalog:",
 		"oxlint-tsgolint": "catalog:",
-		"prettier": "^3.9.10",
+		"prettier": "^3.10.0",
 		"typescript": "catalog:",
 		"vite-plus": "catalog:"
 	},

@@ -223,7 +223,7 @@ importers:
         version: link:packages/oxlint-stylistic
       '@standard-config/prettier':
         specifier: ^1.23.0
-        version: 1.23.0(prettier@3.10.0)
+        version: 1.23.0(prettier@3.10.1)
       '@standard-config/tsconfig':
         specifier: 'catalog:'
         version: 3.2.0(typescript@6.0.3)
@@ -240,8 +240,8 @@ importers:
         specifier: 'catalog:'
         version: 7.0.2007
       prettier:
-        specifier: ^3.10.0
-        version: 3.10.0
+        specifier: ^3.10.1
+        version: 3.10.1
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -1559,8 +1559,8 @@ packages:
     peerDependencies:
       prettier: '>=3'
 
-  prettier@3.10.0:
-    resolution: {integrity: sha512-mBi4765LgjO1PFjlEs7pUeK0nb1bw71c+N4/ItfeUWNdY5cV2pRKaFpbbFRYmDJMO+5ZwzGxHRqHxFZna7iv5w==}
+  prettier@3.10.1:
+    resolution: {integrity: sha512-70vp3ZUYoPlFbF9uiTdXHUUCGEIp7d4+6p+8DYbkm2jP7x/3i/paXVF6dopSI3zd/CEitrZN1rc4i85xWmmXlg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2018,16 +2018,16 @@ snapshots:
       '@reteps/dockerfmt-linux-arm64': 0.5.4
       '@reteps/dockerfmt-linux-x64': 0.5.4
 
-  '@standard-config/prettier@1.23.0(prettier@3.10.0)':
+  '@standard-config/prettier@1.23.0(prettier@3.10.1)':
     dependencies:
       '@prettier/plugin-oxc': 0.2.4
-      prettier: 3.10.0
-      prettier-plugin-expand-json: 1.2.1(prettier@3.10.0)
-      prettier-plugin-markdown-html: 1.6.1(prettier@3.10.0)
-      prettier-plugin-pkg: 0.22.1(prettier@3.10.0)
-      prettier-plugin-sh: 0.20.2(prettier@3.10.0)
-      prettier-plugin-sort-json: 4.2.0(prettier@3.10.0)
-      prettier-plugin-yaml: 1.3.1(prettier@3.10.0)
+      prettier: 3.10.1
+      prettier-plugin-expand-json: 1.2.1(prettier@3.10.1)
+      prettier-plugin-markdown-html: 1.6.1(prettier@3.10.1)
+      prettier-plugin-pkg: 0.22.1(prettier@3.10.1)
+      prettier-plugin-sh: 0.20.2(prettier@3.10.1)
+      prettier-plugin-sort-json: 4.2.0(prettier@3.10.1)
+      prettier-plugin-yaml: 1.3.1(prettier@3.10.1)
 
   '@standard-config/tsconfig@3.2.0(typescript@6.0.3)':
     optionalDependencies:
@@ -2630,34 +2630,34 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.2
 
-  prettier-plugin-expand-json@1.2.1(prettier@3.10.0):
+  prettier-plugin-expand-json@1.2.1(prettier@3.10.1):
     dependencies:
-      prettier: 3.10.0
+      prettier: 3.10.1
 
-  prettier-plugin-markdown-html@1.6.1(prettier@3.10.0):
+  prettier-plugin-markdown-html@1.6.1(prettier@3.10.1):
     dependencies:
-      prettier: 3.10.0
+      prettier: 3.10.1
 
-  prettier-plugin-pkg@0.22.1(prettier@3.10.0):
+  prettier-plugin-pkg@0.22.1(prettier@3.10.1):
     dependencies:
-      prettier: 3.10.0
+      prettier: 3.10.1
 
-  prettier-plugin-sh@0.20.2(prettier@3.10.0):
+  prettier-plugin-sh@0.20.2(prettier@3.10.1):
     dependencies:
       '@reteps/dockerfmt': 0.5.4
-      prettier: 3.10.0
+      prettier: 3.10.1
       sh-syntax: 0.7.0
 
-  prettier-plugin-sort-json@4.2.0(prettier@3.10.0):
+  prettier-plugin-sort-json@4.2.0(prettier@3.10.1):
     dependencies:
-      prettier: 3.10.0
+      prettier: 3.10.1
 
-  prettier-plugin-yaml@1.3.1(prettier@3.10.0):
+  prettier-plugin-yaml@1.3.1(prettier@3.10.1):
     dependencies:
-      prettier: 3.10.0
+      prettier: 3.10.1
       yaml: 2.9.1
 
-  prettier@3.10.0: {}
+  prettier@3.10.1: {}
 
   pretty-format@27.5.1:
     dependencies:

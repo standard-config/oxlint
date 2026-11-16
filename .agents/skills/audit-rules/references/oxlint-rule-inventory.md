@@ -2,9 +2,22 @@
 
 Use the bundled read-only [`scripts/inventory.ts`](../scripts/inventory.ts) as the authoritative detector for Oxlint core rule coverage and base/override parity. The script discovers and compares deterministically. This skill interprets verified findings under repository policy and routes explicitly authorized repairs.
 
+## Prepare Checkout
+
+At the start of each audit or repair, refresh the checkout and install its dependencies before selecting the inventory workflow.
+
+1. Inspect the current branch, its configured upstream, and local changes. From the repository root, run `git pull --ff-only --no-autostash` against that upstream, preserving local work.
+2. Reload applicable instructions and skill files changed by the pull. Run `pnpm install --frozen-lockfile` with the repository’s prescribed pnpm version and normal lifecycle scripts, even when dependencies are already installed. This synchronizes dependencies with the pulled lockfile without selecting dependency upgrades.
+
+When the user explicitly asks to keep the current checkout at its existing revision or prohibits pulling, skip only the pull and still run the frozen install. Skip installation only when the user explicitly prohibits installation or all preparation. Report any resulting freshness limitation.
+
+If a required pull has no configured upstream or either required command cannot complete, report the preparation problem and stop before running the detector. Don’t switch branches, stash local work, or rewrite history to make preparation succeed.
+
+Complete preparation once per invocation. Detector reruns during repair and validation use the prepared checkout.
+
 ## Select Inventory Workflow
 
-- For an audit or inspection without an explicit change request, [resolve the audit scope](#resolve-audit-scope), run the read-only detector, inspect the evidence, interpret findings, and report them. Don’t enter repair, install dependencies, modify repository files, run mutating tools, or update snapshots. Stop after reporting findings.
+- For an audit or inspection without an explicit change request, [resolve the audit scope](#resolve-audit-scope), run the read-only detector, inspect the evidence, interpret findings, and report them. After preparation, keep the audit read-only. Don’t enter repair or update snapshots. Stop after reporting findings.
 - An explicit request to repair, fix, update, or otherwise modify the inventory uses the [repair workflow](repair-workflow.md), even when described as an audit, review, or inspection. Treat auditing in a mixed audit-and-repair request as the discovery phase of that workflow.
 
 Detector findings alone never grant permission to enter repair.

@@ -184,8 +184,8 @@ catalogs:
       specifier: ^3.2.0
       version: 3.2.0
     '@stylistic/eslint-plugin':
-      specifier: ^6.0.0
-      version: 6.0.0
+      specifier: ^6.0.1
+      version: 6.0.1
     '@types/node':
       specifier: ^26.6.6
       version: 26.6.6
@@ -317,7 +317,7 @@ importers:
     dependencies:
       '@stylistic/eslint-plugin':
         specifier: 'catalog:'
-        version: 6.0.0(oxlint@1.94.0(oxlint-tsgolint@7.0.2007)(vite-plus@1.6.0(@types/node@26.6.6)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1)))
+        version: 6.0.1(oxlint@1.94.0(oxlint-tsgolint@7.0.2007)(vite-plus@1.6.0(@types/node@26.6.6)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1)))
       eslint-plugin-perfectionist:
         specifier: 'catalog:'
         version: 5.14.0(typescript@6.0.3)
@@ -387,7 +387,7 @@ importers:
         version: 3.2.0(typescript@6.0.3)
       '@stylistic/eslint-plugin':
         specifier: 'catalog:'
-        version: 6.0.0(oxlint@1.94.0(oxlint-tsgolint@7.0.2007)(vite-plus@1.6.0(@types/node@26.6.6)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1)))
+        version: 6.0.1(oxlint@1.94.0(oxlint-tsgolint@7.0.2007)(vite-plus@1.6.0(@types/node@26.6.6)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1)))
       '@types/node':
         specifier: 'catalog:'
         version: 26.6.6
@@ -862,8 +862,8 @@ packages:
       typescript:
         optional: true
 
-  '@stylistic/eslint-plugin@6.0.0':
-    resolution: {integrity: sha512-phICSey4OqR8nkSwmoeXsl9EBzv30Zqbge4jrK3CU02GhjTgZ+y5qhTTg92EDK5j7JhX2xzp4VvH+YYUknQ8/Q==}
+  '@stylistic/eslint-plugin@6.0.1':
+    resolution: {integrity: sha512-7nyi2RmGIuzBYGq5C8cFaoQsh+COfo6oHMWCygzg2iaqJJ4RDThaKCMYRkkOUAQWv80R7sbBbpuKZfulH7bFcw==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
     peerDependencies:
       eslint: ^9.0.0 || ^10.0.0
@@ -2040,7 +2040,7 @@ snapshots:
     optionalDependencies:
       typescript: 6.0.3
 
-  '@stylistic/eslint-plugin@6.0.0(oxlint@1.94.0(oxlint-tsgolint@7.0.2007)(vite-plus@1.6.0(@types/node@26.6.6)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1)))':
+  '@stylistic/eslint-plugin@6.0.1(oxlint@1.94.0(oxlint-tsgolint@7.0.2007)(vite-plus@1.6.0(@types/node@26.6.6)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1)))':
     dependencies:
       '@eslint-community/eslint-utils': 4.10.1
       '@typescript-eslint/types': 8.72.2

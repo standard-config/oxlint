@@ -11,7 +11,8 @@ const config: OxlintConfigBaseEntry = {
 		'react',
 		'react-perf',
 
-		// `typescript/no-restricted-types` is conditionally included in the JSX config
+		// The JSX config uses `typescript/no-restricted-types` when the core
+		// config is available
 		...(includesCoreConfig() ? (['typescript'] as const) : []),
 	],
 	jsPlugins: [

@@ -13,9 +13,8 @@ const RELEASE_TIMEOUT_MS = 15_000;
 // document exactly
 export const OPTIONS = ['--json', '--release-notes', '--tracked-only'] as const;
 
-// The compiler loads at run time rather than through a static import, so a
-// missing installation reaches the command’s failure handler instead of
-// stopping the script before it starts
+// Load the compiler at run time so a missing installation reaches the command’s
+// failure handler
 let ts: typeof TypeScript;
 
 export const loadTypeScript = async (): Promise<void> => {
@@ -350,8 +349,8 @@ const collectRuleMapEntries = (
 
 /**
  * Parse the statically declared plugin ownership and rule names from a config
- * source file. Direct `plugins` entries are owned, and spread entries are
- * supplemental.
+ * source file. Direct `plugins` entries declare owned plugins and spreads
+ * declare supplemental ones.
  */
 export const parseConfigSource = (
 	sourceText: string,
@@ -612,7 +611,8 @@ const runOxlint: RunOxlint = (arguments_) => {
 		process.execPath,
 		[
 			resolveOxlintBinPath(),
-			// Registry inspection must not load project configs or their build outputs
+			// Use the inventory config to read the registry without loading
+			// project configs or their build outputs
 			'--config',
 			join(SCRIPT_DIRECTORY, 'inventory.oxlintrc.json'),
 			...arguments_,

@@ -77,6 +77,7 @@ const config: OxlintConfigOverrideEntry = {
 		'typescript/no-unsafe-argument': 'off',
 		'typescript/no-unsafe-assignment': 'off',
 		'typescript/no-unsafe-call': 'off',
+		'typescript/no-unsafe-class-instance-assignment': 'off',
 		'typescript/no-unsafe-declaration-merging': 'off',
 		'typescript/no-unsafe-enum-assignment': 'off',
 		'typescript/no-unsafe-enum-comparison': 'off',

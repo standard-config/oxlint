@@ -488,6 +488,7 @@ const config: OxlintConfigCoreBaseEntry = {
 		'typescript/no-unsafe-argument': 'error',
 		'typescript/no-unsafe-assignment': 'error',
 		'typescript/no-unsafe-call': 'error',
+		'typescript/no-unsafe-class-instance-assignment': 'error',
 		'typescript/no-unsafe-declaration-merging': 'error',
 		'typescript/no-unsafe-enum-assignment': 'error',
 		'typescript/no-unsafe-enum-comparison': 'error',

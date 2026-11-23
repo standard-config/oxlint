@@ -7,6 +7,10 @@ import type {
 } from '../types/index.ts';
 import clone from '../clone/index.ts';
 
+/**
+ * Merges two Oxlint configs, combining arrays and merging objects shallowly.
+ * The extension can remove a top-level property with `null` or `undefined`.
+ */
 export default function mergeConfig(
 	baseConfig: OxlintConfig,
 	extensionConfig:
@@ -51,10 +55,16 @@ export default function mergeConfig(
 	return result;
 }
 
+/**
+ * Checks whether a value is an array.
+ */
 function isArray(value: unknown): value is unknown[] {
 	return Array.isArray(value);
 }
 
+/**
+ * Checks whether a value is a non-null object, including an array.
+ */
 function isObject(value: unknown): value is Record<string, unknown> {
 	return typeof value === 'object' && value !== null;
 }

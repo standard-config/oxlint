@@ -1,3 +1,6 @@
+/**
+ * Returns a deep copy when possible, or the original value if cloning fails.
+ */
 export default function clone<T>(value: T): T {
 	try {
 		/* oxlint-disable-next-line eslint/no-param-reassign */

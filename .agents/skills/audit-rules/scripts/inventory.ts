@@ -17,12 +17,18 @@ export const OPTIONS = ['--json', '--release-notes', '--tracked-only'] as const;
 // failure handler
 let ts: typeof TypeScript;
 
+/**
+ * Load the TypeScript compiler to parse config source files.
+ */
 export const loadTypeScript = async (): Promise<void> => {
 	const module = await import('typescript');
 
 	ts = module.default;
 };
 
+/**
+ * Find the repository root by searching upward from the given path.
+ */
 const findRepositoryRoot = (startPath: string): string => {
 	let currentPath = resolve(startPath);
 
@@ -46,8 +52,10 @@ const findRepositoryRoot = (startPath: string): string => {
 	}
 };
 
-// Resolved on use rather than on import, so a missing Oxlint installation
-// reaches the command’s failure handler
+/**
+ * Resolve the Oxlint executable at run time so a missing installation reaches
+ * the command’s failure handler.
+ */
 const resolveOxlintBinPath = (): string =>
 	join(
 		dirname(createRequire(import.meta.url).resolve('oxlint/package.json')),
@@ -135,20 +143,35 @@ export class RegistryFormatError extends Error {
 	}
 }
 
+/**
+ * Check whether a value is a non-null, non-array object.
+ */
 const isRecord = (value: unknown): value is Record<string, unknown> =>
 	typeof value === 'object' && value !== null && !Array.isArray(value);
 
+/**
+ * Use forward slashes and strip a leading `./` from a repository path.
+ */
 const normalizeRepositoryRelativePath = (path: string): string =>
 	path.replaceAll('\\', '/').replace(/^\.\/+/, '');
 
+/**
+ * Return the path relative to the repository root, using forward slashes.
+ */
 const getRepositoryRelativePath = (
 	repositoryRoot: string,
 	path: string
 ): string => normalizeRepositoryRelativePath(relative(repositoryRoot, path));
 
+/**
+ * Replace underscores with hyphens so plugin names match across sources.
+ */
 const normalizePluginName = (plugin: string): string =>
 	plugin.replaceAll('_', '-');
 
+/**
+ * Normalize the plugin prefix of a qualified rule name.
+ */
 const normalizeRuleName = (rule: string): string => {
 	const separatorIndex = rule.indexOf(RULE_NAME_SEPARATOR);
 
@@ -159,9 +182,15 @@ const normalizeRuleName = (rule: string): string => {
 	return `${normalizePluginName(rule.slice(0, separatorIndex))}${rule.slice(separatorIndex)}`;
 };
 
+/**
+ * Return the normalized plugin name from a qualified rule name.
+ */
 const getRuleSource = (rule: string): string =>
 	normalizePluginName(rule.split(RULE_NAME_SEPARATOR, 1)[0] ?? '');
 
+/**
+ * Read an identifier, string, or numeric literal used as a property name.
+ */
 const getPropertyName = (name: TypeScript.PropertyName): string | undefined => {
 	if (
 		ts.isIdentifier(name) ||
@@ -174,6 +203,9 @@ const getPropertyName = (name: TypeScript.PropertyName): string | undefined => {
 	return undefined;
 };
 
+/**
+ * Strip parentheses and type-only syntax to expose the underlying expression.
+ */
 const unwrapExpression = (
 	expression: TypeScript.Expression
 ): TypeScript.Expression => {
@@ -192,6 +224,9 @@ const unwrapExpression = (
 	return currentExpression;
 };
 
+/**
+ * Map top-level variable names to their initializers in the config source.
+ */
 const collectVariables = (
 	sourceFile: TypeScript.SourceFile
 ): Map<string, TypeScript.Expression> => {
@@ -212,6 +247,9 @@ const collectVariables = (
 	return variables;
 };
 
+/**
+ * Follow local references, stopping at unknown names or cycles.
+ */
 const resolveExpression = (
 	expression: TypeScript.Expression,
 	variables: ReadonlyMap<string, TypeScript.Expression>,
@@ -237,6 +275,9 @@ const resolveExpression = (
 	return resolveExpression(initializer, variables, seenIdentifiers);
 };
 
+/**
+ * Find the first assignment to the named property in an object literal.
+ */
 const findProperty = (
 	objectLiteral: TypeScript.ObjectLiteralExpression,
 	propertyName: string
@@ -253,6 +294,9 @@ const findProperty = (
 	return undefined;
 };
 
+/**
+ * Identify owned plugins from string literals listed directly in the array.
+ */
 const collectDirectStringArrayEntries = (
 	expression: TypeScript.Expression,
 	variables: ReadonlyMap<string, TypeScript.Expression>
@@ -276,6 +320,9 @@ const collectDirectStringArrayEntries = (
 	return values;
 };
 
+/**
+ * Collect qualified rule names across spreads and conditional branches.
+ */
 const collectRuleMapEntries = (
 	expression: TypeScript.Expression,
 	variables: ReadonlyMap<string, TypeScript.Expression>,
@@ -403,6 +450,9 @@ export const parseConfigSource = (
 	};
 };
 
+/**
+ * Read a rule from its registry row, skipping table headers and separators.
+ */
 const parseRegistryTableRow = (
 	line: string,
 	category: string,
@@ -553,6 +603,9 @@ type RunCommand = (
 	cwd: string
 ) => CommandResult;
 
+/**
+ * Run a command and capture its output, exit status, and any launch error.
+ */
 const runCommand: RunCommand = (command, arguments_, cwd) => {
 	const result = spawnSync(command, arguments_, {
 		cwd,
@@ -567,6 +620,9 @@ const runCommand: RunCommand = (command, arguments_, cwd) => {
 	};
 };
 
+/**
+ * List the files Git tracks under `packages`, relative to the repository root.
+ */
 export const resolveTrackedPaths = (
 	repositoryRoot: string,
 	execute: RunCommand = runCommand
@@ -606,6 +662,9 @@ export const resolveTrackedPaths = (
 
 type RunOxlint = (arguments_: string[]) => string;
 
+/**
+ * Return the output of the installed Oxlint CLI using the inventory config.
+ */
 const runOxlint: RunOxlint = (arguments_) => {
 	const result = spawnSync(
 		process.execPath,
@@ -648,6 +707,9 @@ const runOxlint: RunOxlint = (arguments_) => {
 	return result.stdout;
 };
 
+/**
+ * Extract the installed version from Oxlint’s CLI output.
+ */
 const parseOxlintVersion = (output: string): string => {
 	const version = /(?:Version:\s*)?(\d+\.\d+\.\d+(?:-[\w.-]+)?)/.exec(
 		output
@@ -670,9 +732,15 @@ export const resolveRuleRegistry = (
 	execute: RunOxlint = runOxlint
 ): RuleRegistry => parseRuleRegistry(execute(['--rules', '--format=default']));
 
+/**
+ * Read the owned plugins and rule names declared in a config file.
+ */
 const readConfigSource = (configPath: string): ConfigSource =>
 	parseConfigSource(readFileSync(configPath, 'utf8'), configPath);
 
+/**
+ * Read the `name` string from a package manifest.
+ */
 const readPackageName = (packagePath: string): string => {
 	const packageJson: unknown = JSON.parse(readFileSync(packagePath, 'utf8'));
 
@@ -683,6 +751,9 @@ const readPackageName = (packagePath: string): string => {
 	return packageJson.name;
 };
 
+/**
+ * Find package manifests, base configs, and overrides in the working tree.
+ */
 const discoverFilesystemPackageFiles = (
 	repositoryRoot: string
 ): PackageFiles[] => {
@@ -730,6 +801,9 @@ const discoverFilesystemPackageFiles = (
 	return packageFiles;
 };
 
+/**
+ * Find package manifests, base configs, and overrides among Git-tracked paths.
+ */
 const discoverTrackedPackageFiles = (
 	repositoryRoot: string,
 	trackedPaths: ReadonlySet<string>
@@ -811,6 +885,9 @@ const discoverTrackedPackageFiles = (
 	return packageFiles;
 };
 
+/**
+ * Find package files in the working tree, using only tracked paths if supplied.
+ */
 const discoverPackageFiles = (
 	repositoryRoot: string,
 	trackedPaths?: ReadonlySet<string>
@@ -819,9 +896,15 @@ const discoverPackageFiles = (
 		? discoverFilesystemPackageFiles(repositoryRoot)
 		: discoverTrackedPackageFiles(repositoryRoot, trackedPaths);
 
+/**
+ * Check whether Oxlint lists the rule in its nursery category.
+ */
 const isNurseryRule = (rule: RegistryRule): boolean =>
 	rule.category.toLowerCase() === 'nursery';
 
+/**
+ * Report gaps in core rule coverage and owned rules found only in overrides.
+ */
 export const buildInventory = ({
 	registry,
 	repositoryRoot,
@@ -934,9 +1017,15 @@ export const buildInventory = ({
 	};
 };
 
+/**
+ * Return the GitHub release page for the given Oxlint version.
+ */
 export const getDefaultReleaseUrl = (version: string): string =>
 	`https://github.com/oxc-project/oxc/releases/tag/oxlint_v${encodeURIComponent(version)}`;
 
+/**
+ * Fetch the release notes and their GitHub URL for the given Oxlint version.
+ */
 export const fetchReleaseNotes = async (
 	version: string,
 	request: typeof fetch = fetch
@@ -978,6 +1067,9 @@ export const fetchReleaseNotes = async (
 	};
 };
 
+/**
+ * Parse inventory flags and display usage for `--help`.
+ */
 const parseCliOptions = (arguments_: string[]): CliOptions => {
 	const options: CliOptions = {
 		help: false,
@@ -1034,6 +1126,9 @@ const parseCliOptions = (arguments_: string[]): CliOptions => {
 	return options;
 };
 
+/**
+ * List the findings under their label, or say that the check found no gaps.
+ */
 const formatIssueList = (
 	label: string,
 	issues: string[],
@@ -1051,6 +1146,9 @@ const formatIssueList = (
 	}
 };
 
+/**
+ * Format the registry totals and each package’s findings as a text report.
+ */
 const formatInventory = (report: InventoryReport): string => {
 	const output = [
 		'Oxlint rule inventory',
@@ -1095,6 +1193,9 @@ const formatInventory = (report: InventoryReport): string => {
 	return `${output.join('\n')}\n`;
 };
 
+/**
+ * Load Oxlint’s registry, then audit rule coverage and base/override parity.
+ */
 const runInventory = (trackedOnly: boolean): InventoryReport => {
 	const repositoryRoot = findRepositoryRoot(SCRIPT_DIRECTORY);
 	const version = parseOxlintVersion(runOxlint(['--version']));
@@ -1111,6 +1212,9 @@ const runInventory = (trackedOnly: boolean): InventoryReport => {
 	});
 };
 
+/**
+ * Print the inventory in the requested format and signal findings on exit.
+ */
 const main = async (): Promise<void> => {
 	const options = parseCliOptions(process.argv.slice(2));
 

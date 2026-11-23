@@ -33,10 +33,9 @@ minimumReleaseAgeExclude:
   - oxlint-tsgolint
 
 overrides:
+  vite: npm:@voidzero-dev/vite-plus-core@latest
   vite-plus>oxfmt: '-'
   vite-plus>oxlint: 'catalog:'
-  vite-plus>oxlint-tsgolint: 'catalog:'
-  vite: npm:@voidzero-dev/vite-plus-core@latest
 
 peerDependencyRules:
   allowAny:

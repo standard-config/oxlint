@@ -26,6 +26,7 @@
 		"standard-config",
 		"standard-config-oxlint",
 		"stylistic",
+		"tsrs",
 		"type-aware",
 		"typescript",
 		"vite+",

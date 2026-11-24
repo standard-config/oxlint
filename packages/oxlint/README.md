@@ -46,7 +46,7 @@ npm install --save-dev @standard-config/oxlint
 pnpm add --save-dev @standard-config/oxlint
 ```
 
-For [type-aware linting](https://oxc.rs/docs/guide/usage/linter/type-aware.html), make sure `oxlint` and `oxlint-tsgolint` are both installed.
+For [type-aware linting](https://oxc.rs/docs/guide/usage/linter/type-aware.html), make sure either `tsrs` or `oxlint-tsgolint` is installed alongside `oxlint`.
 
 ## Usage
 

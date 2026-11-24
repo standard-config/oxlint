@@ -17,7 +17,7 @@ updates:
       default-days: 1
       exclude:
         - '@oxlint/*'
-        - '@oxlint-tsgolint/*'
         - '@standard-config/*'
+        - '@tsrs/*'
         - oxlint
-        - oxlint-tsgolint
+        - tsrs

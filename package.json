@@ -20,7 +20,7 @@
 		"@standard-config/prettier": "^1.23.1",
 		"@standard-config/tsconfig": "catalog:",
 		"@types/node": "catalog:",
-		"@vitest/coverage-v8": "5.1.0",
+		"@vitest/coverage-v8": "5.1.1",
 		"oxlint": "catalog:",
 		"prettier": "^3.10.1",
 		"tsrs": "catalog:",

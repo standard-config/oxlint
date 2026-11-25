@@ -16,7 +16,7 @@ catalog:
   publint: ^0.3.25
   tsrs: ^7.1.0-beta.tsrs5
   typescript: ^6.0.3
-  vite-plus: ^1.7.0
+  vite-plus: ^1.8.0
 
 color: always
 
@@ -33,7 +33,6 @@ minimumReleaseAgeExclude:
   - tsrs
 
 overrides:
-  vite: npm:@voidzero-dev/vite-plus-core@latest
   vite-plus>oxfmt: '-'
   vite-plus>oxlint: 'catalog:'
   vite-plus>tsrs: 'catalog:'
